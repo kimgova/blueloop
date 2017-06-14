@@ -90,53 +90,53 @@ grails:
                 taglib: none
                 staticparts: none
                 
-    plugin:
-        springsecurity: 
-            password:
-                algorithm: bcrypt
-            logout:
-                postOnly: false
-            rememberMe: 
-                createSessionOnSuccess: true
-            userLookup:
-                userDomainClassName: cr.sa.bl.User
-                authorityJoinClassName: cr.sa.bl.UserRole
-            authority:
-                className: cr.sa.bl.Role
-            controllerAnnotations:
-                staticRules: [
-                        '/':                              ['permitAll'],
-                        '/index':                         ['permitAll'],
-                        '/monitoring':                    ['permitAll'],
-                        '/index.gsp':                     ['permitAll'],
-                        '/**/js/**':                      ['permitAll'],
-                        '/**/css/**':                     ['permitAll'],
-                        '/**/images/**':                  ['permitAll'],
-                        '/**/favicon.ico':                ['permitAll'],
-                        '/services/**':                   ['permitAll'],
-                        '/**/crumb/**':                   ['permitAll'],
-                        '/**/city/**':                    ['permitAll'],
-                        '/assets/**':                     ['permitAll'],
-                        '/**/fonts/**':                   ['permitAll'],
-                        '/**/repos/**':                   ['permitAll'],
-                        '/**/js_i18n/**':                 ['permitAll']
-                    ]
-            useSecurityEventListener: true
-            failureHandler:
-                exceptionMappings: [
-                    'org.springframework.security.authentication.CredentialsExpiredException': '/user/passwordExpired'
-                    ]
-
-bruteforcedefender:
-    time: 5
-    allowedNumberOfAttempts: 3
-
-recaptcha:
-    publicKey: 6LdQRBcTAAAAAI_YNhUJ28qS9MhMfeWYyLNSITEQ
-    privateKey: 6LdQRBcTAAAAAKo37VToFFzRYT8Nu44InaJdJunc
-    includeNoScript: true
-    includeScript: true
-    enabled: true
+#    plugin:
+#        springsecurity: 
+#            password:
+#                algorithm: bcrypt
+#            logout:
+#                postOnly: false
+#            rememberMe: 
+#                createSessionOnSuccess: true
+#            userLookup:
+#                userDomainClassName: cr.sa.bl.User
+#                authorityJoinClassName: cr.sa.bl.UserRole
+#            authority:
+#                className: cr.sa.bl.Role
+#            controllerAnnotations:
+#                staticRules: [
+#                        '/':                              ['permitAll'],
+#                        '/index':                         ['permitAll'],
+#                        '/monitoring':                    ['permitAll'],
+#                        '/index.gsp':                     ['permitAll'],
+#                        '/**/js/**':                      ['permitAll'],
+#                        '/**/css/**':                     ['permitAll'],
+#                        '/**/images/**':                  ['permitAll'],
+#                        '/**/favicon.ico':                ['permitAll'],
+#                        '/services/**':                   ['permitAll'],
+#                        '/**/crumb/**':                   ['permitAll'],
+#                        '/**/city/**':                    ['permitAll'],
+#                        '/assets/**':                     ['permitAll'],
+#                        '/**/fonts/**':                   ['permitAll'],
+#                        '/**/repos/**':                   ['permitAll'],
+#                        '/**/js_i18n/**':                 ['permitAll']
+#                    ]
+#            useSecurityEventListener: true
+#            failureHandler:
+#                exceptionMappings: [
+#                    'org.springframework.security.authentication.CredentialsExpiredException': '/user/passwordExpired'
+#                    ]
+#
+#bruteforcedefender:
+#    time: 5
+#    allowedNumberOfAttempts: 3
+#
+#recaptcha:
+#    publicKey: 6LdQRBcTAAAAAI_YNhUJ28qS9MhMfeWYyLNSITEQ
+#    privateKey: 6LdQRBcTAAAAAKo37VToFFzRYT8Nu44InaJdJunc
+#    includeNoScript: true
+#    includeScript: true
+#    enabled: true
 
 endpoints:
     jmx:
