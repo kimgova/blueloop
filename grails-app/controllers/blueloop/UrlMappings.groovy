@@ -17,9 +17,9 @@ class UrlMappings {
 			}
 		}
 
-//		"/"(view:"/index")
-		"/"(controller:"index")
-		"500"(view:'/error')
+		"/"(view:"/index")
+//		"/"(controller:"index")
+//		"500"(view:'/error')
 		
 		//Update User Personal Info
 		"/user/updatePI" (controller: "user") {
