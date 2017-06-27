@@ -1,0 +1,9 @@
+<% $.each(listImages, function(i, imagen){ %>
+	<li id='gridliRiskImg'>
+		<img id='imgRisk' class='fancybox-image' rel='group' href='<%= imagen.filePath %>' src='<%= imagen.filePath %>' alt=''>
+		<caption>
+			<input type='hidden' id='filePathSelectRiskImg' value='<%= imagen.filePath %>'/>
+		    <input type='hidden' id='fileNameSelectRiskImg' value='<%= imagen.name %>'/>
+		</caption>
+	</li>																                                        
+<% }); %>  

@@ -1,0 +1,25 @@
+<div class="col-lg-12">
+    <div id="pagination" class="pagination"></div>
+    <table cellpadding='0' cellspacing='0' border='0' class='table table-striped table-hover table-bordered' id='tableForecastLinear' style='text-align: center'>
+        <thead>
+            <tr>
+                <th class='center'><%= json.forecast.linearPlan.sku %></th>
+                <th class='center'><%= json.forecast.linearPlan.description %></th>
+                <th class='center'><%= json.forecast.linearPlan.category %></th>
+                <th class='center'><%= json.forecast.linearPlan.subCat %></th>
+                <th class='center'><%= json.forecast.linearPlan.role %></th>
+                <th class='center'><%= json.forecast.linearPlan.suggested %></th>
+                <th class='center'><%= json.forecast.linearPlan.variations %></th>
+                <th class='center'><%= json.forecast.linearPlan.finalTrade %></th>
+                <th class='center'><%= json.forecast.linearPlan.negotiation %></th>
+                <th class='center action-column'><%= json.general.action %></th>
+            </tr>
+        </thead>
+        <tbody id="all">
+            <tr>
+                <td id="no-data-td" valign="top" colspan="10">No data available in table</td>
+            </tr>
+        </tbody>
+        <tbody id="display"></tbody>
+    </table>
+</div>

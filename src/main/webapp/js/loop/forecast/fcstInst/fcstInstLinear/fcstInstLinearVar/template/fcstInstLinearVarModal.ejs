@@ -1,0 +1,26 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="variations-linear-modal" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+             	<button id="closeHeader" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+             	<h4 class="modal-title">Linear Planning Adjustments</h4>
+			</div>
+			<div class="modal-body">
+                <div class="task-progress" style="float:none;">
+                    <h1>Adjustments for SKU: <%= identifier %></h1>
+                    <p>Add varations to the SKU</p>
+                </div>
+                <div style="float:right;">
+                    <button id="addVarBtn" type="button" class="btn btn-primary btn-sm">
+                        <i class="fa fa-plus"></i> <%= json.general.addNew %>
+                    </button>
+                </div>
+                <br><br>
+            	<div id="varTable"></div>
+           	</div>
+        	<div class="modal-footer">
+        		<button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

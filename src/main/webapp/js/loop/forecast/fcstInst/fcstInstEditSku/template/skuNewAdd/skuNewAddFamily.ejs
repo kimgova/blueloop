@@ -1,0 +1,23 @@
+<div class="form-group">
+	<label class="col-lg-2 col-sm-2 control-label" for="familySku"><%=json.forecast.skuPlanning.skuFamily%></label>
+	<div class="col-lg-10 col-sm-10 input-group m-bot15" id="divFamilySku">
+	</div>
+	<label class="col-lg-2 col-sm-2 control-label" for="brandSku"><%=json.forecast.skuPlanning.skuBrand%></label>
+	<div class="col-lg-10 col-sm-10 input-group m-bot15"  id="divBrandSku">
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-lg-2 col-sm-2 control-label" for="typeSku"><%=json.forecast.skuPlanning.skuType%></label>
+	<div class="col-lg-10 col-sm-10 input-group m-bot15">
+		<select class="form-control" id="typeSku" name="typeSku" <%=disabled%>>
+			<option value="FP" <% if(type == "FP"){%> selected<%}%> >FP</option>
+			<option value="ROH" <% if(type == "ROH"){%> selected<%}%> >ROH</option>
+			<option value="HALB" <% if(type == "HALB"){%> selected<%}%> >HALB</option>
+		</select> 
+		<span class="input-group-btn"></span>
+	</div>
+	
+	<label class="col-lg-2 col-sm-2 control-label" for="promotionSku"><%=json.forecast.skuPlanning.skuPromotion%></label>
+	<input type="checkbox" id="promo<%=identifier%>" name="promo<%=identifier%>"
+		value="<%if(status == "skuChain"){%><%=skuChain%><%}%>" <%=promotion%>/>
+</div>

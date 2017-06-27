@@ -1,0 +1,100 @@
+<% var isArchitect = "", isBBResponsible = "", isInvited = "", isOrderResponsible = "", disabledViewer = '', disabledViewerOtherCheckboxes = '';%>
+    <% $.each(roles, function(i, role){ %> 
+        <% if(role.roleName == "LOOP_ARCHITECT"){%>
+            <% isArchitect = "checked"; %>
+        <% } %>
+        <% if(role.roleName == "LOOP_BB_RESPONSIBLE"){%>
+            <% isBBResponsible = "checked"; %>
+        <% } %>
+        <% if(role.roleName == "LOOP_INVITED"){%>
+            <% isInvited = "checked"; %>
+        <% } %>
+        <% if(role.roleName == "LOOP_ORDER_RESPONSIBLE"){%>
+            <% isOrderResponsible = "checked"; %>
+        <% } %>
+    <% }); %>
+
+<% var layerGeneral = "", layerRisk = "", layerImprovement = "";%>
+    <% $.each(layers, function(i, layer){ %> 
+        <% if(layer.name == "GENERAL"){%>
+            <% layerGeneral = "checked"; %>
+        <% } %>
+        <% if(layer.name == "RISK_MANAGEMENT"){%>
+            <% layerRisk = "checked"; %>
+        <% } %>
+    <% }); %>
+    
+<tr>
+    <td><div><%= name %></div></td>
+    <td><div><%= company %></div></td>
+    
+    <td><div>
+            <% if(isArchitect != ''){%>
+                <%= json.teamwork.architect %><br>
+            <% } %>
+            <% if(isBBResponsible != ''){%>
+                <%= json.teamwork.bbResponsible %><br>
+            <% } %>
+            <% if(isInvited != ''){%>
+                <%= json.teamwork.invited %>
+            <% } %>
+        </div>
+    </td>
+    <td>
+        <div class='md-checkbox'>
+        <% if(isArchitect != '' || isInvited != ''){%>
+            <% disabledViewer = 'disabled'; %>
+        <% } %>
+        
+        <% if(viewer == true){%>
+            <% disabledViewerOtherCheckboxes = '';%>
+            <input id='checkboxViewer<%= idUser %>' class='viewerCheckbox' type="checkbox" value="VIEWER" checked='checked' <%= disabledViewer %> >
+        <% }else{ %>
+            <% disabledViewerOtherCheckboxes = 'disabled';%>
+            <input id='checkboxViewer<%= idUser %>' class='viewerCheckbox' type="checkbox" value="VIEWER" <%= disabledViewer %> >
+        <% } %>
+            <label for="checkboxViewer<%= idUser %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </td>
+    <td><div class='md-checkbox'>
+            <input id='checkboxOrderResponsible<%= idUser %>' class='roleCheckbox md-check' type="checkbox" value="LOOP_ORDER_RESPONSIBLE" <%= isOrderResponsible %> <%= disabledViewerOtherCheckboxes %> >
+            <label for="checkboxOrderResponsible<%= idUser %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </td>
+    <td><div class='md-checkbox'>
+            <input id='checkboxLayerGeneral<%= idUser %>' class='layerCheckbox' type="checkbox" value="GENERAL" <%= layerGeneral %> disabled>
+            <label for="checkboxLayerGeneral<%= idUser %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </td>
+    <td><div class='md-checkbox'>
+            <input id='checkboxLayerRisk<%= idUser %>' class='layerCheckbox' type="checkbox" value="RISK_MANAGEMENT" <%= layerRisk %> <%= disabledViewerOtherCheckboxes %> >
+            <label for="checkboxLayerRisk<%= idUser %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </td>     
+    <td>
+        <div>      
+            <% if(isInvited != ''){ %>  
+                <button id='removeMember' class='btn btn-danger btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.button.remove %>">
+                    <i class='fa fa-trash-o'></i>
+                </button>
+            <% } %>
+        </div>
+    </td>
+</tr>

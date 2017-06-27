@@ -1,0 +1,94 @@
+#paper {
+	display: inline-block;
+	border: 1px solid gray;
+}
+
+.current-box {
+	 
+	border: 2px solid black;
+	background-color: #E67E22;
+	opacity: .3;
+	display: none;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+}
+
+.selection-box {
+	
+	cursor: move;
+	border: 2px dashed #F39C12;
+	position: absolute;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	margin-top: -4px;
+	margin-left: -4px;
+	box-shadow: 2px 2px 5px lightgray;
+}
+.live .connection {
+    stroke: #2ecc71;
+    stroke-width: 3px;
+}
+
+.live .connection-wrap {
+    stroke: #2ecc71;
+}
+
+
+.element.hover .inPorts circle{
+	visibility:visible;
+}
+
+.element.live {
+    fill: #2ecc71;
+    stroke: #27ae60;
+}
+.element.connected {
+    fill: #6699FF;
+    stroke: #6699FF;
+}
+ 
+ .live text{
+ 	fill : black
+ }
+ 
+ 
+ .execution .marker-arrowhead ,.execution .tool-remove , .execution .marker-vertex-group{
+ 	visibility:hidden;
+ }
+ 
+ .altrouting.editing .element.alt, .altrouting.editing .link.alt{
+ 	opacity: 0.2;
+ 	pointer-events: none;
+ }
+ .altrouting.editing .element.alt.active, .altrouting.editing .link.alt.active{
+ 	opacity: 1;
+ 	pointer-events: all;
+ }
+ 
+ #routName{
+	position: absolute;
+	z-index: 9999999999999999999999999999999999999999999999999999999;
+	background-color: #fff;
+	width: auto;
+	height: 24px;
+	padding: 5px 24px;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	display: none;
+ }
+ 
+ .diagramPrevImg{
+ 
+ 	position: absolute;
+ 	top: 500px;
+ 	left: 500px;
+ 	width: 500px;
+ }
+ 
+ #canvas.altrouting.editing {
+ 		background-image:url(../../../images/canvas/canvasBackgroundDark.png);
+ }
+ 
+ 
+ 

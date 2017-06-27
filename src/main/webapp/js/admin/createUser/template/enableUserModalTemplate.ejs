@@ -1,0 +1,46 @@
+<div aria-hidden="true" aria-labelledby="order-modal" role="dialog" tabindex="-1" id="enable-user-modal" class="modal fade" data-backdrop="static">
+    <div id="Modal-dialog" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" id="closeEnableUser" type="button">×</button>
+                <h4 class="modal-title"><%= json.user.enable %></h4>
+            </div>
+                     
+            <div class="modal-body">
+ 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">
+                            <div class="panel-body">
+                                
+                                <div class="task-progress">
+                                    <h5><%=json.user.enableMessage%>:</h5>
+                                </div>
+                                </br> 
+                                <table class="table table-bordered table-striped table-hover" id="">
+                                    <tbody>
+                                        <tr>
+                                            <td><div><img id="" src="<%=image%>" style="border-radius: 50%;height: 36px;width: 36px;"></div></td>
+                                            <td><div><%=user.firstName%> <%=user.lastName%></div></td>
+                                            <td><div><%=user.email%></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="task-progress">
+                                    <h5><%=json.user.enableMessage2%></h5>
+                                </div>
+                          
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                
+           	</div>
+        	<div class="modal-footer">
+        		<button id="closeModal" type="button" class="btn btn-default bb-btn" data-dismiss="modal"><%= json.button.cancel %></button>
+        		<button id="enableUser" type="submit" class="btn btn-default bb-btn"><%= json.user.enableBtn %></button>
+      		</div>
+      		
+        </div>
+    </div>
+</div>

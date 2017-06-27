@@ -1,0 +1,76 @@
+.bb-search i {
+    font-size: 20px;
+}
+
+#bbsearch-box input {
+	outline: none;
+}
+
+#bbsearch-box input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+#bbsearch-box input::-webkit-search-decoration,
+#bbsearch-box input::-webkit-search-cancel-button {
+	display: none; 
+} 
+
+#bbsearch-box input[type=search] {
+	font-size: 18px;
+	border: none;
+    padding: 9px 10px 9px 56px;
+    padding-top: 9px;
+    padding-right: 10px;
+    padding-bottom: 9px;
+    padding-left: 56px;
+    width: 0;
+    color: transparent;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    margin-left: -35px;
+    background-color: transparent;
+}
+
+
+#bbsearch-box input[type=search]:hover {
+	cursor:pointer;
+	background-color: transparent;
+	border-bottom: solid 1px #ccc;
+    width: 200px;
+}
+#bbsearch-box input[type=search]:focus {
+	width: 200px;
+	color: #9B9BA6;
+	background-color: transparent;
+	cursor: auto;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	border:none;
+	color:#797979;
+	background: #fff;
+	font-weight: normal;
+}
+
+.ui-accordion .ui-accordion-header {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    padding: .5em .5em .5em 1.7em;
+    min-height: 0;
+    font-size: 18px;
+}
+
+.ui-widget {
+    font-family: 'Avenir LT Std 35 Light', sans-serif;
+}
+
+.ui-widget-content {
+    border: none;
+    background: #fff;
+    color: #333;
+}

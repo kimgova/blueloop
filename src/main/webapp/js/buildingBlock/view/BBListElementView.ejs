@@ -1,0 +1,32 @@
+<% if (data){ %>
+    <% $.each(listBB, function(j, bb){ %>
+    	<% if(type=="mine"){ %>
+    		
+	    		<div class="item-container col-lg-6 col-md-12 col-sm-12">
+	    		
+				 			<div class="grid-item item-border">
+				 				<div class="grid-item-icon icon-circle">
+				 				
+				 					<img src="<%= filePath %><%= bb.fileName %>" height="80" width="80" alt="<%= bb.name %>"/>
+				 					
+				 				</div>
+				 				<hr>
+				 				<div class="grid-item-description">
+				 					<h4><%= bb.name %></h4>
+				 					<h5><%= bb.type %> </h5>
+				 					<p>created by: <%= bb.ownerName %></p>
+				 				</div>
+				 			</div>
+				</div>
+    		
+	        
+	        
+	    <% } else { %>
+			
+			
+	    <% } %>
+	    
+    <% }); %>
+<% }else{ %>
+    <li style="margin-top:50px;" ><%= json.bb.notFound %></li>
+<% } %>

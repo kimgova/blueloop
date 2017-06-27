@@ -1,0 +1,20 @@
+<div class="row" style="margin-left:0; margin-bottom:5px;">
+    <div class="col-lg-2">
+        <% if(disabled){ %>
+            <input id="<%= id %>" <%= status %> class="checkAct" disabled type="checkbox">
+        <% } else { %>
+            <% if(authorized){ %>
+                <input id="<%= id %>" <%= status %> class="checkAct" type="checkbox">
+            <% } else { %>
+                <input id="<%= id %>" <%= status %> class="checkAct" disabled type="checkbox">
+            <% } %>
+        <% } %>
+    </div>
+    <div class="col-lg-4">
+        <img width="20px" heigth="20px" src="<%= filePath %><%= imgUrl %>" filename="<%= imgUrl %>">
+        <%= name %>
+    </div>
+    <div class="col-lg-4">
+        <%= responsible %>
+    </div>
+</div>

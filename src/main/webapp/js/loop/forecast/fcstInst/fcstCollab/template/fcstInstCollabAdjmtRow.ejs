@@ -1,0 +1,24 @@
+<tr class="<%= treeClass %>">
+    <td><%= detailRow %></td>
+    <td><%= exportRow %></td>
+    <td><%= budgetRow %></td>
+    <td>
+        <div><%= adjustmentsRow %></div>
+        <div id="addAdjmt">
+            <% if(editable){ %>
+                <i class="fa fa-pencil pull-right editNegociation" title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.addAdjust %>"></i>
+            <% } %>
+        </div>
+    </td>
+    <td><%= finalRow %>  <i class="fa <%= arrow %>"></i></td>
+    <td>
+        <div><%= risksRow %></div>
+        <div id="addRisk">
+            <% if(editable){ %>
+                <i class="fa fa-pencil pull-right editNegociation" title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.addRisk %>"></i>
+            <% } %>
+        </div>
+    </td>
+</tr>

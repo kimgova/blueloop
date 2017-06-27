@@ -1,0 +1,35 @@
+<div class="cd-panel-bb from-right" id="bb-panel">
+	<div class="cd-panel-header">
+		<p>Add Building Block</p>
+		<a href="#0" class="cd-panel-close icon-close" id="close-panel"></a>
+	</div>
+	<div class="cd-panel-container-bb">
+		<div class="cd-panel-content-bb">
+            <div class="col-lg-12">
+                <form class="bb-search" id="bbsearch-box">
+                    <i class="icon-magnifier"></i>
+                    <input type="search" id="searchbox" placeholder="<% json.general.search %>">
+                </form>
+            </div>
+            <br>
+            <div class="accordion_toolkit" style="margin-top:3%;">
+                <h4 class="acordion_title accordion-header"><%= json.bbpanel.mybb %></h4>
+                <div class="acordion_div" id="my-bb" style="height: 400px">
+                    <div id="stockContent"> </div>
+                    <div id="flowContent"> </div>
+                </div>
+
+                <h4 class="acordion_title accordion-header"><%= json.bbpanel.sharebb %></h4>
+                <div class="acordion_div" id="share-bb" style="height:500px">
+                    <div id="sharedStock"> </div>
+                    <div id="sharedFlow"> </div>
+                </div>
+                
+                <% if(bbCreationPermission == true){ %>
+                    <h4 class="acordion_title accordion-header"><%= json.bbpanel.newbb %></h4>
+    				<div class="acordion_div" id="new-bb" style="height:500px"></div>
+				<% } %>
+            </div>
+		</div>
+	</div>
+</div>

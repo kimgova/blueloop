@@ -1,0 +1,24 @@
+<tr>
+    <td><div><%= identifier %></div></td>
+    <td><div><%= description %></div></td>
+    <td><div><%= type %></div></td>
+    <td><div><%= brand %></div></td>
+    <td><div><%= family %></div></td>
+    <td>
+        <div>
+            <input type="checkbox" id="promo<%=identifier%>" name="promo<%=identifier%>" value="<%=skuChain%>" <%=promotion%> />
+        </div>
+    </td>
+    <td>
+        <div>
+            <button id="editSkuIns" class="btn btn-primary btn-xs" title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.modAssoSku %>">
+                <i class="fa fa-pencil"></i>
+            </button>
+            <button class="btn btn-danger btn-xs" id="deleteSkuFromIns" title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.deleteSku %>">
+                <i class="fa fa-trash-o"></i>
+            </button>
+        </div>
+    </td>
+</tr>

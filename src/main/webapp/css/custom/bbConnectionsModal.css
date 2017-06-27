@@ -1,0 +1,126 @@
+#bb-connections-dialog{
+	width: 65%;
+    min-width: 800px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+    overflow:hidden;
+}
+
+#modal-bb-grid{
+	position: relative;
+    padding: 0 4% 0;
+    height: 378px;
+    overflow-y: scroll;
+}
+
+.grid-item{
+	position: relative;
+    /* border-style: dashed; */
+    text-align: center;
+    width: 100%;
+}
+
+/* hover mark */
+.user-hover-mark{
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* padding-left: 28%; */
+     opacity: 0; 
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+
+
+#mark-transition{
+	position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    top: -15px;
+    transition: .25s;
+    text-align: center;
+    /* padding-left: 29%; */
+}
+
+
+.user-hover-mark .btn-default{
+	margin-bottom: 10px;
+    display: table;
+    background-color: rgba(138, 138, 138, 0.88);
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 0px;
+    border-color: white;
+}
+
+#mark-transition #select-btn{
+   position: relative;
+    margin-top: 28%;
+    /* text-align: center; */
+    margin-left: 31%;
+}
+
+.user-hover-mark .btn-default:hover{
+	background-color: rgba(138, 138, 138, 0.98);
+}
+
+.grid-item:hover:hover .user-hover-mark{
+	opacity:1;
+}
+
+.grid-item:hover:hover .grid-item-description p{
+	opacity:1;
+}
+
+.grid-item:hover #mark-transition{
+	top:0;
+}
+
+.grid-item-pic{
+	width: 100px;
+    height: 100px;
+}
+
+#modal-selection-container{
+}
+
+.closed{
+	display:none;
+}
+
+#modal-selection{
+	position: relative;
+    padding: 0 5% 0;
+}
+
+.modal-panel{
+	position: relative;
+	display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+#send-btn {
+    background-color: #FFF;
+    color: #000;
+    margin-top: 8%;
+    float: right;
+}
+
+#left-panel{
+	text-align: center;
+    padding: 8%;
+}
+
+.item-description h4{
+	font-weight: 600;
+}
+
+

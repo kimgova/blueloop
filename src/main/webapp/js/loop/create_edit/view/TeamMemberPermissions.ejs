@@ -1,0 +1,29 @@
+<div aria-hidden="true" aria-labelledby="" role="dialog" tabindex="-1" id="modalLayerPermission" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" id="closePermission" type="button">×</button>
+                <h4 class="modal-title"><%= title %></h4>
+            </div>
+            <div class="modal-body">
+	 			<div class="panel-body" style="padding: 30px 55px;">
+	 				<label id="idUserPermission" style="display: none;"><%= userId %></label>
+	 				<div class="col-lg-12 col-sm-12">
+						<%= message %>
+					</div>
+					<br><br>					
+	 				<div id="layerList" class="row">
+                        <% $.each(layers, function(i, layer){ %> 
+                        <label class="label_check c_on col-lg-6 col-sm-6" for="checkbox-<%= layer.id %>">
+                            <input id="checkbox-<%= layer.id %>" class="layerCheckbox" type="checkbox" <%= layer.permit %> value="<%= layer.id %>" name="checkbox-<%= layer.id %>"> <%= layer.name %>
+                        </label>
+                        <% }); %>
+                    </div>
+				</div>
+      		 	<div class='modal-footer'>
+ 					<button id='savePermission' class='btn btn-primary' type='button'><%= button %></button>
+				</div>	
+			</div>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addMember" class="modal fade" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-hidden="true" id="closeHeaderAddMember" data-dismiss="modal" class="close" type="button">×</button>
+				<h4 class="modal-title"><%= json.teamwork.inviteMember %></h4>
+			</div>
+			<div class="modal-body">
+				<div class="panel-body">
+					<div class="form"> 
+						<form action="" method="" class="cmxform form-horizontal" onsubmit="return false;">
+							<br>
+							<p class="form-group" ><%= json.default.inviteMessage %></p>
+							<input class="form-control" type="text" name='j_namenm' id='emailName' placeholder='<%= json.default.nameLabel %>' class="loginemail"/>
+							<br>
+							<input class="form-control" type="email" name='j_emailnm' id='email' placeholder='<%= json.default.emailLabel %>' class="loginemail"/>
+							<br>
+							<div class="modal-footer">
+			    				<button id="closeAddMember" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+    							<button id="sendAddMember" type="submit" class="btn btn-primary"><%= json.button.send %></button>
+   							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<div class="item-container col-lg-3 col-md-4 col-sm-4 col-xs-6" id="item-cont">
+	<div class="grid-item">
+		<div class="user-hover-mark">
+			<div id="mark-transition">
+				<i id="user-unfollow" class="icon-user-unfollow" data-container="body" data-toggle="tooltip" data-placement="top" title="Remove Connection"></i>
+			    <i id="user-options" class="icon-options"></i>
+				<a href="../user/profileWall/<%= id %>" class="btn btn-default">View Profile</a>
+				<a href="#" class="btn btn2 btn-default" style="display:none;">Btn2</a>
+			</div>
+		</div>
+		<img src="<%= path %>"/>
+		<div id="people-status-icon"><i></i></div>
+		<hr>
+		<div class="grid-item-description">
+		<h4><%= firstName %> <%= lastName %></h4>
+		<h5><%= department %> </h5>
+	    <p><%= email %></p>
+		</div>
+	</div>
+</div>

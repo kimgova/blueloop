@@ -1,0 +1,26 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="form-chain" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= modalTitle %></h4>
+           	 </div>
+           	  <div class="modal-body">
+           	  	<div class="panel-body">
+          	  		<div class="form-group">
+						<label for="description" class="col-lg-4 control-label">
+							<%= name %>			
+						</label>
+						<div class="col-lg-12">
+                            <input type="text" class="form-control" name="descriptionChain" id="descriptionChain" value="<%= value %>" />
+						</div>
+					</div>
+           	  	</div>
+           	  </div>
+        	<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal"><%= cancelBtn %></button>
+        		<button id="saveChainName" type="button" data-dismiss="modal" class="btn btn-primary"><%= saveBtn %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

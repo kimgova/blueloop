@@ -1,0 +1,28 @@
+<div class="row">
+	 	<div class="col-lg-6 col-md-6 col-sm-6">
+	 	<!-- <a class="grid-search"><i class="icon-magnifier"></i></a> -->
+		 	<form class="grid-search" id="search-box">
+		 	    <i class="icon-magnifier"></i>
+		    	<input type="search" placeholder="<% json.general.search %>">
+	        </form>
+	 	</div>
+	 	<div class="col-lg-6 col-md-6 col-sm-6">
+	 		<ul class="grid-navbar pull-right" id="filter">
+				<li class="grid-nav-dropdown">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+						<span class="selectedFilter">
+						<%= json.bb.allBBs %>
+						</span>
+						<b class="caret"></b>
+					</a>
+					<ul id="filter-bbs">
+						<li id="filter-all"><%= json.bb.allBBs %></li>
+						<li id="filter-mine"><%= json.bb.myBBs %></li>
+						<li id="filter-invited"><%= json.bb.invitedBBs %></li>
+						<li id="filter-archived"><%= json.bb.archivedBBs %></li>
+					</ul>
+				</li>
+
+	 		</ul>
+	 	</div>
+</div>

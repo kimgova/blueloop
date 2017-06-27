@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label class="col-lg-4 col-sm-4 control-label"><%=destination%></label>
+    <div class="col-lg-8 col-sm-8">
+        <select id="<%=id%>" name="<%=id%>" class="selectpicker show-menu-arrow form-control staticField">
+           <% $.each(COLUMNS, function(i, col){ %>
+                <% if(origin.value == col.value){ %>
+                    <option value="<%=col.value%>" selected><%=col.text%></option>
+                <% }else{ %>
+                    <option value="<%=col.value%>"><%=col.text%></option>
+                <% } %>
+            <% }); %> 
+        </select>
+    </div>
+</div>

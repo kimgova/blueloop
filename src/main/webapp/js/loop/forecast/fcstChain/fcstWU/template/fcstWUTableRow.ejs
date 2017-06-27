@@ -1,0 +1,47 @@
+<tr>
+    <td><div><%= name %></div></td>
+    <td>
+        <div>
+            <ul>
+                <% $.each(activities, function(i, act){ %>
+                <li>
+                    <img width="20px" heigth="20px" src="<%= filePath %><%= act.fileName %>" filename="<%= act.fileName %>"> <%= act.name %>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </td>
+    <td>
+        <div>
+            <ul>
+                <% $.each(members, function(i, member){ %>
+                    <% if(member.selected == "selected"){ %>
+                    <li>
+                        <%= member.name %>
+                    </li>
+                    <% } %>
+                <% }); %>
+            </ul>
+        </div>
+    </td>
+    <td>
+        <div>
+            <button id='editWU' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.editWU %>">
+                <i class='fa fa-pencil'></i>
+            </button>
+            <button id='addWUActivities' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.addActiv %>">
+                <i class='fa fa-list'></i>
+            </button>
+            <button id='addWUMembers' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.addWUMembers %>">
+                <i class='fa fa-users'></i>
+            </button>
+            <button id='deleteWU' class='btn btn-danger btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.button.delete %>">
+                <i class='fa fa-trash-o'></i>
+            </button>
+        </div>
+    </td>
+</tr>

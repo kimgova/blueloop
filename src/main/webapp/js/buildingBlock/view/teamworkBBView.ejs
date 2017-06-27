@@ -1,0 +1,39 @@
+<% if(checkTemplate){ %>
+	<input type="checkbox" id="<%=rbid%>" name="<%=rbid%>" value="<%=idCategory%>" <%=checked%> <%=disabled%> />
+<% } %>
+
+<% if(thumbsTeamList){ %>
+	<li>
+		<a class='thumb' name='leaf' title='<%=name%>' ondblclick='bbController.openEditFormTeam(this)'>
+			<div class='badge-li'></div>
+			<img src="<%=filePath%><%=fileName%>" height="80" width="80" alt="<%=name%>" />
+		</a> 
+		<label><%=name.substring(0,13)%></label>
+		<div class='caption'>
+			<input type='hidden' id='idBB' value='<%=id%>' /> 
+			<input type='hidden' id='idTeamwork' value='<%=idTeam%>' />
+			<div class='image-title'><%=name%></div>
+			<br>
+			<div class='image-title'><%=description%></div>
+			<br>
+			<br>
+			<a class='btn btn-info btnDataBBTeam'><%=json.bb.editInfoAndMore%></a>
+		</div>
+	</li>
+<% } %>
+
+<% if(memberList){ %>
+	<div id='member-container'></div>
+<% } %>
+
+<% if(multiSelect){ %>
+	<select multiple="multiple" id="member-select"></select>
+<% } %>
+
+<% if(optionSelect){ %>
+	<option value='<%=id%>'><%=name%></option>
+<% } %>
+
+<% if(btnDelete){ %>
+	<a class='deleteUserGroup icon-trash' <%=disabled%>></a>
+<% } %>

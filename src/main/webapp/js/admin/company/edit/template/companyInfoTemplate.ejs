@@ -1,0 +1,82 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="companyInfoModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id ="closeModal" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Edit the information of the company</h4>
+            </div>
+            
+            <div class="modal-body">
+                <form role="form" class="form-horizontal" id="formCompanyInfo" method="get" action="">
+                    <div class="form-group">
+                        <label for="firstName" class="col-lg-4 col-sm-4 control-label">Company Name</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Company name" value="<%= user.company_name %>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-lg-4 col-sm-4 control-label">Email</label>
+                        <div class="col-lg-6">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<%= user.email %>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="col-lg-4 col-sm-4 control-label">Language</label>
+                        <div class="col-lg-6">
+                            <select class="form-control m-bot15" name="language" id="language">
+                                <% $.each(languageList, function(i, item){ %> 
+                                    <% if(user.language_id == item.id){ %>
+                                        <option value="<%= item.id %>" selected><%= item.name %></option>
+                                    <% }else{ %>
+                                        <option value="<%= item.id %>"><%= item.name %></option>
+                                    <% } %>
+                                <% }); %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="col-lg-4 col-sm-4 control-label">Country</label>
+                        <div class="col-lg-6">
+                            <select class="form-control m-bot15" name="country" id="country">
+                                <% $.each(countries, function(i, country){ %> 
+                                    <% if(country_id == country.id){ %>
+                                        <option value="<%= country.id %>" selected><%= country.name %></option>
+                                    <% }else{ %>
+                                        <option value="<%= country.id %>"><%= country.name %></option>
+                                    <% } %>
+                                <% }); %>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city" class="col-lg-4 col-sm-4 control-label">City</label>
+                        <div class="col-lg-6 city">
+                            <select class="form-control m-bot15" name="city" id="city">
+                                <% $.each(cyties, function(i, item){ %> 
+                                    <% if(city_id == item.id){ %>
+                                        <option value="<%= item.id %>" selected><%= item.name %></option>
+                                    <% }else{ %>
+                                        <option value="<%= item.id %>"><%= item.name %></option>
+                                    <% } %>
+                                <% }); %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="timezone" class="col-lg-4 col-sm-4 control-label">Timezone</label>
+                        <div class="col-lg-6">
+                            <div class="timezone"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button> 
+                <button id="btnSaveInfo" type="button" class="btn btn-white">Save</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

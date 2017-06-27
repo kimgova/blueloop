@@ -1,0 +1,416 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="forecastCycleModal" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+			 	<button id="closeHeader" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>                
+                <h4 class="modal-title"><%= json.forecastCycle.title %> </h4>
+           	 </div>
+           	 <div class="modal-body">
+           	 	<form id="" class="cmxform form-horizontal tasi-form" action="" method="get">
+           	   		<div class="form">
+						<h4><%= json.forecastCycle.planning %></h4>
+												
+							<div class="form-group">
+								<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.periodicity %></label>
+								<div class="col-lg-8 col-sm-8">
+									<select id="selectForecastPeriodicity" class="form-control">
+										<% $.each(FORECAST_PERIODICITY, function(i, item){ %>
+											<% if(FORECAST_PERIODICITY[planningPeriodicity].id == item.id){ %>
+												<option value="<%=item.id%>" selected><%=item.message%></option>
+											<% }else{ %>
+												<option value="<%=item.id%>"><%=item.message%></option>
+											<% } %> 
+										<% }); %>
+									</select>
+								</div>
+							</div>
+							
+							
+							<% if(FORECAST_PERIODICITY[planningPeriodicity].id == FORECAST_PERIODICITY["ONCEAMONTH"].id){ %>																
+								<div id="formPeriodicityMonth">		
+							<% }else{ %>
+								<div id="formPeriodicityMonth" style="display:none;">
+							<% } %>							
+							<!-- start form once a week -->
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.repeatBy %></label>
+										<div class="col-lg-8 col-sm-8 formForecastRepeat">
+											<% $.each(FORECAST_REPEAT, function(i, item){ %>
+												<% if(FORECAST_REPEAT[planningRepeat].id == item.id){ %>
+													<input type="radio" class="radioForecastRepeat" name="forecastRepeatBy1" value="<%=item.id%>" checked="checked" > <%=item.message%>
+												<% }else{ %>
+													<input type="radio" class="radioForecastRepeat" name="forecastRepeatBy1" value="<%=item.id%>" > <%=item.message%>
+												<% } %> 
+											<% }); %>
+										</div>
+									</div>
+										
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.every %></label>
+								
+										<% if(FORECAST_REPEAT[planningRepeat].id == FORECAST_REPEAT["DAYONAMONTH"].id){ %>
+								
+											<div class="col-lg-8 col-sm-8 formEveryDayOfMonth">
+												<select class="selectForecastFrecuencyRepeat form-control" style="display:none;">
+													<option value="<%=FORECAST_FRECUENCY.EVERY.id%>" selected><%=FORECAST_FRECUENCY.EVERY.message%></option>
+												</select>
+												<select class="selectForecastRepeatValue form-control">
+													<% for(var i=1; i< 31; i++){ %>
+														<% if(i == planningRepeatValue){ %>
+															<option value="<%=i%>" selected><%=i%></option>
+														<% }else{ %>
+															<option value="<%=i%>"><%=i%></option>
+														<% } %>													 
+													<% }; %>
+												</select>
+												<%= json.forecastCycle.ofMonth %>										
+											</div>
+								
+											<div class="col-lg-8 col-sm-8 formEveryDayOfWeek" style="display:none;">
+												<div class="row">
+												
+												<div class="col-lg-4 col-sm-4"> 
+												<select class="selectForecastFrecuencyRepeat form-control">
+													<% $.each(FORECAST_FRECUENCY, function(i, item){ %>
+														<% if(FORECAST_FRECUENCY.EVERY.id != item.id){ %>
+															<% if(FORECAST_FRECUENCY[planningFrecuencyRepeat].id == item.id){ %>
+																<option value="<%=item.id%>" selected><%=item.message%></option>
+															<% }else{ %>
+																<option value="<%=item.id%>"><%=item.message%></option>
+															<% } %> 
+														<% } %>
+													<% }); %>											
+												</select>
+												</div>
+												<div class="col-lg-4 col-sm-4">
+												<select class="selectForecastRepeatValue form-control">
+													<% $.each(FORECAST_DAYS, function(i, item){ %>														
+															<option value="<%=item.id%>"><%=item.message%></option>
+													<% }); %>	
+												</select>
+												</div>
+												<div class="col-lg-4 col-sm-4">
+												<%= json.forecastCycle.ofMonth %>
+												</div>
+												</div>
+											</div>
+									
+										<% }else{ %>
+											<div class="col-lg-8 col-sm-8 formEveryDayOfMonth" style="display:none;">
+												<select class="selectForecastFrecuencyRepeat form-control" style="display:none;">
+													<option value="<%=FORECAST_FRECUENCY.EVERY.id%>" selected><%=FORECAST_FRECUENCY.EVERY.message%></option>
+												</select>
+												<select class="selectForecastRepeatValue form-control">
+													<% for(var i=1; i< 31; i++){ %>
+														<% if(i == planningRepeatValue){ %>
+															<option value="<%=i%>" selected><%=i%></option>
+														<% }else{ %>
+															<option value="<%=i%>"><%=i%></option>
+														<% } %>													 
+													<% }; %>
+												</select>
+												<%= json.forecastCycle.ofMonth %>										
+											</div>
+								
+											<div class="col-lg-8 col-sm-8 formEveryDayOfWeek">
+											
+												<div class="row">
+												
+												<div class="col-lg-4 col-sm-4"> 
+												<select class="selectForecastFrecuencyRepeat form-control">
+													<% $.each(FORECAST_FRECUENCY, function(i, item){ %>
+														<% if(FORECAST_FRECUENCY.EVERY.id != item.id){ %>
+															<% if(FORECAST_FRECUENCY[planningFrecuencyRepeat].id == item.id){ %>
+																<option value="<%=item.id%>" selected><%=item.message%></option>
+															<% }else{ %>
+																<option value="<%=item.id%>"><%=item.message%></option>
+															<% } %> 
+														<% } %>
+													<% }); %>											
+												</select>
+												</div>
+												<div class="col-lg-4 col-sm-4">
+												<select class="selectForecastRepeatValue form-control">
+													<% $.each(FORECAST_DAYS, function(i, item){ %>
+														<% if(FORECAST_DAYS[planningRepeatValue.toString()].id == item.id){ %>
+															<option value="<%=item.id%>" selected><%=item.message%></option>
+														<% }else{ %>
+															<option value="<%=item.id%>"><%=item.message%></option>
+														<% } %>
+													<% }); %>	
+												</select>
+												</div>
+												<div class="col-lg-4 col-sm-4">
+												<%= json.forecastCycle.ofMonth %>
+												</div>
+												
+												</div>
+											</div>
+									
+										<% } %> 
+									</div>	
+										
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.timeAvailable %></label>								
+										<div class="col-lg-8 col-sm-8 formTimeAvailableMonth">
+											<select class="selectPlanningTime form-control">
+												<% for(var i=1; i< 31; i++){ %>
+													<% if(i == planningTimeAvailable){ %>
+														<option value="<%=i%>" selected><%=i%></option>
+													<% }else{ %>
+														<option value="<%=i%>"><%=i%></option>
+													<% } %>													
+												<% }; %>															
+											</select>
+											<%= json.forecastCycle.days %>
+										</div>									
+									</div>	
+																			
+									<h4><%= json.forecastCycle.signOff %></h4>											
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.repeatBy %></label>
+										<div class="col-lg-8 col-sm-8 formSignOffRepeat">
+											<% $.each(FORECAST_REPEAT, function(i, item){ %>
+												<% if(FORECAST_REPEAT[signOffRepeat].id == item.id){ %>
+													<input type="radio" class="radioSignOffRepeat" name="signOffRepeatBy2" value="<%=item.id%>" checked="checked" > <%=item.message%>
+												<% }else{ %>
+													<input type="radio" class="radioSignOffRepeat" name="signOffRepeatBy2" value="<%=item.id%>" > <%=item.message%>
+												<% } %> 
+											<% }); %>
+										</div>
+									</div>
+							
+							
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.every %></label>
+									
+										<% if(FORECAST_REPEAT[signOffRepeat].id == FORECAST_REPEAT["DAYONAMONTH"].id){ %>
+								
+											<div class="col-lg-8 col-sm-8 formSignOffEveryDayOfMonth">
+												<select class="selectSignOffFrecuencyRepeat form-control" style="display:none;">
+													<option value="<%=FORECAST_FRECUENCY.EVERY.id%>" selected><%=FORECAST_FRECUENCY.EVERY.message%></option>
+												</select>
+												<select class="selectSignOffRepeatValue form-control">
+													<% for(var i=1; i< 31; i++){ %>
+														<% if(i == signOffRepeatValue){ %>
+															<option value="<%=i%>" selected><%=i%></option>
+														<% }else{ %>
+															<option value="<%=i%>"><%=i%></option>
+														<% } %>
+													<% }; %>
+												</select>
+												<%= json.forecastCycle.ofMonth %>
+											</div>
+								
+											<div class="col-lg-8 col-sm-8 formSignOffEveryDayOfWeek" style="display:none;">											
+												<div class="row">												
+													<div class="col-lg-4 col-sm-4">
+														<select class="selectSignOffFrecuencyRepeat form-control">
+															<% $.each(FORECAST_FRECUENCY, function(i, item){ %>
+																<% if(FORECAST_FRECUENCY.EVERY.id != item.id){ %>
+																	<% if(FORECAST_FRECUENCY[signOffFrecuencyRepeat].id == item.id){ %>
+																		<option value="<%=item.id%>" selected><%=item.message%></option>
+																	<% }else{ %>
+																		<option value="<%=item.id%>"><%=item.message%></option>
+																	<% } %> 
+																<% } %>
+															<% }); %>											
+														</select>
+														</div>
+														<div class="col-lg-4 col-sm-4">
+															<select class="selectSignOffRepeatValue form-control">
+																<% $.each(FORECAST_DAYS, function(i, item){ %>														
+																		<option value="<%=item.id%>"><%=item.message%></option>														
+																<% }); %>	
+															</select>
+														</div>
+														<div class="col-lg-4 col-sm-4">
+															<%= json.forecastCycle.ofMonth %>
+														</div>													
+													</div>
+											</div>									
+									<% }else{ %>
+										<div class="col-lg-8 col-sm-8 formSignOffEveryDayOfMonth" style="display:none;">
+												<select class="selectSignOffFrecuencyRepeat form-control" style="display:none;">
+													<option value="<%=FORECAST_FRECUENCY.EVERY.id%>" selected><%=FORECAST_FRECUENCY.EVERY.message%></option>
+												</select>
+												<select class="selectSignOffRepeatValue form-control">
+													<% for(var i=1; i< 31; i++){ %>
+														<% if(i == signOffRepeatValue){ %>
+															<option value="<%=i%>" selected><%=i%></option>
+														<% }else{ %>
+															<option value="<%=i%>"><%=i%></option>
+														<% } %>
+													<% }; %>
+												</select>
+												<%= json.forecastCycle.ofMonth %>
+											</div>
+								
+											<div class="col-lg-8 col-sm-8 formSignOffEveryDayOfWeek" >											
+												<div class="row">											
+													<div class="col-lg-4 col-sm-4">
+														<select class="selectSignOffFrecuencyRepeat form-control">
+															<% $.each(FORECAST_FRECUENCY, function(i, item){ %>
+																<% if(FORECAST_FRECUENCY.EVERY.id != item.id){ %>
+																	<% if(FORECAST_FRECUENCY[signOffFrecuencyRepeat].id == item.id){ %>
+																		<option value="<%=item.id%>" selected><%=item.message%></option>
+																	<% }else{ %>
+																		<option value="<%=item.id%>"><%=item.message%></option>
+																	<% } %> 
+																<% } %>
+															<% }); %>											
+														</select>
+														</div>
+														<div class="col-lg-4 col-sm-4">
+														<select class="selectSignOffRepeatValue form-control">
+															<% $.each(FORECAST_DAYS, function(i, item){ %>
+																<% if(FORECAST_DAYS[signOffRepeatValue.toString()].id == item.id){ %>
+																	<option value="<%=item.id%>" selected><%=item.message%></option>
+																<% }else{ %>
+																	<option value="<%=item.id%>"><%=item.message%></option>
+																<% } %>
+															<% }); %>	
+														</select>
+														</div>
+														<div class="col-lg-4 col-sm-4">
+															<%= json.forecastCycle.ofMonth %>
+														</div>												
+													</div>
+											</div>									
+										<% } %> 
+									</div>
+								
+									<h4><%= json.forecastCycle.forecastFor %></h4>
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.forecastFor %></label>						
+							
+										<div class="col-lg-8 col-sm-8 formForecastForMonth">
+											<select class="selectforecastFor form-control">
+												<% for(var i=1; i< 13; i++){ %>
+													<% if(i == forecastFor){ %>
+														<option value="<%=i%>" selected><%=i%></option>
+													<% }else{ %>
+														<option value="<%=i%>"><%=i%></option>
+													<% } %>													 
+												<% }; %>
+											</select>
+											<%= json.forecastCycle.monthsAhead %> 
+										</div>										
+									</div>													
+ 								</div><!-- end form once a month -->	
+								
+								
+								
+								
+							
+							
+							<% if(FORECAST_PERIODICITY[planningPeriodicity].id == FORECAST_PERIODICITY["ONCEAWEEK"].id){ %>																
+								<div id="formPeriodicityWeek">		
+							<% }else{ %>
+								<div id="formPeriodicityWeek" style="display:none;">
+							<% } %>							
+							<!-- start form once a week -->
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.repeatBy %></label>
+										<div class="col-lg-8 col-sm-8 formForecastRepeat">
+											<input type="radio" name="<forecastRepeatBy4" value="<%=FORECAST_REPEAT.DAYOFAWEEK.id%>" checked="checked" disabled> <%=FORECAST_REPEAT.DAYOFAWEEK.message%>
+										</div>
+									</div>	
+																			
+									<div class="form-group">
+										<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.every %></label>								
+											<div class="col-lg-8 col-sm-8 formEveryDayOfWeek">
+												<select class="selectForecastFrecuencyRepeat form-control" style="display:none">
+													<option value="<%=FORECAST_FRECUENCY.EVERY.id%>" selected><%=FORECAST_FRECUENCY.EVERY.message%></option>								
+												</select>
+												<select class="selectForecastRepeatValue form-control">
+													<% $.each(FORECAST_DAYS, function(i, item){ %>
+														<% if(FORECAST_PERIODICITY[planningPeriodicity].id == FORECAST_PERIODICITY["ONCEAWEEK"].id){ %>																
+															<% if(FORECAST_DAYS[planningRepeatValue.toString()].id == item.id){ %>
+																<option value="<%=item.id%>" selected><%=item.message%></option>
+															<% } %>
+														<% }else{ %>
+															<option value="<%=item.id%>"><%=item.message%></option>
+														<% } %>
+													<% }); %>	
+												</select>
+												<%= json.forecastCycle.ofWeek %>
+											</div>																												
+										</div>		
+										
+										<div class="form-group">
+											<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.timeAvailable %></label>									
+											<div class="col-lg-8 col-sm-8 formTimeAvailableWeek">
+												<select class="selectPlanningTime form-control">
+													<% for(var i=1; i< 8; i++){ %>
+														<% if(i == planningTimeAvailable){ %>
+															<option value="<%=i%>" selected><%=i%></option>
+														<% }else{ %>
+															<option value="<%=i%>"><%=i%></option>
+														<% } %>													
+													<% }; %>															
+												</select>
+												<%= json.forecastCycle.days %>
+											</div>
+										</div>										
+										
+										<h4><%= json.forecastCycle.signOff %></h4>												
+										<div class="form-group">
+											<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.repeatBy %></label>
+											<div class="col-lg-8 col-sm-8 formSignOffRepeat">
+												<input type="radio" name="signOffRepeatBy5" value="<%=FORECAST_REPEAT.DAYOFAWEEK.id%>" checked="checked" disabled> <%=FORECAST_REPEAT.DAYOFAWEEK.message%>
+											</div>
+										</div>
+					
+										<div class="form-group">
+											<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.every %></label>																												
+											<div class="col-lg-8 col-sm-8 formSignOffEveryDayOfWeek" >
+												<select class="selectSignOffFrecuencyRepeat form-control" style="display:none";>
+													<option value="<%=FORECAST_FRECUENCY.EVERY.id%>" selected><%=FORECAST_FRECUENCY.EVERY.message%></option>											
+												</select>
+												<select class="selectSignOffRepeatValue form-control">
+													<% $.each(FORECAST_DAYS, function(i, item){ %>
+														<% if(FORECAST_DAYS[signOffRepeatValue.toString()] != undefined){ %>
+															<% if(FORECAST_DAYS[signOffRepeatValue.toString()].id == item.id){ %>
+																<option value="<%=item.id%>" selected><%=item.message%></option>
+															<% }else{ %>
+																<option value="<%=item.id%>"><%=item.message%></option>
+															<% } %>
+														<% }else{ %>
+																<option value="<%=item.id%>"><%=item.message%></option>
+															<% } %>
+													<% }); %>	
+												</select>
+												<%= json.forecastCycle.ofWeek %>
+											</div>									
+										</div>									
+										
+										<h4><%= json.forecastCycle.forecastFor %></h4>
+										<div class="form-group">
+											<label class="col-lg-4 col-sm-4 control-label" for="name"><%= json.forecastCycle.forecastFor %></label>														
+											<div class="col-lg-8 col-sm-8 forecastForWeek" >
+												<select class="selectforecastFor form-control">
+													<% for(var i=1; i< 53; i++){ %>
+														<% if(i == forecastFor){ %>
+															<option value="<%=i%>" selected><%=i%></option>
+														<% }else{ %>
+															<option value="<%=i%>"><%=i%></option>
+														<% } %>													 
+													<% }; %>
+												</select>
+												<%= json.forecastCycle.weeksAhead %>
+											</div>
+										</div>									
+											
+								</div><!-- end form once a week -->
+												
+ 					</div>
+ 				</form>
+           	</div>
+        	<div class="modal-footer">        		
+        		<button id="saveCycle" type="button" class="btn btn-primary"><%= json.button.save %></button>
+        		<button id="cancelChanges" type="button" data-dismiss="modal" class="btn btn-primary"><%= json.button.cancel %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

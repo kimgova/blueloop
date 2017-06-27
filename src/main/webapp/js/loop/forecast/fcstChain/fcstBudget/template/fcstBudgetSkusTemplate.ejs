@@ -1,0 +1,69 @@
+<div class='col-lg-12 col-sm-12'>
+    <div class='row' style=''>
+    	<div class='col-lg-6 col-sm-6'>
+		    <button id="backBtn" type="button" class="btn btn-default btn-sm">
+		        <i class="fa fa-reply"></i> <%= json.button.back %>
+		    </button>  
+		</div>  
+		<div class='col-lg-6 col-sm-6'>
+    		<div id="pagination" class="pagination" style="float: right;"></div>
+    	</div> 
+    </div> 
+
+    <div id="tableContent" class='row'>
+		<table cellpadding='0' cellspacing='0' border='0' class='table table-striped table-hover table-bordered' id='tableBudgetSkus' style='text-align: center'>
+		    <thead>
+		        <tr>
+		            <th class='center'>Role</th>
+		            <th class='center'>Sku number</th>
+		            <th class='center'>Sku name</th>
+		            <% $.each(periods, function(i, item){ %>
+						<th class='center'><%= item[0].name.substr(0,3) %> <%= item[1] %></th>
+					<% }); %>
+		        </tr>
+		    </thead>
+		    <tbody id='allSkuBudget'>		    
+			    <% if(skus.length == 0){%>
+			        <tr>
+			            <td id="no-data-td" valign="top" colspan="<%= 3 + periods.length %>">No data available in table</td>
+			        </tr>
+			    <% }else{ %>			    
+			    	
+				    	<% $.each(skus, function(i, sku){ %>
+				    	<tr>
+							<td>
+								<div title='<%= sku.role %>'>
+									<% if(sku.role.length > 11){%>
+										<%= sku.role.substr(0,8) %>...
+									<% }else{ %>
+										<%= sku.role %>
+									<% } %>
+								</div>
+							</td>
+							<td>
+								<div>
+									<%= sku.number %>
+								</div>
+							</td>
+							<td>
+								<div title='<%= sku.name %>'>
+									<% if(sku.name.length > 25){%>
+										<%= sku.name.substr(0,22) %>...
+									<% }else{ %>
+										<%= sku.name %>
+									<% } %>
+								</div>
+							</td>
+							<% $.each(sku.budgets, function(i, budget){ %>
+								<td><div><%= Math.ceil(budget.budget * 100)/100 %></div></td>
+							<% }); %>
+						</tr>
+						<% }); %>			            
+			       
+			    <% } %>
+		    </tbody>
+		    <tbody id='displaySkuBudget'>
+		    </tbody>
+		</table>
+    </div>
+</div>

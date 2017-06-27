@@ -1,0 +1,224 @@
+div.content:not(.contentSearch) {
+	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
+/*	display: none;*/
+/*     overflow: scroll; */
+/*     width: 100%; */
+/*    float:left;*/
+    border: 1px solid #ccc;
+/*    margin-top: 89px;*/
+/*     margin-left: 100px; */
+    min-height: 468px;
+    border-radius: 10px;
+}
+
+div.content a, div.navigation a {
+	text-decoration: none;
+ 	color: #fff; 
+}
+div.content a:focus, div.content a:hover, div.content a:active {
+	text-decoration: underline;
+}
+div.controls {
+	margin-top: 5px;
+	height: 23px;
+}
+div.controls a {
+	padding: 5px;
+}
+div.ss-controls {
+	float: left;
+}
+div.nav-controls {
+	float: right;
+}
+div.slideshow-container {
+	position: relative;
+	clear: both;
+	height: 120px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+div.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('../../../images/loader.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 550px;
+	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+div.slideshow {
+
+}
+div.slideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 30%;
+}
+div.slideshow a.advance-link {
+	display: block;
+	/*width: 300px;*/
+	height: 150px; /* This should be set to be at least the height of the largest image in the slideshow */
+	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	text-align: center;
+}
+div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited {
+	text-decoration: none;
+}
+div.slideshow img {
+	vertical-align: top;
+	padding: 70px;
+/* 	border: 1px solid #ccc; */
+}
+div.download {
+	float: right;
+}
+div.caption-container {
+	position: relative;
+	clear: left;
+	height: 300px;
+	overflow: hidden;
+}
+span.image-caption {
+	display: block;
+    left: 24%;
+    position: absolute;
+    top: 0;
+}
+div.caption {
+	padding: 90px;
+    text-align: center;
+    display: none;
+}
+div #general .caption {
+    display: block;
+}
+div.content .caption {
+    display: block;
+}
+div.content label {
+    display: none;
+}
+div.content span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 30%;
+}
+div.content a.thumb {
+	display: block;
+	/*width: 300px;*/
+	height: 150px; /* This should be set to be at least the height of the largest image in the slideshow */
+	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	text-align: center;
+	border: none; 
+}
+div.content a.thumb:hover {
+	text-decoration: none;
+}
+div.content img {
+	padding-top: 85px;
+    vertical-align: top;
+    width: 110px !important;
+    height: auto;
+}
+
+div.image-title {
+	font-weight: normal;
+	font-size: 1.4em;
+	text-align: center;
+}
+div.image-desc {
+	line-height: 1.3em;
+	padding-top: 12px;
+}
+div.navigation {
+/* 	border: 1px solid #ccc; */
+	position: relative;
+	background-color: none !important;
+/*	margin-left: 50px;*/
+/* 	padding:5px; */
+	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+}
+ul.thumbs {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+ul.thumbs li {
+	float: left;
+	padding: 0;
+	margin: 10px 25px 5px 5px;
+	list-style: none;
+	font-size: 11px;
+	cursor: pointer;
+}
+ul.thumbs li a:hover, ul.thumbs li.displayed a {
+	background: #d9edf7;
+	/*opacity: 0.7;*/
+	border: 1px solid #bce8f1;
+}
+a.thumb {
+	padding: 2px;
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+ul.thumbs li.selected a.thumb {
+	background: #EEEEEE;
+}
+a.thumb:focus {
+	outline: none;
+}
+ul.thumbs img {
+	border: none;
+	padding: 8px;
+/* 	border: 1px solid #ccc; */
+	display: block;
+}
+div.pagination {
+	clear: both;
+	margin-top: 0 !important;	
+/* 	float: right; */
+/* 	margin-right: 27px; */
+/* 	margin-right: 45px; */
+}
+div.navigation:not(#resultSearch) div.top:not(#resultSearch) {
+	margin-bottom: 50px;
+	height: 11px;
+}
+div.navigation div.bottom {
+	margin-top: 12px;
+}
+div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+	display: block;
+	float: left;
+	margin-right: 2px;
+	padding: 4px 7px 2px 7px;
+	border: 1px solid #ccc;
+}
+div.pagination a{
+	color: gray; 
+}
+div.pagination a:hover {
+	background-color: #eee;
+	text-decoration: none;
+}
+div.pagination span.current {
+	font-weight: normal;
+	background-color: #000;
+	border-color: #000;
+	color: #fff;
+}
+div.pagination span.ellipsis {
+	border: none;
+	padding: 5px 0 3px 2px;
+}
+
+
+
+
+
+
+
+

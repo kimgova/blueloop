@@ -1,0 +1,229 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalProcessEdit" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+            <form class="cmxform form-horizontal tasi-form" id="formProcessEdit" method="get" action="">
+			<div class="modal-header">
+				<button id ="closeModal" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  				<% if(!isNew){ %>
+  					<h4 class="modal-title">Building Block Information</h4>
+				<% }else{ %>
+  					<h4 class="modal-title">Create new Building Block</h4>
+				<% }%>	
+			</div>
+            
+			<div class="modal-body">
+				<div class="form"> 
+					
+                        
+                        <h3>General</h3>
+                    
+                        <div class="form-group">
+							<label for="name" class="col-lg-2 col-sm-2 control-label">Name:</label>
+							<div class="col-lg-10">
+								<% if(!isNew){ %>
+									<input class="form-control" type="text" name="name" id="name" value="<%= bb.name %>" disabled required/>
+								<% }else{ %>
+									<input class="form-control" type="text" name="name" id="name" value="" required/>
+								<% }%>	
+							</div>
+						</div>
+                    
+                        <div class="form-group">
+							<label for="description" class="col-lg-2 col-sm-2 control-label">Description:</label>
+							<div class="col-lg-10">
+								<% if(!isNew){ %>
+									<input class="form-control" type="text" name="description" id="description" value="<%= bb.description %>" disabled required/>
+								<% }else{ %>
+									<input class="form-control" type="text" name="description" id="description" value="" required/>
+								<% }%>	
+							</div>
+						</div>
+                    
+                        <div class="form-group">
+							<label for="companyName" class="col-lg-2 col-sm-2 control-label">Company Name:</label>
+							<div class="col-lg-10">
+								<% if(!isNew){ %>
+									<input class="form-control" type="text" name="companyName" id="companyName" value="<%= bb.companyName %>" disabled required/>
+								<% }else{ %>
+									<input class="form-control" type="text" name="companyName" id="companyName" value="" required/>
+								<% }%>	
+							</div>
+						</div>
+                    
+                        <div class="form-group">
+							<label for="phoneNumber" class="col-lg-2 col-sm-2 control-label">Phone Number:</label>
+							<div class="col-lg-10">
+								<% if(!isNew){ %>
+									<input class="form-control" type="text" name="phoneNumber" id="phoneNumber" value="<%= bb.phoneNumberAreaCode %> <%= bb.phoneNumber %>" disabled required/>
+								<% }else{ %>
+								
+									<div class="input-group m-bot15">
+		        						<span class="input-group-addon">   
+		        							<select class="selectAreaCode" id="selectAreaCode" name="selecAreaCode">	
+		        							<% $.each(countries, function(j, country){ %>
+												<option value="<%= country.areaCode %>"><%= country.name %> (<%= country.areaCode %>)</option>
+											<% }); %>
+											</select>						
+											<input type="text" class="selectAreaCode" name="phoneNumberAreaCode" id="phoneNumberAreaCode" readonly value="<%= defCountryAreaCode %>" required/>			       	
+		            					</span>
+		            					<input class="form-control" type="number" name="phoneNumber" id="phoneNumber" value="" required/>
+		        					</div>		
+		        					
+								<% }%>	
+							</div>
+						</div>
+                    
+                        <div class="form-group">
+							<label for="emailAddress" class="col-lg-2 col-sm-2 control-label">Email Address:</label>
+							<div class="col-lg-10">
+								<% if(!isNew){ %>
+									<input class="form-control" type="text" name="emailAddress" id="emailAddress" value="<%= bb.emailAddress %>" disabled required/>
+								<% }else{ %>
+									<input class="form-control" type="text" name="emailAddress" id="emailAddress" value="" required/>
+								<% }%>	
+							</div>
+						</div>
+                    
+                        <% if(!isNew){ %>
+                            <% if(isEdit){ %>
+                                <div class="form-group">
+                                    <label for="owner" class="col-lg-2 col-sm-2 control-label">Owner:</label>
+                                    <div class="col-lg-10">
+                                            <input class="form-control input-sm m-bot15" type="text" name="owner" id="owner" value="<%= bb.ownerName %>"  disabled required/>	
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="responsible" class="col-lg-2 col-sm-2 control-label">Responsible:</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control input-sm m-bot15 selectUsers" name="responsible" id="responsible">
+                                            <option selected value="DEFAULT">-- Select a responsible --</option>
+                                            <% $.each(listMembers, function(i, user){ %> 
+                                                <% if(cbb != undefined && cbb.responsible == listMembers[i].user.id){ %> 
+                                                    <option value="<%= listMembers[i].user.id %>" selected> <%= listMembers[i].user.firstName +  ' ' + listMembers[i].user.lastName  %> </option>
+                                                <% }else{ %>
+                                                    <option value="<%= listMembers[i].user.id %>"> <%= listMembers[i].user.firstName +  ' ' + listMembers[i].user.lastName  %> </option>
+                                                <% } %>
+                                            <% }); %>
+                                        </select>
+                                    </div>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="leadTime" class="control-label col-lg-4">Lead Time:</label>
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <input name="leadTime" id="leadTime" type="text" class="form-control" value="<%= leadTime %>">
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select name="leadTimeType" id="leadTimeType" class="form-control m-bot15">
+                                                    <% $.each(listLeadTimeTypes, function(i, type){ %> 
+                                                    <% if(leadTimeType == type.value){ %>
+                                                        <option value="<%= type.value %>" selected><%= type.text %></option>
+                                                    <% }else{ %>
+                                                        <option value="<%= type.value %>"><%= type.text %></option>
+                                                    <% } %>
+                                                    <% }); %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }%>   
+                        <% }else{%>
+                                <div class="form-group">
+                                    <label for="leadTimeBB" class="control-label col-lg-4" data-trigger="hover" data-toggle="popover" title="Lead Time" data-content="The lead-time is the time of an order in the building block"><span class="span-dotted">Lead Time:</span></label>
+                                    <br><br>
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <input name="leadTimeBB" id="leadTimeBB" type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select name="typeLeadTimeBB" id="typeLeadTimeBB" class="form-control m-bot15">
+                                                    <% $.each(listTypes, function(i, type){ %>
+                                                        <option value="<%= type.value %>"><%= type.text %></option>
+                                                    <% }); %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        <% } %>
+                    
+                        <h3>Operating Parameters</h3>
+                    
+                        <% $.each(bb.config, function(i, field){ %>
+                            <div class="form-group">
+                                <label for="<%= field.id %>" class="col-lg-2 col-sm-2 control-label"><%= field.description %></label>
+                                <div class="col-lg-10 col-sm-10">
+                                    <% if(!isNew){ %>
+                                    <input type="text" class="form-control" name="<%= field.name %>" id="<%= field.id %>" value="<%= field.value %>" disabled required/>
+                                    <% }else{ %>
+									<input class="form-control" type="text" name="<%= field.name %>" id="<%= field.id %>" value="" required/>
+								    <% }%>	
+                                </div>
+                            </div>
+                        <% }); %>
+						
+						<% if(!isNew){ %>
+                            <% if(isEdit){ %>
+                                <input type="text" name="idBB" id="idBB" value="<%= bb.id %>" style="display:none;"/>
+                                <input type="text" name="alias" id="alias" value="<%= alias %>" style="display:none;"/>
+                                <h3>Risks</h3>
+                                <% if(risks.length != 0){ %> 
+                                    <% $.each(risks, function(j, risk){ %>
+                                    <div class="form-group">
+                                        <label for="risk<%= risk.id %>" class="col-lg-2 col-sm-2 control-label"><%= risk.name %>:</label>
+                                        <div class="col-lg-10">
+                                            <select class="form-control input-sm m-bot15 selectUsers" name="risk<%= risk.id %>" id="risk<%= risk.id %>">
+                                                <option selected value="DEFAULT">-- Select a Route --</option>
+                                                <% $.each(listAltRoutes, function(i, route){ %> 
+                                                    <% if(cbb != undefined && cbb['risk'+risk.id] == listAltRoutes[i].id){ %> 
+                                                        <option value="<%= listAltRoutes[i].id %>" selected> <%= listAltRoutes[i].name  %> </option>
+                                                    <% }else{ %>
+                                                        <option value="<%= listAltRoutes[i].id %>"> <%= listAltRoutes[i].name  %> </option>
+                                                    <% } %>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <% }); %>
+                                <% }else{ %>
+                                    <div class="form-group">
+                                        <label class="col-lg-10 col-sm-2 control-label">No data found</label>
+                                    </div>
+                                <% } %>
+
+                                <h3>Calendar</h3>
+                                <% if(daysOff.length != 0){ %> 
+                                    <% $.each(daysOff, function(i, day){ %>
+                                    <div class="form-group">
+                                        <div class="col-lg-10">
+                                            <label for="day<%= day.id %>" class="col-lg-10 col-sm-2 control-label">
+                                                <b><%= daysOff[i].name %></b>: from <%= daysOff[i].startDate %> to <%= daysOff[i].finishDate %> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <% }); %>  
+                                <% }else{ %>
+                                    <div class="form-group">
+                                        <label class="col-lg-10 col-sm-2 control-label">No data found</label>
+                                    </div>
+                                <% } %>
+                        
+                            <% }%>   
+                        <% }%>
+						
+					
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="saveBBData" type="submit"  class="btn btn-primary">Save</button>
+  				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>	
+			</div>
+                </form>
+		</div>
+	</div>
+</div>

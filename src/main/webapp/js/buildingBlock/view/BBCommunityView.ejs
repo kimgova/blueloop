@@ -1,0 +1,29 @@
+<div id="mycarousel" class="es-carousel-wrapper">
+    <% if (size > 0){ %>
+    <div id="escarousel" class="es-carousel">
+        <ul id="bb-list" class="ul-carousel">
+            <% $.each(listBB, function(i, bb){ %>
+                <% if (i % 3 == 0){ %>
+                    <% if (i != 0){ %>
+                        </li>
+                    <% } %>
+                    <li class='li-carousel'>
+                <% } %>
+                <section class='panel-bb'>
+                    <div class='pro-img-box'>
+                        <img class='img-bb' src='<%= filePath + bb.fileName %>' width='80' height='80' />
+                    </div>
+                    <div class='panel-body text-center'>
+                        <h4><a class='pro-title'><%= bb.name %></a></h4>
+                        <input type='hidden' name='id' class='id_bb' value='<%= bb.id %>'/>
+                        <p class='price'><%= bb.ownerName %></p>
+                        <a class='btn btn-info btn-more'><%= json.bb.moreInfo %></a>
+                    </div>
+                </section>
+            <% }); %>
+        </ul>
+    </div>
+    <% }else{ %>
+        <div class='panel-body alert alert-warning'>No matching Building Block's found</div>    
+    <% } %>
+</div>

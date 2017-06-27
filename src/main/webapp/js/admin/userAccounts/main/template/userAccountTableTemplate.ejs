@@ -1,0 +1,47 @@
+<div class='row'>
+    <div class='col-lg-12' style="padding-right:5%;">
+        <div class='col-lg-6 col-md-6 col-sm-6'>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <ul class="grid-navbar orders_filter" id="filter">
+                <li class="grid-nav-dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="selectedFilter">
+                        <%= json.admin.filterUserEnabled %>
+                        </span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul id="filter-bbs">
+                        <li id="filter-all"><%= json.execution.allOrders %></li>
+                        <li id="filter-enabled"><%= json.admin.filterUserEnabled %></li>
+                        <li id="filter-disabled"><%= json.admin.filterUserDisabled %></li>
+                    </ul>
+                </li>
+        
+            </ul>
+        </div>
+    </div>
+    <div class='col-lg-12' style="padding: 0 3% 3% 3%;">
+        <section class='panel'>
+            <div id="usersList">
+                <div class="adv-table">
+                    <table class="table table-bordered table-striped table-hover" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th width='10%' class="center"></th>
+                                <th width='22%' class="center"><%= json.admin.userName %></th>
+                                <th width='22%' class="center"><%= json.admin.userEmail %></th>
+                                <th width='18%' class="center"><%= json.admin.userPermissions %></th>
+                                <th width='13%' class="center"><%= json.admin.userLastLogin %></th>
+                                <th width='10%' class="center"><%= json.admin.userStatus %></th>
+                                <th width='5%%' class="center"><%= json.general.action %></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <div id="add_user" class="circle-text"><div>+</div></div>
+    </div>
+</div>

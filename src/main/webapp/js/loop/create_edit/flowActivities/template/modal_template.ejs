@@ -1,0 +1,52 @@
+<div class="modal fade" id="flowActivitiesModal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id ="closeModal" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Building Block Dropped</h4>
+            </div>
+            <div class="modal-body">
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-2" id="steps">
+                            <div class="mt-element-step bg-white" id="step-1">
+                                <div class="mt-step-number">1</div>
+                            </div>
+                            <div class="step-line" id="step-line-1"></div>
+                            <div class="mt-element-step bg-white" id="step-2">
+                                <div class="mt-step-number">2</div>
+                            </div>
+                            <div class="step-line" id="step-line-2"></div>
+                            <div class="mt-element-step bg-white" id="step-3">
+                                <div class="mt-step-number">3</div>
+                            </div>
+                            <div class="step-line" id="step-line-3"></div>
+                            <div class="mt-element-step bg-white" id="step-4">
+                                <div class="mt-step-number">4</div>
+                            </div>
+                        </div>
+                        <div class="col-md-10" id='content'>
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <button id="back" class="btn btn-white" type="button" style="display:none">
+                            <%=json.button.back%>
+                        </button>
+                        <button id="next" class="btn btn-white" type="button">
+                            <%=json.button.next%>
+                        </button>
+                        <button id="finish" class="btn btn-white" type="button" style="display:none">
+                            Finish
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="borderedPanel">
+    <section class="panel">
+         <header class="panel-heading">
+             <h2><%= json.sequence.noSkusTitle %></h2>
+         </header>
+         <div class="panel-body">
+         
+            <div class="iconDiv">
+                <i class='roundIcon fa fa-barcode'></i>
+            </div>
+            
+            <div>
+            <% if(arch == false){ %>
+                <div class="textContent">
+                    <%= json.sequence.noSkusText1 %>
+                </div>
+            <% }else{ %>
+                <div class="textContent">
+                    <%= json.sequence.noSkusText2 %>
+                </div> 
+                <div> 
+                   <a id="GoToSKusBtn" class="btn btn-info" href='/blueloop-backend/chain/edit/<%= idLoop %>'><%= json.sequence.noSkusBtn %></a> 
+                </div>
+            <% } %>
+            </div>
+            
+        </div>
+    </section>
+</div>

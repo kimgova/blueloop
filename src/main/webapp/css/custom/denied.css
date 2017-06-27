@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+.page-404 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.page-404 .number {
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #e7505a;
+    text-align: right;
+}
+
+.page-404 .number, .page-500 .number {
+    letter-spacing: -10px;
+    line-height: 128px;
+    font-size: 128px;
+    font-weight: 300;
+}
+
+.page-404 .details {
+    padding-top: 0;
+    text-align: left;
+}
+.page-404 .details, .page-500 .details {
+    margin-left: 40px;
+    display: inline-block;
+}

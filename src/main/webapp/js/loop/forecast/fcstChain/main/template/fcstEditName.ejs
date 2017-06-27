@@ -1,0 +1,26 @@
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="editNameModal" class="modal fade in">
+    <div class="modal-backdrop fade in"></div>
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Forecast name</h4>
+            </div>
+            <div class="modal-body">
+                <div style="float:none;" class="task-progress">
+                    <p>Edit the name for the forecast</p>
+                </div>
+                <div class="form-group">
+                    <label for="newNameFcst" class="control-label">New forecast name:</label>
+                    <div class="">
+                        <input type="text" value="" placeholder="Name" id="newNameFcst" class="form-control"> 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="saveFcstName" type="button" class="btn btn-primary"><%= json.button.save %></button>
+                <button id="cancel" type="button" data-dismiss="modal" class="btn btn-primary"><%= json.button.cancel %></button>
+            </div>
+        </div>
+    </div>
+</div>

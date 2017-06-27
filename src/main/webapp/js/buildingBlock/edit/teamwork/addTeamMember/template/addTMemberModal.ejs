@@ -1,0 +1,54 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" data-backdrop="static" role="dialog" tabindex="-1" id="addTMemberModal" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close closeModal" type="button">×</button>
+                <h4 class="modal-title"><%= json.teamwork.addUsers %></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">
+                            <header class="panel-heading">
+                                <%= json.teamwork.addHeader %>
+                            </header>
+                            <div class="panel-body">
+                                <div class="form"> 
+                                    <form action="" method="" class="cmxform form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"><%= json.general.users %></label>
+                                            <div class="col-lg-8 form-inline">
+                                                <div id="users-list">
+                                                    <div id="select-container" style="float: left;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkboxes">
+                                                <label class="col-lg-3 control-label"><%= json.button.sendEmail %></label>
+                                                <label class="label_check c_on col-lg-6 md-checkbox" for="checkbox_sendEmail">
+                                                    <input id="checkbox_sendEmail" type="checkbox" value="1" name="checkbox_sendEmail">
+                                                    <label for="checkbox_sendEmail">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>
+                                                        <%= json.notification.sendEmailNotification %>
+                                                    </label>                                                    
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="addMembers" type="button" data-dismiss="modal" class="btn btn-primary"><%= json.button.add %></button>
+                <button type="button" class="btn btn-default closeModal" data-dismiss="modal"><%= json.button.close %></button>
+            </div>
+        </div>
+    </div>
+</div>

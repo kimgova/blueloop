@@ -1,0 +1,14 @@
+<tr>
+    <td><div><%= identifier %></div></td>
+    <td><div><%= description %></div></td>
+     
+     <% $.each(equivList, function(i, equiv){ %>
+	 	<td>
+	 		<div class="fcstEquivContainer" id="<%= equiv.id %>"><%= equiv.factor %></div>
+	 		<div class="editEquiv">
+	            <i class="fa fa-pencil pull-right editEquivalence" title="" data-placement="top" data-toggle="tooltip" 
+	                data-original-title="<%= json.forecast.tooltips.edit %>"></i>
+        	</div>
+	 		</td>
+     <% }); %>  
+</tr>

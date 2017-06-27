@@ -1,0 +1,3 @@
+<% $.each(dataOrders, function(i, item){ %> 
+    <p class="<%= item.status.name %>"><b>Order <%= item.order.orderNumber %></b></p>
+<% }); %>

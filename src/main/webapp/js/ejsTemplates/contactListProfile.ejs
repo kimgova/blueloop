@@ -1,0 +1,27 @@
+<div id="contact-row" class="row contact-list contact-row main-section-user">
+
+	<% $.each(listUsers, function(i, user){ %>
+		<div class="col-md-4">
+			<section class="panel">
+				<div class="pro-img-box"> 
+					<img src="<%= filePath %><%= user.username %>/user/profile.png" alt="" />					
+						<% if(userLogged == user.id){ %>   
+							<a href="/blueloop-backend/user/profile/" class="visit"> <i class="fa fa-star-half">Go</i></a>																										
+	   					<% }else{ %>
+	   						<a href="/blueloop-backend/user/profileWall/<%= user.id %>" class="visit"> <i class="fa fa-star-half">Go</i></a>
+	   					<% } %> 					
+				</div>
+				<div class="panel-body text-center panel-body-name">
+					<h4>
+						<% if(userLogged == user.id){ %>   
+							<a href="/blueloop-backend/user/profile/" class="pro-title"><%= user.firstName %> <%= user.lastName %></a>																										
+	   					<% }else{ %>
+	   						<a href="/blueloop-backend/user/profileWall/<%= user.id %>" class="pro-title"><%= user.firstName %> <%= user.lastName %></a>
+	   					<% } %> 					
+					</h4>
+				</div>
+			</section>
+		</div>															                                        
+	<% }); %>  
+
+</div>

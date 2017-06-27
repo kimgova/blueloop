@@ -1,0 +1,29 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="bbModalSelectImg" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= json.bb.imageSelectionBB %></h4>
+            </div>
+            <div class="modal-body">
+	 			<div class="panel-body">
+	 				<div id="imgGrid" style="height:375px">
+                        <div id="pagination" class="pagination" style="float: right; width:100%"></div>
+                        <ul id="display" class="grid"></ul>
+						<ul id="ulGridImg" class="grid">
+                            <% $.each(listBBImg, function(j, img){ %>
+                                <li class="gridliBbImg">
+                                    <img id="idImgBB" class="fancybox-image" rel="group" href="<%=img.filePath%>" src="<%=img.filePath%>" alt=''>
+                                    <caption>
+                                        <input type="hidden" id="filePathSelectBBImg" value="<%=img.filePath%>"/>
+                                        <input type="hidden" id="fileNameSelectBBImg" value="<%=img.name%>"/>
+                                    </caption>
+                                </li>
+                            <% }); %>
+                        </ul>
+					</div>
+      		 	</div>
+			</div>
+		</div>
+    </div>
+</div>

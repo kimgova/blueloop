@@ -1,0 +1,192 @@
+/* Float Clearing
+ ---------------------------------------------------------------------*/
+
+.module:after
+{
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/* float clearing for IE6 */
+* html .module
+{
+	height: 1%;
+	overflow: visible;
+}
+
+/* float clearing for IE7 */
+* + html .module
+{
+	min-height: 1%;
+}
+
+/* Breadcrumb Styles
+ ---------------------------------------------------------------------*/
+
+.breadCrumb
+{
+	padding: 8px 15px;
+	  background-color: rgba(0, 0, 0, 0);
+    border: medium none !important;
+    border-radius: 0;
+    box-shadow: none;
+/* 	margin: 0; */
+/* 	margin-bottom: 15px; */
+/* 	padding: 0; */
+/* 	float: left; */
+/* 	display: block; */
+/* 	height: 21px; */
+/* 	overflow: hidden; */
+/* 	width: 990px; */
+/* 	padding:10px; */
+/* 	border:solid 1px #dedede; */
+/* 	background:#fff; */
+}
+.breadCrumb ul
+{
+	margin: 0;
+	padding: 0;
+	height: 21px;
+	display: block;
+}
+.breadCrumb ul li
+{
+	display: block;
+	float: left;
+	position: relative;
+	height: 21px;
+	overflow: hidden;
+	line-height: 21px;
+	margin: 0px 6px 0px 0;
+	padding: 0px 10px 0px 0;
+	font-size: .9167em;
+	background: url(breadcrumbs/f054-128.png) no-repeat 100% center;
+}
+.breadCrumb ul li div.chevronOverlay
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+.breadCrumb ul li span
+{
+	display: block;
+	overflow: hidden;
+}
+.breadCrumb ul li a
+{
+	display: block;
+	position: relative;
+	height: 21px;
+	line-height: 21px;
+	overflow: hidden;
+	float: left;
+}
+.breadCrumb ul li a:hover
+{ 
+	color: #959290;
+}
+	
+.breadCrumb ul li.first a
+{
+	height: 16px !important;
+	text-indent:-1000em;
+	width:16px;
+	padding: 0;
+	margin-top: 2px;
+	overflow: hidden;
+	background:url(breadcrumbs/IconHome.gif) no-repeat 0 0;
+	
+}
+.breadCrumb ul li.first a:hover
+{
+	background-position: 0 -16px;
+	color: #35404D;
+}
+.breadCrumb ul li.last
+{
+	background: none;
+	margin-right: 0;
+	padding-right: 0;
+}
+.chevronOverlay
+{
+	display: none;
+	background: url(breadcrumbs/f054-128.png) no-repeat 100% center;
+	width: 13px;
+	height: 20px;
+}
+
+.fa-chevron-right{
+	color: #515050;
+    content: "";
+    font-family: FontAwesome;
+    padding: 0 5px;
+}
+
+
+/* CSS para el Título de la página */
+
+.page-title i {
+    color: #73777C;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    margin-right: 22px;
+    margin-left: 2px;
+    position: relative;
+    top: 16px;
+}
+
+
+.fa-arrow-circle-o-left:before {
+    content: "\f190";
+	margin-left: 15px;
+    
+}
+
+
+.page-title {
+    color: #666666;
+    display: block;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.page-title h3 {
+    line-height: 30px;
+	color: #505458;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    margin: 7px -15px;
+}
+/* h1, h2, h3, h4, h5, h6 { */
+/*     color: #505458; */
+/*     font-family: 'Open Sans'; */
+/*     font-weight: 300; */
+/*     margin: 7px -15px; */
+/* } */
+/* h3, .h3 { */
+/*     font-size: 24px; */
+/* } */
+
+
+.page-title h3 {
+    display: inline-block;
+    position: relative;
+/*     top: -5px; */
+    width: 83%;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+

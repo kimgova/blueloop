@@ -1,0 +1,16 @@
+<% if(gridLiImg){ %>
+	<li class='gridliBbImg'>
+		<img id='idImgBB' class='fancybox-image' rel='group' href='<%=filePath%>' src='<%=filePath%>' alt=''>
+		<caption>
+			<input type='hidden' id='filePathSelectBBImg' value='<%=filePath%>'/>
+			<input type='hidden' id='fileNameSelectBBImg' value='<%=fileName%>'/>
+		</caption>
+	</li>
+<% } %>
+
+<% if(selectImg){ %>
+	<div id='selectedImgBBDiv'>
+		<input id='pathselectImgBB' type='hidden' name='Path' class='' value='<%=filePath%>'>
+		<input id='nameSelectImgBB' type='hidden' name='Path' class='' value='<%=fileName%>'>
+	</div>"
+<% } %>

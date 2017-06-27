@@ -1,0 +1,13 @@
+<% if(type == "BB"){ %>
+<div class="ws-element bb-element">
+<% }else if(type == "Loop"){ %>
+<div class="ws-element loop-element">
+<% }else { %>
+<div class="ws-element">
+<% }%>
+    <div class="ws-pic ws-element-pic">
+        <img src="<%= path %>" alt="" class="" />
+    </div>
+    <div class="ws-element-name"><%= name %></div>
+    <p class="ws-element-role">Role: <%= role %></p>
+</div>

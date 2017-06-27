@@ -1,0 +1,40 @@
+<div class="modal fade" id="modalSelectClient" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title"><%=json.blueMonitor.modalTitle%></h4>
+            </div>
+            <div class="modal-body">
+                <section class="panel">
+                    <header class="panel-heading"> <%=json.blueMonitor.selectClient%> </header>
+                    <div class="panel-body">
+                        <select id="procStatus" name="procStatus" class="selectpicker show-menu-arrow">
+                                <option value=""><%=json.blueMonitor.selectClient%></option>
+                                <% $.each(client, function(i, item){ %> 
+                                <option value="<%=item.id%>"><%=item.name%></option>
+                                <% }); %>
+                        </select>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <div class="panel-body">
+                    <div class="col-lg-6">
+                        <button id="backClient" class="btn btn-primary" type="button" style="float: left;">
+                            <%=json.button.back%>
+                        </button>
+                </div>
+                    <div class="col-lg-6">
+                        <button id="selectClient" class="btn btn-primary" type="button">
+                            <%=json.button.select%>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class='row'>
+    <div class='col-sm-12'>
+        <section class='panel'>
+            <header class='panel-heading'>
+                <%= json.bb.liActFlowBB %>
+            </header>
+            <div class='adv-table editable-table'>
+                <div class='clearfix' style="margin-top: 10px;">
+                    <div class='btn-group'>
+                        <button id='newFlowActivity' class='btn green'>
+                            <%= json.general.addNew %>
+                            <i class='fa fa-plus'></i>
+                        </button>
+                    </div>
+                </div>
+                <div class='space15'></div>
+                <div id='actFlowBB'>
+                    <table class='table table-bordered table-striped table-hover' id='tabFlowBB'>
+                        <thead>
+                            <tr>
+                                <th width='25%'><%= json.general.icon %></th>
+                                <th width='50%'><%= json.activity.name %></th>
+                                <th width='25%'><%= json.general.action %></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

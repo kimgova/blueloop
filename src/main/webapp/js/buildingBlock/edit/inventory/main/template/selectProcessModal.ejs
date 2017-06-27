@@ -1,0 +1,39 @@
+<div class="modal fade" id="modalSelectProcess" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title"><%=json.blueMonitor.modalTitle%></h4>
+            </div>
+            <div class="modal-body">
+                <section class="panel">
+                    <header class="panel-heading"><%=json.blueMonitor.headerProc%></header>
+                    <div class="panel-body">
+                        <select id="procStatus" name="procStatus" class="selectpicker show-menu-arrow">
+                        <% $.each(PROCESS_STATUS, function(i, item){ %> 
+                                <option value="<%=item.value%>"><%=item.message%></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <div class="panel-body">
+                    <div class="col-lg-6">
+                        <button id="backProcess" class="btn btn-primary" type="button" style="float: left;">
+                            <%=json.button.back%>
+                        </button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button id="selectProcess" class="btn btn-primary" type="button">
+                            <%=json.button.select%>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

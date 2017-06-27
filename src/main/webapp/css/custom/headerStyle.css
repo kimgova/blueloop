@@ -1,0 +1,138 @@
+/*This goes to main style css*/
+body{
+	background-color: white;
+}
+/*Header style*/
+.header{
+	z-index: 999 !important;
+}
+.dark-bg {
+	background-color: #2A3542;
+    color: white;
+    height: 71px;
+}
+
+.logo{
+	position: absolute;
+    top: 12px;
+    left: 28px;
+}
+
+#bcrumb-container{
+	position: absolute;
+	width: 40%;
+    font-size: 24px;
+    font-weight: 100;
+    /* left: 7.5%; */
+    left: 108px;
+    top: 27%;
+    display: inline-block;
+}
+
+#bcrumb-caret{
+	margin-left: 1%;
+	font-size: 18px;
+ 	visibility: hidden; 
+}
+
+.bcrumb{
+    display: inline;
+    margin-left: 1.8%
+}
+
+#user-nav{
+    position: absolute;
+    right: 1%;
+    top: 29%;
+}
+
+ul.top-menu > li > a:not(.tweet){
+	color:#D6D6D6;
+	border: none !important;
+	transition: 0.35s;
+	z-index: 1;
+}
+
+ul.top-menu > li > a:not(.tweet):hover{
+	background-color: transparent !important;
+	border: none !important;
+	color:white !important;
+	cursor: pointer;
+}
+
+#tab-chat, #notif-bell{
+	font-size: 22px;
+}
+
+.bubble-notif{
+	visibility : hidden;
+	position: absolute;
+    top: -5px;
+    left: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    background-color: #FF6C60;
+    width: 20px;
+    height: 18px;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    z-index: 1000 !important;
+    padding-top: 2px;
+}
+
+ul.top-menu > li > a:not(.tweet):hover, ul.top-menu > li > a:not(.tweet):focus{
+	border:none !important;
+	background-color:transparent !important;
+	text-decoration:none;
+	color:white !important;
+	}
+.top-nav ul.top-menu > li > a:not(.tweet):hover, .top-nav ul.top-menu > li > a:not(.tweet):focus{
+	border: none !important;
+	background:transparent !important;
+}
+
+.dropdown-menu.extended{
+	position: absolute;
+    border-radius: 0;
+    left: -126px;
+}
+
+.dropdown-menu.extended.logout > li:last-child {
+    float: left;
+    text-align: center;
+    width: 100%;
+    background: inherit;
+    border-radius: 0;
+}
+
+.dropdown-menu.extended.logout > li:last-child > a, .dropdown-menu.extended.logout > li:last-child > a:hover {
+	    color: #a4abbb;
+    border-bottom: none !important;
+    text-transform: uppercase;
+}
+
+/*media queries*/
+
+/* small screen size */
+@media only screen and (max-device-width: 1370px) and (min-device-width: 860px)  {
+	.dark-bg {
+    	height: 64px;
+	}
+	
+	a.logo img{
+		height: 37px;
+	}
+	
+	#bcrumb-container{
+		font-size: 22px;
+	}
+	
+	#tab-chat, #notif-bell{
+		font-size: 19px;
+		margin-right: 14px;
+	}
+	.wrapper{
+	   margin-top: 64px;
+	}
+}

@@ -1,0 +1,5 @@
+<select multiple="multiple" id="member-select">
+    <% $.each(users, function(i, user){ %>
+        <option value="<%= user.id %>"><%= user.firstName + ' ' + user.lastName %></option>
+    <% }); %>
+</select>

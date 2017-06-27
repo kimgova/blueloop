@@ -1,0 +1,16 @@
+<tr>
+    <td><div><%= date %></div></td>
+    <td><div><%= observation %></div></td>
+    <td><div><%= value %></div></td>
+    <td><div><%= user.name %></div></td>
+    <td>
+        <div>
+            <button id='editVar' class='btn btn-primary btn-xs' <%= disabled %> >
+                <i class='fa fa-pencil'></i>
+            </button>
+            <button id='deleteVar' class='btn btn-danger btn-xs' <%= disabled %> >
+                <i class='fa fa-trash-o'></i>
+            </button>
+        </div>
+    </td>
+</tr>

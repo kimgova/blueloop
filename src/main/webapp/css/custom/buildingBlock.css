@@ -1,0 +1,20 @@
+.panel-bb{border:1px solid #B9B9B9;border-radius:4px;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset;margin-bottom:50px!important}
+.img-bb{margin-left:38%;margin-top:20px}
+.btn-bb,.btn-info{padding:5px 10px;margin-top:15px;margin-right:5px}
+.btn-add-team{margin-top:0}
+#tumbsSection{border:1px solid #ccc;border-radius:10px;min-height:487px;padding:15px;margin-left:2%;margin-bottom:50px}
+#thumbs,#thumbs.top,#thumbs.bottom{background:none!important;border:0 solid #fff!important;height:1px}
+.btnEraseBB{padding-left:14px;padding-right:14px}
+#general .caption{padding:0}
+.modal-content{box-shadow:0 5px 15px rgba(0,0,0,0.5)!important}
+.badge-li{min-width:40px;min-height:40px;z-index:2;background:url(../../images/btn_teamwork.png) center no-repeat;background-size:35px 35px;margin-bottom:-40px;margin-right:-63px;margin-top:0px;opacity:0.7;}
+#gallery .badge-li{margin-top:-17px;}
+#ulThumbsList label{position:relative}
+.tagsexample{border:1px solid #e3e6ed;border-radius:6px;height:50px;padding:6px 1px 1px 6px;overflow-y:auto;text-align:left;}
+.tagsexample .taginput{/*border:1px solid #e3e6ed;*/margin-top:1px;float:left;}
+.tagsexample .taginput input{text-align:center;border:none;font-size: 18px;}
+.tagsexample .tagexample{border-radius:4px;border:1px solid #428bca;cursor:pointer;margin-right:-4px;margin-left:-4px;margin-top:3px;line-height:11px;padding: 6px 10px 6px 10px;
+position: relative;display: inline-block;float:left;background: none repeat scroll 0 0 #428bca;color: white;}
+.tagsexample .tagexample a{bottom:0;cursor:pointer;font-size: 15px;padding:5px 3px 0 0;position:absolute;right: 0;text-align: right;text-decoration: none;
+top: 0;margin-left:2px;color: white;}
+.tagsexample .tagexample a:hover {font-weight:bold;}

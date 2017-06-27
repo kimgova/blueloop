@@ -1,0 +1,35 @@
+<tr>
+    <td><div><%= globalOrderId %></div></td>
+    <td>
+        <div>
+            <span><%= json.general.view %> (<%= orders %>)</span>
+            <a id='view-details' class='' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.view %>">
+                <i class='fa fa-plus-circle'></i>
+            </a>
+        </div>
+    </td>
+    <td>
+        <div>
+            <span id="attach-counter"><%= json.general.view %> (<%= attachments %>)</span>
+            <a id='view-attachments' class='' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.view %>">
+                <i class='fa fa-plus-circle' id='view-attach'></i>
+            </a>
+        </div>
+    </td>
+    <td><div><%= dta %></div></td>
+    <td><div><%= pta %></div></td>
+    <td><div><%= step %></div></td>
+    <td><div><%= status %></div></td>
+    <td>
+        <div>
+            <% if(isResponsible == 'true'){ %>
+                <button id='editOrder' class='btn btn-primary btn-xs'>
+                    <i class='fa fa-pencil'></i>
+                </button>
+                <button id='deleteOrder' class='btn btn-danger btn-xs'>
+                    <i class='fa fa-trash-o'></i>
+                </button>
+            <% } %>
+        </div>
+    </td>
+</tr>

@@ -1,0 +1,28 @@
+<td><div><%= identifier %></div></td>
+<td><div><%= description %></div></td>
+<td><div><%= category.name %></div></td>
+<td><div><%= subcategory.name %></div></td>
+<td><div><%= role.name %></div></td>
+<td><div><%= suggested %></div></td>
+<td><div><%= variations %></div></td>
+<td><div><%= finalTrade %></div></td>
+<td>
+    <form id="negociationForm" class="cmxform form-horizontal">
+        <div class="form-group">
+            <div class="col-lg-12">
+                <input id="negociation" type="text" class="form-control small" value="<%= negociation %>" required>
+            </div>
+            <label class="error" for="negociation" style="display:none">This field is required.</label>
+        </div>
+    </form>
+</td>
+<td>
+    <div>
+        <button id='saveLinear' class='btn btn-primary btn-xs'>
+            <i class='fa fa-floppy-o'></i>
+        </button>
+        <button id='cancelLinear' class='btn btn-danger btn-xs'>
+            <i class='fa fa-times'></i>
+        </button>
+    </div>
+</td>

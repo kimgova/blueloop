@@ -1,0 +1,36 @@
+<div class="item-container col-lg-4 col-md-6 col-sm-12">
+    <div class="grid-item">
+        <div class="user-hover-mark">
+            <div id="mark-transition">
+            <% if(archived){ %>
+                <i id="remove-bb"    class="icon-trash" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.deletePermanently %>"></i>
+                <i id="user-options" class="icon-options"></i>
+                <a id="detail-btn"   class="btn btn-default"><%= json.button.viewDetail %></a>
+                <a id="restore-bb"   class="btn btn-default"> <%= json.button.restore %> </a>
+             <% }else{ %>
+                <% if(!invited){ %>
+                    <i id="archive-bb" class="icon-drawar" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.archive %>"></i>
+                <% } %>
+                <a href="workspace/<%= id %>" id="goto-ws">
+                    <i  class="icon-arrow-right-circle" data-container="body" data-toggle="tooltip" data-placement="top" title="Manage Connections"></i>
+                </a>
+                <i id="user-options" class="icon-options"></i>
+                <a id="detail-btn"   class="btn btn-default"><%= json.button.viewDetail %></a>
+                <input id="idBB"     type="hidden" value="<%= id %>">
+                <% if (invited) { %>
+                   <a class="btn btn-default btnDataBBTeam">Edit Info & More</a>
+                <% }else{ %>
+                   <a class="btn btn-default btnDataBB">Edit Info & More</a>
+                <% } %>
+                
+             <% } %>
+            </div>
+        </div>
+        <img src="<%= path %>" alt="<%= name %>" class="grid-item-pic"/>
+        <div class="grid-item-description">
+            <h4><%= name %></h4>
+            <h5><%= ownership %></h5>
+            <p>created by: <%= ownerName %></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="row" style="margin-bottom:1%">
+    <div class="col-md-5" style="padding-left:2%">
+        <input id='idFlowBB' type="hidden" value="<%= id_flow_bb %>">
+        <div class="col-md-1">
+            <div id='deleteFlowBB' class='btn btn-danger btn-xs btnDelFLBB'><i class='fa fa-trash-o'></i></div>
+        </div>
+        <div class="col-md-1">
+            <div id='showFlowBB' class='btn btn-primary btn-xs btnOpenFLBB'><i class='fa fa-pencil-square-o'></i></div>
+        </div>
+        <div class="col-md-10">
+            <div class="col-md-2">
+                <img src="<%= imgURI %>" style="height:35px; width:35px;">
+            </div>
+            <div class="col-md-10">
+                <label><%= description %></label>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="md-checkbox">
+            <input name="brl_<%= id_flow_bb %>_<%= id_activity %>" id="brl_<%= id_flow_bb %>_<%= id_activity %>" class="valve-checkbox" type="checkbox" checked disabled />
+            <label for="brl_<%= id_flow_bb %>_<%= id_activity %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="md-checkbox">
+            <% if(mc == false){ %> 
+                <input name="bmc_<%= id_flow_bb %>_<%= id_activity %>" att-id="<%= id_flow_bb %>" id="bmc_<%= id_flow_bb %>_<%= id_activity %>" class="valve-checkbox" type="checkbox" />
+            <% }else{ %>
+                <% if(ra == false){ %> 
+                    <input name="bmc_<%= id_flow_bb %>_<%= id_activity %>" att-id="<%= id_flow_bb %>" id="bmc_<%= id_flow_bb %>_<%= id_activity %>" class="valve-checkbox" type="checkbox" checked />
+                <% }else{ %>
+                    <input name="bmc_<%= id_flow_bb %>_<%= id_activity %>" att-id="<%= id_flow_bb %>" id="bmc_<%= id_flow_bb %>_<%= id_activity %>" class="valve-checkbox" type="checkbox" checked  disabled/>
+                <% } %>
+            <% } %>
+            <label for="bmc_<%= id_flow_bb %>_<%= id_activity %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="md-checkbox">
+            <% if(ra == false){ %> 
+                <input name="bra_<%= id_flow_bb %>_<%= id_activity %>" id="bra_<%= id_flow_bb %>_<%= id_activity %>" class="valve-checkbox" type="checkbox" />
+            <% }else{ %>
+                <input name="bra_<%= id_flow_bb %>_<%= id_activity %>" id="bra_<%= id_flow_bb %>_<%= id_activity %>" class="valve-checkbox" type="checkbox" checked />
+            <% } %>
+            <label for="bra_<%= id_flow_bb %>_<%= id_activity %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="row" style="margin-bottom:1%">
+    <div class="col-md-5" style="padding-left:3%">
+        <img src="<%= url %><%= fileName %>" title="" style="height:35px; width:35px;margin-right:8%">
+        <label style="font-size:16px" for="act<%= id %>"><%= description %></label>
+    </div>
+    <div class="col-md-2">
+        <div class="md-checkbox">
+            <% if(rl == false){ %> 
+                <input name="rl<%= id %>" id="rl<%= id %>" class="valve-checkbox" type="checkbox" />
+                <label for="rl<%= id %>">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>
+                </label>
+            <% }else if(haveOrders){ %>
+                <input name="rl<%= id %>" id="rl<%= id %>" class="valve-checkbox" type="checkbox" checked disabled />
+                <label for="rl<%= id %>">
+                    <span></span>
+                    <span class="check" data-toggle="tooltip" data-placement="right" data-original-title="This activity has active orders, can not be deselected"></span>
+                    <span class="box"></span>
+                </label>
+            <% }else{ %>
+                <input name="rl<%= id %>" id="rl<%= id %>" class="valve-checkbox" type="checkbox" checked />
+                <label for="rl<%= id %>">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>
+                </label>
+            <% } %>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="md-checkbox">
+            <% if(mc == false){ %>
+                <% if(rl == false){ %> 
+                    <input name="mc<%= id %>" id="mc<%= id %>" class="valve-checkbox" type="checkbox" disabled/>
+                <% }else{ %>
+                    <input name="mc<%= id %>" id="mc<%= id %>" class="valve-checkbox" type="checkbox" />
+                <% } %>
+            <% }else{ %>
+                <% if(ra == false){ %> 
+                    <input name="mc<%= id %>" id="mc<%= id %>" class="valve-checkbox" type="checkbox" checked />
+                <% }else{ %>
+                    <input name="mc<%= id %>" id="mc<%= id %>" class="valve-checkbox" type="checkbox" checked disabled/>
+                <% } %>
+            <% } %>
+            <label for="mc<%= id %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="md-checkbox">
+            <% if(ra == false){ %>
+                <% if(rl == false){ %> 
+                    <input name="ra<%= id %>" id="ra<%= id %>" class="valve-checkbox" type="checkbox" disabled/>
+                <% }else{ %>
+                    <input name="ra<%= id %>" id="ra<%= id %>" class="valve-checkbox" type="checkbox" />
+                <% } %>
+            <% }else{ %>
+                <input name="ra<%= id %>" id="ra<%= id %>" class="valve-checkbox" type="checkbox" checked />
+            <% } %>
+            <label for="ra<%= id %>">
+                <span></span>
+                <span class="check"></span>
+                <span class="box"></span>
+            </label>
+        </div>
+    </div>
+</div>

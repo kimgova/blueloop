@@ -1,0 +1,11 @@
+<div id="roleFilters">
+    <div class="col-lg-3">
+        <label>Roles:</label>
+        <select id="rolesFilter" class="form-control col-lg-2">
+            <option value="0">All Roles</option>
+            <% $.each(roles, function(i, rol){ %>
+                <option value="<%= rol.id %>"><%= rol.get("name") %></option>												 
+            <% }); %>
+        </select>
+    </div>  
+</div>

@@ -1,0 +1,29 @@
+<div id="item-info">
+    <!-- <div class="grid-item-icon icon-circle"> -->
+      <img class="panel-element-pic" src="<%= model.path %>" alt="<%= model.name %>"/>
+    <!-- </div> -->
+    <h4><%= model.name %></h4>
+	<hr>
+	<div class="bb-description">
+   		<p>Owner: <span><%= model.ownerName %></span></p>
+        <p>Responsible: <span><%= model.responsible %></span></p>
+        <p>Company: <span><%= model.company %></span></p>
+   		<p>Email: <span><%= model.email %></span></p>
+        <p>Phone number: <span><%= model.phone %></span></p>
+        <!-- <p>Last updated: <span><%= model.lastUpdated %></span></p> -->
+   		<p>Participating in Loops: <span><%= model.loops %></span></p>
+   	</div>
+   	 <% if(model.archived == false){ %>
+   	    <input id="idBB" type="hidden" value="<%= model.id %>">
+   	    <% if (model.invited) { %>
+            <a class="btn btn-default btnDataBBTeam btn-lg bb-btn">Edit Info & More</a>
+        <% }else{ %>
+            <a class="btn btn-default btnDataBB btn-lg bb-btn">Edit Info & More</a>
+            <a href="workspace/<%= model.id %>" id="bb-btn" class="btn btn-default btn-lg">Manage Connections</a>
+        <% } %>
+ 	   
+ 	 <% } %> 
+ 	 <% if(creationPermission == true){ %>
+ 	      <a href="/blueloop-backend/buildingBlock/create" id="add_btn" class="circular-red-btn"><i class="" id="cross">+</i></a>
+ 	 <% } %>
+</div>

@@ -1,0 +1,20 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="dialog-exit" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= json.default.exitLabel %></h4>
+           	 </div>
+           	  <div class="modal-body">
+           	  	<div class="panel-body">
+          	  		<h4><%= json.default.saveChangesAndExit %></h4>
+           	  	</div>
+           	  </div>
+        	<div class="modal-footer">
+        		<button id="saveChain" type="button" data-dismiss="modal" class="btn btn-primary"><%= json.button.saveExit %></button>
+        		<button id="noSaveChain" type="button" data-dismiss="modal" class="btn btn-primary"><%= json.button.dontSave %></button>
+        		<button type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

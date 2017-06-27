@@ -1,0 +1,110 @@
+<tr class="tw-sub-row">
+    <td colspan="8" class="sub-row" style="display:none;">
+        <div class="sub-row-content">
+            <table id='groupDetails' idteam='<%= idTeam %>' nameteam='<%= nameTeam %>' typeteam='<%= typeTeam %>' itemid='<%= itemId %>'  item='<%= item %>' width='100%'>
+
+                <% $.each(items, function(i, value){ %>
+                    <% if(i == 0){ %>
+                    <tr>
+                        <td class='alert alert-info fade in'><%= json.roles.administrator %>:</td>
+                        <td class='alert alert-info fade in'>
+                            <ul>
+                    <% } %> 
+                    <% if(value.role == "LOOP_ARCHITECT" || value.role == "BB_ADMIN"){ %>
+                        <% if(value.id == userLogged){ %>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td><a class='' href='/blueloop-backend/user/profile'><%= value.fullName %></a></td>
+                                        <td>
+                                        <% if(value.twitterUser != ''){ %>
+                                            <i class='fa fa-twitter'> </i> @<%= value.twitterUser %>
+                                        <% } %>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </li>
+                        <% }else{ %>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td><a class='' href='/blueloop-backend/user/profileWall/<%= value.id %>'><%= value.fullName %></a></td>
+                                        <td>
+                                        <% if(value.twitterUser != ''){ %>
+                                            <i class='fa fa-twitter'> </i> @<%= value.twitterUser %>
+                                        <% } %>
+                                        </td>
+                                        <td>
+                                            <a class='messageTeammember' id='<%= value.id %>' name='<%= value.fullName %>' title='<%= json.tooltip.sendEmail %>'>
+                                                <i class='icon-envelope'></i>
+                                            </a>
+                                            <a class='chatTeammember' id='<%= value.id %>' name='<%= value.fullName %>' title='<%= json.tooltip.createChat %>'>
+                                                <i class='icon-bubble'></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                        <% } %>
+                    <% } %> 
+                <% }); %> 
+                </ul>
+                </td>
+                </tr>
+
+            <% $.each(items, function(j, value){ %>
+                <% if(j == 0){ %>
+                <tr>
+                    <td class='alert alert-success fade in'><%= json.roles.members %>:</td>
+                    <td class='alert alert-success fade in'>
+                        <ul>
+                <% } %> 
+                <% if(value.role != "LOOP_ARCHITECT" && value.role != "BB_ADMIN"){ %>
+                    <% if(value.id == userLogged){ %>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td><a class='' style="color: #3c763d;" href='/blueloop-backend/user/profile'><%= value.fullName %></a></td>
+                                        <td>
+                                            <% if(value.twitterUser != ''){ %>
+                                                <i class='fa fa-twitter'> </i> @<%= value.twitterUser %>
+                                            <% } %>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </li>
+                    <% }else{ %>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td><a class='' style="color: #3c763d;" href='/blueloop-backend/user/profileWall/<%= value.id %>'><%=value.fullName %></a></td>
+                                        <td>
+                                        <% if(value.twitterUser != ''){ %>
+                                            <i class='fa fa-twitter'> </i> @<%=value.twitterUser %> 
+                                        <% } %>
+                                        </td>
+                                        <td>
+                                            <a class='messageTeammember' id='<%= value.id %>' name='<%= value.fullName %>'
+                                                title='<%= json.tooltip.sendEmail %>' style="font-size:16px; color: #3c763d;">
+                                                <i class='icon-envelope'></i>
+                                            </a>
+                                            <a class='chatTeammember' id='<%= value.id %>' name='<%= value.fullName %>'
+                                                title='<%= json.tooltip.createChat %>' style="font-size:16px; color: #3c763d;">
+                                                <i class='icon-bubble'></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                    <% } %>
+                <% } %> 
+            <% }); %> 
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </td>
+</tr>

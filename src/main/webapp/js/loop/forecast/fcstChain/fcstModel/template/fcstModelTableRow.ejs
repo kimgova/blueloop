@@ -1,0 +1,20 @@
+<tr>
+    <td><div><%= name %></div></td>
+    <td><div><%= description %></div></td>
+
+<% if(forecastPermission == true){ %>   
+    <td>
+        <div>
+            <input type="text" value="" placeholder="Name" id="nameFcst" class="form-control">
+        </div>
+    </td>
+    <td>
+        <div>
+            <button id='addForecastModel' data-dismiss="modal" class='btn btn-primary btn-xs'>
+                <i class='fa fa-plus'></i>
+            </button>
+        </div>
+    </td>
+<% } %>
+
+</tr>

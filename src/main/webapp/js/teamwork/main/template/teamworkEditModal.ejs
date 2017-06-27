@@ -1,0 +1,64 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="tw-edit-modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="closeHeader" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= json.teamwork.details %></h4>
+            </div>
+            <form class="cmxform form-horizontal" role="form" id="formTeamwork" method="get" action="">
+                <div class="modal-body">
+                    <div class="panel-body">
+						<div class="form-group">
+							<label class="col-lg-2 col-sm-2 control-label" for="name"><%= json.default.nameLabel %></label>
+							<div class="col-lg-12">
+								<input id="groupNameEdit" name="name" value="<%= name %>" class="form-control" type="text" placeholder='<%= json.placeholder.enterName %>' required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-2 col-sm-2 control-label" for="description"><%= json.default.descLabel %></label>
+							<div class="col-lg-12">
+								<input id="groupDescEdit" name="description" value="<%= description %>" class="form-control" type="text" placeholder='<%= json.placeholder.enterDescription %>' required />
+							</div>
+						</div>
+						<div class="form-group" style="float:right;">
+						    <div class="col-lg-12">
+                                <button id="saveBtn" type="submit" class="btn btn-primary"><%= json.button.save %></button>
+                                <% if(type == 1){ %>
+                                    <a id="editTeamworkMembers" href="/blueloop-backend/buildingBlock/list" class="btn btn-primary" style="margin-bottom: 0px;"><%= json.teamwork.editTeammembers %></a>
+                                <% }else{ %>
+                                    <a id="editTeamworkMembers" href="/blueloop-backend/chain/list" class="btn btn-primary" style="margin-bottom: 0px;"><%= json.teamwork.editTeammembers %></a>
+                                <% } %>
+						    </div>
+						</div>
+						<br><br><br>
+						<div class='row'>
+							<div class='col-lg-12'>
+								<section class='panel'>
+									<div id="teamWorkList">
+										<div class="adv-table" >
+											<table class="table table-bordered table-striped table-hover" id="tm-table">
+												<thead>
+													<tr>
+														<th><%= json.user.id %></th>
+														<th width='20%'><%= json.user.name %></th>
+														<th width='20%'><%= json.user.department %></th>
+														<th width='10%'><%= json.user.company %></th>
+														<th width='50%'><%= json.user.permissions %></th>
+													</tr>
+												</thead>
+                                                <tbody></tbody>
+											</table>
+										</div>
+									</div>
+								</section>
+							</div>				
+						</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeBtn" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+                </div>
+            </form>
+         </div>
+    </div>
+</div>

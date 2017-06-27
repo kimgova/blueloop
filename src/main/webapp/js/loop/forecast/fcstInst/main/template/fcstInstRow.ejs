@@ -1,0 +1,50 @@
+<tr>
+    <td><div><%= name %></div></td>
+    <td><div><%= month.name %> <%= year %></div></td>
+    <td><div><%= FORECAST_STATUS[status].message %></div></td>
+    <td><div><%= createDate %></div></td>
+    <td><div><%= signOffDate %></div></td>
+    <td><div><%= autorizedBy %></div></td>
+    <td><div><%= percentageComplete %></div></td>
+    <td>
+        <div>
+        
+            <button id='viewForecast' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.viewInsInfo%>">
+                <i class='fa fa-search'></i>
+            </button>
+                
+            <% if(FORECAST_STATUS[status].id == 1) {%>
+                <button id='selectBudget' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.selectBudget %>">
+            <% } else { %> 
+                <button id='selectBudget' disabled class='btn btn-primary btn-xs btn-disabled' title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.selectBudget %>">
+            <% } %>        
+                <i class='fa fa-money'></i></button>
+            
+            <% if(FORECAST_STATUS[status].id == 1) {%>
+                <button id='checkActivities' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.checkActiv %>">
+            <% } else { %>
+                <button id='checkActivities' disabled class='btn btn-primary btn-xs btn-disabled' title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.checkActiv %>">
+            <% } %>            
+                <i class='fa fa-list'></i></button>
+            
+            <% if(FORECAST_STATUS[status].id == 1 && userLeader) {%>
+                <button id='signOff' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.signOff %>">
+                    <i class='fa fa-check'></i>
+                </button>
+            <% } %>       
+            
+            <% if(FORECAST_STATUS[status].id == 1 && userLeader) {%>
+                <button id='deleteInstance' class='btn btn-danger btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                    data-original-title="<%= json.forecast.tooltips.deleteIns %>">
+            	   <i class='fa fa-trash-o'></i>
+                </button>
+            <% }%>
+        </div>
+    </td>
+</tr>

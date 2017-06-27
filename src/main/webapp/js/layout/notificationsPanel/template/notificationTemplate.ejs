@@ -1,0 +1,31 @@
+<li class="panel-item">
+    <% if (type == "bb"){ %>
+        <div class="row item-title bb-notification">
+            <h4 class="col-sm-6">Building Block Alert</h4>
+            <h4 class="col-sm-3 pull-right"><%= date %></h4>	
+        </div>
+    <% } else if (type == "loop"){ %> 
+        <div class="row item-title loop-notification">
+            <h4 class="col-sm-6">Loop Alert</h4>
+            <h4 class="col-sm-3 pull-right"><%= date %></h4>	
+        </div>
+    <% } else if (type == "user"){ %>
+        <div class="row item-title user-notification">
+            <h4 class="col-sm-6">User Alert</h4>
+            <h4 class="col-sm-3 pull-right"><%= date %></h4>	
+        </div>
+    <% } else { %>
+        <div class="row item-title fc-notification">
+            <h4 class="col-sm-6">Forecast Alert</h4>
+            <h4 class="col-sm-3 pull-right"><%= date %></h4>	
+        </div>
+    <% } %>
+    <div class="item-description">
+        <p><%= description %></p>
+        <div class="row item-icons">
+            <a href="#" class="icon-check go-btn"></a>	
+            <a href="#" class="icon-close close-btn"></a>	
+        </div>
+    </div>
+    <hr>
+</li>

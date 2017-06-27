@@ -1,0 +1,23 @@
+<tr>
+    <td>
+        <div><%= name %></div>
+    </td>
+    <td>
+        <div><%= company %></div>
+    </td>
+
+    <td>
+        <% if(role != 'BB_ADMIN'){ %> 
+            <div class="permissions"></div>
+        <% } else { %>
+            <div class="">BB Administrator</div>
+        <% }%>
+    </td>
+    <td>
+        <div>
+            <% if(role != 'BB_ADMIN'){ %> 
+                <a class='deleteUser icon-trash'></a> 
+            <% }%>
+        </div>
+    </td>
+</tr>

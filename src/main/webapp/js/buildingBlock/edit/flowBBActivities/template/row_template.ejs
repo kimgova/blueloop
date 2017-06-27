@@ -1,0 +1,18 @@
+<tr>
+    <td>
+        <div>
+             <img id="img_bb" src="<%=imageURI%>" alt='Activity image' width="20px" height="20px">
+        </div>
+    </td>
+    <td>
+        <div><%= name %></div>
+    </td>
+    <td>
+        <div>
+            <a class="editAct icon-pencil"></a>
+            <% if(!haveOrders){ %>
+                <a class='deleteAct icon-trash'></a> 
+            <% } %>
+        </div>
+    </td>
+</tr>

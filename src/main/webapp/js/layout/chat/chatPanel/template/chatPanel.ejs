@@ -1,0 +1,136 @@
+<div>
+    <% if (isExecution != 1){ %>
+        <button id="btnCreateChatGroup" class="btn btn-groupchat" type="button"><%= json.chat.newChatGroup %></button>
+    <% }else{ %>
+        <button id="btnCreateLoopChatGroup" class="btn btn-groupchat" type="button"><%= json.chat.newLoopChat %></button>
+    <% } %>
+    <br><br>
+    <% if (isExecution != 1){ %>
+        <ul class="chat-list" id="chat-group-list">
+            <li class="">
+                <a class="lobby" >
+                    <h4><i class="fa fa-list"></i><%= json.chat.groupChatTitle %></h4>
+                </a>
+            </li>
+            <% $.each(chats, function(i, c){ %>
+                <li class="chat-panel-item">
+                    <% if (c.type == 0){ %>
+                        <a id="chat<%= c.id %>" class="a-chat">
+                            <i id="<%= c.channel %>" class="channelName fa fa-exclamation-circle"></i>
+                            <i class="fa fa-circle-o"></i>
+                            <span title="<%= c.name %>" onclick="chat.agregarGroupChat(<%= c.id %>,'<%= c.name %>','<%= c.channel %>', $(this));">
+                                <% if (c.name.length > 13) { %>
+                                    <%= c.name.substring(0, 12) %>...
+                                <% }else{ %>
+                                    <%= c.name %>
+                                <% } %>	
+                            </span>
+                            <% if (c.creator.id == user.id) { %>
+                                <i onclick="chat.deleteChat(<%= c.id %>, '<%= c.name %>');" class="fa fa-times pull-right btnDeleteChatGroup" ></i>
+                                <i id="<%= c.id %>" class="fa fa-pencil pull-right btnEditChatGroup"></i>
+                            <% }else{ %>
+                                <i onclick="chat.leaveChat(<%= c.id %>,'<%= c.name %>');" class="fa fa-times pull-right btnLeaveChatGroup" ></i>
+                            <% } %>			                                
+                        </a>
+                    <% } %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    <ul class="chat-list" id="bb-chat-group-list">  
+        <li class="">
+            <a class="lobby">
+                <h4><i class="fa fa-map-marker"></i><%= json.chat.bbChatTitle %></h4>
+            </a>
+        </li>
+        <% $.each(chats, function(i, c){ %>
+            <li class="chat-panel-item">
+                <% if (c.type == 3){ %>
+                    <a id="chat<%= c.id %>" class="a-chat">
+                        <i id="<%= c.channel %>" class="channelName fa fa-exclamation-circle"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <span title="<%= c.name %>" onclick="chat.agregarGroupChat(<%= c.id %>,'<%= c.name %>','<%= c.channel %>', $(this));">
+                            <% if (c.name.length > 13) { %>
+                                <%= c.name.substring(0, 12) %>...
+                            <% }else{ %>
+                                <%= c.name %>	
+                            <% } %>	
+                        </span>
+                        <% if (c.creator.id == user.id) { %>
+                            <i onclick="chat.deleteChat(<%= c.id %>, '<%= c.name %>');" class="fa fa-times pull-right"></i>
+                            <i id="<%= c.id %>" bb="<%= c.bb.id %>" class="fa fa-pencil pull-right btnEditBBChatGroup"></i>
+                        <% }else{ %>
+                            <i onclick="chat.leaveChat(<%= c.id %>,'<%= c.name %>');" class="fa fa-times pull-right btnLeaveChatGroup" ></i>
+                        <% } %>	
+                        <label title="(BB: <%= c.bb.name %>)">
+                            <% if (c.name.length > 12) { %>
+                                (BB: <%= c.name.substring(0, 11) %>...)
+                            <% }else{ %>
+                                (BB: <%= c.name%>)	
+                            <% } %>
+                        </label>
+                    </a>
+                <% } %>
+            </li>
+        <% }); %>
+    </ul>
+    <ul class="chat-list" id="loop-chat-group-list">
+        <li class="">
+            <a class="lobby">
+                <h4><i class="fa fa-map-marker"></i><%= json.chat.loopChatTitle %></h4>
+            </a>
+        </li>
+        <% $.each(chats, function(i, c){ %>
+            <li class="chat-panel-item">
+                <% if (c.type == 1){ %>
+                    <a id="chat<%= c.id %>" class="a-chat">
+                        <i id="<%= c.channel %>" class="channelName fa fa-exclamation-circle"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <span title="<%= c.name %>" onclick="chat.agregarGroupChat(<%= c.id %>,'<%= c.name %>','<%= c.channel %>', $(this));">
+                            <% if (c.name.length > 13) { %>
+                                <%= c.name.substring(0, 12) %>...
+                            <% }else{ %>
+                                <%= c.name %>	
+                            <% } %>	
+                        </span>
+                        <% if (c.creator.id == user.id) { %>
+                            <i onclick="chat.deleteChat(<%= c.id %>, '<%= c.name %>');" class="fa fa-times pull-right"></i>
+                            <i id="<%= c.id %>" lp="<%= c.chain.id %>" class="fa fa-pencil pull-right btnEditLoopChatGroup"></i>
+                        <% }else{ %>
+                            <i onclick="chat.leaveChat(${c.id},'${c.name}');" class="fa fa-times pull-right"></i>
+                        <% } %>
+                        <label title="(Loop: <%= c.chain.description %>)">
+                            <% if (c.chainName.length > 12) { %>
+                                (Loop: <%= c.chainName.substring(0, 11) %>...)
+                            <% }else{ %>
+                                (Loop: <%= c.chainName %>)	
+                            <% } %>
+                        </label>
+                    </a>
+                <% } %>
+            </li>
+        <% }); %>
+    </ul>
+    <ul class="chat-list" id="users-chat-list">
+        <li class="">
+            <a class="lobby" >
+                <h4> <i class="fa fa-group"></i><%= json.chat.userChatTitle %> </h4>
+            </a>
+        </li>
+        <% $.each(listUsers, function(i, u){ %>
+            <li class="chat-panel-item">
+                <a onclick="chat.createChatFromPanel(<%= u.id %>,'<%= u.firstName %>', $(this))">
+                    <i class="fa fa-circle text-muted user-id-<%= u.id %>"></i>
+                    <span title="<%= u.firstName %> <%= u.lastName %>">
+                        <% if ((u.firstName + ' ' + u.lastName).length > 17) { %>
+                            <%= (u.firstName + ' ' + u.lastName).substring(0, 16) %>...
+                        <% }else{ %>
+                            <%= u.firstName %> <%= u.lastName %>	
+                        <% } %>
+                    </span>
+                    <i id="" class="channelName fa fa-exclamation-circle" style="float:right"></i>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+</div>

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.paginateButtons{background-color:#435265;border-color:#435265;color:#fff;-moz-user-select:none;background-image:none;border:1px solid transparent;border-radius:4px;display:inline-block;font-size:14px;font-weight:400;line-height:1.42857;margin-bottom:0;padding:6px 12px;text-align:center;vertical-align:middle;white-space:nowrap;width:98.8%;position:relative}
+.paginateButtons:hover,.paginateButtons:focus,.paginateButtons:active,.paginateButtons.active{background-color:#5F6D7F;border-color:#5F6D7F;color:#fff;cursor:pointer}
+.paginateButtons a{color:#fff;width:100%;cursor:pointer}
+#content fieldset{bottom:21px;right:0;left:1.3%;position:absolute}
+#ulresultList li{display:inline-block;padding:5px 5px 9px}
+#resultSearchSection{display:inline-block;width:100%}
+#resultSearchSection label{display:inline-block;font-weight:700}
+.styled-select{border:1px solid #ccc;box-sizing:border-box;border-radius:3px;display:inline-table;margin-left:6px;overflow:hidden;position:relative}
+.styled-select,.styled-select select{width:115px}
+select:focus{outline:none}
+.styled-select select{height:26px;padding:2px 0 5px 5px;background:transparent;border:none;-webkit-appearance:none}
+.fa-sort-desc{position:absolute;top:0;right:12px;font-size:18px}
+select::-ms-expand{display:none}
+_:-o-prefocus,.selector{.styled-selectbackground:none}
+#holderSearch{float:right;margin:0}
+.topSearch{height:50px}
+.itemsPerPage{display:inline-flex}
+.filter{margin-left:27px;margin-top:3px}
+.filter a{border-radius:3px;cursor:pointer;border:1px solid #ccc;cursor:pointer;font-size:12px;margin:2px;padding:4px 7px 2px;height:26px}
+.filter a:hover,.filter a:focus{background-color:#2a3542;color:#fff;border:1px solid #2a3542}
+.filterActive{background-color:#2a3542;color:#fff;border:1px solid #2a3542}
+.panelInfoConn{box-shadow:0 -2px 3px -2px rgba(0,0,0,0.2),0 2px 2px rgba(0,0,0,0.1);border-radius:4px}
+.panelInfoConn ul > li:not(.general){display:none}
+.modalInfoConnectB{cursor:pointer}
+#modalInfoConnect .modal-dialog{width:650px}

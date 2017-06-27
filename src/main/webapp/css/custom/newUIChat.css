@@ -1,0 +1,112 @@
+#chat-panel a{
+	color: inherit;
+	font-size: 17px;
+    font-weight: 100;
+}
+
+#chat-panel a:hover{
+	color: red;
+	cursor: pointer;
+}
+
+#new-conversation{
+	margin-left: 28px;
+}
+
+#category-container{
+	margin-top: 28px;
+}
+
+.empty-category {
+	display:none;
+}
+
+.chat-category h4{
+	text-align: center;
+}
+
+.chats-container{
+	margin-left: 28px;
+	margin-right: 28px;
+}
+
+#new-conversation i{
+	font-weight: 700;
+}
+
+.user-display-name{
+	white-space: nowrap;
+    width: 19em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#display-name{
+	margin-left: 4%;
+}
+
+#chat-msg-count{
+	visibility: hidden; 
+    position: absolute;
+    display: inline;
+    /* margin-top: 4%; */
+    right: 28px;
+    margin-top: 3%;
+    color: white;
+    background-color: #2A3542;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 15px;
+}
+
+#chat-pic{
+	width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+#chat-status-icon{
+    position: absolute;
+    /* bottom: 2px; */
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: solid;
+    border-width: 1px;
+    border-color: #8E8E8E;
+    background-color: #D5D5D5;
+    margin-left: 9%;
+    /* margin-right: 4%; */
+    margin-top: -3%;
+}
+
+#group-chat-options{
+	display: inline;
+    visibility: hidden;
+    position: absolute;
+    right: 64px;
+    margin-top: 3.6%;
+}
+
+.chat-elmnt-container:hover #group-chat-options{
+	visibility:visible;
+}
+
+#chat-name{
+	margin-left: 4%;
+	olor: inherit;
+    font-size: 17px;
+    font-weight: 100;
+    display: inline;
+    white-space: nowrap;
+    width: 5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#chat-name:hover{
+	color: red;
+	cursor: pointer;
+}

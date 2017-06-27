@@ -1,0 +1,20 @@
+<tr>
+    <td>
+        <a id='groupDetail' class='' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.view %>" style="font-size:18px">
+            <i class='fa fa-plus-circle' id='view-attach'></i>
+        </a>
+    </td>
+    <td><div><%= name %></div></td>
+    <% if(type == 1){ %>
+        <td><div><b>BB: </b><%= objname %></div></td>
+    <% }else{ %>
+        <td><div><b>Loop: </b><%= objname %></div></td>
+    <% } %> 
+    <td>
+        <div>      
+            <a id='editGroup' title='<%= json.tooltip.edit %>' style="font-size:18px"><i class='icon-pencil'></i></a>
+            <a id='messageGroup' title='<%= json.tooltip.sendEmail %>' style="font-size:18px"><i class='icon-envelope'></i></a>
+            <a id='chatGroupTeamwork' title='<%= json.tooltip.createChat %>' style="font-size:18px"><i class='icon-bubble'></i></a>
+        </div>
+    </td>
+</tr>

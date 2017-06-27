@@ -1,0 +1,35 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="fcst-instance-budget-modal" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+                <button id="closeHeader" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Forecast IPO Budgets</h4>
+           	 </div>
+           	  <div class="modal-body">
+           	  	<div class="panel-body">
+                    <div class="row">
+                        <div class="task-progress" style="float:none;">
+                            <h1>Budget</h1>
+                            <p>Select the budget for this Forecast Planning</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>Budgets:</label>
+                        <select id="budgetSelect" class="form-control col-lg-2">
+                            <% $.each(budgets, function(i, bdgt){ %>
+                                <option value="<%= bdgt.id %>"><%= bdgt.get("description") %></option>												 
+                            <% }); %>
+                        </select>
+                    </div>
+                    <br>
+				    <div id="btnsAction" class="row">
+				    	<button id='selectBudget' class='btn btn-primary' title='Select Budget' style='float:right;'>Save</button>            
+				    </div>
+           	  	</div>
+           	  </div>
+        	<div class="modal-footer">
+        		<button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

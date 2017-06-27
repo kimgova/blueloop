@@ -1,0 +1,29 @@
+<tr>
+    <td><div><%= identifier %></div></td>
+    <td><div><%= description %></div></td>
+    <td><div><%= category.name %></div></td>
+    <td><div><%= subcategory.name %></div></td>
+    <td><div><%= role.name %></div></td>
+    <td><div><%= suggested %></div></td>
+    <td><div><%= variations %></div></td>
+    <td><div><%= finalTrade %></div></td>
+    <td>
+        <div><%= negociation %></div>
+        <div>
+            <i class="fa fa-pencil pull-right editNegociation" title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.button.edit %>"></i>
+	   </div>
+    </td>
+    <td>
+        <div class="btn-group">
+          <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button"><li class="fa fa-bars"></li> <span class="caret"></span></button>
+          <ul role="menu" class="dropdown-menu linear-row-menu">
+              <li><a id="openTrend" href="#">View Historical Trend</a></li>
+              <li class="divider"></li>
+              <li><a id="openAdjus" href="#">View Adjustments Done</a></li>
+              <li class="divider"></li>
+              <li><a id="openMember" href="#">View Members with Access</a></li>
+          </ul>
+      </div>
+    </td>
+</tr>

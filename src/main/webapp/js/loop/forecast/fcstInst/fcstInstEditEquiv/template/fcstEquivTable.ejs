@@ -1,0 +1,27 @@
+<div>
+	<div>
+		<div id="pagination" class="pagination"></div>
+		<div style="float:right;">
+			<button id="addEquivBtn" type="button" disabled class="btn btn-primary btn-sm">
+				<i class="fa fa-plus"></i> <%= json.general.addNew %>
+			</button>
+		</div>
+	</div>
+	<table cellpadding='0' cellspacing='0' border='0' class='table table-striped table-hover table-bordered' id='tableForecastEquiv' style='text-align: center'>
+		<thead>
+			<tr>
+				<th class='center'>SKU</th>
+				<th class='center'>Description</th>
+                <% $.each(headers, function(i, header){ %>
+				    <th class='center'><%= header.get("name") %></th>
+                <% }); %>				
+			</tr>
+		</thead>
+		<tbody id="all">
+			<tr>
+				<td id="no-data-td" valign="top" colspan="<%= headers.length + 3 %>">No data available in table</td>
+			</tr>
+		</tbody>
+		<tbody id="display"></tbody>
+	</table>
+</div>

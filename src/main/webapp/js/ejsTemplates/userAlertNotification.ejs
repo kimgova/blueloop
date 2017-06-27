@@ -1,0 +1,28 @@
+<li>
+    <a>
+        <span class="photo notification-icon red">
+            <i class="fa fa-user"></i>
+        </span>
+		<span class="subject">
+			<% if(type == "AddedToTeam"){ %> 
+				<span class="from"><%= alertName %></span>
+			<% }else{ %> 
+				<span class="from"><%= user2Name %></span>
+			<% } %>
+   			
+   			<span class="time"><%= alertDate %></span>
+		</span>
+		<span class="message"><%= alertDescription %></span>
+	</a>
+	<% if(type == "ConnectionApproved"){ %>   
+		<a href="/blueloop-backend/user/profileWall/<%= user2 %>" id="<%= userAlertId %>" class="alertNotification btn btn-xs">
+	<% }else{ %> 
+		<% if(type == "AddedToTeam"){ %>   
+			<a href="/blueloop-backend/teamwork/list" class="alertNotification btn btn-xs" id="<%= userAlert %>">
+		<% }else{ %> 
+			<a href="/blueloop-backend/user/profileWall/<%= user2 %>" class="alertNotification btn btn-xs" id="<%= userAlert %>">
+		<% } %>
+	<% } %> 
+	   
+	  Go</a> 	
+</li>

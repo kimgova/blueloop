@@ -1,0 +1,73 @@
+<% if(tableBBTypes){ %>
+	<table cellpadding='0' cellspacing='0' border='0' class='table table-striped table-hover table-bordered' id='tableBBTypes' style='text-align: center'>
+		<thead>
+			<tr>
+				<th class='hidden-phone'>id</th>
+				<th style='width:20%' class='center'><%= json.bbType.name %></th>
+				<th class='center'><%= json.bbType.description %></th>
+				<th class='hidden-phone center'><%= json.file.name %></th>
+				<th class='hidden-phone center'><%= json.general.defaultImage %></th>
+				<th style='width:15%;' class='center'><%= json.general.action %></th>
+			</tr>
+		</thead>
+	</table>
+<% } %>
+<% if(img) { %> 
+	<img width='20px' heigth='20px' src='<%= imgPath %>'>
+<% } %> 
+<% if(editBBType){ %> 
+	<button id='editBBType' class='btn btn-primary btn-xs'>
+		<i class='fa fa-pencil'></i>
+	</button>
+<% } %> 
+<% if(deleteBBType){ %> 
+	<button id='deleteBBType' style='margin-left:4px' class='btn btn-danger btn-xs'>
+		<i class='fa fa-trash-o'></i>
+	</button>
+<% } %> 
+<% if(nameInput){ %> 
+	<input id="nameBBType" type="text" class="form-control small" value="<%= aDataName %>" required>
+<% } %> 
+<% if(descriptionInput){ %> 
+	<input id="descriptionBBType" type="text" class="form-control small" value="<%= aDataDescription %>" required>
+<% } %> 
+<% if(chooseImg){ %> 
+	<a id='chooseImgBBType' class='cursor-pointer' required><%=json.button.select %></a>
+<% } %>
+<% if(chooseImgEdit){ %> 
+	 <%=imgPath%>
+	 <figcaption>
+	 	<a id='chooseImgBBType' class='cursor-pointer'required><%=json.button.select %></a>
+	 </figcaption>
+<% } %>
+<% if(updateImgEdit){ %> 
+	<img width='20px' fileName='<%= aDataName %>' heigth='20px' src='<%=imgPath%>'>
+	<figcaption>
+		<a id='chooseImgBBType' class='cursor-pointer' required><%=json.button.select %></a>
+	</figcaption>
+<% } %>
+<% if(btnSave){ %> 
+	<button type="submit" id="saveBBType" class="btn btn-success btn-xs">
+		<i class="fa fa-check"></i>
+	</button>
+<% } %>
+<% if(btnCancel){ %> 
+	<button id="cancelBBType" class="btn btn-danger btn-xs <%= cancel %>" style="margin-left:4px" <%= dataMode %>>
+		<i class="fa fa-times"></i>
+	</button>
+<% } %>
+<% if(gridliImg){ %> 
+	<li id='gridliBBTypeImg'>
+		<img id='imgBBType' class='fancybox-image' rel='group' href='<%=imgPath%>' src='<%=imgPath%>' alt=''>
+		<caption>
+			<input type='hidden' id='filePathSelectBBTypeImg' value='<%=imgPath%>'/>
+			<input type='hidden' id='fileNameSelectBBTypeImg' value='<%= aDataName %>'/>
+		</caption>
+	</li>
+<% } %>
+<% if(selectedImg){ %>
+	<div id='selectedImgBBTypeDiv'>
+		<input id='pathselectImgBBType' type='hidden' name='Path' class='' value='<%=imgPath%>'>
+		<input id='nameSelectImgBBType' type='hidden' name='Path' class='' value='<%= aDataName %>'>
+	</div>
+<% } %>

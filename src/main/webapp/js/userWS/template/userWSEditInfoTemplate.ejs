@@ -1,0 +1,86 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalValve" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id ="closeModal" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  		        <h4 class="modal-title">Edit Your Info</h4>
+			</div>
+			
+			<div class="modal-body">
+                <form role="form" class="form-horizontal" id="formUserInfo" method="get" action="">
+
+                    <div class="form-group">
+                        <label for="firstName" class="col-lg-4 col-sm-4 control-label">First Name</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" value="<%= user.firstName %>">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName" class="col-lg-4 col-sm-4 control-label">Last Name</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" value="<%= user.lastName %>">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="col-lg-4 col-sm-4 control-label">Email</label>
+                        <div class="col-lg-6">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<%= user.email %>">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="col-lg-4 col-sm-4 control-label">Phone Number</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" value="<%= user.phone %>">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" class="col-lg-4 col-sm-4 control-label">Company</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="company" id="company" placeholder="Company" value="<%= user.company %>" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country" class="col-lg-4 col-sm-4 control-label">Country</label>
+                        <div class="col-lg-6">
+                            <select class="form-control m-bot15" name="country" id="country">
+                                <% $.each(countries, function(i, country){ %> 
+                                    <% if(user.countryId == country.id){ %>
+                                        <option value="<%= country.id %>" selected><%= country.name %></option>
+                                    <% }else{ %>
+                                        <option value="<%= country.id %>"><%= country.name %></option>
+                                    <% } %>
+                                <% }); %>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="department" class="col-lg-4 col-sm-4 control-label">Department</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="department" id="department" placeholder="Department" value="<%= user.department %>">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="occupation" class="col-lg-4 col-sm-4 control-label">Occupation</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" name="occupation" id="occupation" placeholder="Occupation" value="<%= user.occupation %>">
+                        </div>
+                    </div>
+
+                </form>
+			</div>
+
+			<div class="modal-footer">
+				<button id="btnSaveInfo" type="button" data-dismiss="modal" class="btn btn-white">Save</button>
+  				<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>	
+			</div>
+            
+		</div>
+	</div>
+</div>

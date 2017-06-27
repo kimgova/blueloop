@@ -1,0 +1,51 @@
+#steps{
+    border-right: 1px solid #e5e5e5;	
+}
+
+.mt-element-step {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border: 2px solid #95A5A6;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%!important;
+    font-size: 20px;
+    color: #95A5A6;
+}
+
+.mt-element-step-green {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border: 2px solid #26C281;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%!important;
+    font-size: 20px;
+    color: #26C281;
+}
+
+.step-line{
+	width: 0;
+    border-right: 2px dotted #95A5A6;
+    height: 40px;
+    margin-left: 27%;
+}
+
+.step-line-green{
+    width: 0;
+    border-right: 2px dotted #26C281;
+    height: 40px;
+    margin-left: 27%;
+}
+
+.bg-white {
+  background: #ffffff !important; 
+}
+
+.textContent {
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+}

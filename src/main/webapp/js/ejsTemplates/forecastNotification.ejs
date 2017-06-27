@@ -1,0 +1,12 @@
+<li>
+    <a>
+        <span class="photo notification-icon green"><i class="fa fa-tasks"></i></span>
+        <span class="subject">
+            <span class="from"> <%= alertName %></span>
+            <span class="time"> <%= alertDate %></span>
+        </span>
+        <span class="message"> <%= alertDescription %></span>
+	</a>
+    <a href="/blueloop-backend/chain/list" class="alertNotification" id="<%= userAlertId %>">Go</a>
+    <a id="" class="alertDismiss btn btn-xs userAlert<%= userAlertId %>" title="Dismiss" idalert="<%= userAlertId %>">Dismiss</a>
+</li>

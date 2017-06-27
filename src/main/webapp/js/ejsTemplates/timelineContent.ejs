@@ -1,0 +1,30 @@
+<% if(item.type == 0){ %>
+ 	<div class='activity terques'><span><i class='fa fa-reply-all'></i></span>
+<% } %>
+<% if(item.type == 1){ %>
+	<div class='activity alt purple'><span><i class='fa fa-check'></i></span>
+<% } %>
+<% if(item.type == 2){ %>
+	<div class='activity blue'><span><i class='fa fa-bullhorn'></i></span>
+<% } %>
+<% if(item.type == 3){ %>
+	<div class='activity alt green'><span><i class='fa fa-comment-o'></i></span>
+<% } %>
+
+	<div class='activity-desk'>
+		<div class='panel'>
+			<div class='panel-body'>
+				<% if(item.type == 0 || item.type == 3){ %>
+					<div class='arrow-alt'></div>
+	 			<% }else{ %>
+	 				<div class='arrow'></div>
+				<% } %>
+					
+				<i class='fa fa-clock-o'></i>
+				<h4><%= item.creationDate %></h4>
+				<p><b><%= user.firstName %> <%= user.lastName %></b></p>
+				<p><%= item.message %></p>
+			</div>
+		</div>
+	</div>
+</div>

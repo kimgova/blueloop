@@ -1,0 +1,17 @@
+<li class="animated fadeInLeft media">
+    <a class="pull-left" href="#">
+        <img class="media-object" height="48" width="48" alt="Generic placeholder image" src="<%= urlUserPic %>">
+    </a>
+    <div class="pull-left media-body chat-pop">
+        <h4 class="media-heading">
+            <%= user %> 
+            <span class="pull-right">
+                <i class="fa fa-clock-o"></i>
+                <abbr id="curr-time" class="timeago" title="<%= curr_time %>" >
+                    <%= curr_time %>
+                </abbr>
+            </span>
+        </h4>
+        <%= message %>
+    </div>
+</li>

@@ -1,0 +1,13 @@
+<div id="bb-right-panel">
+    <div id="info-panel" class="">
+        <div id="default-info">
+            <img src="/blueloop-backend/static/images/info.png" alt="" />
+            <h4>Please select a Building Block to view its details!</h4>
+        </div>
+    </div>
+    <% if(creationPermission == true){ %> 
+        <a href="/blueloop-backend/buildingBlock/create" id="add_btn" class="circular-red-btn">
+            <i class="" id="cross">+</i>
+        </a> 
+    <% } %>
+</div>

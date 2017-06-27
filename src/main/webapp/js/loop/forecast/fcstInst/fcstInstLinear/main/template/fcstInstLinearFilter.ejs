@@ -1,0 +1,36 @@
+<div class="col-lg-12">
+    <div id="categoryFilters">
+        <div class="col-lg-3">
+            <label>Category:</label>
+            <select id="catFilter" class="form-control">
+                <option value="0" selected>All Categories</option>
+                <% $.each(categories, function(i, category){ %>
+                    <option value="<%= category.id %>"><%= category.name %></option>												 
+                <% }); %>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <label>Subcategory:</label>
+            <select id="subCatFilter" class="form-control col-lg-2">
+                <option value="0" selected>All Subcategories</option>
+                <% $.each(subCategories, function(i, subcategory){ %>
+                    <option value="<%= subcategory.id %>"><%= subcategory.name %></option>												 
+                <% }); %>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <label>Roles:</label>
+            <select id="rolesFilter" class="form-control col-lg-2">
+                <option value="0" selected>All Roles</option>
+                <% $.each(roles, function(i, rol){ %>
+                    <option value="<%= rol.id %>"><%= rol.get("name") %></option>												 
+                <% }); %>
+            </select>
+        </div>  
+    </div>
+    <div id="roleFilters" class="col-lg-6" style="margin-top:5px;">
+        <label>Custom Filters:</label>
+        <br>
+        <div id="filters"></div>
+    </div>
+</div>

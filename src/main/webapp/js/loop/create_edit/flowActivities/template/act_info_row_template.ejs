@@ -1,0 +1,42 @@
+<div class="col-lg-12 act_row_info row">
+    <div class="col-lg-4">
+        <div class="col-lg-5">
+            <img  width="30px" src="<%= model.get('imgURI') %>">
+        </div>                
+        <div class="col-lg-7 no_padding">
+            <label class=""><%= model.get('description') %></label>
+        </div>                
+    </div>                
+    <div class="col-lg-4">
+        <select class="form-control m-bot15 selectpicker show-menu-arrow sp1" data-live-search="true" name="act_responsible" id="act_responsible">
+        <% $.each(team_members, function(i, item){ %>
+            <% if(item.id == model.get("responsible")){ %>
+                <option value="<%= item.id %>" selected><%= item.name %></option>
+             <% } else { %>
+                <option value="<%= item.id %>"><%= item.name %></option>
+             <% }%>
+        <% }); %>
+        </select>
+    </div>                
+    <div class="col-lg-4">
+        <div class="col-lg-5 no_padding">
+            <% if(model.get("leadTime") != 0){ %>
+                <input type="text" class="form-control" name="act_lead_time" id="act_lead_time" value="<%= model.get('leadTime') %>">
+            <% } else { %>
+                <input type="text" class="form-control" name="act_lead_time" id="act_lead_time" value="">
+            <% }%>
+        </div>
+        <div class="col-lg-7" style="padding-left: 6px;">
+            <select class="form-control m-bot15 selectpicker show-menu-arrow sp2" name="select_leadTimeType" id="select_leadTimeType">
+                <% $.each(LEADTIME_TYPES, function(i, item){ %>
+                    <% if(item.value == model.get("leadTimeType")){ %>
+                        <option value="<%= item.value %>" selected><%= item.text %></option>
+                    <% } else { %>
+                        <option value="<%= item.value %>"><%= item.text %></option>
+                    <% }%>
+                <% }); %>
+            </select>
+        </div>
+        <label class="error invisible"></label>
+    </div>                
+</div>

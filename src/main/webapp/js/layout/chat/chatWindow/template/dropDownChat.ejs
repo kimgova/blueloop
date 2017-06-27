@@ -1,0 +1,10 @@
+<div class="btn-group dropup chat-wdgt-group" style="left:<%= left %>px">
+    <button class="btn btn-default" type="button"><i class="fa fa-comment"></i><%= total %></button>
+    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"><span class="caret"></span></button>
+    <ul role="menu" class="dropdown-menu">
+        <% $.each(chatList, function(i, chat){ %>
+            <li class="chatGrouped" id="<%= chat.id %>"><a href="#"><%= chat.title %></a></li>
+            <li class="divider"></li>
+        <% }); %>
+    </ul>
+</div>

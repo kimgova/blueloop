@@ -1,0 +1,111 @@
+<% var userEditionDisabled = "disabled"; %>
+<% if ((currentLoggedUser == owner.id)){ %> <!-- || (currentLoggedUser == creator.id) -->
+    <% userEditionDisabled = ""; %>
+<% }%>
+        
+<form class="cmxform form-horizontal tasi-form" id="static-bb-form" method="get" novalidate="novalidate">	
+    <div class="panel-body">
+		<input class="form-control" type="hidden" name="id" id="id" value="<%= id %>"/>
+		<input class="form-control" type="hidden" name="type" id="type" value="<%= type %>"/>
+        <input class="form-control" type="hidden" name="category" id="category" value="<%= category %>"/>
+		<input class="form-control" type="hidden" name="fileNameSelect" id="fileNameSelect" value=""/>
+		
+		<div class="form-group">
+            <label for="name" class="col-lg-2 col-sm-2 control-label">Icon</label>
+            <div class="col-lg-10 col-sm-10">
+                                       
+                <div class="col-lg-12 col-sm-12">            
+                    <img id='bb-thumb' style="height: 70px;float:left;margin-left:1%;" src="" />
+                </div>
+                
+                <% if(userEditionDisabled == ""){ %> 
+                    <div class="col-lg-12 col-sm-12">
+                        <a id='selectImage' class='' <%= userEditionDisabled %> >Change Image</a>                        
+                    </div>
+                <% }%>
+
+            </div>
+        </div>
+		
+		<div class="form-group">
+			<label for="name" class="col-lg-2 col-sm-2 control-label">Name</label>
+			<div class="col-lg-10 col-sm-10">
+				<input type="text" class="form-control staticField" name="name" id="name" <%= disabled %> <%= userEditionDisabled %> value="<%= name %>" required/>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="description" class="col-lg-2 col-sm-2 control-label">Description</label>
+			<div class="col-lg-10 col-sm-10">
+				<input class="form-control staticField" type="text" name="description" id="description" <%= disabled %> <%= userEditionDisabled %> value="<%= description %>" required/>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="companyName" class="col-lg-2 col-sm-2 control-label">Company Name</label>
+			<div class="col-lg-10 col-sm-10">
+				<input class="form-control staticField" type="text" name="companyName" id="companyName" <%= disabled %> <%= userEditionDisabled %> value="<%= companyName %>" required/>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="phoneNumber" class="col-lg-2 col-sm-2 control-label">Phone Number</label>
+			<div class="col-lg-10 col-sm-10">
+				<div class="input-group m-bot15">
+		        	<span class="input-group-addon">   
+		        		<select class="selectAreaCode" id="selectAreaCode" name="selecAreaCode">	
+		        		<% $.each(countries, function(j, country){ %>
+                            <option value="<%= country.areaCode %>"><%= country.name %> (<%= country.areaCode %>)</option>
+                        <% }); %>
+						</select>						
+						<input type="text" class="selectAreaCode" name="phoneNumberAreaCode" id="phoneNumberAreaCode" readonly value="<%= phoneNumberAreaCode %>" required/>			       	
+		            </span>
+		            <input type="text" class="form-control staticField" name="phoneNumber" id="phoneNumber" <%= disabled %> <%= userEditionDisabled %> value="<%= phoneNumber %>" required/>
+		        </div>					
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="emailAddress" class="col-lg-2 col-sm-2 control-label">Email</label>
+			<div class="col-lg-10 col-sm-10">
+				<input type="text" class="form-control staticField" name="emailAddress" id="emailAddress" <%= disabled %> <%= userEditionDisabled %> value="<%= emailAddress %>" required/>
+			</div>
+		</div>
+
+	    <% if(edit){ %>
+		<div class="form-group">
+			<label for="userCreator" class="col-lg-2 col-sm-2 control-label">Created by</label>
+			<div class="col-lg-10 col-sm-10">
+				<input type="text" class="form-control staticField" name="userCreator" id="userCreator" disabled value="<%=creator.name%>" required/>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="ownership" class="col-lg-2 col-sm-2 control-label">Ownership</label>
+            <div class="col-lg-10 col-sm-10">
+                <select class="form-control staticField" name="ownership" <%= disabled %> <%= userEditionDisabled %> id="ownership">
+                <% $.each(community, function(i, us){ %> 
+                    <% if (us.id == owner.id){ %>
+                    <option value="<%= us.id %>" selected><%= us.firstName + ' ' + us.lastName %></option>
+                    <% }else{ %>
+                    <option value="<%= us.id %>"><%= us.firstName + ' ' + us.lastName %></option>
+                    <% } %>
+                <% }); %>
+                </select>
+            </div>
+		</div>
+	   <% }%>
+       
+       <% if(userEditionDisabled == ""){ %> 
+            <div class="form-group">
+                <div class="col-lg-12 col-lg-12">
+                    <button id="saveBB" class="btn btn-white" type="submit" style="float:right;">Save</button>
+                </div>
+            </div>
+       <% }%> 
+    </div>
+            
+   
+</form>
+<div style="clear: both;"></div>
+

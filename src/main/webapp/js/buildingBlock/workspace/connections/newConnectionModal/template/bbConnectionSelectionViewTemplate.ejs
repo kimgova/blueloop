@@ -1,0 +1,94 @@
+<div id="modal-selection">
+	<div class="modal-panel" id="left-panel">
+		<img src="<%= path %>" alt="<%= name %>" class="grid-item-pic"/>
+		<div class="item-description">
+		  <h4><%= name %></h4>
+	    <p>created by: <%= ownerName %></p>
+	    <p>company: <%= company %></p>
+		</div>
+	</div>
+  <div class="modal-panel">
+    <ul class="modal-permissions" id="category-list">
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="1">General
+          </label>
+        </div>
+      </li>
+<!--       <li> -->
+<!--         <div class="checkbox"> -->
+<!--           <label> -->
+<!--             <input type="checkbox" id="permission-checkbox" value="2">Share With -->
+<!--           </label> -->
+<!--         </div> -->
+<!--       </li> -->
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="3">Risks
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="4">
+            <% if(category == "Stock"){ %>
+                Input/Output
+            <% }else{ %>
+                Activities
+            <% } %>
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="5">Calendar
+          </label>
+        </div>
+      </li>
+<!--       <li> -->
+<!--         <div class="checkbox"> -->
+<!--           <label> -->
+<!--             <input type="checkbox" id="permission-checkbox" value="6">Costs -->
+<!--           </label> -->
+<!--         </div> -->
+<!--       </li> -->
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="7">Teamwork
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="8">Operating parameter
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="9">Attachments
+          </label>
+        </div>
+      </li>
+       <% if(category == "Stock"){ %>
+      <li>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="permission-checkbox" value="10">Inventory
+          </label>
+        </div>
+      </li>
+       <% }%>
+
+    </ul>
+
+    <a id="send-btn" data-dismiss="modal" class="btn btn-default btn-lg">Send Request</a>
+	</div>
+</div>

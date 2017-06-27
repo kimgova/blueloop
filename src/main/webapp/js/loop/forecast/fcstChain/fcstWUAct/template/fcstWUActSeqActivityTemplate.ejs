@@ -1,0 +1,40 @@
+<li class="list-primary">
+	<i class=" fa fa-ellipsis-v"></i>	
+	
+	<div class="task-title">
+		<input class="idActivity" type="hidden" value="<%= model.id %>"/>
+		<span class="task-title-sp" title="<%= model.name %>"><b>( <%= model.tag %> )</b> - 
+			<% if(model.name.length < 30){ %>
+				<%= model.name %>              
+	        <% }else{ %>
+	        	<%= model.name.substring(0, 29) %>...
+	        <% } %>
+        </span>   
+		<div class="pull-right">
+			 
+			<div class="dependency-container form-control">
+				<label><%= json.forecast.depends %>: </label>
+				<select multiple="multiple" class="dependency-select" id="select-<%= model.id %>">
+
+                    <% $.each(select, function(i, item){ %>
+                    	<% var finded = false; %>
+                    	<% $.each(model.dependencies, function(j, dependency){ 
+                    		if(dependency.id == item.id){ 
+                    			finded = true;
+                    		} 
+                    	}); %>
+
+						<% if(item.attributes.id != model.id){ %>
+	                    	<% if(finded){ %>
+	                    		<option value="<%= item.attributes.id %>" selected><%= item.attributes.tag %></option>
+	                    	<% }else{ %>
+	                    		<option value="<%= item.attributes.id %>"><%= item.attributes.tag %></option>
+	                    	<% } %>
+                    	<% } %>
+                    <% }); %>
+
+				</select>		
+			</div>  		
+		</div>                                              
+	</div>
+</li>

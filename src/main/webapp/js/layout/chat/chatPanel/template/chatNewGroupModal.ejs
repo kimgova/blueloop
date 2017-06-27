@@ -1,0 +1,54 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="createChatGroup" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title" id="title-modal"><%= json.chat.createChatGroup %></h4>
+                <label style="display:none;" id="cbbId"></label>
+            </div>
+            <div class="modal-body">
+				<input id="idChatHidden" name="idChatHidden" type="hidden" value="<%= id %>"/>
+                <div class="form-group">
+                    <label for="name" class="col-lg-4 col-sm-6 control-label lbl_editwg" ><%= json.chat.chatTitle %>:</label>
+                    <div class="col-lg-12 col-sm-12">
+                        <input id="nameChatGroup" name="nameChatGroup" type="text" class="form-control" value="<%= name %>" required>
+                    </div>
+                    <div class="col-lg-12 col-sm-12">
+                        <label id="nameChatGroupError" class="error" ></label>
+                    </div>
+                </div>
+                <br>
+                <div class="ms-option">
+                    <div class="ms-optionSelect">
+                        <a id="select-all" href="#"><%= json.general.selectAll %> </a>
+                    </div>
+                    <div class="ms-optionDeselect">
+                        <a id="deselect-all" href="#"><%= json.general.deselectAll %> </a>
+                    </div>
+                </div>
+
+                <div class="user-select">
+                    <select id='selectUsers' multiple='multiple'>
+                    <% $.each(userList, function(i, user){ %>
+                        <option value="<%= user.id %>" <%= user.selected %>><%= user.firstName %></option>
+                    <% }); %>
+                    </select>
+                </div>					
+                <br>
+
+                <div class="col-lg-12 col-sm-12">
+                    <label id="membersChatGroupError" class="error" ></label>
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer" id="modal-footer-btns">
+                <% if (!edit) { %>
+                    <button id="btnSaveGroup" class="btn btn-primary">Create Chat</button>
+                <% }else{ %>
+                    <button id="btnSaveEditGroup" class="btn btn-primary">Edit Chat</button>	
+                <% } %>
+                <button id="btnCancel" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>	
+        </div>
+    </div>
+</div>

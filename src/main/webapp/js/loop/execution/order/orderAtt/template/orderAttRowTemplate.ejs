@@ -1,0 +1,21 @@
+<tr>
+    <td><div><%= fileName %></div></td>
+    <td><div><%= description %></div></td>
+    <td><div><%= uploader %></div></td>
+    <td><div><%= creationDate %></div></td>
+    <td>
+        <div>
+            <button id='downloadAttachment' class='btn btn-info btn-xs'>
+                <i class='fa fa-download'></i>
+            </button>
+            <% if(isResponsible){ %>
+                <button id='editAttachment' class='btn btn-primary btn-xs'>
+                    <i class='fa fa-pencil'></i>
+                </button>
+                <button id='deleteAttachment' class='btn btn-danger btn-xs'>
+                    <i class='fa fa-trash-o'></i>
+                </button>
+            <% } %>
+        </div>
+    </td>
+</tr>

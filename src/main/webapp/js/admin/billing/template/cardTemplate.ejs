@@ -1,0 +1,80 @@
+<div class="row">
+    <h2>Credit Card Information</h2>
+    <% if(emptyInfo){ %>
+        <span style="padding-left:15px;color:#F3565D">*Please fill this form to continue</span>
+    <% } %>
+    <form id="myCCForm" class="cmxform form-horizontal tasi-form" action="" method="post">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="ccNo" class="col-lg-2 col-sm-2 control-label">Card Number:</label>
+                <div class="col-lg-4 col-sm-10">
+                    <input type="text" class="form-control staticField" id="ccNo" value="<%= cardNumber %>" placeholder="Card Number" autocomplete="off" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="expMonth" class="col-lg-2 col-sm-2 control-label">Expiration Date (MM/YYYY):</label>
+                <div class="col-lg-2 col-sm-10">
+                    <input type="text" class="form-control staticField" id="expMonth" value="<%= month %>" placeholder="MM" autocomplete="off" size="2" required/>
+                </div>
+                <div class="col-lg-2 col-sm-10">
+                    <input type="text" class="form-control staticField" id="expYear" value="<%= year %>" placeholder="YYYY" autocomplete="off" size="4" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cvv" class="col-lg-2 col-sm-2 control-label">CVC:</label>
+                <div class="col-lg-2 col-sm-10">
+                    <input type="text" class="form-control staticField" id="cvv" value="<%= cvc %>" placeholder="CVC" autocomplete="off" required/>
+                </div>
+            </div>
+            <% if(emptyInfo){ %>
+                <button type="submit" id="addCCInfo" class="btn btn-white">Add Credit Card</button>
+            <% }else{ %>
+                <button type="submit" id="editCCInfo" class="btn btn-white">Edit Credit Card</button>
+            <% } %>
+        </div>
+    </form>
+    
+    <h2>Billing Information</h2>
+    <form id="billingForm" class="cmxform form-horizontal tasi-form" action="" method="post">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="name" class="col-lg-2 col-sm-2 control-label">Full Name:</label>
+                <div class="col-lg-6 col-sm-10">
+                    <input type="text" class="form-control staticField" id="name" value="" placeholder="Full Name" autocomplete="off" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address" class="col-lg-2 col-sm-2 control-label">Street Address</label>
+                <div class="col-lg-6 col-sm-10">
+                    <input type="text" class="form-control staticField" id="address" value="" placeholder="Street Address" autocomplete="off" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="city" class="col-lg-2 col-sm-2 control-label">City</label>
+                <div class="col-lg-6 col-sm-10">
+                    <input type="text" class="form-control staticField" id="city" value="" placeholder="City" autocomplete="off" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="state" class="col-lg-2 col-sm-2 control-label">State</label>
+                <div class="col-lg-6 col-sm-10">
+                    <input type="text" class="form-control staticField" id="state" value="" placeholder="State" autocomplete="off" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="zip" class="col-lg-2 col-sm-2 control-label">Zip</label>
+                <div class="col-lg-6 col-sm-10">
+                    <input type="text" class="form-control staticField" id="zip" value="" placeholder="Zip" autocomplete="off" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="country" class="col-lg-2 col-sm-2 control-label">Country</label>
+                <div class="col-lg-6 col-sm-10">
+                    <input type="text" class="form-control staticField" id="country" value="" placeholder="Country" autocomplete="off" required/>
+                </div>
+            </div>
+            <button type="submit" id="sendBillingInfo" class="btn btn-white">Add Billing Info</button>
+        </div>
+    </form>
+</div>
+

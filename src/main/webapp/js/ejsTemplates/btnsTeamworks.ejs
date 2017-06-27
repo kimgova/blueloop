@@ -1,0 +1,15 @@
+<% if(type == "imageDetail"){ %>   
+	<img class='groupDetail' src='../images/img/details_open.png'>
+<% } %> 
+
+<% if(type == "editGroup"){ %>   
+	<button id='editGroup' title='<%= json.tooltip.edit %>' class='btn btn-primary btn-xs'><i class='fa fa-list'></i></button>
+<% } %>
+
+<% if(type == "messageGroup"){ %>   
+ 	<button id='messageGroup' title='<%= json.tooltip.sendEmail %>' class='btn btn-default btn-xs'><i class='fa fa-envelope'></i></button>
+<% } %> 
+
+<% if(type == "chatGroup"){ %>   
+ 	<button class='chatGroupTeamwork btn btn-success btn-xs' title='<%= json.tooltip.createChat %>'><i class='fa fa-comments'></i></button>
+<% } %> 

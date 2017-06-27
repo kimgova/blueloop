@@ -1,0 +1,95 @@
+<% if(tableFields){ %>
+	<table cellpadding='0' cellspacing='0' border='0' class='table table-striped table-hover table-bordered' id='tableBBFields' style='text-align: center'>
+		<thead>
+			<tr>
+				<th class='hidden-phone'><%=json.file.id%></th>
+				<th style='width:20%' class='center'><%=json.field.name%></th>
+				<th class='center'><%=json.field.type%></th>
+				<th class='center'><%=json.field.unitMeasure%></th>
+				<th class='center'><%=json.field.required%></th>
+				<th style='width:15%;' class='center'>Action</th>
+			</tr>
+		</thead>
+	</table>
+<% } %>
+
+<% if(btnsEdit){ %>
+	<button id='editField' class='btn btn-primary btn-xs'><i class='fa fa-pencil'></i></button>
+	<button id='deleteField' style='margin-left:4px' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i></button>
+<% } %>
+
+<% if(descriptionField){ %>
+	<form id="descriptionFieldForm" class="cmxform form-horizontal">
+		<div class="form-group">
+			<div class="col-lg-12">
+				<input id="descriptionField" type="text" class="form-control small" value="<%= description %>" required>
+			</div>
+		</div>
+	</form>
+<% } %> 
+
+<% if(typeField){ %>
+	<form id="typeFieldForm" class="cmxform form-horizontal">
+		<div class="form-group">
+			<div class="col-lg-12">
+				<select class="form-control small" id="typeField">
+					<option value="text"	<% if(type == "text"){ %>	selected <% } %> ><%=json.field.typeText%></option>
+					<option value="number"	<% if(type == "number"){ %> selected <% } %> ><%=json.field.typeNumber%></option>
+					<option value="date"	<% if(type == "date"){ %>	selected <% } %> ><%=json.field.typeDate%></option>
+				</select>
+			</div>
+		</div>
+	</form>
+<% } %> 
+
+<% if(unitField){ %>
+	<form id="unitFieldForm" class="cmxform form-horizontal">
+		<div class="form-group">
+			<div class="col-lg-12">
+				<select class="form-control small" id="unitField" <% if(type != "number"){ %> disabled <% } %> >
+					<option value="" 			<% if(unit == ""){ 			%> selected <% } %>	>	<%=json.field.unitMeasure1%>	</option>
+					<option value="grams"		<% if(unit == "grams"){ 	%> selected <% } %> >	<%=json.field.unitMeasure2%>	</option>
+					<option value="kilograms"	<% if(unit == "kilograms"){ %> selected <% } %>	>	<%=json.field.unitMeasure3 %>	</option>
+					<option value="pounds"		<% if(unit == "pounds"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure4%>	</option>
+					<option value="tons"		<% if(unit == "tons"){ 		%> selected <% } %>	>	<%=json.field.unitMeasure5%>	</option>
+					<option value="units"		<% if(unit == "units"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure6%>	</option>
+					<option value="liters"		<% if(unit == "liters"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure7%>	</option>
+					<option value="gallons"		<% if(unit == "gallons"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure8%>	</option>
+					<option value="barrels"		<% if(unit == "barrels"){	%> selected <% } %>	>	<%=json.field.unitMeasure9%>	</option>
+					<option value="boxes"		<% if(unit == "boxes"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure10%>	</option>
+					<option value="meters"		<% if(unit == "meters"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure11%>	</option>
+					<option value="cubic meters"<% if(unit == "cubic meters"){ %> selected <% } %>>	<%=json.field.unitMeasure12%>	</option>
+					<option value="rolls"		<% if(unit == "rolls"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure13%>	</option>
+					<option value="other"		<% if(unit == "other"){ 	%> selected <% } %>	>	<%=json.field.unitMeasure14%>	</option>
+				</select>
+			</div>
+		</div>
+	</form>
+<% } %> 
+
+<% if(requiredField){ %>
+	<form id="requiredFieldForm" class="cmxform form-horizontal">
+		<div class="form-group">
+			<div class="col-lg-12">
+				<select class="form-control small" id="reqField">
+					<option value="true"  <%if(required){ %> selected <%}%> >	<%=json.field.requiredYes%> </option>
+					<option value="false" <%if(!required){%> selected <%}%> >	<%=json.field.requiredNo%>  </option>
+				</select>
+			</div>
+		</div>
+	</form>
+<% } %> 
+
+<% if(btnsAction){ %>
+	<button type="submit" id="saveField" class="btn btn-success btn-xs">
+		<i class="fa fa-check"></i>
+	</button>
+	<button id="cancelField" class="btn btn-danger btn-xs <%= cancel %>"
+		style="margin-left: 4px" <%=dataMode%>>
+		<i class="fa fa-times"></i>
+	</button>
+<% } %> 
+
+<% if(labelError){ %>
+	<label class="error"><%= msgError %></label>
+<% } %>

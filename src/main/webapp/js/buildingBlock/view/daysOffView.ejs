@@ -1,0 +1,114 @@
+<% if(tableDayOff){ %>
+	<div class='row'>
+		<div class='col-lg-12'>
+			<section class='panel'>
+				<div class='adv-table editable-table'>
+					<div class='clearfix'>
+						<div class='btn-group'>
+							<button id='dayOffNew' class='btn green'>
+								<%=json.general.addNew%>
+								<i class='fa fa-plus'></i>
+							</button>
+						</div>
+					</div>
+					<div class='space15'></div>
+					<div id='dayOffByBB'>
+						<table class='table table-bordered table-striped table-hover' id='tableDayOffByBB'>
+							<thead>
+								<tr>
+									<th><%=json.bb.daysOffId%></th>
+									<th><%=json.bb.id%></th>
+									<th width='30%'><%=json.general.reason%></th>
+									<th><%=json.bb.startDate%></th>
+									<th><%=json.bb.finishDate%></th>
+									<th width='15%'><%=json.general.action%></th>
+									<th>reasonId</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+<% } %>
+
+<% if(editDayOff){ %>
+    <a  id='editDayOff' class="icon-pencil"></a>
+<% } %>
+
+<% if(deleteDayOff){ %>
+    <a  id='deleteDayOff' class="icon-trash" style='margin-left: 4px'></a>
+<% } %>
+
+<% if(nameInputForm){ %>
+    <form id="nameDayOffForm" class="cmxform form-horizontal">
+        <div class="form-group">
+            <div class="col-lg-12">           
+                <select id="reasonSelect" class="form-control small">
+                    <% $.each(DAYOFF_REASON, function(i, item){ %>
+                        <% var showSelected = ""; %>
+                        <% if(reasonId == item.value){ %>
+                            <% showSelected = "selected"; %>
+                        <% } %>
+                        <option value="<%=item.value%>" <%=showSelected%> ><%=item.text%></option>
+                                
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+	</form>
+	
+<% } %>
+
+<% if(startDateForm){ %>
+	<form id="startDateForm" class="tasi-form form-horizontal">
+		<div class="form-group">
+            <div id="startDate" class="col-md-3 col-xs-11">
+                <input id="inputStartDate" type="text" readonly="" value="" size="16" class="form_datetime form-control start" required>
+            </div>
+		</div>
+	</form>
+<% } %>
+
+<% if(finishDateForm){ %>
+	<form id="finishDateForm" class="tasi-form form-horizontal">
+		<div class="form-group">
+            <div id="finishDate" class="col-md-3 col-xs-11">
+				<input id="inputFinishDate" type="text" readonly="" value="" size="16" class="form_datetime form-control end" required>
+            </div>
+        </div>
+	</form>
+<% } %>
+
+<% if(saveDayOff){ %>
+    <a  id='saveDayOff' class="icon-check"></a>
+<% } %>
+
+<% if(cancelDayOff){ %>
+    <a  id='cancelDayOff' class="icon-close <%= cancel %>" style="margin-left: 4px"  <%= dataMode%> ></a>
+<% } %>
+
+<% if(labelError){ %>
+	<label class="error"><%= msgError %></label>
+<% } %>
+
+<% if(editStartDate){ %>
+	<form id="startDateForm" class="tasi-form form-horizontal">
+		<div class="form-group">
+            <div id="startDate" class="col-md-3 col-xs-11">
+				<input id="inputStartDate" type="text" readonly="" value="<%=date%>" size="16" class="form-control dpYears start" required>
+            </div>
+        </div>
+	</form>
+<% } %>
+
+<% if(editFinishDate){ %>
+	<form id="finishDateForm" class="tasi-form form-horizontal">
+		<div class="form-group">
+            <div id="finishDate" class="col-md-3 col-xs-11">
+				<input id="inputFinishDate" type="text" readonly="" value="<%=date%>" size="16" class="form-control dpYears end" required>
+            </div>
+        </div>
+	</form>
+<% } %>

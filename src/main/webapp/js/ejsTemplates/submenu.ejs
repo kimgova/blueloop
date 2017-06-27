@@ -1,0 +1,26 @@
+<div class='subMenuBB' id='submenu<%= pid %>'> 
+	<ul class=''>
+	<% if(isExec){ %> 
+		<li>
+			<a id='viewCBBOrder' onclick='SubmenuController.viewCBBOrders("<%= pid %>")'><%= json.submenu.viewOrders %></a>
+		</li>
+		<li>
+			<a id='createChat' onclick='SubmenuController.createChat("<%= pid %>", <%= ptype %>)'><%= json.submenu.createChat %></a>
+		</li>
+		<li>
+			<a id='viewCBBAlert' onclick='SubmenuController.viewCBBAlerts("<%= pid %>")'><%= json.submenu.viewAlerts %></a>
+		</li>
+		<li>
+			<a id='viewAttach' onclick='SubmenuController.viewAttachments("<%= pid %>")'><%= json.submenu.viewAttachments %></a>
+		</li>
+		<li>
+			<a id='viewConnectedBB' onclick='SubmenuController.viewConnectedBB("<%= formId %>")'><%= connectedLabel %></a>
+		</li>
+		
+	<% }else{ %>
+		<li>
+			<a id='viewConnectedBB' onclick='SubmenuController.viewConnectedBB("<%= formId %>")'><%= connectedLabel %></a>
+		</li>
+	<% } %>
+	</ul>
+</div>

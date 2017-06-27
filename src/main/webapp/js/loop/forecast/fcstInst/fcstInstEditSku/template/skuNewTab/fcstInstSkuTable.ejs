@@ -1,0 +1,31 @@
+<div>
+	<div>
+		<div id="pagination" class="pagination"></div>
+		<div style="float:right;">
+			<button id="addNewSku" type="button" class="btn btn-primary btn-sm">
+				<i class="fa fa-plus"></i> <%= json.general.addNew %>
+			</button>
+		</div>
+	</div>
+	<br>
+	<table cellpadding='0' cellspacing='0' border='0' class='table table-striped table-hover table-bordered' id='tableFCPSkuList' style='text-align: center'>
+		<thead>
+			<tr>
+				<th class='center'>Sku</th>
+				<th class='center'>Description</th>
+				<th class='center'>Type</th>
+				<th class='center'>Family</th>
+				<th class='center'>Brand</th>
+				<th class='center'>Promotion</th>
+				<th class='center action-column'><%= json.general.action %></th>
+			</tr>
+		</thead>
+		<tbody id="tbodySku">
+			<tr>
+				<td id="no-data-td" valign="top" colspan="4">No data available in table</td>
+			</tr>
+		</tbody>
+		<tbody id="display"></tbody>
+	</table>
+
+</div>

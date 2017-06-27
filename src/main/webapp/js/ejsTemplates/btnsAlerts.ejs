@@ -1,0 +1,51 @@
+<% if(type == "edit"){ %>   
+ 	<button id='editCBBAlert' class='btn btn-primary btn-xs'><i class='fa fa-pencil'></i></button>
+<% } %> 
+
+<% if(type == "delete"){ %>   
+	<button id='deleteCBBAlert' style='margin-left:4px' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i></button>
+<% } %>
+
+<% if(type == "save"){ %>   
+	<button type="submit" id="saveAlert" class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+<% } %>  
+
+<% if(type == "cancelNew"){ %>   
+	<button id="cancelAlert" class="btn btn-danger btn-xs" style="margin-left:4px" data-mode="new"><i class="fa fa-times"></i></button>
+<% } %> 
+
+<% if(type == "cancelEdit"){ %>   
+	<button id="cancelAlert" class="btn btn-danger btn-xs cancel" style="margin-left:4px"><i class="fa fa-times"></i></button>
+<% } %> 
+
+<% if(type == "nodata"){ %>   
+	<div id="nodata" class="form-group"><label class="control-label">No data found</label></div>	
+<% } %>
+
+<% if(type == "inputName"){ %>   
+	<form id="nameAlertForm" class="cmxform form-horizontal">
+		<div class="form-group">
+			<div class="col-lg-12">
+				<input id="nameAlert" type="text" class="form-control small" value="<%= value %>" required>
+			</div>
+		</div>
+	</form>
+<% } %>
+ 
+<% if(type == "inputDescription"){ %>   
+	<form id="descriptionAlertForm" class="cmxform form-horizontal">
+		<div class="form-group">
+			<div class="col-lg-12">
+				<input id="descriptionAlert" type="text" class="form-control small" value="<%= value %>" required>
+			</div>
+		</div>
+	</form>
+<% } %> 
+
+<% if(type == "errorName"){ %>   
+	<label class="error" for="nameAlert">This field is required.</label>
+<% } %> 
+
+<% if(type == "errorDescription"){ %>   
+	<label class="error" for="descriptionAlert">This field is required.</label>
+<% } %> 

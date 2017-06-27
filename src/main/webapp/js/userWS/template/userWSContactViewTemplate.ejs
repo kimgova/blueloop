@@ -1,0 +1,12 @@
+<% if(currentUser) { %>
+    <div class="ws-element">
+        <a href="/blueloop-backend/user/profile"><img src="<%= path %>" alt="" class="ws-pic ws-contact-pic"/></a>
+<% } else if (partners){ %>
+    <div class="ws-element">
+        <a href="/blueloop-backend/user/profileWall/<%= id %>"><img src="<%= path %>" alt="" class="ws-pic ws-contact-pic"/></a>
+<% } else { %>
+    <div class="ws-element not_partners">
+        <div><img src="<%= path %>" alt="" class="ws-pic ws-contact-pic"/></div>
+<% } %>
+        <div class="ws-contact-name"><%= firstName %> <%= lastName %></div>
+    </div>

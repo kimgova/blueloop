@@ -1,0 +1,19 @@
+<tr>
+    <td><div><img id="" src="<%=image%>" style="border-radius: 50%;height: 36px;width: 36px;"></div></td>
+    <td><div><%=name%></div></td>
+    <td><div><%=email%></div></td>
+    <td><div class="permissions"></div></td>
+    <td><div><%=lastLogin%></div></td>
+    <td><div><%=userStatus%></div></td>
+    <td>
+        <div class="btnsAction">
+        <% if (userStatus =="ENABLED") { %>
+            <a id='resetPass'  title='<%= json.admin.resetPass %>' style="font-size:18px;"> <i class="icon-lock"></i></a>
+            <a id='editUser'   title='<%= json.admin.editUser %>' style="font-size:18px"><i class='icon-pencil'></i></a>
+            <a id='deleteUser' title='<%= json.admin.deleteUser %>' style="font-size:18px"> <i class="icon-trash"></i></a>
+        <% }else{ %>
+            <a id='activateUser' title='<%= json.admin.activateUser %>' style="font-size:18px"><i class='icon-power'></i></a>
+        <% } %>
+        </div>
+    </td>
+</tr>

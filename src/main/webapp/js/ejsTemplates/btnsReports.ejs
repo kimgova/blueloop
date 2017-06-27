@@ -1,0 +1,11 @@
+<% if(type == "errorStart"){ %>   
+ 	<label class="error">Start date is required.</label>
+<% } %> 
+
+<% if(type == "errorEnd"){ %>   
+ 	<label class="error" style="padding-left:15px;">End rate is required.</label>
+<% } %> 
+
+<% if(type == "errorDates"){ %>   
+ 	<label class="error">End date should be no earlier than the start date.</label>
+<% } %> 

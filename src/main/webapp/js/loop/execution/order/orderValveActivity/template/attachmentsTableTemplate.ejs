@@ -1,0 +1,26 @@
+<% if(isResponsible){ %>
+        
+    <div class="row fileupload-buttonbar" style='margin-left: 0px'>
+        <span class="btn btn-default fileinput-button">
+            <span><%= json.general.addNew %> <i class="fa fa-plus"></i></span>
+            <form method="post" enctype="multipart/form-data" id="formNewAttach">  
+                <input id='addAttachment' type="file" name="inputFile">
+            </form>
+        </span>
+    </div>
+
+<% } %>
+
+<div class="adv-table" >
+   <table class="table table-bordered table-striped table-hover" id="activ_attach_table">
+        <thead>
+            <tr>
+                <th width='40%'><%= json.file.name %></th>
+                <th width='25%'><%= json.file.description %></th>
+                <th width='15%'><%= json.file.dateTime %></th>
+                <th width='20%'><%= json.general.action %></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>

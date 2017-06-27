@@ -1,0 +1,20 @@
+<tr>
+    <td><div><%= name %></div></td>
+    <td>
+        <div>
+            <img width="20px" heigth="20px" src="<%= filePath %><%= imgUrl %>" filename="<%= imgUrl %>">
+        </div>
+    </td>
+    <td>
+        <div>
+            <button id='editAct' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.button.edit %>">
+                <i class='fa fa-pencil'></i>
+            </button>
+            <button id='deleteAct' class='btn btn-danger btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.button.delete %>">
+                <i class='fa fa-trash-o'></i>
+            </button>
+        </div>
+    </td>
+</tr>

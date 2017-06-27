@@ -1,0 +1,32 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="datatable-modal" class="modal fade" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" style="width:950px;">
+         <div class="modal-content">
+             <div class="modal-header">
+                <button id="closeHeader" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= json.teamwork.loopTeam %></h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+ 
+                    <form class="cmxform form-horizontal" role="form" id="formTeamwork" method="get" action="">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-sm-2 control-label" for="name"><%= json.teamwork.name %></label>
+                            <div class="col-lg-10">
+                                <input id="teamworkNameEdit" name="name" value="<%= teamName %>" class="form-control" type="text" placeholder='<%= json.general.enterName %>' required />
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <button id="addUserBtn" type="button" class="btn btn-primary"><%= json.teamwork.addUsers %></button>
+                            
+                    <div id="teamworkTableContent"></div>
+                
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="acceptBtn" type="button" class="btn btn-primary" data-dismiss="modal"><%= json.button.accept %></button>
+                <button id="closeBtn" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+            </div>
+         </div>
+    </div>
+</div>

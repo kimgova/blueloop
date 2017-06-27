@@ -1,0 +1,26 @@
+<div class="contact-content" style="display:none;">
+    <div class="scroller" style="height: 350px" data-height="350px" data-always-visible="1" data-rail-visible="1">
+        <div class="contact-list">
+        <% $.each(people, function(i, user){ %>
+            <div class="contact">
+                <img src="https://s3-us-west-1.amazonaws.com/blapp-users/<%= user.username %>/user/avatar.png" alt="<%= user.name %>" class="photo" /> 
+                <span class="name"> <%= user.name %> </span> 
+                <span class="status">
+                    <i class="user-id-<%= user.id %>"></i>
+                </span>
+            </div>
+        <% }); %>
+        </div>
+    </div>
+    <div class="divide-20"></div>
+    <div class="chat-form">
+        <div style="float: left;width: 50%;padding-right: 5%;">
+            <button class="btn btn-default btnChatList btnBack">Back</button>
+        </div>
+        <% if(isCreator){ %>
+        <div style="float: right;width: 50%;padding-left: 5%;">
+            <button class="btn btn-info btnChatList btnEditChatGroup">Edit people</button>
+        </div>
+        <% } %>
+    </div>
+</div>

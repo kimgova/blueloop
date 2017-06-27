@@ -1,0 +1,12 @@
+<% if(taginput){ %>
+	<div class='taginput'>
+		<input size='<%=size%>' value="<%=value%>"/>
+	</div> 
+<% } %>
+
+<% if(elementHtml){ %>
+	<div id="<%=elemId%>" class='tagexample' title="<%=elemFull%>">
+		<span><%=elemLbl%>&nbsp;&nbsp;</span>
+		<a class='tagexample-remove-link'>x</a>
+	</div>
+<% } %>

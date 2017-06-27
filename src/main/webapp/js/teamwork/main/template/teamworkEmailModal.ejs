@@ -1,0 +1,38 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="tw-email-modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="closeHeader" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= json.teamwork.sendToTeam %></h4>
+            </div>
+            <form class="cmxform form-horizontal" role="form" id="formTeamwork" method="get" action="">
+                <div class="modal-body">
+                    <div class="panel-body">
+                        <div class="form-group">
+							<label class="col-lg-2 col-sm-2 control-label" for="toTeam"><%= json.email.to %>:</label>
+							<div class="col-lg-10 col-sm-10">
+								<input id="toTeam" class="form-control staticField" type="text" disabled value="<%= name %>" name="toTeam">
+							</div>
+						</div>							
+						<div class="form-group">
+							<label class="col-lg-2 col-sm-2 control-label" for="subject"><%= json.email.subject %>:</label>
+							<div class="col-lg-10 col-sm-10">
+								<input id="subject" class="form-control staticField" type="text" required value="" name="subject" placeholder="<%= json.email.subjectPH %>"> 
+							</div>
+						</div>							
+						<div class="form-group">
+							<label class="col-lg-2 col-sm-2 control-label" for="message"><%= json.email.message %>:</label>
+							<div class="col-lg-10 col-sm-10">
+								<textarea id="message" class="form-control staticField" type="text" required value="" name="message" style="height: 150px;" placeholder="<%= json.email.message %>"></textarea>
+							</div>
+						</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="sendBtn" type="submit" class="btn btn-primary"><%= json.button.send %></button>
+                    <button id="closeBtn" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+                </div>
+            </form>
+         </div>
+    </div>
+</div>

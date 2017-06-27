@@ -1,0 +1,50 @@
+<div class="modal fade" id="modalMap" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title"><%=json.blueMonitor.modalTitle%></h4>
+            </div>
+            <div class="modal-body">
+                <section class="panel">
+                    <header class="panel-heading"><%=json.blueMonitor.configuration%></header>
+                    <div class="panel-body">
+                        <div class='col-lg-12'>
+                            <table class="table table-bordered table-striped table-condensed table-hover" id="mapTable">
+                                <thead>
+                                    <tr>
+                                        <th><%=json.blueMonitor.mapColum%></th>
+                                        <th><%=json.blueMonitor.mapDestination%></th>
+                                        <th><%=json.blueMonitor.mapTypeData%></th>
+                                    </tr> 
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class='col-lg-12'>
+                            <div class="col-lg-6"></div>
+                            <div class="col-lg-6">
+                                <button id="editMap" class="btn btn-default" type="button" style="float:right;">
+                                    <%=json.blueMonitor.mapEdit%>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <div class="panel-body">
+                    <div class="col-lg-6">
+                        <button id="nextMap" class="btn btn-white" type="button">
+                            <%=json.button.close%>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

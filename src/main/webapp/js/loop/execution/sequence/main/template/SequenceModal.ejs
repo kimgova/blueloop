@@ -1,0 +1,40 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="sequence-modal" class="modal fade" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" style="width:950px;">
+         <div class="modal-content">
+             <div class="modal-header">
+                <button id="closeHeader" aria-hidden="true" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= json.sequence.titleModal1 %></h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <div id="sequenceModalContent">
+                        <label class="control-label"><%= json.sequence.titleModal2 %></label>
+                        <br><br>
+                    
+                        <div class="col-md-3" id="seqColumn1">
+                            <div class='row'>
+                                <h4 class='col-md-12' style="color:#39b5aa;margin-left: -15px;"><%= json.sequence.titleModal3 %></h4>
+                            </div>
+                            <div class='row'>
+                                <div class='col-md-12'>
+                                    <button id="addSeqBtn" class="btn btn-primary btn-sm" type="button" style="float:left;margin-left: -15px;"><i class="fa fa-plus"></i> <%= json.button.add %> <%= json.sequence.sequence %> </button>
+                                </div>                                
+                            </div>
+                            <div class='row'>
+                                <div class="task-content" style='padding-top: 20px;'>
+                                    <ul class="task-list ui-sortable" id='seqList'></ul>
+                                </div>  
+                            </div>                                      
+                        </div>
+                        
+                        <div class="col-md-9" id='seqColumn2'></div>
+                        
+                    </div>                
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="closeBtn" type="button" class="btn btn-default"><%= json.button.close %></button>
+            </div>
+         </div>
+    </div>
+</div>

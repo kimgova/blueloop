@@ -1,0 +1,83 @@
+/* Elastislide Style */
+.es-carousel-wrapper {
+	position:relative;
+}
+.es-carousel {
+	overflow:hidden;
+	padding-top: 10px;
+}
+.es-carousel .ul-carousel {
+	display: block;
+}
+.es-carousel .ul-carousel .li-carousel {
+	width: 100%;
+	float:left;
+	display:block;
+	margin-left: 30px;
+}
+.es-carousel .ul-carousel .li-carousel  a {
+	border: none;
+}
+.es-carousel .ul-carousel .li-carousel a img {
+	display:block;
+/* 	border:1px solid #cbcbcb; */
+	border:none;
+	max-height:100%;
+	max-width:100%;
+}
+
+.es-nav span {
+	background: url(../../../images/carousel-controls.png) 0 0 no-repeat transparent;
+	position:absolute;
+	top: 80px;
+	width: 40px;
+	height: 40px;
+	text-indent:-9000px;
+	cursor:pointer;
+}
+.es-nav span.es-nav-next {
+	right:-13px;
+	left:auto;
+	background-position: -40px -40px;
+	z-index: 99;
+}
+.es-nav span.es-nav-prev {
+	left:-13px;
+	right:auto;
+	background-position: 0 -40px;
+	z-index: 99;
+}
+.es-nav span.es-nav-next:hover {
+	background-position: -40px 0;
+}
+.es-nav span.es-nav-prev:hover {
+	background-position: 0 0;
+}
+/*============================================================*/
+/*----------  Media queries ----------*/
+/*============================================================*/
+/*----------------------------------------*/
+/*----- 3.1 Mobile (Portrait) / Design for a width of 320px -----*/
+/*----------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+.es-nav span.es-nav-next {
+ right: 15px;
+ left:auto;
+}
+.es-nav span.es-nav-prev {
+ left: 15px;
+ right:auto;
+}
+}
+/*----------------------------------------*/
+/*----- 3.2 Mobile (Landscape) / Design for a width of 480px -----*/
+/*----------------------------------------*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+ 
+/*----------------------------------------*/
+/*----- 3.3 Tablet (Portrait) / Design for a width of 768px -----*/
+/*----------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+}

@@ -1,0 +1,104 @@
+<table id='groupDetails' idteam='<%= idTeam %>' nameteam='<%= nameTeam %>' typeteam='<%= typeTeam %>' itemid='<%= itemId %>'  item='<%= item %>' width='100%'>
+
+<% $.each(items, function(i, value){ %>
+    <% if(i == 0){ %>
+    <tr>
+        <td class='alert alert-info fade in'><%= json.roles.administrator %>:</td>
+        <td class='alert alert-info fade in'>
+            <ul>
+    <% } %> 
+    <% if(value.role == "LOOP_ARCHITECT" || value.role == "BB_ADMIN"){ %>
+        <% if(value.id == userLogged){ %>
+            <li>
+                <table>
+                    <tr>
+                        <td><a class='' href='/blueloop-backend/user/profile'><%= value.fullName %></a></td>
+                        <td>
+                        <% if(value.twitterUser != ''){ %>
+                            <i class='fa fa-twitter'> </i> @<%= value.twitterUser %>
+                        <% } %>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </li>
+        <% }else{ %>
+            <li>
+                <table>
+                    <tr>
+                        <td><a class='' href='/blueloop-backend/user/profileWall/<%= value.id %>'><%= value.fullName %></a></td>
+                        <td>
+                        <% if(value.twitterUser != ''){ %>
+                            <i class='fa fa-twitter'> </i> @<%= value.twitterUser %>
+                        <% } %>
+                        </td>
+                        <td>
+                            <button class='messageTeammember' id='<%= value.id %>' name='<%= value.fullName %>' class='btn btn-default btn-xs' title='<%= json.tooltip.sendEmail %>'>
+                                <i class='fa fa-envelope'></i>
+                            </button>
+                            <button class='chatTeammember' id='<%= value.id %>' name='<%= value.fullName %>' class='btn btn-default btn-xs' title='<%= json.tooltip.createChat %>'>
+                                <i class='fa fa-comments'></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        <% } %>
+    <% } %> 
+<% }); %> 
+            </ul>
+        </td>
+    </tr>
+    
+<% $.each(items, function(j, value){ %>
+    <% if(j == 0){ %>
+    <tr>
+        <td class='alert alert-success fade in'><%= json.roles.members %>:</td>
+        <td class='alert alert-success fade in'>
+            <ul>
+    <% } %> 
+    <% if(value.role != "LOOP_ARCHITECT" && value.role != "BB_ADMIN"){ %>
+        <% if(value.id == userLogged){ %>
+                <li>
+                    <table>
+                        <tr>
+                            <td><a class='' href='/blueloop-backend/user/profile'><%= value.fullName %></a></td>
+                            <td>
+                                <% if(value.twitterUser != ''){ %>
+                                    <i class='fa fa-twitter'> </i> @<%= value.twitterUser %>
+                                <% } %>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </li>
+        <% }else{ %>
+                <li>
+                    <table>
+                        <tr>
+                            <td><a class='' href='/blueloop-backend/user/profileWall/<%= value.id %>'><%=value.fullName %></a></td>
+                            <td>
+                            <% if(value.twitterUser != ''){ %>
+                                <i class='fa fa-twitter'> </i> @<%=value.twitterUser %> 
+                            <% } %>
+                            </td>
+                            <td>
+                                <button class='messageTeammember' id='<%= value.id %>' name='<%= value.fullName %>'
+                                    class='btn btn-default btn-xs' title='<%= json.tooltip.sendEmail %>'>
+                                    <i class='fa fa-envelope'></i>
+                                </button>
+                                <button class='chatTeammember' id='<%= value.id %>' name='<%= value.fullName %>'
+                                    class='btn btn-default btn-xs' title='<%= json.tooltip.createChat %>'>
+                                    <i class='fa fa-comments'></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+        <% } %>
+    <% } %> 
+<% }); %> 
+            </ul>
+        </td>
+    </tr>
+</table>

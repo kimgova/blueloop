@@ -1,0 +1,179 @@
+<ul class="nav top-menu">
+		<!-- settings start -->
+		<li id="header_fc_notification_bar" class="dropdown">
+			<a data-toggle="dropdown" class="dropdown-toggle" href="#"> 
+				<i class="fa fa-tasks"></i>
+                <% if (fcAlerts.length > 0){ %>
+					<span class="badge bg-success" id="fcAlertsCounter"> <%= fcAlerts.length %> </span>
+				<% } else { %>
+                    <span class="badge bg-success" id="fcAlertsCounter" style="display:none;"> <%= fcAlerts.length %> </span>
+                <% } %>
+			</a>
+			<ul class="dropdown-menu extended inbox">
+				<div class="notify-arrow notify-arrow-green"></div>
+				<li>
+					<p class="green">
+                        <%= fcAlertTitle %>
+                    </p>
+				</li>
+                
+                <% $.each(fcAlerts, function(i, fcAlert){ %> 
+				<li>
+					<a>
+						<span class="photo notification-icon green">
+							<i class="fa fa-tasks"></i>
+						</span>
+						<span class="subject">
+							<span class="from"> <%= fcAlert[0].name %></span>
+							<span class="time"> <%= fcAlert[0].createDate %></span>
+						</span>
+						<span class="message"> <%= fcAlert[0].description %></span>
+					</a>
+					
+					<a href="/blueloop-backend/chain/list" class="alertNotification" id="<%= fcAlert[1].id %>">
+					Go</a>
+					<a id="" class="alertDismiss btn btn-xs userAlert<%= fcAlert[1].id %>" title="Dismiss" idalert="<%= fcAlert[1].id %>">Dismiss</a>
+				</li>
+				<% }); %>
+			</ul>
+		</li>
+		<!-- settings end -->
+		
+		<!-- user notification dropdown start-->
+		<li id="header_inbox_bar" class="dropdown">
+			<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+				<i class="fa fa-users"></i>
+                <% if (conRequests.length > 0){ %>
+					<span class="badge bg-important" id="requestsCounter"> <%= conRequests.length %> </span>
+				<% } else { %>
+                    <span class="badge bg-important" id="requestsCounter" style="display:none;"> <%= conRequests.length %> </span>
+                <% } %>
+			</a>
+			<ul class="dropdown-menu extended inbox">
+				<div class="notify-arrow notify-arrow-red"></div>
+				<li>
+					<p class="red messageCounterAlert">
+						<%= userTitle %>
+					</p>
+				</li>
+				
+                <% $.each(conRequests, function(i, conRequest){ %> 
+				<li>
+					<a>	
+						<span class="photo notification-icon red">
+							<i class="fa fa-user"></i>
+						</span>
+						<span class="subject">
+							<% if (conRequest[0].name == "Added to teamwork" || conRequest[0].name == "Added as a leader"){ %> 
+								<span class="from"> <%= conRequest[0].name %> </span>
+							<% }else{ %>
+								<span class="from"> <%= conRequest[1].sender.firstName %> <%= conRequest[1].sender.lastName %> </span>
+							<% } %>
+							<span class="time">
+								<%= conRequest[0].createDate %>
+							</span>
+						</span>
+						<span class="message"> <%= conRequest[0].description %> </span>
+					</a>
+					
+					<% if (conRequest[0].description == "Accepted your connection request"){ %>
+						<a href="/blueloop-backend/user/profileWall/<%= conRequest[1].sender.id %>" id="<%= conRequest[1].id %>" class="alertNotification btn btn-xs">
+					<% }else{ %>
+						<% if (conRequest[0].name == "Added to teamwork"){ %> 
+							<a href="/blueloop-backend/teamwork/list" class="alertNotification btn btn-xs" id="<%= conRequest[1].id %>">
+						<% } else if (conRequest[0].name == "Added as a leader"){ %> 
+							<a href="/blueloop-backend/forecast/" class="alertNotification btn btn-xs" id="<%= conRequest[1].id %>">
+						<% }else{ %>
+							<a href="/blueloop-backend/user/profileWall/<%= conRequest[1].sender.id %>" class="btn btn-xs">
+						<% } %>									
+					<% } %>
+					Go</a>
+					<a id="" class="alertDismiss btn btn-xs userAlert<%= conRequest[1].id %>" title="Dismiss" idalert="<%= conRequest[1].id %>">Dismiss</a>
+				</li>
+				<% }); %>
+			</ul>
+		</li>
+		<!-- user notification dropdown end -->
+		
+		<!-- loop notification dropdown start-->
+		<li id="header_notification_bar" class="dropdown">
+			<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+				<i class="fa fa-circle-o"></i>                
+                <% if (alerts.length > 0){ %>
+					<span class="badge bg-warning" id="alertsCounter"> <%= alerts.length %> </span>
+				<% } else { %>
+                    <span class="badge bg-warning" id="alertsCounter" style="display:none;"> <%= alerts.length %> </span>
+                <% } %>
+			</a>
+			<ul class="dropdown-menu extended inbox" id="UserAlertsList">
+				<div class="notify-arrow notify-arrow-yellow"></div>
+				<li>
+					<p class="yellow messageCounterAlert" id="alertsCounterMessage">
+                    	<%= loopTitle %>
+					</p>
+				</li>
+                <% $.each(alerts, function(i, alert){ %>
+				<li>
+					<a>
+						<span class="photo notification-icon yellow">
+							<i class="fa fa-circle-o"></i>
+						</span>
+						<span class="subject">
+							<span class="from"> <%= alert[0].name %></span>
+							<span class="time"> <%= alert[0].createDate %></span>
+						</span>
+						<span class="message"> <%= alert[0].description %></span>
+					</a>
+					
+					<a href="/blueloop-backend/chain/list" class="alertNotification" id="<%= alert[1].id %>">
+					Go</a>
+					<a id="" class="alertDismiss btn btn-xs userAlert<%= alert[1].id %>" title="Dismiss" idalert="<%=alert[1].id %>">Dismiss</a>
+				</li>
+				<% }); %>
+			</ul>
+		</li>
+		<!-- loop notification dropdown end -->
+		
+		<!-- bb notification dropdown start-->
+		<li id="header_bb_notification_bar" class="dropdown">
+			<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+				<i class="fa fa-th-large"></i>
+                <% if (bbAlerts.length > 0){ %>
+					<span class="badge bg-primary" id="bbAlertsCounter"> <%= bbAlerts.length %> </span>
+				<% } else { %>
+                    <span class="badge bg-primary" id="bbAlertsCounter" style="display:none;"> <%= bbAlerts.length %> </span>
+                <% } %>
+			</a>
+			<ul class="dropdown-menu extended inbox" id="BBAlertsList">
+				<div class="notify-arrow notify-arrow-purple"></div>
+				<li>
+					<p class="purple messageCounterAlert" id="bbAlertsCounterMessage">
+						<%= bbAlertTitle %>						
+					</p>
+				</li>
+                <% $.each(bbAlerts, function(i, bbalert){ %>
+				<li>
+                    <a>
+						<span class="photo notification-icon purple">
+							<i class="fa fa-th-large"></i>
+						</span>
+						<span class="subject">
+							<span class="time"><%= bbalert[0].createDate %></span>
+							<span class="from"><%= bbalert[0].name %></span>
+						</span>
+						<span class="message"><%= bbalert[0].description %></span>
+					</a>
+					
+					<% if (bbalert[0].name == "Connected Building Block"){ %>
+						<a href="/blueloop-backend/buildingBlock/connectBB" class="alertNotification" id="<%= bbalert[1].id %>">Go</a>
+					<% }else{ %>
+                        <a href="/blueloop-backend/buildingBlock/connectBB" class="alertNotification" id="<%= bbalert[1].id %>">Go</a>
+					<% } %>
+						
+					<a id="" class="alertDismiss btn btn-xs userAlert<%= bbalert[1].id %>" title="Dismiss" idalert="<%= bbalert[1].id %>">Dismiss</a>
+				</li>
+				<% }); %>
+			</ul>
+		</li>
+		<!-- bb notification dropdown end -->
+	</ul>

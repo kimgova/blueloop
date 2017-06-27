@@ -1,0 +1,66 @@
+<div aria-hidden="true" aria-labelledby="titleModal" data-backdrop="static" role="dialog" tabindex="-1" id="newSkuModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<%if(this.model.callFrom != 'modifySkuAsso'){%>
+					<h4 class="modal-title" id="titleModal"><%=json.forecast.skuPlanning.titleModal%></h4>
+				<%}else{%>
+					<h4 class="modal-title" id="titleModal">Modify the SKU associations</h4>
+				<%}%>				
+				
+			</div>
+            <form class="cmxform" id="newSkuForm" method="get" action="">
+                <div class="modal-body">
+                    <div class="panel-body">
+                        <div class="form-group">
+
+                                <label class="col-lg-2 col-sm-2 control-label" for="skuCode"><%=json.forecast.skuPlanning.skuCode%></label>
+                                <div class="col-lg-10 col-sm-10 input-group m-bot15">
+                                    <input type="text" class="form-control" id="skuCode" name="skuCode"
+                                        placeholder="Identifier" value=""> 
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-white" type="button" id="btnConsult"><%=json.forecast.skuPlanning.btnConsult%></button>
+                                    </span>
+                                </div>
+                                <label class="col-lg-2 col-sm-2 control-label" for="skuDes"><%=json.forecast.skuPlanning.skuDescription%></label>
+                                <div class="col-lg-10 col-sm-10 input-group m-bot15">
+                                    <input type="text" class="form-control" id="skuDes" name="skuDes" required
+                                        placeholder="<%=json.forecast.skuPlanning.skuDescription%>"
+                                        disabled style="border-radius: 4px;"
+                                        value="<%= description %>"> 
+                                    <span class="input-group-btn"></span>
+                                </div>
+                                <label class="col-lg-2 col-sm-2 control-label" for="skuUnit"><%=json.forecast.skuPlanning.skuUnit%></label>
+                                <div class="col-lg-10 col-sm-10 input-group m-bot15">
+                                    <input type="text" class="form-control" id="skuUnit" name="skuUnit"
+                                        placeholder="<%=json.forecast.skuPlanning.skuUnit%>"
+                                        disabled style="border-radius: 4px;"
+                                        value="<%= unit %>"> 
+                                    <span class="input-group-btn"></span>
+                                </div>
+
+                                    <input type="text" class="form-control" id="idUnit" name="idUnit" style="display: none;"
+                                        value="<%= unit %>"> 
+
+                        </div>
+
+                        <div id="familyBrand"></div>
+
+                        <div id="associateTable" class="row"></div>
+                        <br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button aria-hidden="true" class="btn btn-default" id="btnCancel" data-dismiss="modal" type="button">
+                        <%=json.button.close%>
+                    </button>
+                    <button id="saveNewSku" class="btn btn-primary" type="submit">
+                        <i class="fa fa-floppy-o"></i> 
+                        <%=json.button.save%>
+                    </button>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>

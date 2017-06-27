@@ -1,0 +1,35 @@
+<div class="modal fade modal-dialog-request" id="bbAccessNoAllowed" tabindex="-1" role="dialog" aria-labelledby="friend request" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><%= json.profile.friendRequestTitle %></h4>
+            </div>
+            <div class="modal-body">
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="col-lg-12">
+                            <div id="ws-request-header" class="ws-request-header center">
+                                <div class="center">
+                                    <img class="ws-pic ws-request-pic" alt="user image" src="<%=path%>">
+                                </div>
+                            </div>
+                            
+                            <div class="center">
+                                <p class="ws-request-name">
+                                    <span id="ws-request-first-name"><%= name %></span>
+                                </p>
+                                <%= json.bb.owner %>: <%=ownerName %>
+                            </div>
+                            <hr>
+                            <div class="center">
+                                <%= json.profile.getBBAccess %>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<tr>
+    <td><div><%= orderNumber %></div></td>
+    <td>
+        <div>
+            <%= json.general.view %> (<%= totalOrderDetail %>)
+            <a id='valve-details' class='' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.view %>">
+                <i class='fa fa-plus-circle'></i>
+            </a>
+        </div>
+    </td>
+    <td>
+        <div>
+            <span id="attach-counter"><%= json.general.view %> (<%= totalAttach %>)</span>
+            <a id='valve-attachments' class='' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.view %>">
+                <i class='fa fa-plus-circle valve-attach'></i>
+            </a>
+        </div>
+    </td>
+    <td><div><%= dta %></div></td>
+    <td><div><%= pta %></div></td>
+    <td><div><%= status %></div></td>
+    <td>
+        <div>
+            <button id='orderActivities' class='btn btn-info btn-xs'>
+                <i class='fa fa-check-square-o'></i>
+            </button>
+            <% if(isOrderResponsible == true && disabled != "disabled"){ %>
+                <button id='orderProceed' style='margin-left: 4px' class='btn btn-primary btn-xs'>
+                    <i class='fa fa-play'></i>
+                </button>
+            <% } %>
+        </div>
+    </td>
+</tr>

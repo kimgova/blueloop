@@ -1,0 +1,25 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" data-backdrop="static" role="dialog" tabindex="-1" id="forecast-model" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+                <h4 class="modal-title"><%= json.forecast.modelTitle %></h4>
+           	 </div>
+           	  <div class="modal-body">
+           	  	<div class="panel-body">
+          	  		<div class="form-group">
+          	  		 <% if(forecastPermission == true){ %>
+                        <h4><%= json.forecast.modelSubtitle %></h4>
+						<div id="tableContent" class="row"></div>
+					 <% }else{ %>
+					   <h4>You don't have permission to create new Forecast for your loop. Contact to the administrator.</h4>
+					 <% }%>
+					</div>
+           	  	</div>
+           	  </div>
+        	<div class="modal-footer">
+        		<h4><%= json.forecast.modelFooterSubtitle %></h4>
+        		<button id="addModelType" type="button" data-dismiss="modal" class="btn btn-primary" disabled><%= json.forecast.addModelType %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

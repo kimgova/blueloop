@@ -1,0 +1,29 @@
+<div class="col-lg-12">
+    <div class="row form-group activityGeneralContent">
+        <div class="col-lg-6 col-sm-6">
+                <img src="<%= imagePath %>" title="" style="height:35px; width:35px; margin-right:4%;float:left;">
+            <div class="col-lg-8 col-sm-8">
+                <label style="width:100%;margin-top: 9px;"><%= description %></label>
+            </div>
+            <div style="width:100%;">
+                <label style="font-size: 12px;" class="totalAttachments" >(<%= attachments.length %> <%= json.activity.attachment %>) </label>
+                <i class="expandAttachments fa fa-plus-circle green"></i>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+            <label style="width:100%;margin-top: 9px;"><%= responsibleName %></label>
+        </div>
+        <div class=" col-lg-3 col-sm-3 checkbox"> 
+            <div class='md-checkbox div-margin-left'>
+                <input id='doneAct<%= id %>' class='doneCheckbox' type="checkbox" value="Done" <%= status %> <%= manualCheck %> >
+                <label for="doneAct<%= id %>">
+                    <span></span><span class="check"></span><span class="box"></span>
+                    <%= json.activity.done %>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row form-group" id="actAttachments" style="display:none;">
+        <div class="col-lg-12 attachTable"></div>
+    </div>
+</div>

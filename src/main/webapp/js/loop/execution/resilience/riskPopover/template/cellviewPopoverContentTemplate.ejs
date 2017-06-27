@@ -1,0 +1,42 @@
+<% $.each(risks, function(i, item){ %> 
+    <div class="risk_panel">
+	<p class="risk_header">
+		<b class="r_name"><%= item.name %></b>
+		<b class="r_state">
+			 <button class="changeriskstate riskstate<%= item.id %> btn btn-xs btn-success" idRisk="<%= item.id %>" idCBB="<%= idCBB %>" <%= enabled %> >
+			<% if(item.status == "0"){ %>
+			 	Activate risk</button>
+			<% }else{ %>
+				Deactivate risk</button>
+			<% } %>
+		</b>
+	</p>
+	<p class="r_tit"><b>Probability: </b><%= item.probability %>%</p>
+	<p class="r_tit"><b>Time to recover: </b><%= item.resilienceIndex %> days</p>
+	
+	
+	<% var seasonText=""; %>
+    <% $.each(MONTHS, function(j, month){ %>  
+        <% if(item.season[month.value] != "" && item.season[month.value] != undefined){ %>
+            <% seasonText += month.text + " | "; %>
+        <% } %>
+    <% }); %>
+
+	<p class="r_tit"><b>Season: </b><%= seasonText %></p>		    	
+	<img src='<%= staticImgUrl %><%= item.fileName %>' style='margin-top: -70px;width: 40px;float: right;' />
+	
+	<% if(routes[i].length > 0){ %>
+        <% var route = routes[i];  %>
+        <p class="r_tit"><b>Alternate route: </b></p>
+        <p class="r_route">
+            <a class="showRoute" idJSONRoute="<%= route[0].idJSON %>" ><%= route[0].name %></a>
+            <button  <%= enabled %>  class=" changeroutestate routestate<%= route[0].id %> btn btn-xs btn-danger" idRoute="<%= route[0].id %>" >
+            <% if(!route[0].active){ %>
+                Activate route</button>
+            <% }else{ %>
+                Deactivate route</button>
+            <% } %>    
+        </p>	
+	<% } %>	    
+    </div>	
+<% }); %>

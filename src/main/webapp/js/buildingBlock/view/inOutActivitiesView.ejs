@@ -1,0 +1,41 @@
+<%if(btnSave){ %>
+	<a  id='saveInputActi' class="icon-check"></a>
+<% } %>
+
+<% if(btnSaveOut){ %>
+    <a  id='saveOutputActi' class="icon-check"></a>
+<% } %>
+
+<% if(btnEdit){ %>
+    <a  id='<%=idBtn%>' class="icon-pencil"></a>
+<% } %>
+
+<% if(inputDes){ %>
+	<input type="text" id="descriptionActi" class="form-control small" value="<%= value %>" required />
+<% } %>
+
+<% if(img){ %>
+	<img width='20px' heigth='20px' src='<%= filePath %>' fileName='<%= fileName %>'>
+<% } %>
+
+<% if(btnChooseImg){ %>
+	<figcaption>
+		<a id='<%=id%>' href='#modalActivityImg' data-toggle='modal' required><%= json.button.select %></a>
+	</figcaption>
+<% } %>
+
+<%if(btnCancel){ %>
+    <a id="<%=id%>" class="icon-close cancel" style="margin-left: 4px"  <%= dataMode%> ></a>
+<% } %>
+
+<% if(btnDelete){ %>
+    <a id='<%=id%>' class="icon-trash" style='margin-left: 4px'></a>
+<% } %>
+
+<% if(selectInOutAct){ %>
+	<div id='selectedInOutAct'>
+		<input id='tableInputOutput' type='hidden' name='Path' value='<%= value %>'>
+		<input id='pathselectImg' type='hidden' name='Path' value='<%= filePath %>'>
+		<input id='nameSelectImg' type='hidden' name='Path' value='<%= fileName %>'>
+	</div>
+<% } %>

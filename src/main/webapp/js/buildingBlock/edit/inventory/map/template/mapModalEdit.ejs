@@ -1,0 +1,36 @@
+<div class="modal fade" id="modalInventory" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title"><%=json.blueMonitor.modalTitle%></h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading"> <%=json.blueMonitor.mapData%> </header>
+                        <div class="panel-body">
+                            <form class="cmxform form-horizontal tasi-form" id="formEdit">
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <button id="backMapEdit" class="btn btn-white" type="button">
+                            <%=json.button.back%>
+                        </button>
+                        <button id="saveMap" class="btn btn-white" type="button">
+                            <%=json.blueMonitor.saveMap%>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

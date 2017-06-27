@@ -1,0 +1,69 @@
+html,body{height:100%}
+h3{margin-top:0;margin-bottom:20px}
+#main-menu-btn{display:none}
+.sidebar-closed #main-content{height:100%}
+.wrapper{margin-top:5%;margin-left:0;width:98%;/* height:95% */}
+#breacumb-container{height:5%}
+.acordion_div{height:100%}
+.accordion-header{transition: all .3s ease-in-out;}
+#create-chain-title{margin:15px 0 0;background-color:#175796;height:40px;box-shadow:1px 1px 1px 0 gray}
+#create-chain-title label{color:#fff;font-weight:700;font-size:20px;margin-top:8px}
+#chain-config{margin-left:100%;margin-top:-2.4%;float:right}
+#chain-label{text-align:center}
+.form_label{width:130px;font-weight:700}
+.site-footer{position:fixed;width:100%;bottom:0;z-index:999999}
+#panel_toolkit{position:fixed;right:0;background-color:#2A3542;z-index:111;border:1px solid #2A3542;height:100%;top:0;}
+.toolkit-header{padding:10%;color:#F1F1F1;margin-top: 30%;}
+.toolkit-header i{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;font-size:xx-large;float:left;width:50px;height:30%}
+.toolkit-body{height:67%}
+.ui-accordion .ui-accordion-content{padding: 1em 0.5em;}
+.bb-name{margin-left: 20px;margin-top: 20px;color: gray;font-size: 15px;max-width: 140px;}
+.draggable{font-size:11px;margin:10px 0 8px;/*float:left;*/z-index:1;width:100%}
+#stockContent>h5,#flowContent>h5,#sharedStock>h5,#sharedFlow>h5{border: 1px solid #e2e2e4;border-radius:2px;margin-top: 18px;padding: 4px;background:none repeat scroll 0 0 white;width: 20%;color:gray;font-size:15px;margin-left: 20px;width: 85%; }
+.panel-canvas{border:1px solid #bcbcbc;box-shadow:none;background-color:#fff;border-radius:5px;height:80%}
+#canvas{width:100%;height:90%;border:1px solid #BCBCBC;background-image:url(../../images/canvas/grid/Grid_Edit1.png);border-radius:5px;transform-origin:left top 0;overflow:auto}
+.expandida{background:#2A3542;color:gray}
+.expandida:hover{background-position:11px 13px!important}
+.panel-canvas-heading{border-bottom:1px solid #bcbcbc;padding-top:.5%;height:10%}
+.panel-canvas-heading #titleChain{margin-top:-2px;margin-left:3%}
+.panel-canvas-body{padding:1%;height:80%}
+.panel-canvas-footing{border-top:none;padding-top:1%;padding-left:1%;height:10%}
+.altroute-btn{display:none}
+.panel-canvas-footing #saveNewRoute{margin-left:1%;float:left;display:none}
+.sidebar-closed #main-content{padding-right:0}
+.formValveTooltip{position:absolute;top:220px;left:389.015625px;display:none;transition:transform .3s ease-out;box-shadow:1px 3px 2px 0 gray}
+.formValveTooltip .modal-backdrop{display:none;}
+.no-boxshadow{-moz-box-shadow: 1px 1px 5px transparent;-webkit-box-shadow: 1px 1px 5px transparent;box-shadow: 1px 1px 5px transparent;}
+.modal-boxshadow{-moz-box-shadow: 1px 1px 5px gray;-webkit-box-shadow: 1px 1px 5px gray;box-shadow: 1px 1px 5px gray;}
+.drop-area{border:3px dashed #d9d9d9;width:100%;height:100%;padding:5% 0 4% 40%;font-size:22px;font-weight:600;color:#d9d9d9}
+.subMenuBB{position:absolute;background-clip:padding-box;background-color:#FFF;border:1px solid rgba(0,0,0,0.15);box-shadow:0 6px 12px rgba(0,0,0,0.176);font-size:14px;padding:5px 0;top:100%;z-index:1000;margin-left:15px;margin-top:-15px}
+.subMenuBB ul{list-style:none;list-style-type:none;list-style-position:outside}
+.subMenuBB li{line-height:25px;cursor:pointer;padding:2px 4px;white-space:nowrap;display:block}
+.subMenuBB a{padding:5px 30px;white-space:nowrap}
+.subMenuBB li a:hover,.subMenuBB li a:focus{color:#FFF;text-decoration:none}
+.subMenuBB li:hover,.subMenuBB li:focus{background-color:#495D74;color:#FFF}
+.no-data-icon{font-size:60px}
+.separator{border-left: 1px solid #ccc !important;height: 30px;}
+.ui-button{padding: 7px 16px 7px 10px;}
+#tableSKUs_paginate{width: 450px;}
+.md-checkbox{margin-left:40%}
+.toolbox {display: flex;-webkit-display: flex;flex-direction: row;justify-content: space-around;align-items: center;font-size: 1.5em;height: 100%;width: 27%;}
+.toolbox .flex, #editTitleChain{cursor: pointer;color: #000;}
+#editTitleChain{font-size: 1.5em;margin-right: 7px;}
+#toolbar{margin-left: 1%;margin-bottom: 12px;}
+.tabbable-line {margin-bottom: 25px;}
+#content-wrapper {height: 500px;}
+.btnRed{color:#ff6c60 !important;}
+.container-panel{margin-bottom: 0px !important;}
+.circular-red-btn{padding: 1.4%;padding-left: 2%;height: 70px;width: 70px;background-color: #FB756C;border-radius: 50px;text-align: center;-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.3);}
+#add_btn {position: absolute;right: 2%;bottom: 4%;z-index: 1;}
+#add_btn:hover {background-color: #ff5448;cursor: pointer;}
+#cross{position: absolute;color: white;font-size: 61px;bottom: -15%;right: 20%;font-weight:100;font-style: inherit;}
+.act_des{margin-bottom: 1%;min-height: 60px;min-height: 60px;max-height: 60px;font-size: 1em;overflow: hidden;padding: 5% 1%;}
+.act_des label{padding: 10% 0;font-size: 1em;}
+.act_row{text-align: center;}
+.act_row img{border-radius: 50%;height: 35px;width: 35px;}
+.act_row_info{text-align: center;margin-bottom: 1%;}
+.no_padding{padding: 0px;text-align: justify;}
+.btnDelFLBB, .btnOpenFLBB{margin-top: 50%;}
+#modalFlowBBEdit .form-group{padding-bottom: 5px;}

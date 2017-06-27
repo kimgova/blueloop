@@ -1,0 +1,26 @@
+<div>
+	<div class="panel-body">
+		<div class="task-progress" style="float:none;">
+			<h1><%=json.forecast.collaborative.title%></h1>
+			<p><%=json.forecast.collaborative.subtitle%></p>
+		</div>
+        <br>
+		<div id="collaborativeFilter">
+			<div class="col-lg-12">
+				<div id="collaborativeFilters" class="form-group">
+					<div class="btn-row" id="btn-row">
+					<div style="float:right;">
+						<button id="editFilter" type="button" class="btn btn-primary btn-sm">
+							<i class='fa fa-pencil'></i> <%=json.forecast.collaborative.modifyFilters%>
+						</button>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div id="adjustmentsTable">
+		</div>
+		<br>
+	</div>
+</div>

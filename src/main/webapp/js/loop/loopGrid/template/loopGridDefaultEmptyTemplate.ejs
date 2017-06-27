@@ -1,0 +1,9 @@
+<div class="" id="loop-default-template">
+    <div class="default-info-icon icon-circle">
+        <img src="../images/EmptyBox.png" alt="" />
+    </div>
+    <p><%= json.loop.emptyGridMessage %></p>
+    <% if(creationPermission == true){ %> 
+    <a href="/blueloop-backend/chain/create" id="default-empty-btn" class="btn btn-default btn-lg"><%= json.loop.addLoop %></a> 
+    <% } %>
+</div>

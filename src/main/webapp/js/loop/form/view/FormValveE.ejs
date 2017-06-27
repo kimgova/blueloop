@@ -1,0 +1,145 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalValveEdit" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id ="closeModal" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Valve Information</h4>
+			</div>
+
+			<div class="modal-body">
+				<div class="form">
+					<form class="cmxform form-horizontal tasi-form" id="formValve" method="get" action="">
+                        
+						<h4 style="font-weight:bold;">Input Activities</h4>						
+                        <% if(countInAct != 0){ %> 
+                            <% $.each(listAV, function(j, activity){ %>
+                                <% if(activity.type == 0){ %> 
+                                    <div class="form-group">
+                                        <div class="col-lg-1 checkbox">
+                                            <% if(activity.checked){ %> 
+                                                <input name="act<%= activity.id %>" id="act<%= activity.id %>" class="valve-checkbox" type="checkbox" checked />
+                                            <% }else{ %>
+                                                <% if(activity.required){ %> 
+                                                    <input name="act<%= activity.id %>" id="act<%= activity.id %>" class="valve-checkbox" type="checkbox" />
+                                                <% }else{ %>
+                                                    <input name="act<%= activity.id %>" id="act<%= activity.id %>" class="valve-checkbox" type="checkbox" disabled/>
+                                                <% } %>
+                                            <% } %>
+                                        </div>
+                                        <img src="<%= activity.url %>" title="" style="height:50px; width:50px; margin-right:4%;float:left;">
+                                        <label for="act<%= activity.id %>" class="col-lg-5 control-label"><%= activity.description %></label>
+                                        
+                                    </div>
+                                    <% if(activity.required){ %> 
+                                        <% $.each(activity.skus, function(j, sku){ %>
+                                            <div class="form-group">
+                                                <label for="sku<%= sku.sku.id %>-act<%= activity.id %>" class="col-lg-3 control-label">SKU <%= sku.sku.identifier %>:</label>
+                                                <% if(sku.hasReturn){ %>
+                                                    <input style="width:100px;float:left;" class="form-control" type="text" name="sku<%= sku.sku.id %>-act<%= activity.id %>" id="sku<%= sku.sku.id %>-act<%= activity.id %>" value="<%= sku.sku.value %>" required/>
+                                                <% }else{ %>
+                                                    <input style="width:100px;float:left;" class="form-control" type="text" name="sku<%= sku.sku.id %>-act<%= activity.id %>" id="sku<%= sku.sku.id %>-act<%= activity.id %>" value="<%= sku.sku.value %>" required disabled/>
+                                                <% } %>
+                                                <label for="<%= sku.unitSku %>" class="col-sm-1 control-label"><%= sku.unitSku %></label>
+                                                <% if(sku.hasReturn){ %>
+                                                    <label for="dev<%= sku.sku.id %>-act<%= activity.id %>" class="col-sm-2 control-label">Return:</label>
+                                                    <input style="width:100px;float:left;" class="form-control" type="text" name="dev<%= sku.sku.id %>-act<%= activity.id %>" id="dev<%= sku.sku.id %>-act<%= activity.id %>" value="<%= sku.sku.dev %>" required/>
+                                                    <label for="<%= sku.unitSku %>" class="col-sm-1 control-label"><%= sku.unitSku %></label>
+                                                <% } %>
+                                            </div>
+                                        <% }); %>
+                                    <% } %>
+                                <% } %>
+                            <% }); %>
+                        <% }else{ %>
+                            <div class="form-group">
+                                <label class="col-lg-10 col-sm-2 control-label">No data found</label>
+                            </div>
+                        <% } %>
+                        
+                        <h4 style="font-weight:bold;">Output Activities</h4>                        
+                        <% if(countOutAct != 0){ %> 
+                            <% $.each(listAV, function(j, activity){ %>
+                                <% if(activity.type == 1){ %>
+                                    <div class="form-group">
+                                        <div class="col-lg-1 checkbox">
+                                            <% if(activity.checked){ %> 
+                                                <input name="act<%= activity.id %>" id="act<%= activity.id %>" class="valve-checkbox" type="checkbox" checked />
+                                            <% }else{ %>
+                                                <% if(activity.required){ %> 
+                                                    <input name="act<%= activity.id %>" id="act<%= activity.id %>" class="valve-checkbox" type="checkbox" />
+                                                <% }else{ %>
+                                                    <input name="act<%= activity.id %>" id="act<%= activity.id %>" class="valve-checkbox" type="checkbox" disabled/>
+                                                <% } %>
+                                            <% } %>
+                                        </div>
+                                        <img src="<%= activity.url %>" title="" style="height:50px; width:50px; margin-right:4%;float:left;">
+                                        <label for="act<%= activity.id %>" class="col-lg-5 control-label"><%= activity.description %></label>
+
+                                    </div>
+                                    <% if(activity.required){ %> 
+                                        <% $.each(activity.skus, function(j, sku){ %>
+                                            <div class="form-group">
+                                                <label for="sku<%= sku.sku.id %>-act<%= activity.id %>" class="col-lg-3 control-label">SKU <%= sku.sku.identifier %>:</label>
+                                                <% if(sku.hasReturn){ %>
+                                                    <input style="width:100px;float:left;" class="form-control" type="text" name="sku<%= sku.sku.id %>-act<%= activity.id %>" id="sku<%= sku.sku.id %>-act<%= activity.id %>" value="<%= sku.sku.value %>" required/>
+                                                <% }else{ %>
+                                                    <input style="width:100px;float:left;" class="form-control" type="text" name="sku<%= sku.sku.id %>-act<%= activity.id %>" id="sku<%= sku.sku.id %>-act<%= activity.id %>" value="<%= sku.sku.value %>" required disabled/>
+                                                <% } %>
+                                                <label for="<%= sku.unitSku %>" class="col-sm-1 control-label"><%= sku.unitSku %></label>
+                                                <% if(sku.hasReturn){ %>
+                                                    <label for="dev<%= sku.sku.id %>-act<%= activity.id %>" class="col-sm-2 control-label">Return:</label>
+                                                    <input style="width:100px;float:left;" class="form-control" type="text" name="dev<%= sku.sku.id %>-act<%= activity.id %>" id="dev<%= sku.sku.id %>-act<%= activity.id %>" value="<%= sku.sku.dev %>" required/>
+                                                    <label for="<%= sku.unitSku %>" class="col-sm-1 control-label"><%= sku.unitSku %></label>
+                                                <% } %>
+                                            </div>
+                                        <% }); %>
+                                    <% } %>
+                                <% } %>
+                            <% }); %>
+                        <% }else{ %>
+                            <div class="form-group">
+                                <label class="col-lg-10 col-sm-2 control-label">No data found</label>
+                            </div>
+                        <% } %>
+                        
+                        <h4 style="font-weight:bold;">Flow Building Blocks</h4>
+                        
+                        <% if(listFlowBB.length != 0){ %> 
+                            <% $.each(listFlowBB, function(l, flowBB){ %>
+                                <div class="form-group">
+                                    <div class="col-lg-1 checkbox" style="margin-top:2%;">
+                                        <% if(flowBB.checked){ %> 
+                                            <input name="flbb<%= flowBB.bb.id %>" id="flbb<%= flowBB.bb.id %>" class="valve-checkbox" type="checkbox" checked />
+                                        <% }else{ %>
+                                            <% if(flowBB.required){ %> 
+                                                <input name="flbb<%= flowBB.bb.id %>" id="flbb<%= flowBB.bb.id %>" class="valve-checkbox" type="checkbox" />
+                                            <% }else{ %>
+                                                <input name="flbb<%= flowBB.bb.id %>" id="flbb<%= flowBB.bb.id %>" class="valve-checkbox" type="checkbox" disabled/>
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                    <img src="<%= flowBB.bb.url %>" title="" style="height:50px; width:50px; margin-right:4%;float:left;">
+                                    <label style="float:left; width:20%; margin-top:3%;"><%= flowBB.bb.name %></label>
+                                </div>
+
+                            <% }); %>
+                        <% }else{ %>
+                            <div class="form-group">
+                                <label class="col-lg-10 col-sm-2 control-label">No data found</label>
+                            </div>
+                        <% } %>
+						
+					</form>   
+				</div>
+
+                
+			</div>
+            
+            <div class="modal-footer">
+				<button id="btnSaveValve" type="button" data-dismiss="modal" class="btn btn-primary">Save</button>
+  				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>	
+			</div>
+            
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<tr>
+    <td>
+        <div>
+            <input id="selectCat" class="radioCat" name="skucategory" type="radio">
+        </div>
+    </td>
+    <td><div><%= name %></div></td>
+    <% if(status == 1){ %>
+        <td><div>In Use</div></td>
+    <% } else { %>
+        <td><div>Not In Use</div></td>
+    <% } %>
+    <td>
+        <div>
+            <button id='editCat' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.editCat %>" >
+                <i class='fa fa-pencil'></i>
+            </button>
+            <button id='deleteCat' class='btn btn-danger btn-xs' title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.deleteCat %>" >
+                <i class='fa fa-trash-o'></i>
+            </button>
+        </div>
+    </td>
+</tr>

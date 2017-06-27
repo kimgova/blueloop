@@ -1,0 +1,83 @@
+<% if(type == 0){ %>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addMember" class="modal fade" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-hidden="true" id="closeHeaderAddMember" data-dismiss="modal" class="close" type="button">×</button>
+				<h4 class="modal-title"><%= json.teamwork.inviteMember %></h4>
+			</div>
+			<div class="modal-body">
+				<div class="panel-body">
+					<div class="form"> 
+						<form action="" method="" class="cmxform form-horizontal" onsubmit="return false;">
+							<br>
+							<p class="form-group" ><%= json.teamwork.messageInvite %></p>
+							<input class="form-control" type="text" name='j_namenm' id='emailName' placeholder='<%= json.general.name %>' class="loginemail"/>
+							<br>
+							<input class="form-control" type="email" name='j_emailnm' id='email' placeholder="Email" class="loginemail"/>
+							<br>
+							<div class="modal-footer">
+			    				<button id="closeAddMember" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+    							<button id="sendAddMember" type="submit" class="btn btn-primary"><%= json.tooltip.sendEmail %></button>
+   							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% }else{ %>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addMemberTeamBB" class="modal fade" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="closeHeaderEditTeamMember" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h4 class="modal-title"><%= json.teamwork.addUsers %></h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel-body">
+							<div class="form"> 
+								<form action="" method="" class="cmxform form-horizontal">
+									<div class="form-group">
+										<label class="col-lg-3 control-label"><%= json.teamwork.users %></label>
+										<div class="col-lg-8 form-inline">
+											<div>
+												<div id="member-list">
+													<div id="member-container" class="form-control" >
+														<select multiple="multiple" id="member-select"></select>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+                                    <div class="form-group">
+                                        <div class="checkboxes">
+                                            <label class="col-lg-3 control-label"></label>
+                                            <label class="label_check c_on col-lg-6 md-checkbox left-check" for="checkbox_sendEmail">
+                                                <input id="checkbox_sendEmail" type="checkbox" value="1" name="checkbox_sendEmail">
+                                                <label for="checkbox_sendEmail">
+                                                    <span></span>
+                                                    <span class="check"></span>
+                                                    <span class="box"></span>
+                                                    <%= json.teamwork.sendEmailNotification %>
+                                                </label>
+                                            </label>
+                                        </div>
+                                    </div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="closeEditTeamMember" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+				<button id="shareMember" type="button" data-dismiss="modal" class="btn btn-primary"><%= json.button.add %></button>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>

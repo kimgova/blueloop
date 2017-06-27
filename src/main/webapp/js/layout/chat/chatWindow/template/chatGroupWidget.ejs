@@ -1,0 +1,45 @@
+<div class="chat-widget" id="<%= id %>">
+    <div class="col-md-12">
+        <!-- BOX -->
+        <div class="chatbox border primary">
+            <div class="box-title">
+                <div class="title-h4">
+                    <h4><i class="fa fa-comment"></i>
+                   <% if(title.length > 13){ %>   
+                        <span><%= title.substr(0,14)%>...</span>
+                    <% }else{ %>
+                        <span><%= title %></span>
+                    <% } %>
+                    </h4>
+                </div>
+                <div class="tools">
+                    <span data-badge="<%= people.length %>" class="chat-people chat-people-collapse" style="display:none"
+                        title="<%= people.length %> <%= json.chat.countPeople %>" aria-label=" <%= people.length %> <%= json.chat.countPeople %>">
+                        <i class="fa fa-users"></i>
+                    </span>
+                    <span class="chatCollapse">
+                        <i class="fa fa-minus"></i>
+                    </span>
+                    <span class="remove">
+                        <i class="fa fa-times"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="box-body" style="display:none;">
+                <div class="chat-content">
+                    <div class="scroller" style="height:350px" data-height="350px" data-always-visible="1" data-rail-visible="1">
+                        <ul class="media-list chat-list-wdgt"></ul>
+                    </div>
+                    <div class="divide-20"></div>
+                    <div class="chat-form">
+                        <div class="input-group"> 
+                            <input type="text" class="form-control"> 
+                            <span class="input-group-btn"> <button class="btn btn-primary" type="button"><i class="fa fa-check"></i></button> </span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /BOX -->
+    </div>
+</div>

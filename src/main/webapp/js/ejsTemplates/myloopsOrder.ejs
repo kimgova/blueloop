@@ -1,0 +1,16 @@
+<% if(type == "table"){ %>
+	<table class='display table table-bordered' id='order-list' style='text-align:center;'>
+		<thead class='portlet-title'>
+			<tr> 
+				<th width='0%'>ID</th>
+				<th width='35%'>Order Number</th>
+				<th width='35%'>State</th>
+				<th width='30%'>Action</th>
+			</tr>
+		</thead>
+	</table>
+<% } %> 
+<% if(type == "button"){ %>
+	<button id ="editOrder" class="btn btn-primary btn-xs" style="margin-right: 10px;">Edit</button>
+	<button id ="deleteOrder" class="btn btn-danger btn-xs">Delete</button>
+<% } %> 

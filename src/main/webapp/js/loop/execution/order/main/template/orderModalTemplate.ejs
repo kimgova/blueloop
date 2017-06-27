@@ -1,0 +1,44 @@
+<div aria-hidden="true" aria-labelledby="order-modal" role="dialog" tabindex="-1" id="order-modal" class="modal fade" >
+    <div id ="myModal-dialog" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" id="closeFormOrders" type="button">×</button>
+                <h4 class="modal-title"><%= json.loop.loopOrders %></h4>
+            </div>
+            <div class="modal-body">
+           	  	<div class="panel-body">
+                <div class="row">
+                        <div class='col-lg-6 col-md-6 col-sm-6'>
+                        <% if(isResponsible == 'true'){ %>
+                            <button id='newOrderChain' class='btn green'><%= json.general.addNew %> <i class='fa fa-plus'></i></button>
+                        <% }%>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <ul class="grid-navbar orders_filter" id="filter">
+                                <li class="grid-nav-dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                        <span class="selectedFilter">
+                                        <%= json.execution.orderOnTransit %>
+                                        </span>
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul id="filter-bbs">
+                                        <li id="filter-all"><%= json.execution.allOrders %></li>
+                                        <li id="filter-transit"><%= json.execution.orderOnTransit %></li>
+                                        <li id="filter-orderFinished"><%= json.execution.orderFinished %></li>
+                                        <li id="filter-orderCanceled"><%= json.execution.orderCanceled %></li>
+                                    </ul>
+                                </li>
+                
+                            </ul>
+                        </div>
+                    </div>
+				    <div id="order-content" class="row"></div>
+           	  	</div>
+           	  </div>
+        	<div class="modal-footer">
+        		<button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+      		</div>
+        </div>
+    </div>
+</div>

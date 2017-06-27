@@ -1,0 +1,31 @@
+<tr>
+    <td><div><%= identifier %></div></td>
+    <td>
+        <div title='<%= description %>'>
+        <% if(description.length > 25){%>
+            <%= description.substr(0,22) %>...
+        <% }else{ %>
+            <%= description %>
+        <% } %>
+        </div>
+    </td>
+    <td><div><%= Math.ceil(initInv    * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(transit    * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(fcstTrade  * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(finalInv   * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(dos        * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(dailySales * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(invPolicy  * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(invAdj     * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(order      * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(suggAdj    * 100)/100 %></div></td>
+    <td><div><%= Math.ceil(fcstExport * 100)/100 %>
+        <% if(editable){ %>  
+            <i class="fa fa-pencil pull-right editExport" title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.button.edit %>"></i>
+        <% } %>  
+       </div>
+    </td>
+   
+</tr>
+

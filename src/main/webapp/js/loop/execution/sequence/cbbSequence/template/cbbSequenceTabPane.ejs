@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-5">
+                <section class="panel">
+                    <div class="panel-body progress-panel">
+                        <div class="task-progress">
+                            <h1><%=json.prodOrder.title1%></h1>
+                            <p><%=json.prodOrder.instruction1%></p>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel tasks-widget col-lg-11">
+                    <div class="panel-body">
+                        <div class="task-content">
+                            <ul id="sortableBB" class="task-list">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-7">
+                <section class="panel">
+                    <div class="panel-body progress-panel">
+                        <div class="task-progress">
+                            <h1><%=json.prodOrder.title2%></h1>
+                            <p><%=json.prodOrder.instruction2%></p>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel tasks-widget col-lg-11">
+                    <div class="panel-body">
+                        <div class="task-content">
+                            <ul id="sortable" class="task-list">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-11">
+                <button id="saveSequence" class="btn btn-primary pull-right" ><%=json.button.save%></button>
+            </div>
+        </div>
+    </div>
+</div>

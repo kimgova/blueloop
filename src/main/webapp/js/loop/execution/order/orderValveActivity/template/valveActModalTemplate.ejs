@@ -1,0 +1,66 @@
+<div class="modal fade " id="order-valve-act-modal" tabindex="-1" role="dialog" aria-labelledby="order-modal" aria-hidden="true">
+  <div class="modal-dialog modal-med">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title"><%= json.activity.activityValve %></h4>
+          </div>
+          <div class="modal-body form-horizontal tasi-form">
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <h4 style="font-weight:bold;margin-left: 52px;"><%= json.activity.activities %></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4 style="font-weight:bold;margin-left:-12px;"><%= json.activity.responsible %></h4>
+                </div>
+                <div class="col-lg-3" style="text-align: center;">
+                    <h4 style="font-weight:bold;">Check</h4>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <h4 style="font-weight: bold;"><%=json.activity.outputActivities%></h4>
+                    <h6><%=json.activity.msgActivity%></h6>
+                </div>
+                <div class="col-lg-4"></div>
+                <div id="outputOrderValveAct">
+                    <div class="form-group">
+                        <label class="col-lg-10 col-sm-2" style="margin-left:16px"><%=json.activity.nodata%></label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <h4 style="font-weight: bold;"><%=json.activity.flow%></h4>
+                    <h6><%=json.activity.msgActivity%></h6>
+                </div>
+                <div class="col-lg-4"></div>
+                <div id="flowbbOrderValveAct">
+                    <div class="form-group">
+                        <label class="col-lg-10 col-sm-2" style="margin-left:16px"><%=json.activity.nodata%></label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <h4 style="font-weight: bold;"><%=json.activity.inputActivities%></h4>
+                    <h6><%=json.activity.msgActivity%></h6>
+                </div>
+                <div class="col-lg-4"></div>
+                <div id="inputOrderValveAct">
+                    <div class="form-group">
+                        <label class="col-lg-10 col-sm-2" style="margin-left:16px"><%=json.activity.nodata%></label>
+                    </div>
+                </div>
+            </div>
+            <label style="visibility:hidden;">...</label>
+          </div>
+          <div class="modal-footer">
+              <button id="closeModal" data-dismiss="modal" class="btn btn-default" type="button"><%= json.button.close %></button>
+              <button id="saveOrderActivities" class="btn btn-primary" type="button"><%= json.button.save %></button>
+          </div>
+      </div>
+  </div>
+</div>

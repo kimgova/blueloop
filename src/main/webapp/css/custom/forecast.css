@@ -1,0 +1,31 @@
+.imgOnTable{background:white;border:1px solid #ccc;padding:3px;}
+.btnsTable{float:right;}
+.rowContentTable{text-align:left;vertical-align:top;}
+.divRowContentTable{padding-top:15px;}
+li.tabSpace{padding-left:15px;}
+.dependency-container.form-control{background:rgba(0, 0, 0, 0) none repeat scroll 0 0;border:medium none;margin-top:-15px !important;}
+.dependency-container .ms-choice{width:100px !important;}
+#sortable li .dependency-container{font-size:12px;}
+#sortable li .task-title-sp{}
+.form h4 {color:#39b5aa;}
+.btn-disabled{background-color:#ccc !important;border-color:#ccc !important}
+#roleList li{padding:0px !important;padding-right:35px !important;}
+#roleList li i{color:#fff;}
+#roleList li i:hover{color:#ff6c60;}
+#roleList li .content{display:block;outline:medium none;padding:15px 0px 15px 20px !important;}
+#roleList li .btns{margin-top:-30px;margin-right:-30px;float:right;}
+#roleList li:hover{background-color:#bec3c7;color:black;font-weight:normal;cursor:pointer;}
+#roleList li.selected{background-color:#41cac0;color:black;font-weight:bold;cursor:pointer;}
+.thBtns i:hover{color:#ff6c60;cursor:pointer;}
+#historical-trend-modal .modal-dialog, #collaborative-adjustments-modal .modal-dialog, #fcst-collab-risk-modal .modal-dialog{width:800px !important;}
+#forecast-budget-modal .modal-dialog{width:1100px !important;}
+.modal-backdrop{position:fixed !important;}
+#equivToolbar label{margin-right:8px;}
+.fa-pencil,.fa-floppy-o,.fa-times{cursor: pointer;}
+.action-column{width:75px;}
+.action-column-2{width:130px;}
+/* Linear Planning */
+.linear-row-menu{left:-170px;}
+/* icheck */
+.iCheck-helper, .icheckbox_square-blue.checked input{position:relative !important;}
+.fa-minus-square, .fa-plus-square{color:#428bca;}

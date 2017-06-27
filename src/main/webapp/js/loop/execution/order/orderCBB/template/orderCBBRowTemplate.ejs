@@ -1,0 +1,31 @@
+<tr>
+    <td><div><%= identifier %></div></td>
+    <td>
+        <div>
+            <%= json.general.view %> (<%= totalOrderDetail %>)
+            <a id='cbb-details' class='' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.view %>">
+                <i class='fa fa-plus-circle'></i>
+            </a>
+        </div>
+    </td>
+    <td>
+        <div>
+            <span id="attach-counter"><%= json.general.view %> (<%= totalAttach %>)</span>
+            <a id='cbb-attachments' class='' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.view %>">
+                <i class='fa fa-plus-circle cbb-attach'></i>
+            </a>
+        </div>
+    </td>
+    <td><div><%= dta %></div></td>
+    <td><div><%= pta %></div></td>
+    <td><div><%= status %></div></td>
+    <td>
+        <div>
+            <% if (isLastCBB && isOrderResponsible) { %>
+                <button id='endOrderChain' class='btn btn-primary btn-xs'>
+                    <i class='fa fa-flag'></i>
+                </button>
+            <% } %>
+        </div>
+    </td>
+</tr>

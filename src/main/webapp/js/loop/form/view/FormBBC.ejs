@@ -1,0 +1,178 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalProcessEdit" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+            <form class="cmxform form-horizontal tasi-form" id="formProcessEdit" method="get" action="">
+			<div class="modal-header">
+				<button id ="closeModal" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  					<h4 class="modal-title">Building Block Information</h4>			
+			</div>
+            
+			<div class="modal-body">
+				<div class="form"> 				
+                        
+
+					<div style="border: 1px solid #CCCCCC;">
+						<section class="panel" style="">
+ 							<header class="panel-heading tab-bg-dark-navy-blue squareBorder">
+                            	<ul class="nav nav-tabs" id="ulNavTabs">
+                                	<li class="active" id="liGeneral">
+	                                	<a data-toggle="tab" href="#general">General</a>
+    	                            </li>
+        	                        <li class="" id="liOperating">
+            	                        <a data-toggle="tab" href="#operating">Operating Parameters</a>
+                	                </li>                                   
+                    	            <li class="" id="liDaysOff">
+                        	            <a data-toggle="tab" href="#daysOff">Calendar</a>
+                            	    </li>
+                                	<li class="" id="liInventory">
+                                    	<a data-toggle="tab" href="#inventory">Inventory</a>
+                                 	</li>
+                             	</ul>
+                         	</header>
+							
+							<div class="panel-body">
+								<div class="tab-content">
+                          			
+                          			<div id="general" class="tab-pane active"><br>		
+                          				<input type="text" name="idBB" id="idBB" value="<%= bb.id %>" style="display:none;"/>							
+										<div class="form-group">
+											<label for="name" class="col-lg-2 col-sm-2 control-label">Name:</label>
+											<div class="col-lg-10 col-sm-10">
+												<input class="form-control" type="text" name="name" id="name" value="<%= bb.name %>" disabled required/>
+											</div>
+										</div>
+				                    
+				                        <div class="form-group">
+											<label for="description" class="col-lg-2 col-sm-2 control-label">Description:</label>
+											<div class="col-lg-10 col-sm-10">
+												<input class="form-control" type="text" name="description" id="description" value="<%= bb.description %>" disabled required/>
+											</div>
+										</div>
+				                    
+				                        <div class="form-group">
+											<label for="companyName" class="col-lg-2 col-sm-2 control-label">Company Name:</label>
+											<div class="col-lg-10 col-sm-10">
+												<input class="form-control" type="text" name="companyName" id="companyName" value="<%= bb.companyName %>" disabled required/>
+											</div>
+										</div>
+				                    
+				                        <div class="form-group">
+											<label for="phoneNumber" class="col-lg-2 col-sm-2 control-label">Phone Number:</label>
+											<div class="col-lg-10 col-sm-10">
+												<input class="form-control" type="text" name="phoneNumber" id="phoneNumber" value="<%= bb.phoneNumberAreaCode %> <%= bb.phoneNumber %>" disabled required/>
+											</div>
+										</div>
+				                    
+				                        <div class="form-group">
+											<label for="emailAddress" class="col-lg-2 col-sm-2 control-label">Email Address:</label>
+											<div class="col-lg-10 col-sm-10">
+												<input class="form-control" type="text" name="emailAddress" id="emailAddress" value="<%= bb.emailAddress %>" disabled required/>
+											</div>
+										</div>
+										
+				                        <div class="form-group">
+				                             <label for="owner" class="col-lg-2 col-sm-2 control-label">Owner:</label>
+				                             <div class="col-lg-10 col-sm-10">
+				                      		       <input class="form-control input-sm m-bot15" type="text" name="owner" id="owner" value="<%= bb.ownerName %>"  disabled required/>	
+				                            </div>
+				                        </div>
+				
+										<div class="form-group">
+											<label for="responsible" class="col-lg-2 col-sm-2 control-label">Responsible:</label>
+											<div class="col-lg-10 col-sm-10">
+												<% if(responsible.firstName != 'DEFAULT'){ %> 
+													<input class="form-control" type="text" name="responsible" id="responsible" value="<%= responsible.firstName + ' ' + responsible.lastName %>" disabled required/>
+												<% }else{ %>
+													<input class="form-control" type="text" name="responsible" id="responsible" value="" disabled required/>
+												<% } %>
+											</div>
+										</div>
+                                        
+                                        <div class="form-group">
+											<label for="leadTime" class="col-lg-2 col-sm-2 control-label">Lead Time:</label>
+											<div class="col-lg-10 col-sm-10">
+												<input class="form-control" type="text" name="leadTime" id="leadTime" value="<%= leadTime + ' ' + leadTimeType %>" disabled required/>
+											</div>
+										</div> 
+									</div>
+									
+                          			<div id="operating" class="tab-pane">
+										<br>
+				                     	<% if(bb.config.length != 0){ %> 
+				                        <% $.each(bb.config, function(i, field){ %>
+				                            <div class="form-group">
+				                                <label for="<%= field.id %>" class="col-lg-2 col-sm-2 control-label"><%= field.description %></label>
+				                                <div class="col-lg-10 col-sm-10">
+				                                    <input type="text" class="form-control" name="<%= field.name %>" id="<%= field.id %>" value="<%= field.value %>" disabled required/>
+				                                </div>
+				                            </div>
+				                        <% }) %>
+										<% } %>
+									</div>
+									
+ 									<div id="daysOff" class="tab-pane"><br>
+										<% if(daysOff.length != 0){ %> 
+			                              <% $.each(daysOff, function(i, day){ %>
+			                                 <div class="form-group">
+			                                     <div class="col-lg-10 col-sm-10">
+			                                         <label for="day<%= day.id %>" class="col-lg-10 col-sm-2 control-label">
+			                                             <%= DAYOFF_REASON[daysOff[i].reason.name].text %>: from <%= daysOff[i].startDate %> to <%= daysOff[i].finishDate %> 
+			                                         </label>
+			                                     </div>
+			                                 </div>
+			                             <% }); %>  
+			                          	<% }else{ %>
+			                            <div class="form-group">
+			                                <label class="col-lg-10 col-sm-2 control-label">No data found</label>
+			                            </div>
+			                           <% } %>                      
+									</div>
+				
+									<div id="inventory" class="tab-pane"><br>
+										<div class="adv-table">
+					                    	<table cellpadding="0" cellspacing="0" border="0" class="table table-hover personal-task" id="inventoryTable">
+					                        	<thead>
+					                                <tr>
+					                                    <th width='10%'>SKU</th>
+					                                    <th width='25%'>Description</th>
+					                                    <th width='18%'>Quantity</th>
+					                                </tr>
+					                                </thead>
+					                                <tbody>
+
+					                                <% if(inventory.length != 0){ %> 
+			                             				<% $.each(inventory, function(i, sku){ %>
+			                             					<tr class="">
+							                                    <td><%= sku.skuIdentifier%></td>
+							                                    <td><%= sku.skuDescription%></td>
+							                                    <td><%= sku.inventoryBL%> <%= sku.skuUnit%></td>
+					                                		</tr>
+			                             				<% }); %>  
+			                          				<% }else{ %>
+			                             				<tr class=""><td colspan="6" style="text-align:left">No data found</td></tr>	
+			                           				<% } %>                
+
+					                                </tbody>
+					                            </table>
+                       					</div>
+									</div>
+									
+									
+									
+								</div>
+							</div>
+
+						</section>
+					</div>
+
+
+										
+				</div>
+			</div>
+			<div class="modal-footer">
+  				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>	
+			</div>
+            </form>
+		</div>
+	</div>
+</div>

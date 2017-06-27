@@ -1,0 +1,53 @@
+<% if(type == "linkDropbox"){ %>   
+	<pre><a id='linkAttach' class='' href='<%= link %>' label='<%= link %>'><%= link.substr(0,10) %>...</a></pre>
+<% } %> 
+
+<% if(type == "linkDisk"){ %>   
+	<a id='linkAttach' class='' href='<%= link %>'><%= link %></a>
+<% } %>
+
+<% if(type == "deleteDropbox"){ %>
+    <a id='deleteAttachDropbox' class='icon-trash'></a>
+<% } %> 
+
+<% if(type == "deleteDisk"){ %>
+    <a id='deleteAttachDisk' class='icon-trash'></a>
+<% } %> 
+
+<% if(type == "download"){ %>
+    <a id='downloadAttach' class='icon-cloud-download' href='<%= link %>' download='<%= fileName %>'></a> 	
+<% } %>
+
+<% if(type == "saveDisk"){ %>   
+ 	<a id='saveAttach' class='icon-check'></a>
+<% } %>
+
+<% if(type == "editDisk"){ %>   
+ 	<a id='editAttach' class='icon-pencil'></a>
+<% } %>
+
+<% if(type == "saveDropbox"){ %>   
+ 	<a id='saveAttachDropbox' class='icon-check'></a>
+<% } %>
+
+<% if(type == "editDropbox"){ %>   
+ 	<a id='editAttachDropbox' class='icon-pencil'></a>
+<% } %>
+
+<% if(type == "cancelDisk"){ %>   
+ 	<a id='cancelAttach' class='icon-cancel'></a>
+<% } %>
+
+<% if(type == "filename"){ %>   
+ 	<div title="<%= fileName %>"><%= name %></div>	
+<% } %>
+
+<% if(type == "description"){ %> 
+<form id="descriptionDiskForm" class="cmxform form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-12">
+            <input type="text" id="descriptionDisk" class="form-control small" value="<%=description%>" required>
+        </div>
+    </div>
+</form>
+<% } %>

@@ -1,0 +1,25 @@
+<div class="page-title"></div>
+<div>
+
+    <div class="adv-table" >
+        <table class="table table-bordered table-striped table-condensed table-hover" id="teamworkTable" >
+            <thead>
+                <tr>
+                    <th class="middle-th" rowspan="2" width='20%'><%= json.teamwork.name %></th>
+                    <th class="middle-th" rowspan="2" width='20%'><%= json.teamwork.company %></th>
+                    <th class="middle-th" rowspan="2" width='20%'><%= json.teamwork.roles %></th>
+                    <th class="center" colspan="2" width='30%' style="border-bottom-width:0px"><%= json.teamwork.permissions %></th>
+                    <th class="center" colspan="2" width='20%' style="border-bottom-width:0px"><%= json.teamwork.layers %></th>
+                    <th class="center middle-th" rowspan="2" width='10%'><%= json.teamwork.action %></th>
+                </tr>    
+                <tr>   
+                    <th width='10%'><%= json.teamwork.viewer %></th> 
+                    <th width='10%'><%= json.teamwork.orderResponsible %></th> 
+                    <th width='10%'><%= json.teamwork.general %></th>
+                    <th width='10%'><%= json.teamwork.resilience %></th>                               
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+     </div>
+</div>

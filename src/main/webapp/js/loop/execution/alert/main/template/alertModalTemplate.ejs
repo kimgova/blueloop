@@ -1,0 +1,29 @@
+<div aria-hidden="true" aria-labelledby="order-modal" role="dialog" tabindex="-1" id="cbb-alert-modal" class="modal fade" >
+    <div id ="myModal-dialog" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" id="closeFormOrders" type="button">×</button>
+                <h4 class="modal-title"><%= json.bbalerts.alerts %></h4>
+            </div>
+            <div class="modal-body">
+           	  	<div class="panel-body">
+                    <div class="task-progress" style="float:none;">
+                        <h1><%= json.bbalerts.alerts %></h1>
+                        <p><%= json.bbalerts.instruction %></p>
+                    </div>
+                    <% if(isResponsible){ %>
+                        <div class='clearfix'>
+                            <div class='btn-group'>
+                                <button id='newCBBAlert' class='btn green'><%= json.general.addNew %> <i class='fa fa-plus'></i></button>
+                            </div>
+                        </div>
+                    <% }%>
+				    <div id="alert-content" class="row"></div>
+           	  	</div>
+           	  </div>
+        	<div class="modal-footer">
+        		<button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal"><%= json.button.close %></button>
+      		</div>
+        </div>
+    </div>
+</div>

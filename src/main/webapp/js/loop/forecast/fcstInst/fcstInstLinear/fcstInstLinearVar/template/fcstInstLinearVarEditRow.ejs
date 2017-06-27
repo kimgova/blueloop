@@ -1,0 +1,40 @@
+<td>
+    <div><%= date %></div>
+</td>
+<td>
+    <div>
+        <form id="observationForm" class="cmxform form-horizontal">
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input id="observation" type="text" class="form-control small" value="<%= observation %>" required>
+                </div>
+                <label class="error" for="observation" style="display:none">This field is required.</label>
+            </div>
+        </form>
+    </div>
+</td>
+<td>
+    <div>
+        <form id="valueForm" class="cmxform form-horizontal">
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input id="value" type="text" class="form-control small" value="<%= value %>" required>
+                </div>
+                <label class="error" for="value" style="display:none">This field is required.</label>
+            </div>
+        </form>
+    </div>
+</td>
+<td>
+    <div><%= user.name %></div>
+</td>
+<td>
+    <div>
+        <button id='saveVar' class='btn btn-primary btn-xs'>
+            <i class='fa fa-floppy-o'></i>
+        </button>
+        <button id='cancelVar' class='btn btn-danger btn-xs'>
+            <i class='fa fa-times'></i>
+        </button>
+    </div>
+</td>

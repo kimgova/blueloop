@@ -1,0 +1,31 @@
+<div class="user-ws-info">
+  <div class="" id="ws-info-header">
+      <div class="profile-pic">
+          <% if(formType == "profile"){ %>
+          <div class="pp-hover-mark">
+              <div id="mark-transition">
+                  <form method="post" enctype="multipart/form-data" id="formUpload" class="form">
+                      <i id="edit-pic" class="icon-pencil" title="Edit"></i>
+                      <input type="file" id="inputFile" name="inputFile" src="" style="display:none;">
+                  </form>
+              </div>
+          </div>
+          <% } %>
+          <img src="<%= path %>" alt="" class="ws-pic ws-info-pic"/>
+      </div>
+    <p id="ws-info-name"><span id="ws-info-first-name"><%= firstName %></span> <span id="ws-info-last-name"><%= lastName %></span></p>
+    <hr>
+    <p id="last-seen"><i class="icon-clock"></i>    Last Seen: <span><%= lastSeen %></span></p>
+    <hr>
+  </div>
+  <div class="" id="ws-info-contact">
+    <p>Email: <span id="ws-info-email"><%= email %></span></p>
+    <p>Phone Number: <span id="ws-info-phone"><%= areaCode %> <%= phone %></span></p>
+    <p>Company: <span id="ws-info-company"><%= company %></span></p>
+    <p>Country: <span id="ws-info-country"><%= country %></span></p>
+    <p>Department: <span id="ws-info-department"><%= department %></span></p>
+    <p>Occupation: <span id="ws-info-occupation"><%= occupation %></span></p>
+  </div>
+  <hr>
+  <div class="" id="ws-info-footer"></div>
+</div>

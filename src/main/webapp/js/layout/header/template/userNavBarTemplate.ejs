@@ -1,0 +1,75 @@
+<a href="http://blue-loop.com"  class="logo">
+	<img src="/blueloop-backend/static/images/logo-circle.png" alt="Blue-loop" height="42"/>
+</a>
+<div id="bcrumb-container">
+	<!-- Breadcrumb template is rendered here -->
+</div>
+<div id="user-nav">
+	<ul class="nav pull-right top-menu">
+        <% if(role != '[ROLE_SUPERADMIN]'){ %>
+		<li class="user-nav-item">
+			<a id="tab-chat">
+				<i class="icon-bubble"></i>
+				<div class="bubble-notif" id="msg-count"></div>
+			</a>
+		</li>
+        	
+		<li class="user-nav-item">
+			<a id="notif-bell"><i class="icon-bell"></i></a>
+			<div class="bubble-notif" id="alert-count"></div>
+		</li>
+		<% }%>
+        <li class="dropdown user-nav-item">
+            <div class="user-nav-header">                
+                <img id="" src="<%= image %>">
+                <% if(role != '[ROLE_SUPERADMIN]'){ %>
+                <a href="" class="current-user-status-icon green" data-toggle="dropdown" class="dropdown-toggle">    
+                    <i class="fa fa-chevron-circle-down"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu" id="user-status-dropdown">
+                    <div class="user-status-arrow-up"></div>
+                    <li>
+                       <a id="online"><i class="fa fa-circle" style="color: rgb(126, 211, 33);"></i> Online</a>
+                    </li>
+                    <li>
+                       <a id="busy"><i class="fa fa-circle" style="color: #ff6c60;"></i> Busy</a>
+                    </li>   
+                    <li>
+                        <a id="away"><i class="fa fa-circle" style="color: rgb(245, 166, 35);"></i> Away</a>
+                    </li>
+                </ul>
+                <% }%>
+            </div>
+        </li>
+        
+		
+		<!-- user login dropdown start-->
+		<li class="dropdown user-nav-item">
+			<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+				<span class="username">
+					<%= name %>
+					<%= lastname %>
+				</span>
+				<b style="font-size: 10px;">
+                    <i class="fa fa-chevron-down"></i>
+                </b>
+			</a>
+			<ul class="dropdown-menu logout">
+				<div class="log-arrow-up"></div>
+                <% if(role != '[ROLE_SUPERADMIN]'){ %>
+				<li>					
+					<a href="/blueloop-backend/user/profile"><i class="icon-user"></i>  Profile</a>
+				</li>
+				<li>
+					<a href="/blueloop-backend/user/settings"><i class="icon-settings"></i>  Settings</a>
+				</li>
+                <% }%>
+				<li>
+					<a href="/blueloop-backend/logout"><i class="icon-logout"></i>  Logout</a>
+				</li>
+			</ul>
+		</li>
+		<!-- user login dropdown end-->
+		
+	</ul>
+</div>

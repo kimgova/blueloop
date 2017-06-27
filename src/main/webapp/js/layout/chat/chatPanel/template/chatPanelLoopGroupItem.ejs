@@ -1,0 +1,33 @@
+<li class="chat-panel-item">
+	<a id='chat<%= chatId %>' class='a-chat hiligth'>
+		<i id='Chat_<%= chatId %>' class='channelName fa fa-exclamation-circle'></i>
+		<i class='fa fa-circle-o'></i>
+		<span title='<%= chatName %>' onclick='chat.agregarGroupChat("<%= chatId %>","<%= chatName %>","Chat_<%= chatId %>", $(this));'>
+
+		   <% if(chatName.length > 13){ %>   
+				<%= chatName.substr(0,12)%>...
+		   	<% }else{ %>
+		   		<%= chatName %>
+		   	<% } %> 
+	   
+		</span>
+		
+		<% if(owner == true){ %>   
+			<i onclick='chat.deleteChat("<%= chatId %>","<%= chatName %>");' class='fa fa-times pull-right'></i>
+			<i id="<%= chatId %>" lp="<%= chainId %>" class='fa fa-pencil pull-right btnEditLoopChatGroup'></i>													
+	   	<% }else{ %>
+	   		<i onclick='chat.leaveChat("<%= chatId %>","<%= chatName %>");' class='fa fa-times pull-right'></i>
+	   	<% } %> 		
+		
+		<label title='(Loop: <%= other %>)'>
+
+			<% if(other.length > 12){ %>   
+				(Loop: <%= other.substr(0,11)%>...
+		   	<% }else{ %>
+		   		(Loop: <%= other %>)
+		   	<% } %>
+		   	 
+		</label>
+	</a>
+</li>
+	

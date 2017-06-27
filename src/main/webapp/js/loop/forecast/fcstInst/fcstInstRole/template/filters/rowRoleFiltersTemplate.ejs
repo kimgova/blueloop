@@ -1,0 +1,13 @@
+<tr>
+    <td><div><%= skuIdentifier %></div></td>
+    <td><div><%= skuDescription %></div></td>
+       <% $.each(filterList, function(i, filterSku){ %>
+       		<td><div>
+    			<% if(filterSku.status == true){%>
+					<input filter="<%= filterSku.filter.id%>" idfrsf='<%= filterSku.idFRSF %>' idfrsku='<%= idFRSku %>' class='statusFilter' type="checkbox" value="" checked='checked'>
+				<% }else{ %>
+					<input filter="<%= filterSku.filter.id%>" idfrsf='<%= filterSku.idFRSF %>' idfrsku='<%= idFRSku %>' class='statusFilter' type="checkbox" value="">
+				<% } %>
+			</div></td>
+       <% }); %>
+</tr>

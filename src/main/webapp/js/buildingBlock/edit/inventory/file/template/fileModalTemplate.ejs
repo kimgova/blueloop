@@ -1,0 +1,32 @@
+<div class="modal fade" id="modalFile" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title"><%=json.blueMonitor.fileModalTitle%></h4>
+            </div>
+            <div class="modal-body">
+                <section class="panel">
+                    <header class="panel-heading"> <%=json.blueMonitor.files%> </header>
+                    <div class="panel-body">
+                        <div class="col-lg-12">
+                            <div id="file-content" class="row"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <div class="panel-body">
+                    <div class="col-lg-6">
+                        <button type="button" data-dismiss="modal" class="btn btn-default" id="closeFile">
+                            <%=json.button.close%>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

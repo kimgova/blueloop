@@ -1,0 +1,66 @@
+<% if(isIdentifier){ %>
+<form id="identifierSKUForm" class="cmxform form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-12">
+            <input id="identifierSKU" type="text" class="form-control small" value="<%= value %>" required>
+        </div>
+        <label class="error" for="identifierSKU" style="display:none">This field is required.</label>
+    </div>
+</form>
+<% }%>
+
+<% if(isDescription){ %>
+<form id="descriptionSKUForm" class="cmxform form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-12">
+            <input id="descriptionSKU" type="text" class="form-control small" value="<%= value %>" required>
+        </div>
+        <label class="error" for="descriptionSKU" style="display:none">This field is required.</label>
+    </div>
+</form>
+<% }%>
+
+<% if(isUnit){ %>
+<form id="unitSKUForm" class="cmxform form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-12">
+            <select class="form-control small" id="unitSKU">
+                <% $.each(units, function(j, unit){ %>
+                    <% if(unit.value == value){ %>
+                        <option value="<%= unit.value %>" selected> <%= unit.description %> </option>
+                    <% }else{ %>
+                        <option value="<%= unit.value %>" > <%= unit.description %> </option>
+                    <% }%>
+                <% }); %>
+            </select>
+        </div>
+    </div>
+</form>
+<% }%>
+
+<% if(newBtns){ %>
+<button type="submit" id="saveSKU" class="btn btn-success btn-xs">
+    <i class="fa fa-check"></i>
+</button>
+<button id="cancelSKU" class="btn btn-danger btn-xs" style="margin-left:4px" data-mode="new">
+    <i class="fa fa-times"></i>
+</button>
+<% }%>
+
+<% if(addBtns){ %>
+<button id='editSKU' class='btn btn-default btn-xs'>
+    <i class='fa fa-pencil'></i>
+</button>
+<button id='deleteSKU' style='margin-left:4px' class='btn btn-danger btn-xs'>
+    <i class='fa fa-trash-o'></i>
+</button>
+<% }%>
+
+<% if(editBtns){ %>
+<button type="submit" id="saveSKU" class="btn btn-success btn-xs">
+    <i class="fa fa-check"></i>
+</button>
+<button id="cancelSKU" class="btn btn-danger btn-xs cancel" style="margin-left:4px">
+    <i class="fa fa-times"></i>
+</button>
+<% }%>

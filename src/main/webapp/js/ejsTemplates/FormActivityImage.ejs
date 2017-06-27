@@ -1,0 +1,30 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalActivityImg" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Image Selection for Activity<g:message code="activity.imageSelection"/></h4>
+            </div>
+            <div class="modal-body">
+	 			<div class="panel-body">
+	 				<input class="form-control" type="hidden" name="fnGetPosition" id="fnGetPosition" value="" />
+	 				<input class="form-control" type="hidden" name="inputOutputAct" id="inputOutputAct" value="" />
+					<ul id="gridActivityImg" class="grid cs-style-3">
+					
+						<% $.each(listImages, function(i, imagen){ %>
+		                	<li id='gridliActiImg' class='gridliActiImg'>
+		                		<img id='imgActi' title='d' class='fancybox-image' rel='group' href='<%= imagen.filePath %>' src='<%= imagen.filePath %>' alt=''>
+		                		<caption>
+		                			<input type='hidden' id='filePathSelectImg' value='<%= imagen.filePath %>'/>
+		                			<input type='hidden' id='fileNameSelectImg' value='<%= imagen.name %>'/>
+		                			<input type='hidden' id='fileNameSelectImg' value='<%= imagen.name %>'/>
+								</caption>
+							</li>																                                        
+			            <% }); %>  
+			                                 		 			 		
+     		 		</ul>
+      		 	</div>
+			</div>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="page-title">
+	<i class="fa fa-dot-circle-o" style=""></i>
+	<h3> <%= json.forecast.planning %> - <span class="semi-bold" id="titleForecast"></span></h3>
+</div>
+<div>
+    <table cellpadding='0' cellspacing='0' border='0' class='table table-striped table-hover table-bordered' id='tableForecastInstances' style='text-align: center'>
+        <thead>
+            <tr>
+                <th class='center'><%= json.forecast.name %></th>
+                <th class='center'><%= json.forecast.period %></th>
+                <th class='center'><%= json.forecast.status %></th>
+                <th class='center'><%= json.forecast.dateCreated %></th>
+                <th class='center'><%= json.forecast.signOff %></th>
+                <th class='center'><%= json.forecast.autorizedBy %></th>
+                <th class='center'><%= json.forecast.percentage %></th>
+                <th class='center'><%= json.general.action %></th>
+            </tr>
+        </thead>
+        <tbody id="all">
+            <tr>
+                <td id="no-data-td" valign="top" colspan="8"><%= json.forecast.noData %></td>
+            </tr>
+        </tbody>
+        <tbody id="display"></tbody>
+    </table>
+ 	<div id="pagination" class="pagination" style="float: right; width:100%"></div>    
+    <div style="float:right;">
+        <button id="addInstanceBtn" type="button" class="btn btn-primary btn-sm">
+            <i class="fa fa-plus"></i> <%= json.forecast.createForecast %>
+        </button>
+    </div>
+</div>

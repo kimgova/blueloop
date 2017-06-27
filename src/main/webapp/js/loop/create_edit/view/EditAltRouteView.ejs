@@ -1,0 +1,29 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="form-edit-route" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><%= modalTitle %></h4>
+           	 </div>
+           	 <div class="modal-body">
+           	  	<div class="panel-body">
+          	  		<div class="form-group">
+						<label for="routeName">Alternative Route: </label>
+						<div class="col-lg-12">
+							<select class="form-control input-sm m-bot15 selectUsers" name="altroute" id="altroute">
+                                <option selected value="DEFAULT">--<%= defaultRoute %>--</option> 
+                                <% $.each(routes, function(i, route){ %>
+                                <option value="<%= route.id %>"><%= route.name %></option>
+                                <% }); %>
+                            </select>
+						</div>
+					</div>
+           	  	</div>
+           	  </div>
+           	  <div class="modal-footer">
+        		<button id="editAltRoute" type="button" data-dismiss="modal" class="btn btn-primary"><%= editBtn %></button>
+        		<button type="button" class="btn btn-default" data-dismiss="modal"><%= cancelBtn %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

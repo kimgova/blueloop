@@ -1,0 +1,32 @@
+<div class="chat-widget" id="<%= id %>">
+    <div class="col-md-12">
+        <!-- BOX -->
+        <div class="chatbox border primary">
+            <div class="box-title">
+                <h4><i class="fa fa-comment"></i><%= title %></h4>
+                <div class="tools">
+                    <a href="javascript:;" class="chat-collapse">
+                        <i class="fa fa-minus"></i>
+                    </a>
+                    <a href="javascript:;" class="remove">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="box-body" style="display:none"> DISPLAY THE CHAT COLLAPSED -->
+            <div class="box-body" style="">  <!-- DISPLAY THE CHAT EXPANDED -->
+                <div class="scroller" style="height:350px" data-height="350px" data-always-visible="1" data-rail-visible="1">
+                    <ul class="media-list chat-list-wdgt"></ul>
+                </div>
+                <div class="divide-20"></div>
+                <div class="chat-form">
+                    <div class="input-group"> 
+                        <input type="text" class="form-control"> 
+                        <span class="input-group-btn"> <button class="btn btn-primary" type="button"><i class="fa fa-check"></i></button> </span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /BOX -->
+    </div>
+</div>

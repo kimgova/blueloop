@@ -1,0 +1,17 @@
+<% if(type == "bbGeneralAlert"){ %>   
+	<svg id='bbGeneralAlert<%= id %>' xmlns='http://www.w3.org/2000/svg' width='50' height='50'>
+		<foreignObject width='50' height='50'>
+			<body xmlns='http://www.w3.org/1999/xhtml'>
+				<div class='bbGeneralAlert' id='bbGeneralAlert<%= id %>'></div>
+			</body>
+		</foreignObject>
+	</svg>
+<% } %> 
+
+<% if(type == "counterTrianle"){ %>   
+    <i class='fa fa-exclamation-triangle popovers' style='font-size:20px; color:#fcb322;'  id='popoverOrder<%= id %>' ></i>
+<% } %>
+
+<% if(type == "content"){ %>   
+    <p class=""><b><%= name %>: </b><%= description %></p>
+<% } %> 

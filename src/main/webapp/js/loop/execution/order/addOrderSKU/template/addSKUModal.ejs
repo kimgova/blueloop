@@ -1,0 +1,21 @@
+<div aria-hidden="true" aria-labelledby="titleModal" data-backdrop="static" role="dialog" tabindex="-1" id="add-SKU-order-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-hidden="true" class="close" type="button">×</button>
+				<h4 class="modal-title" id="titleModal"><%=json.order.newOrderSKU %></h4>
+			</div>
+			<div class="modal-body">
+				<div class="panel-body">
+					<div id="skuTable" class="row"></div>
+					<br>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button aria-hidden="true" class="btn btn-default" id="btnCancel">
+					<%=json.button.close%>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<td><div><%= identifier %></div></td>
+<td><div><%= description %></div></td>
+<td><div><%= initInv %></div></td>
+<td><div><%= transit %></div></td>
+<td><div><%= fcstTrade %></div></td>
+<td><div><%= finalInv %></div></td>
+<td><div><%= dos %></div></td>
+<td><div><%= dailySales %></div></td>
+<td><div><%= invPolicy %></div></td>
+<td><div><%= invAdj %></div></td>
+<td><div><%= order %></div></td>
+<td><div><%= suggAdj %></div></td>
+<td>
+    <form id="exportForm" class="cmxform form-horizontal">
+        <div class="form-group">
+            <div class="col-lg-12">
+                <input id="fcstExport" type="text" class="form-control small" value="<%= fcstExport %>" required>
+            </div>
+            <label class="error" for="fcstExport" style="display:none">This field is required.</label>
+        </div>
+        
+        <i class="fa fa-times pull-right cancel3s" title="" data-placement="top" data-toggle="tooltip" 
+            data-original-title="<%= json.button.cancel %>"></i>
+        <i class="fa fa-floppy-o pull-right save3s" title="" data-placement="top" data-toggle="tooltip" 
+            data-original-title="<%= json.button.save %>"></i> 
+    </form>
+</td>

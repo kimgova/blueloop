@@ -1,0 +1,411 @@
+/*Misc*/
+.ws-pic{
+	border-radius: 50%;
+}
+
+.visible{
+	visibility:visible;
+}
+
+.hidden{
+	visibility:hidden;
+}
+
+/*User WS View*/
+.ws-topbar{
+	position: fixed;
+    background-color: #2A3542;
+    width: 100%; 
+    color: white;
+    font-size: 17px;
+}
+#user-ws-content{
+	position: relative;
+	margin-top: 20px;
+}
+
+.ws-content{
+    display: inline;
+    float: left;
+}
+
+#user-ws-info-container{
+	position: relative;
+    width: 23.2%;
+    border-right: 1px solid #DEDEDE;
+    padding: 1% 1.8% 25px;
+}
+
+#user-ws-panel-container{
+	width: 75%;
+	padding: 2px 42px 28px;
+}
+
+
+/*User WS Info View*/
+.user-ws-info hr{
+	margin: 5% 0 5%;
+}
+
+.user-ws-info span:not(#ws-info-first-name){
+	font-weight: 600;
+}
+
+.ws-info-pic{
+/* 	position: relative; */
+	width: 100%;
+/*     margin: 5%; */
+}
+
+.ws-request-header{
+    width: 55%;
+}
+.center{
+    margin: 0 auto;
+}
+.ws-request-pic{
+    /*padding-left: 25%;
+    padding-right: 25%;*/
+    width: 54%;
+     margin: 0 auto;
+}
+
+.modal-dialog-request .modal-dialog{
+    width: 26%;
+    margin: 12% auto;
+}
+
+.ws-request-name{
+    font-size: 19px;
+    margin-top: 5px;
+}
+
+#ws-info-name{
+	font-size: 24px;
+    font-weight: 100;
+}
+
+#last-seen{
+	font-size: 18px;
+    font-weight: 100;
+}
+
+#last-seen span{
+	font-size: 19px;
+}
+
+#last-seen i{
+	font-size: 22px;
+    margin: 2%;
+    color: #B7B7B7;
+}
+
+#ws-info-contact{
+	font-size: 17px;
+    font-weight: 100;
+    text-align: left;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+#ws-info-contact p{
+	margin-bottom: 3px;
+}
+
+
+#ws-info-footer {
+   margin-top: 8%;
+}
+
+
+#ws-info-footer span{
+	font-size: 20px;
+}
+
+#ws-info-footer i{
+	 font-size: 85px;
+}
+
+
+.ws-chat-pic{
+	margin-top: 8%;
+    margin-left: 36%;
+    width: 30%;
+    height: 89px;
+    background-color: #F1F1F1;
+}
+
+.ws-chat-pic img {
+    width: 53%;
+    margin-top: 24%;
+}
+
+.ws-chat-pic:hover{
+	cursor:pointer;
+    background-color: #DADADA;
+}
+
+/*User WS Panel View*/
+
+.user-ws-info{
+	position:relative;
+	text-align: center;
+}
+
+#ws-info-header{
+	position:relative;
+}
+.ws-list-container{
+	height: 208px;
+	overflow: hidden;
+}
+
+.ws-list-container div{
+	position:relative;
+}
+
+#user-ws-panel-content hr{
+	margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/*WS Lists*/
+.ws-list-header{
+	margin-top: 10px
+}
+
+.ws-list{
+	position: relative;
+	white-space: nowrap;
+    /* overflow-x: scroll; */
+}
+
+.ws-list-arrow{
+	position: absolute;
+	margin-top: 36px;
+    font-size: 36px;
+    color: #DEDEDE;
+    z-index: 998;
+}
+
+.ws-list-arrow:hover{
+	cursor:pointer;
+}
+
+
+.ws-list-arrow-right{
+    right: 0;
+}
+
+.ws-list-arrow-left{
+    left: 0;
+}
+
+
+/*WS elements*/
+
+.ws-element:hover{
+	cursor:pointer;
+}
+
+.ws-element p{
+	font-size: 16px;
+	margin-bottom: 0;
+}
+
+.ws-element-name{
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    width: 11em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: -4px;
+}
+
+.ws-contact-name{
+	font-size: 16px;
+	margin-bottom: 0;
+	white-space: nowrap;
+    width: 11em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: -4px;
+}
+
+.ws-element{
+	text-align: center;
+    display: inline-block;
+    /* float: left; */
+    margin: 18px;
+    width: 168px;
+}
+
+.ws-element-display-name{
+	/* white-space: nowrap;
+    width: 19em;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.ws-element-pic{
+	width: 70px;
+    height: 70px;
+    margin: 6px;
+    margin-left: 48px;
+    background-color: #F1F1F1;
+}
+
+.ws-contact-pic{
+	width: 70px;
+    height: 70px;
+    margin: 6px;
+    background-color: #F1F1F1;
+}
+
+.ws-element-pic img{
+	width: 50px;
+    height: 50px;
+    margin-left: 2px;
+    margin-top: 11px;
+}
+
+#ws-contact-list li{
+	display:inline;
+}
+
+
+/*media queries*/
+
+/* small screen size */
+@media only screen and (max-device-width: 1370px) and (min-device-width: 860px)  {
+	#ws-info-name {
+	    font-size: 20px;
+	}
+	#last-seen {
+	    font-size: 16px;
+	}
+	#last-seen i {
+	    font-size: 20px;
+	}
+	#last-seen span {
+    	font-size: 16px;
+	}
+	#ws-info-contact {
+    	font-size: 15px;
+	}
+	#ws-info-footer span {
+    	font-size: 16px;
+	}
+	.ws-chat-pic{
+		height: 75px;
+	}
+}
+
+ @media only screen and (max-width: 1361px)  {
+	#user-ws-info-container {
+    	width: 25.2%;
+	}
+	#user-ws-panel-container {
+    	width: 72%;
+	}
+}
+
+@media only screen and (max-width: 1205px)  {
+	#user-ws-info-container {
+    	width: 28.2%;
+	}
+	#user-ws-panel-container {
+    	width: 70%;
+	}
+}
+
+@media only screen and (max-width: 1136px)  {
+	#user-ws-info-container {
+    	width: 30.2%;
+	}
+	#user-ws-panel-container {
+    	width: 68%;
+	}
+}
+
+@media only screen and (max-width: 1055px)  {
+	#user-ws-info-container {
+    	min-width: 318px;;
+	}
+	#user-ws-panel-container {
+    	width: 56%;
+	}
+}
+
+@media only screen and (max-width: 1020px)  {
+	#user-ws-panel-container {
+    	min-width:  530px;
+    	position: absolute;
+	}
+}
+
+.profile-pic{
+	position: relative;
+    width:40%;
+    margin:0 auto;
+}
+
+.profile-pic:hover:hover .pp-hover-mark{
+    opacity:1;
+}
+
+.pp-hover-mark{
+	position: absolute;
+	height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+.profile-pic:hover #mark-transition{
+    top:0;
+}
+
+#mark-transition{
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    top: -15px;
+    transition: .25s;
+}
+
+.pp-hover-mark .btn-default{
+    margin: 25%;
+    display: table;
+    background-color: rgba(138, 138, 138, 0.88);
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 0px;
+    border-color: white;
+    color:white;
+}
+
+.pp-hover-mark .btn-default:hover{
+    background-color: rgba(138, 138, 138, 0.98);
+}
+
+#edit-pic{
+	display: table;
+	margin: 25%;
+	font-size:50px;
+	color:white;
+}
+
+#edit-pic:hover{
+    color: rgba(138, 138, 138, 0.98);
+}
+
+
+

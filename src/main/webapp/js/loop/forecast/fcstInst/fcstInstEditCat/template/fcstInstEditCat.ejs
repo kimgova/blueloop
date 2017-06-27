@@ -1,0 +1,34 @@
+<div>
+    <div class="task-progress" style="float:none;">
+        <h1><%= json.forecast.fcstInstCatTitle %></h1>
+        <p><%= json.forecast.fcstInstCatDesc %></p>
+    </div>
+    <br>
+    <div id="catContent">
+        <div style="float:right;">
+            <button id="addCatBtn" type="button" class="btn btn-primary btn-sm" title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.addNewCat %>">
+                <i class="fa fa-plus"></i> <%= json.general.addNew %>
+            </button>
+        </div>
+    </div>
+    <br><br>
+    <div id="primaryCatTable"></div>
+    <br>
+    <div class="task-progress subCatTitle" style="float:none;display:none;">
+        <h1><%= json.forecast.fcstInstSubCatTitle %> <span id="subCatTitle">[ ]</span></h1>
+        <p><%= json.forecast.fcstInstSubCatDesc %></p>
+    </div>
+    <br>
+    <div id="subContent" style="display:none;" >
+        <input id="catId" type="text" value="" style="display:none;">
+        <div style="float:right;">
+            <button id="addSubCatBtn" type="button" class="btn btn-primary btn-sm" title="" data-placement="top" data-toggle="tooltip" 
+                data-original-title="<%= json.forecast.tooltips.addNewSubCat %>">
+                <i class="fa fa-plus"></i> <%= json.general.addNew %>
+            </button>
+        </div>
+    </div>
+    <br><br>
+    <div id="subCatTable" style="display:none;"></div>
+</div>

@@ -1,0 +1,22 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="collab-filter-modal" class="modal fade" >
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-header">
+             	<button id="closeHeader" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+             	<h4 class="modal-title">Modify Collaborative Filters</h4>
+			</div>
+			<div class="modal-body">
+                <div class="task-progress" style="float:none;">
+                    <h1>Table Filters</h1>
+                    <p>Change the order of the table filters</p>
+                </div>
+            	<div id="filterList">
+                    <ul id="sortable" class="task-list"></ul>
+                </div>
+            </div>
+        	<div class="modal-footer">
+                <button id="saveFilterOrder" type="button" data-dismiss="modal" class="btn btn-primary"><%= json.button.save %></button>
+      		</div>
+		 </div>
+	</div>
+</div>

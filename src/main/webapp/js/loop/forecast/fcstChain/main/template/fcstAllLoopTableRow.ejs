@@ -1,0 +1,130 @@
+    <%var currentUserIsAdmin  = false;%>
+    <%var currentUserIsLeader = false;%> 
+        
+    <% if(chain.userCreator.id == currentUser){ currentUserIsAdmin = true}%>
+    <% $.each(leaders, function(j, user){ %> 
+        <% if(user.id == currentUser){ currentUserIsLeader = true}%>
+    <% }); %>
+                
+<tr>
+    <td style='width:0%;display:none;'>
+        <%= id %>
+    </td>
+    <td>
+        <div>
+            <div>
+                <a href="<%= imagePath %>" data-rel="prettyPhoto[gallery1]" title="Zoom Preview" target="_blank" >
+                    <img src="<%= imagePath %>" height="100" width="141" class="imgOnTable"/>
+                </a>
+            </div>
+            <div>
+                <b> <%= chain.description %></b>
+                <br><br>
+                <div id="fcstName">
+                    <b><%= name %></b>
+                    <% if(currentUserIsAdmin == true || currentUserIsLeader == true){ %>
+                        <i class="fa fa-pencil editFcstName" title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.button.edit%>" ></i>
+                    <% } %>
+                </div>
+                <%= forecastModel.name %>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="rowContentTable">
+            <div class="btnsTable">                
+                <% if(currentUserIsAdmin == true){ %>
+                    <button id='addForecastLeader' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.forecast.tooltips.addLeader %>" >
+                        <i class='fa fa-plus'></i>
+                    </button>
+                <% } %>
+            </div>
+            <div class="divRowContentTable">
+                <ul>
+                    <% $.each(leaders, function(j, user){ %> 
+                       <li class="tabSpace"><i class='fa fa-angle-right'></i> <a href="/blueloop-backend/user/profileWall/<%= user.id %>"><%= user.firstName %> <%= user.lastName %></a></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+        
+    </td>
+    <td>
+        <div class="rowContentTable">
+            <div class="btnsTable">
+                <% if(currentUserIsAdmin == true || currentUserIsLeader == true){ %>
+                    <button id='addForecastWU' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.forecast.tooltips.addWU %>">
+                        <i class='fa fa-plus'></i>
+                    </button>
+                <% } %>
+            </div>
+            <div class="divRowContentTable">
+                <ul>
+                <% $.each(workingUnits, function(i, unit){ %>
+                    <li><i class='fa fa-angle-down'></i> <b><%= unit.workingUnit.name %></b>
+                        <ul>
+                        <% $.each(unit.workingUnitMembers, function(k, member){ %>
+                            <li class="tabSpace"><i class='fa fa-angle-right'></i> <a href="/blueloop-backend/user/profileWall/<%= member.id %>"><%= member.firstName %> <%= member.lastName %></a></li>
+                        <% }); %>
+                        </ul>
+                    </li>
+                    <br>
+                <% }); %>
+                </ul>
+            </div>
+        </div>
+        
+    </td>
+    <td>
+        <div class="rowContentTable" >
+            <div class="btnsTable">
+                <% if(currentUserIsAdmin == true || currentUserIsLeader == true){ %>
+                    <button id='editPlanningCycle' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.forecast.tooltips.cycle %>">
+                        <i class='fa fa-pencil'></i>
+                    </button>
+                <% } %>
+            </div>
+            <div class="divRowContentTable"> 
+                <ul>
+                    <li><b><%= json.forecastCycle.starting %>:</b></li>
+                    <li class="tabSpace">
+                        <% if(FORECAST_PERIODICITY[planningPeriodicity].id == 1){%>
+                            <% if(FORECAST_REPEAT[planningRepeat].id == 1){%>
+                                <%= FORECAST_PERIODICITY[planningPeriodicity].message%>, <%= json.forecastCycle.every %> <%= planningRepeatValue %> <%= json.forecastCycle.ofMonth %>
+                            <% }else { %>
+                                <%= FORECAST_PERIODICITY[planningPeriodicity].message%>, <%= FORECAST_FRECUENCY[planningFrecuencyRepeat].message %> <%= FORECAST_DAYS[planningRepeatValue.toString()].message %> <%= json.forecastCycle.ofMonth %>
+                            <% } %>
+                        <% }else { %>
+                            <%= FORECAST_PERIODICITY[planningPeriodicity].message%>, <%= FORECAST_FRECUENCY[planningFrecuencyRepeat].message %> <%= FORECAST_DAYS[planningRepeatValue.toString()].message %> <%= json.forecastCycle.ofWeek %>
+                        <% } %>
+                    </li>
+                    <li><b><%= json.forecastCycle.proyection %>:</b></li>
+                    <li class="tabSpace">
+                        <% if(FORECAST_PERIODICITY[planningPeriodicity].id == 1){%>
+                            <%= forecastFor %> <%= json.forecastCycle.month %>
+                        <% }else { %>
+                            <%= forecastFor %> <%= json.forecastCycle.week %>
+                        <% } %>
+                    </li> 
+                    <!--
+                    <li><b><%= json.forecastCycle.upcoming %>:</b></li>
+                         <li class="tabSpace"> <%= upcomingProyection %> NEXT PLANNING DATE (!)</li>
+                     -->
+                </ul>
+            </div>
+        </div>
+        
+    </td>
+    <td>
+        <div>
+            <button id='viewForecast' class='btn btn-primary btn-xs' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.forecast.tooltips.viewForecast%>">
+                <i class='fa fa-search'></i>
+            </button>
+            <% if(currentUserIsAdmin == true || currentUserIsLeader == true){ %>
+                <button id='deleteForecast' class='btn btn-danger btn-xs' title="" data-placement="top" data-toggle="tooltip" data-original-title="<%= json.forecast.tooltips.deleteForecast%>">
+                    <i class='fa fa-trash-o'></i>
+                </button>
+            <% } %>
+        </div>
+    </td>
+</tr>

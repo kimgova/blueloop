@@ -1,0 +1,104 @@
+<% if(inputRiskName){ %>
+	<form id="nameRiskForm" class="cmxform form-horizontal">
+		<div class="form-group">
+			<div class="col-lg-12">
+				<input type="text" id="nameRisk" class="form-control small" value="<%=value%>"
+					required>
+			</div>
+		</div>
+	</form>
+<% } %>
+
+<% if(inputSeason){ %>
+<form id="seasonRiskForm_<%=random_id%>" class="cmxform form-horizontal">
+    <div class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">View <span class="caret"></span></a>
+        <ul class="dropdown-menu square-dropdown">
+            <% $.each(MONTHS, function(i, item){ %>
+            <li>
+                <div class='md-checkbox'>
+                    <input id='checkMonth<%=item.value%>_<%=random_id%>' class='md-check season-check' type="checkbox" value="<%=item.value%>" <%=season[item.value]%>>
+                    <label for="checkMonth<%=item.value%>_<%=random_id%>"> 
+                        <span></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        <%=item.text%>
+                    </label>
+                </div>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+</form>
+<% } %>
+
+<% if(inputProbability){ %>
+	<div id="spinnerProbability">
+		<div class="input-group input-small">
+			<input id="probabilityRisk" type="number" role="spinbutton"
+				class="spinner-input form-control small" max="100" min="0" step="10"
+				value="<%=value%>" required>
+		</div>
+	</div>
+<% } %>
+
+<% if(inputResilience){ %>
+	<div id="spinnerResilience">
+		<div class="input-group input-small">
+			<input id="resilienceIndexRisk" type="number" role="spinbutton"
+				class="spinner-input form-control small" max="100" min="0" step="1"
+				value="<%=value%>" required>
+		</div>
+	</div>
+<% } %>
+
+<% if(btnsEdit){ %>
+	<a  id='editRisk' class="icon-pencil editRisk"></a>
+	<a  id='deleteRisk' class="icon-trash" style='margin-left: 4px'></a>
+<% } %>
+
+<% if(btnSave){ %>
+    <a  id='saveRisk' class="icon-check saveRisk"></a>
+<% } %>
+
+<% if(btnCancel){ %>
+    <a id='cancelRisk' class="icon-close cancelRisk" style="margin-left: 4px"  <%= dataMode%> ></a>
+<% } %>
+
+<% if(inputFilePath){ %>
+	<a id='chooseImgRisk' href='#modalRiskImg' data-toggle='modal' class=''required><%=json.button.select%></a>
+<% } %>
+
+<% if(inputStatus){ %>
+    <input type="checkbox" name="risk_switch" data-size="small" checked>
+<% } %>
+
+<% if(inputCheckbox){ %>
+	<input  type="checkbox" name="risk_switch" data-size="small" <%=checked%> <%=disabled%>/>
+<% } %>
+
+<% if(img){ %>
+	<img width='20px' heigth='20px' src='<%=filePath%><%=fileName%>'>
+<% } %>
+
+<% if(imgUpdate){ %>
+	<img width='20px' heigth='20px' fileName='<%=fileName%>' src='<%=filePath%>'>
+<% } %>
+
+<% if(figcaption){ %>
+	<figcaption>
+		<a id='chooseImgRisk' href='#modalRiskImg' data-toggle='modal' required>Select</a>
+	</figcaption>
+<% } %>
+
+<% if(modalImg){ %>
+	<div id='selectedImgRiskDiv'>
+		<input id='pathselectImgRisk' type='hidden' name='Path' class='' value='<%=filePath%>'>
+		<input id='nameSelectImgRisk' type='hidden' name='Path' class='' value='<%=fileName%>'>
+	</div>
+<% } %>
+
+<% if(labelError){ %>
+	<label class="error" for="<%=forlbl%>" ><%=json.general.fieldRequired%></label>
+<% } %>
+

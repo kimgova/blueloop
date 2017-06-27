@@ -1,0 +1,24 @@
+
+<div id="stockContent">
+    <h5><%=stockTitle%></h5>
+    <div id="bbPosition" class="position">
+        <% $.each(stockList, function(i, bb){ %> 
+        <div id="<%=bb.id%>" class="draggable figure">
+            <img src="<%=filePath%><%=bb.fileName%>" title="<%=bb.name%>" style="float:left; height:50px; width:50px;">
+            <label class="bb-name"><%=bb.name%></label>
+        </div>
+        <% }); %>
+    </div>
+</div>
+					   
+<div id="flowContent">
+    <h5><%=flowTitle%></h5>
+    <div id="bbPosition" class="position">
+        <% $.each(flowList, function(i, bb){ %> 
+        <div id="<%=bb.id%>" class="draggable figure">
+            <img src="<%=filePath%><%=bb.fileName%>" title="<%=bb.name%>" style="float:left; height:50px; width:50px;">
+            <label class="bb-name"><%=bb.name%></label>
+        </div>
+        <% }); %>
+    </div>
+</div>

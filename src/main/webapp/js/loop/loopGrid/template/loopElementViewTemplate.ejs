@@ -1,0 +1,29 @@
+<div class="item-container col-lg-4 col-md-6 col-sm-12">
+    <div class="grid-item">
+        <div class="user-hover-mark">
+            <div id="mark-transition">
+             <% if(archived){ %>
+                <i id="remove-loop" class="icon-trash" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.deletePermanently %>"></i>                
+                <i id="user-options" class="icon-options"></i>
+                <a id="detail-btn" href="" class="btn btn-default"><%= json.button.viewDetail %></a>
+                <a id="restore-loop" class="btn btn-default"> <%= json.button.restore %> </a>
+             <% }else{ %>
+                 <% if(ownership == 'My Loop'){ %>
+                     <i id="archive-loop" class="icon-drawar" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.archive %>"></i>
+                     <a href="/blueloop-backend/chain/edit/<%= id %>" id="goto-ws"><i  class="icon-pencil" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.edit %>"></i></a>
+                 <% } %>
+                <i id="user-options" class="icon-options"></i>
+                <a id="detail-btn" href="" class="btn btn-default"><%= json.button.viewDetail %></a>
+                <a href="/blueloop-backend/chain/execution/<%= id %>" class="btn btn-default"><%= json.button.gotoExecution %></a>
+             <% } %>
+             
+            </div>
+        </div>
+        <img src="/blueloop-backend/static/images/home/loop.png" alt="<%= name %>" class="grid-item-pic"/>
+        <div class="grid-item-description">
+        <h4><%= name %></h4>
+        <h5><%= ownership %></h5>
+        <p>created by: <%= creatorName %></p>
+        </div>
+    </div>
+</div>
