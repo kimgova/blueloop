@@ -1,6 +1,6 @@
 var headerBreadcrumbView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/layout/header/template/headerBreadcrumbTemplate.ejs',
+	template: '/blueloop/static/js/layout/header/template/headerBreadcrumbTemplate.ejs',
 
     initialize: function(){
     	 _.bindAll(this, 'render', 'setCaret');

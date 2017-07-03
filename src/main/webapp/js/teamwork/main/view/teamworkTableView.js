@@ -1,6 +1,6 @@
 var teamworkTableView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/teamwork/main/template/teamworkTable.ejs',
+	template: '/blueloop/static/js/teamwork/main/template/teamworkTable.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -16,7 +16,7 @@ var teamworkTableView = Backbone.View.extend({
     
     getTeamworks: function(){
     	this.collection = new teamworkCollection([]);
-    	var result = ajaxCall('GET', '/blueloop-backend/teamwork/getAllTeamwork/', {}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/teamwork/getAllTeamwork/', {}, "text/json", "json", false);
 
     	_.each(result.bbTeams,function(item,i){   
     		var team = new teamworkModel({

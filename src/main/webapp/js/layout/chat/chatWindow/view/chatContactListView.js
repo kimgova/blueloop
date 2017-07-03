@@ -1,6 +1,6 @@
 var chatContactListView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/layout/chat/chatWindow/template/chatContactList.ejs',
+    template: '/blueloop/static/js/layout/chat/chatWindow/template/chatContactList.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

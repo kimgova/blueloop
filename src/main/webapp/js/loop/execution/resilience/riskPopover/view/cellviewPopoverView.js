@@ -1,6 +1,6 @@
 var cellviewPopoverView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/resilience/riskPopover/template/cellviewPopoverContentTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/resilience/riskPopover/template/cellviewPopoverContentTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -35,7 +35,7 @@ var cellviewPopoverView = Backbone.View.extend({
     },
     
     updateContent: function(context){
-    	var data = ajaxCall('GET', '/blueloop-backend/chainBuildingBlock/getCBBResilienceData/', {idCBB:context.id}, "text/json", "json", false);
+    	var data = ajaxCall('GET', '/blueloop/chainBuildingBlock/getCBBResilienceData/', {idCBB:context.id}, "text/json", "json", false);
     	var risks = data.risks;
     	var staticImgUrl = data.staticImgUrl;
     	if(risks.length > 0){
@@ -73,13 +73,13 @@ var cellviewPopoverView = Backbone.View.extend({
         var idRisk = $(e.target).attr("idRisk");
         var idCBB  = $(e.target).attr("idCBB");
         var object = {idRisk : idRisk,idCBB : idCBB};
-        var data   = ajaxCall('GET', '/blueloop-backend/bbRisk/changeState/', object, "text/json", "json", false);
+        var data   = ajaxCall('GET', '/blueloop/bbRisk/changeState/', object, "text/json", "json", false);
     },
 	
 	changeRouteState:function(e){  
 		var routeId = $(e.target).attr("idRoute");
 		var jsonObject = {routeId:routeId};
-		var data = ajaxCall('GET', '/blueloop-backend/route/changeState/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET', '/blueloop/route/changeState/', jsonObject, "text/json", "json", false);
 		if(data.result == true){
 			if(data.routeInst.active) 
 				$("button.routestate"+routeId).text("Deactivate route");

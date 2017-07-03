@@ -37,9 +37,9 @@ var lockScreen = {
 		localStorage.setItem('lockScreenState', "active");
 		startTime();
 
-		if(window.location.pathname != "/blueloop-backend/login/lockscreen"){
+		if(window.location.pathname != "/blueloop/login/lockscreen"){
 			localStorage.setItem('lockPathname', window.location.pathname);
-			window.location.replace("/blueloop-backend/login/lockscreen")
+			window.location.replace("/blueloop/login/lockscreen")
 		}
 		realtime.setUuidState(sessionUser.get("pubnubChannel"), {"id":sessionUser.get("id"),"status":"Away"});
 	},

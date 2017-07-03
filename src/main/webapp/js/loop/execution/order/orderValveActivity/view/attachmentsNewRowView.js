@@ -1,6 +1,6 @@
 var attachmentsNewRowView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/execution/order/orderValveActivity/template/attachmentsNewRow.ejs',
+	template: '/blueloop/static/js/loop/execution/order/orderValveActivity/template/attachmentsNewRow.ejs',
 		
 	constructor : function (options) {
 		_.extend(this, options);
@@ -23,7 +23,7 @@ var attachmentsNewRowView = Backbone.View.extend({
 			e.data.tableView.activityView.$el.find("#addAttachment").removeAttr("disabled");			
 			e.data.tableView.activityView.$el.find("#formNewAttach").ajaxSubmit({
 	            async: true,
-	            url: "/blueloop-backend/valve/addAttachmentActivity",
+	            url: "/blueloop/valve/addAttachmentActivity",
 	            data: {idValveOrder: e.data.model.get("idValveOrder"), type: e.data.model.get("type"), attachmentDescription: attachmentDescription},
 	            beforeSubmit: function() { 
 	            	$("body").addClass("loading");    

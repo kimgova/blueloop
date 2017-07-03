@@ -1,6 +1,6 @@
 var orderAttRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderAtt/template/orderAttRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderAtt/template/orderAttRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -21,7 +21,7 @@ var orderAttRowView = Backbone.View.extend({
     downloadAttachment: function(context) {
         var actData = {id:context.data.model.get("id"),type:context.data.model.get("type")};
         
-        $.fileDownload("/blueloop-backend/valve/downloadAttachment/?id="+actData.id+"&type="+actData.type, {
+        $.fileDownload("/blueloop/valve/downloadAttachment/?id="+actData.id+"&type="+actData.type, {
 		    successCallback: function (url) {
 		        console.log('Download :' + url);
 		    },
@@ -51,7 +51,7 @@ var orderAttRowView = Backbone.View.extend({
 	                var actData = {id:context.data.model.get("id"),type:context.data.model.get("type")};
 	                var dataReturned = $.ajax({
 	                    type: 'POST',
-	                    url: '/blueloop-backend/valve/deleteAttachment/',
+	                    url: '/blueloop/valve/deleteAttachment/',
 	                    data: JSON.stringify(actData),
 	                    contentType: 'application/json; charset=utf-8',
 	                    dataType: 'json',

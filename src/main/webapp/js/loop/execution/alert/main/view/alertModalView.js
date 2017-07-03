@@ -1,6 +1,6 @@
 var alertModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/alert/main/template/alertModalTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/alert/main/template/alertModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -16,7 +16,7 @@ var alertModalView = Backbone.View.extend({
     
     getAlerts: function() {
     	this.collection = new alertCollection([]);
-    	var result = ajaxCall('GET', '/blueloop-backend/chainBuildingBlockAlert/getCBBAlerts/', {jsonId:this.cbbJsonId}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/chainBuildingBlockAlert/getCBBAlerts/', {jsonId:this.cbbJsonId}, "text/json", "json", false);
     	this.idCBB = result.idcbb;
     	
     	this.disabled = "";

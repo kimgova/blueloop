@@ -1,6 +1,6 @@
 var forecastInstActView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstAct/template/fcstInstActTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstAct/template/fcstInstActTemplate.ejs',
     
     constructor : function (options) {
 		_.extend(this, options);
@@ -25,7 +25,7 @@ var forecastInstActView = Backbone.View.extend({
     	var data = {instanceId:this.instanceId,forecastId:this.forecastId};
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/fcstWUnitActiv/getAllIntanceActivities/',
+	        url: '/blueloop/fcstWUnitActiv/getAllIntanceActivities/',
 	        data: data,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

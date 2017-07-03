@@ -1,6 +1,6 @@
 var fileModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/inventory/file/template/fileModalTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/inventory/file/template/fileModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

@@ -1,6 +1,6 @@
 var forecastInstanceNewRowView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/main/template/fcstInstNewRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/main/template/fcstInstNewRow.ejs',
 		
 	constructor : function (options) {
 		_.extend(this, options);
@@ -26,7 +26,7 @@ var forecastInstanceNewRowView = Backbone.View.extend({
 		var instance = {idForecastChain:data.forecastId,name:data.$el.find("#nameInstance").val()};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/forecast/saveForecastInstance/',
+			url: '/blueloop/forecast/saveForecastInstance/',
 			data: JSON.stringify(instance),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

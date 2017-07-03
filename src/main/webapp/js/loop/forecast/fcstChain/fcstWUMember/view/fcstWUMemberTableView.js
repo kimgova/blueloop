@@ -1,6 +1,6 @@
 var forecastWUMemberSelectView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWUMember/template/fcstWUMemberSelect.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWUMember/template/fcstWUMemberSelect.ejs',
 
     render: function() {
         this.$el = $(new EJS({url: this.template }).render());
@@ -31,7 +31,7 @@ var forecastWUMemberSelectView = Backbone.View.extend({
     	var memberData = {id:wuId,forecastId:forecastId,userId:userId};
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/fcstWUnit/saveWUMember/',
+	        url: '/blueloop/fcstWUnit/saveWUMember/',
 	        data: JSON.stringify(memberData),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -53,7 +53,7 @@ var forecastWUMemberSelectView = Backbone.View.extend({
     	var memberData = {id:wuId,forecastId:forecastId,userId:userId};
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/fcstWUnit/deleteWUMember/',
+	        url: '/blueloop/fcstWUnit/deleteWUMember/',
 	        data: JSON.stringify(memberData),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

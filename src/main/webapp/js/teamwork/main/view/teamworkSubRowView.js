@@ -1,6 +1,6 @@
 var teamworkSubRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/teamwork/main/template/teamworkSubRow.ejs',
+    template: '/blueloop/static/js/teamwork/main/template/teamworkSubRow.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
@@ -14,7 +14,7 @@ var teamworkSubRowView = Backbone.View.extend({
     },
     
     getData: function(){
-    	var data = ajaxCall('GET', '/blueloop-backend/teamwork/getTeamWorkFnOpen/', {id:this.model.id}, "text/json", "json", false);
+    	var data = ajaxCall('GET', '/blueloop/teamwork/getTeamWorkFnOpen/', {id:this.model.id}, "text/json", "json", false);
 
         this.dataTemplate = {
             idTeam     : this.model.id,

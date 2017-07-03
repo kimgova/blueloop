@@ -1,6 +1,6 @@
 var fcstCollabAdjTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollabAdj/template/fcstCollabAdjTable.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollabAdj/template/fcstCollabAdjTable.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -35,7 +35,7 @@ var fcstCollabAdjTableView = Backbone.View.extend({
     getAdjustmentsList: function(){
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/fcstCollaborative/getAllCollabAdjusments/',
+	        url: '/blueloop/fcstCollaborative/getAllCollabAdjusments/',
 	        data: {id:this.model.id,objectType:this.model.get("rowType"),filterType:this.model.get("filterType"),instanceId:this.model.get("instanceId")},
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

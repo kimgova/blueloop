@@ -1,6 +1,6 @@
 var skuNewAddFamilyView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewAdd/skuNewAddFamily.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewAdd/skuNewAddFamily.ejs',
 	
 	subCollection : null,
 		

@@ -1,6 +1,6 @@
 var alertRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/alert/main/template/alertRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/alert/main/template/alertRowTemplate.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
@@ -30,7 +30,7 @@ var alertRowView = Backbone.View.extend({
                 var alertData = {idAlert:context.data.model.get("id"),idcbb:context.data.idCBB};
                 var dataReturned = $.ajax({
                     type: 'GET',
-                    url: '/blueloop-backend/chainBuildingBlockAlert/deleteAlertByCBB/',
+                    url: '/blueloop/chainBuildingBlockAlert/deleteAlertByCBB/',
                     data: alertData,
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',

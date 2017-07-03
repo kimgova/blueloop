@@ -1,6 +1,6 @@
 var addSKURowView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/execution/order/addOrderSKU/template/addSKURow.ejs',
+	template: '/blueloop/static/js/loop/execution/order/addOrderSKU/template/addSKURow.ejs',
 	
 	constructor : function (options) {
 		_.extend(this, options);

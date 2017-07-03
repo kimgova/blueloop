@@ -1,6 +1,6 @@
 var forecastInstCatRowView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditCat/template/fcstInstCatRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditCat/template/fcstInstCatRow.ejs',
 
 	render: function () {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -29,7 +29,7 @@ var forecastInstCatRowView = Backbone.View.extend({
 			var catData = {id:e.data.model.id};
 			var dataReturned = $.ajax({
 				type: 'POST',
-				url: '/blueloop-backend/fcstCategory/deleteCatForecast/',
+				url: '/blueloop/fcstCategory/deleteCatForecast/',
 				data: JSON.stringify(catData),
 				contentType: 'application/json; charset=utf-8',
 				dataType: 'json',

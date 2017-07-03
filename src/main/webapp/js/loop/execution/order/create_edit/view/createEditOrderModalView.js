@@ -1,6 +1,6 @@
 var createEditOrderModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/create_edit/template/orderModalTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/create_edit/template/orderModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -32,7 +32,7 @@ var createEditOrderModalView = Backbone.View.extend({
     },
     
     setEditForm: function(){
-    	var result = ajaxCall('GET', '/blueloop-backend/orderChain/getOrderChain/', {orderId:this.idOrderChain}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/orderChain/getOrderChain/', {orderId:this.idOrderChain}, "text/json", "json", false);
 	    
 	    this.orderNumber = result.order.orderNumber;
     	this.dta = result.order.desiredTimeArrival;
@@ -132,7 +132,7 @@ var createEditOrderModalView = Backbone.View.extend({
     	var order = {orderId:this.idOrderChain,orderNumber:this.$el.find("#orderId").val(),orderDta:this.$el.find("#orderDta").val(), skus:this.skusCollection.models, idChain:idChain};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/orderChain/saveOrderChain/',
+			url: '/blueloop/orderChain/saveOrderChain/',
 			data: JSON.stringify(order),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

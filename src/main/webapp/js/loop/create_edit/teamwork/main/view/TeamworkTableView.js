@@ -1,6 +1,6 @@
 var TeamworkTableView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/create_edit/teamwork/main/template/TeamworkTable.ejs',
+	template: '/blueloop/static/js/loop/create_edit/teamwork/main/template/TeamworkTable.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);

@@ -48,7 +48,7 @@ $(function(){
 	});
 
 	function updateReportURL(){
-		$("#btnGenerate").attr("href","/blueloop-backend/analysis/generateReport?" +
+		$("#btnGenerate").attr("href","/blueloop/analysis/generateReport?" +
 	        							"idChain=" + $("#selectReportLoop").val() +
 				  						"&startDate=" + $('.dpd1').val() + 
 				  						"&endDate=" + $('.dpd2').val() + 
@@ -70,18 +70,18 @@ $(function(){
 	
 		if($('.dpd1').val() == ""){
 			errors = true;			
-			$('#valErrors').append(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/btnsReports.ejs'}).render({type:"errorStart"})); 	
+			$('#valErrors').append(new EJS({url: '/blueloop/static/js/ejsTemplates/btnsReports.ejs'}).render({type:"errorStart"})); 	
 		}
 			
 		if($('.dpd2').val() == ""){
 			errors = true;
-			$('#valErrors').append(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/btnsReports.ejs'}).render({type:"errorEnd"})); 	
+			$('#valErrors').append(new EJS({url: '/blueloop/static/js/ejsTemplates/btnsReports.ejs'}).render({type:"errorEnd"})); 	
 		}
 	
 		if($('.dpd1').val() != "" && $('.dpd2').val() != ""){
 			if(isFromBiggerThanTo($('.dpd1').val(), $('.dpd2').val())){
 				errors = true;
-				$('#valErrors').append(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/btnsReports.ejs'}).render({type:"errorDates"})); 	
+				$('#valErrors').append(new EJS({url: '/blueloop/static/js/ejsTemplates/btnsReports.ejs'}).render({type:"errorDates"})); 	
 				}
 		}			
 		return errors;

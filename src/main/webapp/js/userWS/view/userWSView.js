@@ -1,6 +1,6 @@
 var userWSView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/userWS/template/userWSViewTemplate.ejs',
+    template: '/blueloop/static/js/userWS/template/userWSViewTemplate.ejs',
     
     initialize: function (){
 

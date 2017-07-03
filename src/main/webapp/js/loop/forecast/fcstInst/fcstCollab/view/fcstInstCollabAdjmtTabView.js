@@ -1,6 +1,6 @@
 var collaborativeTabView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtTab.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtTab.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

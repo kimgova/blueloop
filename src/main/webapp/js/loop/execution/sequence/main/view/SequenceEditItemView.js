@@ -1,6 +1,6 @@
 var SequenceEditItemView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/sequence/main/template/SequenceEditItem.ejs',
+	template: '/blueloop/static/js/loop/execution/sequence/main/template/SequenceEditItem.ejs',
         
     render: function () {
         this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -24,7 +24,7 @@ var SequenceEditItemView = Backbone.View.extend({
     	var seq = {id:model.id,name:newname};
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/orderSequence/editOrderSequence/',
+	        url: '/blueloop/orderSequence/editOrderSequence/',
 	        data: JSON.stringify(seq),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

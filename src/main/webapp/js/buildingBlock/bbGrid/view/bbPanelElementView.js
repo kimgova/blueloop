@@ -1,7 +1,7 @@
 var bbPanelElementView = Backbone.View.extend({
     
-    defaultTemplate: '/blueloop-backend/static/js/buildingBlock/bbGrid/template/bbPanelElementDefaultViewTemplate.ejs',
-    infoTemplate: '/blueloop-backend/static/js/buildingBlock/bbGrid/template/bbPanelElementInfoViewTemplate.ejs',
+    defaultTemplate: '/blueloop/static/js/buildingBlock/bbGrid/template/bbPanelElementDefaultViewTemplate.ejs',
+    infoTemplate: '/blueloop/static/js/buildingBlock/bbGrid/template/bbPanelElementInfoViewTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

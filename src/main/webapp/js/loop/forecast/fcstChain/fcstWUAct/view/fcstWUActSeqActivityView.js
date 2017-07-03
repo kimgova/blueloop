@@ -1,6 +1,6 @@
 var activityListView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActSeqActivityTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActSeqActivityTemplate.ejs',
 
     render: function() {
     	this.$el = $(new EJS({url: this.template }).render({model:this.model.toJSON(), select:this.collection.models}));

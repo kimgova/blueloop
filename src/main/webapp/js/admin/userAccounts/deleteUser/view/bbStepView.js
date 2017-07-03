@@ -1,6 +1,6 @@
 var bbStepView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/bbTableTemplate.ejs',
+	template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/bbTableTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -16,7 +16,7 @@ var bbStepView = Backbone.View.extend({
     
     getBBList: function() {
     	if(this.bbCollection.length == 0){
-        	var result = ajaxCall('GET', '/blueloop-backend/buildingBlock/getAllBBByUser/', {idUser:this.model.id}, "text/json", "json", false);
+        	var result = ajaxCall('GET', '/blueloop/buildingBlock/getAllBBByUser/', {idUser:this.model.id}, "text/json", "json", false);
         	_.each(result,function(item,i){
         		var bb = new bbModel({
         			id : item.id,

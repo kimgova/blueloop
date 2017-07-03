@@ -1,6 +1,6 @@
 var fcstCollabAdjModalView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollabAdj/template/fcstCollabAdjModal.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollabAdj/template/fcstCollabAdjModal.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

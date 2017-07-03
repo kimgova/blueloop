@@ -1,6 +1,6 @@
 var forecastRoleFilterThNewView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstRole/template/filters/newThTableRoleFilterTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstRole/template/filters/newThTableRoleFilterTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -31,7 +31,7 @@ var forecastRoleFilterThNewView = Backbone.View.extend({
         var dataFilter = {filterName:filterName,roleId:roleId}; 
         var dataReturned = $.ajax({
             type: 'POST',
-            url: '/blueloop-backend/fcstRoleFilter/saveForecastRoleFilter/',
+            url: '/blueloop/fcstRoleFilter/saveForecastRoleFilter/',
             data: JSON.stringify(dataFilter),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

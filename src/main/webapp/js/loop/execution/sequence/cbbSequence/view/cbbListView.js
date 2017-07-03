@@ -1,6 +1,6 @@
 var cbbListView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/sequence/cbbSequence/template/cbbList.ejs',
+    template: '/blueloop/static/js/loop/execution/sequence/cbbSequence/template/cbbList.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

@@ -1,6 +1,6 @@
 var forecastInstLinearFilterView = Backbone.View.extend({
 
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearFilter.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearFilter.ejs',
 
     constructor : function (options) {
         _.extend(this, options);
@@ -49,7 +49,7 @@ var forecastInstLinearFilterView = Backbone.View.extend({
     retrieveFilters: function(){
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/fcstLinearPlan/getRoleFilters/',
+            url: '/blueloop/fcstLinearPlan/getRoleFilters/',
             data: {instanceId:this.instanceId},
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -68,7 +68,7 @@ var forecastInstLinearFilterView = Backbone.View.extend({
     retrieveCatRoleFilters: function(){
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/fcstLinearPlan/getCatForRoleFilters/',
+            url: '/blueloop/fcstLinearPlan/getCatForRoleFilters/',
             data: {instanceId:this.instanceId},
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

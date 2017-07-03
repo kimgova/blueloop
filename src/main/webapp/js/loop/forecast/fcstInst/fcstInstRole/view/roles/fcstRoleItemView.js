@@ -1,6 +1,6 @@
 var forecastRoleItemView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstRole/template/roles/itemRoleTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstRole/template/roles/itemRoleTemplate.ejs',
         
     render: function () {
         this.$el = $(new EJS({url: this.template }).render(this.model.attributes));
@@ -36,7 +36,7 @@ var forecastRoleItemView = Backbone.View.extend({
 		    	var userForecastRole = {id:e.data.model.id};
 		    	var dataReturned = $.ajax({
 			        type: 'POST',
-			        url: '/blueloop-backend/fcstRole/deleteForecastRole/',
+			        url: '/blueloop/fcstRole/deleteForecastRole/',
 			        data: JSON.stringify(userForecastRole),
 			        contentType: 'application/json; charset=utf-8',
 			        dataType: 'json',

@@ -1,6 +1,6 @@
 var forecastInstEditSkuView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewTab/fcstInstSkuView.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewTab/fcstInstSkuView.ejs',
 	that : this,
 	constructor : function (options) {
 		_.extend(this, options);
@@ -73,7 +73,7 @@ var forecastInstEditSkuView = Backbone.View.extend({
 		var actData = {skuChain:skuChain,status:status,fcstInst:fcstInst};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/fcstSku/changePromoStatus/',
+			url: '/blueloop/fcstSku/changePromoStatus/',
 			data: JSON.stringify(actData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

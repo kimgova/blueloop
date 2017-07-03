@@ -14,7 +14,7 @@ function Chat() {
 	that.createChatFromPanel =  function (chatId, userId, title, channel, obj){	
 		
 		var jsonObject = {idUser:userId,loopChat:"false",chatName:"",idChain:"",idCbb:""};
-		var data = ajaxCall('GET','/blueloop-backend/chat/createChat/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/chat/createChat/', jsonObject, "text/json", "json", false);
 		if(channel == ""){
 			chatView.setSingleChatChannel(userId, data.channel, data.id);
 			realtime.publishChannel(sessionUser.get("pubnubChannel"), {chatId:data.id, channel:data.channel, user:userId, user2:sessionUser.get("id"), type:"newSingleChat"}); //publish notification
@@ -94,7 +94,7 @@ function Chat() {
 		var users;
 		$.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/chat/getChatWithMembers/',
+	        url: '/blueloop/chat/getChatWithMembers/',
 	        data: {id:idChat},
 	        contentType: "text/json",
 	        dataType: "json",
@@ -213,23 +213,23 @@ function Chat() {
 	
 	//function showChatGroupDialog() {
 	that.showChatGroupDialog = function(){
-		var data = ajaxCall('GET', '/blueloop-backend/chat/getListCommunity/', new Object(), "text/json", "json", false);
-		var groupModal = $(new EJS({url:'/blueloop-backend/static/js/layout/chat/chatPanel/template/chatNewGroupModal.ejs'}).render({userList:data, name:'',id:'',idChain:'',edit:false}));
+		var data = ajaxCall('GET', '/blueloop/chat/getListCommunity/', new Object(), "text/json", "json", false);
+		var groupModal = $(new EJS({url:'/blueloop/static/js/layout/chat/chatPanel/template/chatNewGroupModal.ejs'}).render({userList:data, name:'',id:'',idChain:'',edit:false}));
 		groupModal.modal('show');
 		setEventsChatGroupDialog(groupModal);
 	}
 	
 	that.showLoopChatGroupDialog = function(idChain) {
-		var data = ajaxCall('GET', '/blueloop-backend/chat/getListTeamMembers/', {idChain:idChain}, "text/json", "json", false);
-		var groupModal = $(new EJS({url:'/blueloop-backend/static/js/layout/chat/chatPanel/template/chatNewLoopGroupModal.ejs'}).render({userList:data.listUsers,name: data.chainName, id:'', idChain:idChain, edit:false}));
+		var data = ajaxCall('GET', '/blueloop/chat/getListTeamMembers/', {idChain:idChain}, "text/json", "json", false);
+		var groupModal = $(new EJS({url:'/blueloop/static/js/layout/chat/chatPanel/template/chatNewLoopGroupModal.ejs'}).render({userList:data.listUsers,name: data.chainName, id:'', idChain:idChain, edit:false}));
 
 		groupModal.modal('show');
 		setEventsChatGroupDialog(groupModal);
 	}
 	
 	that.showBBChatGroupDialog = function(suggestedName, cbbid, bbid, idChain) {
-		var data = ajaxCall('GET', '/blueloop-backend/chat/getListBBTeamMembers/', {idCBB:cbbid,idBB:bbid}, "text/json", "json", false);
-		var groupModal = $(new EJS({url:'/blueloop-backend/static/js/layout/chat/chatPanel/template/chatNewBBGroupModal.ejs'}).render({userList:data,name: '', id: '',cbbId:cbbid,suggestedName:suggestedName,idChain:idChain, edit: false}));
+		var data = ajaxCall('GET', '/blueloop/chat/getListBBTeamMembers/', {idCBB:cbbid,idBB:bbid}, "text/json", "json", false);
+		var groupModal = $(new EJS({url:'/blueloop/static/js/layout/chat/chatPanel/template/chatNewBBGroupModal.ejs'}).render({userList:data,name: '', id: '',cbbId:cbbid,suggestedName:suggestedName,idChain:idChain, edit: false}));
 		groupModal.modal('show');
 		setEventsChatGroupDialog(groupModal);
 	}
@@ -336,7 +336,7 @@ function Chat() {
 		var jsonObject = new Object();
 		jsonObject.chat = groupName;
 		jsonObject.users= userList;
-		var data = ajaxCall('GET','/blueloop-backend/chat/createChatGroup/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/chat/createChatGroup/', jsonObject, "text/json", "json", false);
 		chatView.addNewGroupChat(data); //new UI chat
 		//refreshPanelChatGroup(data.id,groupName); // old chat
 		sendNotificationNewChat(data.id, groupName, userList, "newGroupChat", "");
@@ -348,7 +348,7 @@ function Chat() {
 		jsonObject.chat = groupName;
 		jsonObject.users= userList;
 		jsonObject.idChain = idChain;
-		var data = ajaxCall('GET','/blueloop-backend/chat/createLoopChatGroup/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/chat/createLoopChatGroup/', jsonObject, "text/json", "json", false);
 		chatView.addNewLoopChat(data); //new UI chat
 		//refreshPanelLoopChatGroup(data.instanceChat.id,groupName,data.instanceChat.chain.id, data.loopName);
 		sendNotificationNewChat(data.instanceChat.id, groupName, userList, "newLoopGroupChat", data.loopName)
@@ -362,7 +362,7 @@ function Chat() {
 		jsonObject.idChain = idChain;
 		jsonObject.idCBB = idCBB;
 		jsonObject.type = type;
-		var data = ajaxCall('GET','/blueloop-backend/chat/createBBChatGroup/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/chat/createBBChatGroup/', jsonObject, "text/json", "json", false);
 		chatView.addNewBBChat(data); //new UI chat
 		//refreshPanelBBChatGroup(data.instanceChat.id,groupName,data.instanceChat.bb.id, data.bbName);
 		sendNotificationNewChat(data.instanceChat.id, groupName, userList, "newBBGroupChat", data.bbName);
@@ -384,25 +384,25 @@ function Chat() {
 		switch (model.get("type")){
 		
 		case 0: //type: 0 = group chat
-			var users    = ajaxCall('GET', '/blueloop-backend/chat/getListCommunity/', new Object(), "text/json", "json", false);
+			var users    = ajaxCall('GET', '/blueloop/chat/getListCommunity/', new Object(), "text/json", "json", false);
 			var chatData = getChatGroupWithMembers(model.get("id"),users);
-			var groupModal = $(new EJS({url:'/blueloop-backend/static/js/layout/chat/chatPanel/template/chatNewGroupModal.ejs'}).render({userList:chatData.users,name:chatData.chatName,id:model.get("id"),edit:true}));						
+			var groupModal = $(new EJS({url:'/blueloop/static/js/layout/chat/chatPanel/template/chatNewGroupModal.ejs'}).render({userList:chatData.users,name:chatData.chatName,id:model.get("id"),edit:true}));						
 			groupModal.modal('show');
 			setEventsChatGroupDialog(groupModal,model);
 		break;
 		
 		case 1://type: 1 = loop chat
-			var users = ajaxCall('GET', '/blueloop-backend/chat/getListTeamMembers/', {idChain:model.get("chain_id")}, "text/json", "json", false);
+			var users = ajaxCall('GET', '/blueloop/chat/getListTeamMembers/', {idChain:model.get("chain_id")}, "text/json", "json", false);
 			var chatData = getChatGroupWithMembers(model.get("id"),users.listUsers);
-			var groupModal = $(new EJS({url:'/blueloop-backend/static/js/layout/chat/chatPanel/template/chatNewLoopGroupModal.ejs'}).render({userList:chatData.users,name:chatData.chatName,id:model.get("id"),idChain:model.get("chain_id"),edit:true}));						
+			var groupModal = $(new EJS({url:'/blueloop/static/js/layout/chat/chatPanel/template/chatNewLoopGroupModal.ejs'}).render({userList:chatData.users,name:chatData.chatName,id:model.get("id"),idChain:model.get("chain_id"),edit:true}));						
 			groupModal.modal('show');
 			setEventsChatGroupDialog(groupModal,model);
 		break;
 
 		case 3: //type : 3 = bb chat
-			var users = ajaxCall('GET', '/blueloop-backend/chat/getListBBTeamMembers/', {idCBB:model.get("id"),idBB:model.get("bb_id")}, "text/json", "json", false);
+			var users = ajaxCall('GET', '/blueloop/chat/getListBBTeamMembers/', {idCBB:model.get("id"),idBB:model.get("bb_id")}, "text/json", "json", false);
 			var chatData = getChatGroupWithMembers(model.get("id"),users);
-			var groupModal = $(new EJS({url:'/blueloop-backend/static/js/layout/chat/chatPanel/template/chatNewBBGroupModal.ejs'}).render({userList:chatData.users,suggestedName:chatData.chatName,id:model.get("id"),cbbId:model.get("bb_id"),idChain:model.get("chain_id"),edit:true}));						
+			var groupModal = $(new EJS({url:'/blueloop/static/js/layout/chat/chatPanel/template/chatNewBBGroupModal.ejs'}).render({userList:chatData.users,suggestedName:chatData.chatName,id:model.get("id"),cbbId:model.get("bb_id"),idChain:model.get("chain_id"),edit:true}));						
 			groupModal.modal('show');
 			setEventsChatGroupDialog(groupModal,model);
 		break;
@@ -410,7 +410,7 @@ function Chat() {
 	}
 	
 	function getChatGroupWithMembers(id,users){	
-		var data = ajaxCall('GET', '/blueloop-backend/chat/getChatWithMembers/', {id:id}, "text/json", "json", false);
+		var data = ajaxCall('GET', '/blueloop/chat/getChatWithMembers/', {id:id}, "text/json", "json", false);
 		$.each(data[0].members, function (i,member) {
 			$.each(users, function(j,user) {
 				if(user.id == member.id) {
@@ -424,7 +424,7 @@ function Chat() {
 	
 	that.editChatGroup = function(newName,users,id){
 		var jsonObject    = new Object({chat:newName,users:users,id:id});
-		var data = ajaxCall('GET','/blueloop-backend/chat/editGroup/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/chat/editGroup/', jsonObject, "text/json", "json", false);
 		
 		return data; //Format: users removed, user in group, chatinstance, bbname or loopname		
 	}
@@ -460,7 +460,7 @@ function Chat() {
 	}
 
 	function refreshContactList(user,chat_id){
-        var content = $(new EJS({url: '/blueloop-backend/static/js/layout/chat/chatWindow/template/contact.ejs'}).render({user:user}));
+        var content = $(new EJS({url: '/blueloop/static/js/layout/chat/chatWindow/template/contact.ejs'}).render({user:user}));
         
         var userStatus = chatView.singleChatsCollection.findWhere({userId:user.id}).get("status");
         var status     = $(content).find('i.user-id-'+ user.id).parent();
@@ -483,21 +483,21 @@ function Chat() {
 	
 	function refreshPanelChatGroup(chatId, chatName){	
 		var data = {chatId:chatId, chatName:chatName, owner:true};
-		var content = $(new EJS({url: '/blueloop-backend/static/js/layout/chat/chatPanel/template/chatPanelGroupItem.ejs'}).render(data));
+		var content = $(new EJS({url: '/blueloop/static/js/layout/chat/chatPanel/template/chatPanelGroupItem.ejs'}).render(data));
 		$("#chat-group-list").append($(content));
 		$("#chat-group-list").find('i').click(that.btnActionByClass);
 	}
 	
 	function refreshPanelLoopChatGroup(chatId, chatName, chainId, loopName){	
 		var data = {chatId:chatId, chatName:chatName, other:loopName, owner:true, chainId:chainId};
-		var content = $(new EJS({url: '/blueloop-backend/static/js/layout/chat/chatPanel/template/chatPanelLoopGroupItem.ejs'}).render(data));
+		var content = $(new EJS({url: '/blueloop/static/js/layout/chat/chatPanel/template/chatPanelLoopGroupItem.ejs'}).render(data));
 		$("#loop-chat-group-list").append($(content)); 		
 		$("#loop-chat-group-list").find('i').click(that.btnActionByClass);
 	}
 	
 	function refreshPanelBBChatGroup(chatId, chatName, bbId, bbName){	
 		var data = {chatId:chatId, chatName:chatName, other:bbName, owner:true, bbId:bbId};
-		var content = $(new EJS({url: '/blueloop-backend/static/js/layout/chat/chatPanel/template/chatPanelBbGroupItem.ejs'}).render(data));
+		var content = $(new EJS({url: '/blueloop/static/js/layout/chat/chatPanel/template/chatPanelBbGroupItem.ejs'}).render(data));
 		$("#bb-chat-group-list").append($(content)); 			
 		$("#bb-chat-group-list").find('i').click(that.btnActionByClass);
 	}
@@ -505,7 +505,7 @@ function Chat() {
 	that.leaveChat = function (idChat, nameChat) {
 		bootbox.confirm(json.chat.confirmLeave, function (e) {
     		if (e){
-    			var result = ajaxCall('GET', '/blueloop-backend/chat/leaveChat/', {id:idChat}, "text/json", "json", false);
+    			var result = ajaxCall('GET', '/blueloop/chat/leaveChat/', {id:idChat}, "text/json", "json", false);
     			if(result.result == "success"){
     				toastr.success(json.chat.leaved);
     				that.removeChat(idChat);
@@ -517,7 +517,7 @@ function Chat() {
 	that.deleteChat = function (idChat, nameChat, chatType) {
 		bootbox.confirm(json.chat.confirmDelete, function (e) {
     		if (e){
-    			var result = ajaxCall('GET', '/blueloop-backend/chat/removeChat/', {id:idChat}, "text/json", "json", false);
+    			var result = ajaxCall('GET', '/blueloop/chat/removeChat/', {id:idChat}, "text/json", "json", false);
     			if(result.result == "success"){
     				toastr.success(json.chat.deleted);
     				chatView.removeChat(idChat, chatType);

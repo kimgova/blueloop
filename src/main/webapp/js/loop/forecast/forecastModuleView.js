@@ -1,6 +1,6 @@
 var forecastModuleView = {
 		
-		nodataTemplate:'/blueloop-backend/static/js/loop/forecast/fcstChain/main/template/nodatafound.ejs',
+		nodataTemplate:'/blueloop/static/js/loop/forecast/fcstChain/main/template/nodatafound.ejs',
 		
 		init:function (){
 			if(localStorage.getItem("loopId") != "all"){
@@ -36,7 +36,7 @@ var forecastModuleView = {
 		getAllForecastByLoop:function(loopId){
 			var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/forecast/getAllForescastByLoop/',
+		        url: '/blueloop/forecast/getAllForescastByLoop/',
 		        data: {id:loopId},
 		        contentType: 'application/json; charset=utf-8',
 		        dataType: 'json',
@@ -55,7 +55,7 @@ var forecastModuleView = {
 		getAllForecasts:function(){
 			var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/forecast/getAllForescasts/',
+		        url: '/blueloop/forecast/getAllForescasts/',
 		        data: {},
 		        contentType: 'application/json; charset=utf-8',
 		        dataType: 'json',
@@ -79,7 +79,7 @@ var forecastModuleView = {
 		getAllForecastModels:function(){
 			var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/forecast/getAllForescastModels/',
+		        url: '/blueloop/forecast/getAllForescastModels/',
 		        data: {},
 		        contentType: 'application/json; charset=utf-8',
 		        dataType: 'json',

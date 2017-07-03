@@ -1,6 +1,6 @@
 var forecastEquivView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquiv.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquiv.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

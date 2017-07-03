@@ -1,6 +1,6 @@
 var SequenceTabView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/sequence/main/template/SequenceTab.ejs',
+    template: '/blueloop/static/js/loop/execution/sequence/main/template/SequenceTab.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

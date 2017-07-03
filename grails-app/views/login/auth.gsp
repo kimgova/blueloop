@@ -35,19 +35,19 @@
                                                           <form action='${postUrl}' method='POST' id='loginForm' autocomplete='off'>
                                                               <div class="logo">
                                                                   <a href="http://blue-loop.com"> 
-                                                                      <img alt="Blue-loop" src="/blueloop-backend/static/images/logo.png">
+                                                                      <img alt="Blue-loop" src="/blueloop/static/images/logo.png">
                                                                 </a>
                                                               </div>
                                                               <div class="control-group">
                                                                 <div class="controls">
                                                                     <i class="fa fa-envelope-o fa-fw"></i>
-                                                                    <input class="form-control" type="text" id="inputEmail" placeholder='<g:message code="auth.emailUsername"/>' name='j_username' id='username' autofocus>
+                                                                    <input class="form-control" type="text" id="inputEmail" placeholder='<g:message code="auth.emailUsername"/>' name='username' id='username' autofocus>
                                                                 </div>
                                                             </div>
                                                             <div class="control-group">
                                                                 <div class="controls">
                                                                      <i class="fa fa-key fa-fw"></i>
-                                                                    <input class="form-control" type="password" id="inputPassword" placeholder='<g:message code="auth.password"/>' name='j_password' id='password'>
+                                                                    <input class="form-control" type="password" id="inputPassword" placeholder='<g:message code="auth.password"/>' name='password' id='password'>
                                                                 </div>
                                                             </div>
                                                             <div class="control-group">
@@ -70,7 +70,7 @@
                                                                 </g:if>
                                                             </div>
                                                             <br/>
-                                                            <g:recaptchaLogin/>
+<%--                                                            <g:recaptchaLogin/>--%>
                                                             <br/>
                                                             <button type="submit" class="btn pull-right" id="submit"><g:message code="button.login"/></button>
                                                           </form>
@@ -88,7 +88,7 @@
                                                         <form id="forgotPassForm" onsubmit="return false">
                                                             <div class="logo">
                                                                 <a href="http://blue-loop.com"> 
-                                                                    <img alt="Blue-loop" src="/blueloop-backend/static/images/logo.png">
+                                                                    <img alt="Blue-loop" src="/blueloop/static/images/logo.png">
                                                                 </a>
                                                             </div>
                                                             <div class="legendEmail">

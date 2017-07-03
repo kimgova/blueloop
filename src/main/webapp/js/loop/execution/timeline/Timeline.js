@@ -14,7 +14,7 @@ function Timeline() {
 		$('#seeMoreTimeline').click(function(e) {
 		    var jsonSearch = new Object();
 		    jsonSearch.idChain = $("#idChain").text();	    
-		    TimelineDataSet = ajaxCall('GET', '/blueloop-backend/timeline/showAllTimeline/', jsonSearch, "text/json", "json", false);
+		    TimelineDataSet = ajaxCall('GET', '/blueloop/timeline/showAllTimeline/', jsonSearch, "text/json", "json", false);
 		    that.searchTimeline("");
 		});
 		
@@ -28,7 +28,7 @@ function Timeline() {
 	    var stringHtml="";
 		$.each(TimelineDataSet, function(i, item){				
 			if(item[0].message.toLowerCase().indexOf(searchWord.toLowerCase())!=-1 || item[0].creationDate.toString().toLowerCase().indexOf(searchWord.toLowerCase())!=-1 || item[1].firstName.toLowerCase().indexOf(searchWord.toLowerCase())!=-1 || item[1].lastName.toLowerCase().indexOf(searchWord.toLowerCase())!=-1 ) {				
-				stringHtml += new EJS({url: '/blueloop-backend/static/js/ejsTemplates/timelineContent.ejs'}).render({item:item[0],user:item[1]});
+				stringHtml += new EJS({url: '/blueloop/static/js/ejsTemplates/timelineContent.ejs'}).render({item:item[0],user:item[1]});
 			}
 	    });
 		$(stringHtml).appendTo("#timeline_content");			
@@ -40,7 +40,7 @@ function Timeline() {
     	jsonObject.message = $("#timelineMessage").val().trim();
     	jsonObject.type    = 2;
     	 	
-    	var message = ajaxCall('GET', '/blueloop-backend/timeline/addTimelineMessage/', jsonObject, 'application/json; charset=utf-8', "json", false);
+    	var message = ajaxCall('GET', '/blueloop/timeline/addTimelineMessage/', jsonObject, 'application/json; charset=utf-8', "json", false);
 		if (message.result == true){
 			toastr.success(json.loop.messageSend);
 	    	$("#timelineMessage").val("");

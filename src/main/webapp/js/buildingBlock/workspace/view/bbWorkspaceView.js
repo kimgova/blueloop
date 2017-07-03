@@ -1,6 +1,6 @@
 var bbWorkspaceView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/buildingBlock/workspace/template/bbWorkspaceViewTemplate.ejs',
+	template: '/blueloop/static/js/buildingBlock/workspace/template/bbWorkspaceViewTemplate.ejs',
 	tabViews: {},
 	
     initialize: function (){
@@ -60,7 +60,7 @@ var bbWorkspaceView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getBuildingBlock/',
+	        url: '/blueloop/buildingBlock/getBuildingBlock/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

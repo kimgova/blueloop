@@ -1,6 +1,6 @@
 var collaborativeFilterView = Backbone.View.extend({
 	
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtFilter.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtFilter.ejs',
     filterType: 2,
     constructor : function (options) {
 		_.extend(this, options);

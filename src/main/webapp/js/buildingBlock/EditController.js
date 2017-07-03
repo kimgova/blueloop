@@ -118,7 +118,7 @@ function EditController() {
 		    $("#ulNavTabs").find("#liInventory").hide();
 		    
 		    if(_.isEmpty($("#ulNavTabs").find("#liActFlowBB"))){
-		        var liTemp = $(new EJS({url: '/blueloop-backend/static/js/buildingBlock/edit/flowBBActivities/template/li_template.ejs' }).render());
+		        var liTemp = $(new EJS({url: '/blueloop/static/js/buildingBlock/edit/flowBBActivities/template/li_template.ejs' }).render());
 		        $(liTemp).insertBefore($("#ulNavTabs").find("#liDaysOff"));
 		        if(_.isEmpty($(".tab-content").find("#activitiesFlow"))){
 		            $('<div id="activitiesFlow" class="tab-pane"></div>').insertBefore($(".tab-content").find("#daysOff"));
@@ -135,7 +135,7 @@ function EditController() {
 		bb.edit = true;
 		bb.currentLoggedUser = sessionUser.get("id");
 		bb.disabled = "";
-		var form = $(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/bbGeneralInfoEdition.ejs' }).render(bb));
+		var form = $(new EJS({url: '/blueloop/static/js/ejsTemplates/bbGeneralInfoEdition.ejs' }).render(bb));
 		$("#general").append(form);
 		$('#static-bb-form').find("#saveBB").click(this,that.validateFields);
 		
@@ -148,7 +148,7 @@ function EditController() {
 		var config = JSON.parse(bb.config);
 		bb.fields = config;
 		bb.disabled = "";
-		var form = $(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/bbOperatingParams.ejs' }).render(bb));
+		var form = $(new EJS({url: '/blueloop/static/js/ejsTemplates/bbOperatingParams.ejs' }).render(bb));
 		$("#operating").append(form);
 		$('#dynamic-bb-form').find("#editDynamicBB").click(this,that.validateDynamicFields);
 	}
@@ -187,13 +187,13 @@ function EditController() {
 		jsonObject.SYNCHRONIZER_TOKEN = $("meta[name='_csrf']").attr('content');
 		jsonObject.SYNCHRONIZER_URI   = $("meta[name='_csrf_header']").attr('content');
 		
-		var result = ajaxCall('GET','/blueloop-backend/buildingBlock/editBuildingBlock/', jsonObject, "text/json", "json", false);
+		var result = ajaxCall('GET','/blueloop/buildingBlock/editBuildingBlock/', jsonObject, "text/json", "json", false);
 		if(result.error && result.error == 'invalidToken'){
-		    window.location.replace("/blueloop-backend/errors/invalidToken");
+		    window.location.replace("/blueloop/errors/invalidToken");
 		}else{
 		    toastr.success(json.general.successfullySaved);
 		    $("#myModal").modal("hide");
-		    setTimeout(function(){window.location.replace("/blueloop-backend/buildingBlock/list")}, 100);
+		    setTimeout(function(){window.location.replace("/blueloop/buildingBlock/list")}, 100);
 		}
 	}
 
@@ -202,9 +202,9 @@ function EditController() {
         jsonObject.SYNCHRONIZER_TOKEN = $("meta[name='_csrf']").attr('content');
         jsonObject.SYNCHRONIZER_URI = $("meta[name='_csrf_header']").attr('content');
 
-        var result = ajaxCall('GET', '/blueloop-backend/buildingBlock/editBuildingBlockConfig/', jsonObject, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/buildingBlock/editBuildingBlockConfig/', jsonObject, "text/json", "json", false);
         if (result.error && result.error == 'invalidToken') {
-            window.location.replace("/blueloop-backend/errors/invalidToken");
+            window.location.replace("/blueloop/errors/invalidToken");
         } else {
             toastr.success(json.general.successfullySaved);
             $("#myModal").modal("hide");

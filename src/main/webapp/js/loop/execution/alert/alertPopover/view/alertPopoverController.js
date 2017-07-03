@@ -2,7 +2,7 @@ var alertPopoverController = {
 	
 	popovers: new PopoverCollection([]),
 	
-	templateSVGContainer : '/blueloop-backend/static/js/loop/execution/alert/alertPopover/template/SVGContainerTemplate.ejs',
+	templateSVGContainer : '/blueloop/static/js/loop/execution/alert/alertPopover/template/SVGContainerTemplate.ejs',
 		
     createAlertPopoverContainer: function(id, cellview){   
     	$("svg#bbGeneralAlert"+ id).remove();	

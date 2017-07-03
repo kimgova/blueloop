@@ -1,6 +1,6 @@
 var historicalTrendModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstLinearHistTrendModal.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstLinearHistTrendModal.ejs',
 
     render: function() {
     	this.$el = $(new EJS({url: this.template }).render({data:'data graph'}));
@@ -17,7 +17,7 @@ var historicalTrendModalView = Backbone.View.extend({
     	console.log(this.planningId)
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/fcstLinearPlan/getHistoricalData/',
+	        url: '/blueloop/fcstLinearPlan/getHistoricalData/',
 	        data: {planningId:this.planningId},
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

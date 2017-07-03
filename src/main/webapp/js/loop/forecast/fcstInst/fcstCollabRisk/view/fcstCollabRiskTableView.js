@@ -1,6 +1,6 @@
 var fcstCollabRiskTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollabRisk/template/fcstCollabRiskTable.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollabRisk/template/fcstCollabRiskTable.ejs',
     
     constructor : function (options) {
 		_.extend(this, options);
@@ -36,7 +36,7 @@ var fcstCollabRiskTableView = Backbone.View.extend({
     retrieveRiskList: function(){
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/fcstCollaborative/getAllCollabRisks/',
+	        url: '/blueloop/fcstCollaborative/getAllCollabRisks/',
 	        data: {id:this.model.id,objectType:this.model.get("rowType"),filterType:this.model.get("filterType"),instanceId:this.model.get("instanceId")},
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

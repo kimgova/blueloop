@@ -1,7 +1,7 @@
 var loopGridView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/loopGrid/template/loopGridViewTemplate.ejs',
-	emptyGridTemplate: '/blueloop-backend/static/js/loop/loopGrid/template/loopGridDefaultEmptyTemplate.ejs',
+	template: '/blueloop/static/js/loop/loopGrid/template/loopGridViewTemplate.ejs',
+	emptyGridTemplate: '/blueloop/static/js/loop/loopGrid/template/loopGridDefaultEmptyTemplate.ejs',
     
     initialize: function (){;
     	this.getLoopCollection();
@@ -53,7 +53,7 @@ var loopGridView = Backbone.View.extend({
     getAllLoops:function(){
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/chain/getMyLoopsData/',
+	        url: '/blueloop/chain/getMyLoopsData/',
 	        data: {},
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

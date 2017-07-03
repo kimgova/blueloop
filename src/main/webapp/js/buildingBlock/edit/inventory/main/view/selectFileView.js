@@ -1,6 +1,6 @@
 var selectFileView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/inventory/main/template/selectFileModal.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/inventory/main/template/selectFileModal.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -18,7 +18,7 @@ var selectFileView = Backbone.View.extend({
     
     uploadFile: function(e){
         if(e.data.validateFile()){
-            e.data.submitForm($("#formUploadInventory"), "/blueloop-backend/loadFile/uploadInventoryFile", e.data )
+            e.data.submitForm($("#formUploadInventory"), "/blueloop/loadFile/uploadInventoryFile", e.data )
         }else{
             toastr.error(json.forecast.budget.format);
         }
@@ -67,7 +67,7 @@ var selectFileView = Backbone.View.extend({
     },
     
     selectFile: function(e){
-    	var data = ajaxCall('GET','/blueloop-backend/loadFile/processInventoryFile/', {idBB:e.model.get("bb_id"),fileName:e.model.get("file_name")}, "text/json", "json", false);
+    	var data = ajaxCall('GET','/blueloop/loadFile/processInventoryFile/', {idBB:e.model.get("bb_id"),fileName:e.model.get("file_name")}, "text/json", "json", false);
 		
 		if(data.success){
 			var invView = new inventoryTableView({idBB:e.model.get("bb_id")});

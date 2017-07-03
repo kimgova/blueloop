@@ -1,6 +1,6 @@
 var forecastEquivTableView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquivTable.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquivTable.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -46,7 +46,7 @@ var forecastEquivTableView = Backbone.View.extend({
 	retrieveEquivalenceList: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcstSku/getEquivalences/',
+			url: '/blueloop/fcstSku/getEquivalences/',
 			data: {id:this.forecastId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

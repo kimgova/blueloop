@@ -1,6 +1,6 @@
 var historyView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/billing/template/historyTemplate.ejs',
+    template: '/blueloop/static/js/admin/billing/template/historyTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

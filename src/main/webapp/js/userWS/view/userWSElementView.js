@@ -1,6 +1,6 @@
 var userWSElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/userWS/template/userWSElementViewTemplate.ejs',
+    template: '/blueloop/static/js/userWS/template/userWSElementViewTemplate.ejs',
     
     render: function() {
     	this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -16,7 +16,7 @@ var userWSElementView = Backbone.View.extend({
 	goToBB: function(e){
 		var access = e.data.getBBAccess(e.data.model.get("id"));
 		if(access.allowAccessLink == true){
-			 setTimeout(function(){window.location.replace("/blueloop-backend/buildingBlock/list")}, 500);
+			 setTimeout(function(){window.location.replace("/blueloop/buildingBlock/list")}, 500);
 		}else{
 			var modalView = new bbAccessNoAllowedView({model:e.data.model});
 	        modalView.render().$el.modal({backdrop: 'static',keyboard: false});
@@ -29,7 +29,7 @@ var userWSElementView = Backbone.View.extend({
 
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/buildingBlock/getCurrentUserBBAccess/',
+            url: '/blueloop/buildingBlock/getCurrentUserBBAccess/',
             data: jsonObject,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -47,7 +47,7 @@ var userWSElementView = Backbone.View.extend({
     
     goToExecution:function(context){
         if(context.data.model.get("allowAccess")){
-             setTimeout(function(){window.location.replace("/blueloop-backend/chain/execution/"+ context.data.model.get("id"))}, 500);
+             setTimeout(function(){window.location.replace("/blueloop/chain/execution/"+ context.data.model.get("id"))}, 500);
         }else{
             var modalView = new loopAccessView({model:context.data.model});
             modalView.render().$el.modal("show");

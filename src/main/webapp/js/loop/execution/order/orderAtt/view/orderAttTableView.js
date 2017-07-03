@@ -1,6 +1,6 @@
 var orderAttTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderAtt/template/orderAttTableTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderAtt/template/orderAttTableTemplate.ejs',
        
     constructor : function (options) {
         _.extend(this, options);
@@ -19,7 +19,7 @@ var orderAttTableView = Backbone.View.extend({
     setCollection: function() {
         this.collection = new orderAttCollection([]);
         this.flowCollection = new orderAttFowCollection([]);
-        var result = ajaxCall('GET', '/blueloop-backend/orderChain/getAllOrderAttachments/', {orderId:this.model.id}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/orderChain/getAllOrderAttachments/', {orderId:this.model.id}, "text/json", "json", false);
         _.each(result.attList,function(item,i){
             var model = new orderAttModel({
                 id:item.id,

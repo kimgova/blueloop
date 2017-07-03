@@ -1,6 +1,6 @@
 var mainView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/loopGrid/template/mainViewTemplate.ejs',
+	template: '/blueloop/static/js/loop/loopGrid/template/mainViewTemplate.ejs',
 	
     initialize: function (){
 
@@ -36,7 +36,7 @@ var mainView = Backbone.View.extend({
     },
     
     getCreationPermission:function(){
-        var data = ajaxCall('GET', '/blueloop-backend/user/verifyLoopCreationPermission/', {}, "text/json", "json", false);
+        var data = ajaxCall('GET', '/blueloop/user/verifyLoopCreationPermission/', {}, "text/json", "json", false);
         this.creationPermission = data.permission 
     }
 

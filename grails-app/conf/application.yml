@@ -94,19 +94,19 @@ grails:
                 taglib: none
                 staticparts: none
                 
-#    plugin:
-#        springsecurity: 
-#            password:
-#                algorithm: bcrypt
-#            logout:
-#                postOnly: false
-#            rememberMe: 
-#                createSessionOnSuccess: true
-#            userLookup:
-#                userDomainClassName: cr.sa.bl.User
-#                authorityJoinClassName: cr.sa.bl.UserRole
-#            authority:
-#                className: cr.sa.bl.Role
+    plugin:
+        springsecurity: 
+            password:
+                algorithm: bcrypt
+            logout:
+                postOnly: false
+            rememberMe: 
+                createSessionOnSuccess: true
+            userLookup:
+                userDomainClassName: blueloop.User
+                authorityJoinClassName: blueloop.UserRole
+            authority:
+                className: blueloop.Role
 #            controllerAnnotations:
 #                staticRules: [
 #                        '/':                              ['permitAll'],
@@ -169,19 +169,19 @@ environments:
             dbCreate: none
             url: jdbc:mysql://localhost/blueloop?useUnicode=true&characterEncoding=utf-8
             username: root
-            password: root
+            password: 
         imageUpload:
-            root: /blueloop-backend/
+            root: /blueloop/
             templateFolderRoute: web-app/templates/
             imagesFolderRoute: web-app/images/
             bbFolderRoute: web-app/images/buildingBlocks/
             canvasFolderRoute: web-app/images/canvas/
             activityFolderRoute: web-app/images/activities/
             riskFolderRoute: web-app/images/risks/
-            externalFolderRoute: /blueloop-backend/repos/
-            internalFolderRoute: /blueloop-backend/static/
+            externalFolderRoute: /blueloop/repos/
+            internalFolderRoute: /blueloop/static/
             csv: web-app/csv/
-            activitiesURL: /blueloop-backend/static/images/activities/
+            activitiesURL: /blueloop/static/images/activities/
         aws:
             endpoint: https://s3-us-west-1.amazonaws.com/
             bucketBlAppUsers: blapp-users
@@ -195,17 +195,17 @@ environments:
             username: root
             password: root
         imageUpload:
-            root: /blueloop-backend/
+            root: /blueloop/
             templateFolderRoute: web-app/templates/
             imagesFolderRoute: web-app/images/
             bbFolderRoute: web-app/images/buildingBlocks/
             canvasFolderRoute: web-app/images/canvas/
             activityFolderRoute: web-app/images/activities/
             riskFolderRoute: web-app/images/risks/
-            externalFolderRoute: /blueloop-backend/repos/
-            internalFolderRoute: /blueloop-backend/static/
+            externalFolderRoute: /blueloop/repos/
+            internalFolderRoute: /blueloop/static/
             csv: web-app/csv/
-            activitiesURL: /blueloop-backend/static/images/activities/
+            activitiesURL: /blueloop/static/images/activities/
         aws:
             endpoint: https://s3-us-west-1.amazonaws.com/
             bucketBlAppUsers: blapp-users
@@ -228,18 +228,18 @@ environments:
                 minEvictableIdleTimeMillis: 60000
                 timeBetweenEvictionRunsMillis: 5000
         imageUpload:
-            root: /blueloop-backend/           
+            root: /blueloop/           
             repositoryRoute: /home/bitnami/repos/
-            templateFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop-backend/templates/
-            imagesFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop-backend/images/
-            bbFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop-backend/images/buildingBlocks/
-            canvasFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop-backend/images/canvas/
-            activityFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop-backend/images/activities/
-            riskFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop-backend/images/risks/
-            csv: /opt/bitnami/apache-tomcat/webapps/blueloop-backend/csv/
-            externalFolderRoute: /blueloop-backend/repos/
-            internalFolderRoute: /blueloop-backend/static/
-            activitiesURL: /blueloop-backend/static/images/activities/
+            templateFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop/templates/
+            imagesFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop/images/
+            bbFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop/images/buildingBlocks/
+            canvasFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop/images/canvas/
+            activityFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop/images/activities/
+            riskFolderRoute: /opt/bitnami/apache-tomcat/webapps/blueloop/images/risks/
+            csv: /opt/bitnami/apache-tomcat/webapps/blueloop/csv/
+            externalFolderRoute: /blueloop/repos/
+            internalFolderRoute: /blueloop/static/
+            activitiesURL: /blueloop/static/images/activities/
         aws:
             endpoint: https://s3-us-west-1.amazonaws.com/
             bucketBlAppUsers: blapp-users

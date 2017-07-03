@@ -1,6 +1,6 @@
 var forecastInstanceRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/main/template/fcstInstRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/main/template/fcstInstRow.ejs',
         
     render: function () {
         this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -54,7 +54,7 @@ var forecastInstanceRowView = Backbone.View.extend({
             if (e) {
                 var dataReturned = $.ajax({
                     type: 'POST',
-                    url: '/blueloop-backend/forecast/signOffInstance/',
+                    url: '/blueloop/forecast/signOffInstance/',
                     data: JSON.stringify(signOffData),
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',
@@ -84,7 +84,7 @@ var forecastInstanceRowView = Backbone.View.extend({
             if (e) {
                 var dataReturned = $.ajax({
                     type: 'POST',
-                    url: '/blueloop-backend/forecast/deleteFcstInstance/',
+                    url: '/blueloop/forecast/deleteFcstInstance/',
                     data: JSON.stringify(instanceData),
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',

@@ -1,6 +1,6 @@
 var chatPanelView = Backbone.View.extend({
     
-     template: '/blueloop-backend/static/js/layout/newUIChat/template/chatPanelTemplate.ejs',
+     template: '/blueloop/static/js/layout/newUIChat/template/chatPanelTemplate.ejs',
      el : $('#chat-panel-container'),
     
      initialize: function (){
@@ -121,11 +121,11 @@ var chatPanelView = Backbone.View.extend({
                 var bb_id;
                 var path;
                 if(item.instanceChat.type == 0){
-                    path = "/blueloop-backend/static/images/group.png";
+                    path = "/blueloop/static/images/group.png";
                 }else if(item.instanceChat.type==1){
                     chain_id = item.instanceChat.chain.id;
                     bb_id = null;
-                    path = "/blueloop-backend/static/images/home/loop.png";
+                    path = "/blueloop/static/images/home/loop.png";
                 }else if(item.instanceChat.type==3){
                     bb_id = item.instanceChat.bb.id;
                     chain_id=null;
@@ -147,7 +147,7 @@ var chatPanelView = Backbone.View.extend({
       getUserChats : function(){
           var dataReturned = $.ajax({
                 type: 'GET',
-                url: '/blueloop-backend/chat/getUserChats/',
+                url: '/blueloop/chat/getUserChats/',
                 data: new Object(),
                 contentType: "text/json",
                 dataType: "json",
@@ -268,7 +268,7 @@ var chatPanelView = Backbone.View.extend({
                     type: item.type,
                     chain_id: null,
                     bb_id: null,
-                    path: "/blueloop-backend/static/images/group.png"
+                    path: "/blueloop/static/images/group.png"
             });
            this.groupCategoryView.addChatModel(model);
 //           this.groupChatsCollection.add(model);
@@ -283,7 +283,7 @@ var chatPanelView = Backbone.View.extend({
                     type: item.instanceChat.type,
                     chain_id: item.instanceChat.chain.id,
                     bb_id: null,
-                  path: "/blueloop-backend/static/images/home/loop.png"
+                  path: "/blueloop/static/images/home/loop.png"
             });
            this.loopCategoryView.addChatModel(model);
           /* this.groupChatsCollection.add(model);

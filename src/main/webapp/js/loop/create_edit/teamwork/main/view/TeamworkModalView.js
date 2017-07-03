@@ -1,6 +1,6 @@
 var TeamworkModalView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/create_edit/teamwork/main/template/TeamworkModal.ejs',
+	template: '/blueloop/static/js/loop/create_edit/teamwork/main/template/TeamworkModal.ejs',
 	
     initialize: function(){
         this.model = new TeamworkModel();
@@ -53,7 +53,7 @@ var TeamworkModalView = Backbone.View.extend({
 	},
 	
 	getMembersNewTeam: function(){
-		var creator = ajaxCall('GET', '/blueloop-backend/user/getCurrentForNewLoop/', undefined, "text/json", "json", false);
+		var creator = ajaxCall('GET', '/blueloop/user/getCurrentForNewLoop/', undefined, "text/json", "json", false);
     	if($("#titleChain").html() != "Untitled"){
     	    this.model.name = $("#titleChain").html() + " Teamwork";
     	}else{
@@ -74,7 +74,7 @@ var TeamworkModalView = Backbone.View.extend({
 	
 	getMembersSavedTeam: function(){
 		var jsonObject = {id:this.model.id, from:'loop'}
-		var result = ajaxCall('GET', '/blueloop-backend/teamwork/getLoopTeamwork/', jsonObject, "text/json", "json", false);
+		var result = ajaxCall('GET', '/blueloop/teamwork/getLoopTeamwork/', jsonObject, "text/json", "json", false);
 		
 		var data = result[0];
 		this.model.name = data.team.name;

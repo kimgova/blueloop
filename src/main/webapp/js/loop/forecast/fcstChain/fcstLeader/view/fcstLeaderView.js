@@ -1,5 +1,5 @@
 var forecastLeaderView = Backbone.View.extend({
-	template : '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstLeader/template/fcstLeaderModal.ejs',
+	template : '/blueloop/static/js/loop/forecast/fcstChain/fcstLeader/template/fcstLeaderModal.ejs',
 	usersCollection: null,
 
 	render : function() {
@@ -32,7 +32,7 @@ var forecastLeaderView = Backbone.View.extend({
 	retrieveUsersLeadersList:function(){
 		var dataReturned = $.ajax({
 			type : 'GET',
-			url : '/blueloop-backend/forecast/getAllUsersAndLeaders/',
+			url : '/blueloop/forecast/getAllUsersAndLeaders/',
 			data : {id:this.idForecast},
 			contentType : 'application/json; charset=utf-8',
 			dataType : 'json',

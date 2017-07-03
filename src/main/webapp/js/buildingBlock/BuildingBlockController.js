@@ -1,6 +1,6 @@
 function BuildingBlockController() {	
 	var that = this;	
-	that.bbElementTemplate = "/blueloop-backend/static/js/buildingBlock/view/BBListElementView.ejs";
+	that.bbElementTemplate = "/blueloop/static/js/buildingBlock/view/BBListElementView.ejs";
 	
 	that.init = function() {
 		json = JSON.parse(localStorage.getItem('jsLanguage'));
@@ -51,7 +51,7 @@ function BuildingBlockController() {
 		$("#btnFileSystemChooser .qq-uploader > div").removeClass("btn-primary");
 		$("#btnFileSystemChooser .qq-uploader > div").addClass("dropbox-dropin-btn");
 		
-		var btnLoad = new EJS({url: '/blueloop-backend/static/js/ejsTemplates/btnsUploaders.ejs'}).render({type:"faUpload"});
+		var btnLoad = new EJS({url: '/blueloop/static/js/ejsTemplates/btnsUploaders.ejs'}).render({type:"faUpload"});
 		$("#btnFileSystemChooser .qq-uploader > div").append(btnLoad);
 		$("#btnFileSystemChooser2 .qq-uploader > div").append(btnLoad);
 	}
@@ -70,7 +70,7 @@ function BuildingBlockController() {
 	function getBuildingBlockTest(idBB){
 		var jsonObject = new Object();
 		jsonObject.id = idBB;
-		var data = ajaxCall('GET','/blueloop-backend/buildingBlock/getBuildingBlock/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/buildingBlock/getBuildingBlock/', jsonObject, "text/json", "json", false);
 		var bb = data.bb;
 		bb.config 	= data.config;
 		bb.filePath = data.filePath;
@@ -133,9 +133,9 @@ function BuildingBlockController() {
 			}
 			var o = new Object();
 			o.id = idBB;			
-			ajaxCall('GET','/blueloop-backend/buildingBlock/deleteBuildingBlock/', o, "text/json", "json", false);
+			ajaxCall('GET','/blueloop/buildingBlock/deleteBuildingBlock/', o, "text/json", "json", false);
 			toastr.success(json.bb.archived);
-			setTimeout(function(){window.location.replace("/blueloop-backend/buildingBlock/list")}, 1000);
+			setTimeout(function(){window.location.replace("/blueloop/buildingBlock/list")}, 1000);
 		});
 	}
 	

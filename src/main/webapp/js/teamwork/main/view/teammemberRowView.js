@@ -1,6 +1,6 @@
 var teammemberRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/teamwork/main/template/teammemberRow.ejs',
+    template: '/blueloop/static/js/teamwork/main/template/teammemberRow.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);

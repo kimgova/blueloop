@@ -1,6 +1,6 @@
 var actRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/create_edit/flowActivities/template/act_row_template.ejs',
+    template: '/blueloop/static/js/loop/create_edit/flowActivities/template/act_row_template.ejs',
         
     constructor : function (options) {
         _.extend(this, options);

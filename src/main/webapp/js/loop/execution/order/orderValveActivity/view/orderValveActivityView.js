@@ -1,6 +1,6 @@
 var orderValveActivityView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderValveActivity/template/activityTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderValveActivity/template/activityTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);

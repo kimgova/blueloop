@@ -1,6 +1,6 @@
 var fileTableView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/buildingBlock/edit/inventory/file/template/fileTableTemplate.ejs',
+	template: '/blueloop/static/js/buildingBlock/edit/inventory/file/template/fileTableTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -16,7 +16,7 @@ var fileTableView = Backbone.View.extend({
     
     getFiles: function() {
     	this.collection = new fileUpCollection([]);
-    	var result = ajaxCall('GET', '/blueloop-backend/loadFile/getListUploadFiles/', {idBB:this.idBB}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/loadFile/getListUploadFiles/', {idBB:this.idBB}, "text/json", "json", false);
     	_.each(result,function(item,i){
     		var file = new fileUpModel({
     			id : item.id,

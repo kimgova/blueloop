@@ -1,6 +1,6 @@
 var teamMemberRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/teamwork/template/teamMemberRow.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/teamwork/template/teamMemberRow.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
@@ -57,7 +57,7 @@ var teamMemberRowView = Backbone.View.extend({
                 
                 $.ajax({
                     type: 'POST',
-                    url: '/blueloop-backend/teamwork/removeTeamBBMember/',
+                    url: '/blueloop/teamwork/removeTeamBBMember/',
                     data: JSON.stringify(jsonObject),
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',

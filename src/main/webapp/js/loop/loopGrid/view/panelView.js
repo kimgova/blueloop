@@ -1,7 +1,7 @@
 var panelView = Backbone.View.extend({
     
-    defaultTemplate: '/blueloop-backend/static/js/loop/loopGrid/template/panelDefaultViewTemplate.ejs',
-    infoTemplate: '/blueloop-backend/static/js/loop/loopGrid/template/panelInfoViewTemplate.ejs',
+    defaultTemplate: '/blueloop/static/js/loop/loopGrid/template/panelDefaultViewTemplate.ejs',
+    infoTemplate: '/blueloop/static/js/loop/loopGrid/template/panelInfoViewTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

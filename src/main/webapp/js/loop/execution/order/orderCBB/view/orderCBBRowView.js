@@ -1,6 +1,6 @@
 var orderCBBRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderCBB/template/orderCBBRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderCBB/template/orderCBBRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -21,7 +21,7 @@ var orderCBBRowView = Backbone.View.extend({
     endOrder: function(context){
     	bootbox.confirm(json.order.end, function (e) {
             if (e) {
-                var dataAjax = ajaxCall('GET','/blueloop-backend/orderChain/endOrder/', {id:context.data.model.id}, "text/json", "json", false);
+                var dataAjax = ajaxCall('GET','/blueloop/orderChain/endOrder/', {id:context.data.model.id}, "text/json", "json", false);
                 if(dataAjax != undefined){
                     context.data.tableView.datatable.rows(context.data.$el).remove().draw();
                     toastr.success(json.order.ended);

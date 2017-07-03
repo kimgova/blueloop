@@ -1,5 +1,5 @@
 var addTMemberModalView = Backbone.View.extend({
-    template : '/blueloop-backend/static/js/buildingBlock/edit/teamwork/addTeamMember/template/addTMemberModal.ejs',
+    template : '/blueloop/static/js/buildingBlock/edit/teamwork/addTeamMember/template/addTMemberModal.ejs',
 
     constructor : function (options) {
         _.extend(this, options);
@@ -45,7 +45,7 @@ var addTMemberModalView = Backbone.View.extend({
     retrieveUsersList:function(){
         var dataReturned = $.ajax({
             type : 'GET',
-            url : '/blueloop-backend/teamwork/getContactsForTeam/',
+            url : '/blueloop/teamwork/getContactsForTeam/',
             data : {id:null},
             contentType : 'application/json; charset=utf-8',
             dataType : 'json',
@@ -93,7 +93,7 @@ var addTMemberModalView = Backbone.View.extend({
         var models = {models:that.addCollection.models};
         var result= $.ajax({
             type: 'POST',
-            url: '/blueloop-backend/teamwork/saveNewMembers/',
+            url: '/blueloop/teamwork/saveNewMembers/',
             data: JSON.stringify(models),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

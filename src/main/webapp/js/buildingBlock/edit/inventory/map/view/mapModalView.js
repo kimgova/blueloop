@@ -1,6 +1,6 @@
 var mapModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/inventory/map/template/mapModal.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/inventory/map/template/mapModal.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -43,7 +43,7 @@ var mapModalView = Backbone.View.extend({
     },
     
     setMapColumnsCollection: function(){
-    	var data = ajaxCall('GET','/blueloop-backend/loadFile/getFileMapping/', {idBB:this.idBB}, "text/json", "json", false);
+    	var data = ajaxCall('GET','/blueloop/loadFile/getFileMapping/', {idBB:this.idBB}, "text/json", "json", false);
         this.collection = new mapCollection();
         _.each(data,function(item,i){
             var model = new mapModel({

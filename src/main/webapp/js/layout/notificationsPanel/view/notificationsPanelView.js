@@ -1,6 +1,6 @@
 var notificationsPanelView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/layout/notificationsPanel/template/notificationsPanelTemplate.ejs',
+	template: '/blueloop/static/js/layout/notificationsPanel/template/notificationsPanelTemplate.ejs',
 	el : $('#notif-panel-container'),
 	
 	initialize: function (){
@@ -88,7 +88,7 @@ var notificationsPanelView = Backbone.View.extend({
 	getUserNotifications: function(){
 		  var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/user/getUserNotifications/',
+		        url: '/blueloop/user/getUserNotifications/',
 		        data: new Object(),
 		        contentType: "text/json",
 		        dataType: "json",

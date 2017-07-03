@@ -1,6 +1,6 @@
 var loopRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/loopRowTemplate.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/loopRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);

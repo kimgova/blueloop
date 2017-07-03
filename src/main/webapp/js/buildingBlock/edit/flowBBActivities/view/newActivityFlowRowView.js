@@ -1,6 +1,6 @@
 var newActivityFlowRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/flowBBActivities/template/newRow_template.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/flowBBActivities/template/newRow_template.ejs',
     constructor : function (options) {
         _.extend(this, options);
     },
@@ -35,7 +35,7 @@ var newActivityFlowRowView = Backbone.View.extend({
                     request.setRequestHeader("authorizationToken", authorizationToken);
                     request.setRequestHeader("authorizationUri", authorizationUri);
                 },
-                url: '/blueloop-backend/activityBuildingBlock/saveActivityFlowBB/',
+                url: '/blueloop/activityBuildingBlock/saveActivityFlowBB/',
                 data: JSON.stringify(dataActivity),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -89,7 +89,7 @@ var newActivityFlowRowView = Backbone.View.extend({
     },
     
     setSelectedImage: function(modelImage,context){
-        var templateImg = "/blueloop-backend/static/js/buildingBlock/edit/flowBBActivities/template/btnChooseImg.ejs";
+        var templateImg = "/blueloop/static/js/buildingBlock/edit/flowBBActivities/template/btnChooseImg.ejs";
         context.$el.find(".imgNewFlowDiv").html($(new EJS({url: templateImg }).render({fileName:modelImage.get("key"),filePath:modelImage.get("filePath")})));
         context.$el.find("#imgFlowSelect").click(context,context.chooseImg);
         

@@ -1,6 +1,6 @@
 var forecastInstSubCatNewRowView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditCat/template/fcstInstSubCatNewRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditCat/template/fcstInstSubCatNewRow.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -36,7 +36,7 @@ var forecastInstSubCatNewRowView = Backbone.View.extend({
 		var subCatData = {categoryId:e.data.categoryId,name:e.data.$el.find("#nameSubCat").val(),status:e.data.$el.find("#status").val()};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/fcstCategory/saveSubCatForecast/',
+			url: '/blueloop/fcstCategory/saveSubCatForecast/',
 			data: JSON.stringify(subCatData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

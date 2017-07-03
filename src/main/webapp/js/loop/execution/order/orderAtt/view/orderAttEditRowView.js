@@ -1,6 +1,6 @@
 var orderAttEditRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderAtt/template/orderAttEditRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderAtt/template/orderAttEditRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -48,7 +48,7 @@ var orderAttEditRowView = Backbone.View.extend({
         var actData = {id:context.model.get("id"),description:context.model.get("description"),type:context.tableView.model.get("type")};
         var dataReturned = $.ajax({
             type: 'POST',
-            url: '/blueloop-backend/valve/changeAttachmentDescription/',
+            url: '/blueloop/valve/changeAttachmentDescription/',
             data: JSON.stringify(actData),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

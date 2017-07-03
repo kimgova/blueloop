@@ -1,6 +1,6 @@
 var loopElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/loopGrid/template/loopElementViewTemplate.ejs',
+    template: '/blueloop/static/js/loop/loopGrid/template/loopElementViewTemplate.ejs',
 
     initialize: function(){
         _.bindAll(this, 'render', 'clicked','showOptions', 'hideOptions', 'archiveLoop', 'removeLoop', 'restoreLoop'); 
@@ -65,7 +65,7 @@ var loopElementView = Backbone.View.extend({
 			if(e){					
 				$.ajax({
 	 		        type: 'GET',
-	 		        url: '/blueloop-backend/chain/changeState/',
+	 		        url: '/blueloop/chain/changeState/',
 	 		        data: jsonObject,
 	 		        contentType: 'application/json; charset=utf-8',
 	 		        dataType: 'json',
@@ -73,7 +73,7 @@ var loopElementView = Backbone.View.extend({
 	 		        success: function(data, textStatus) {
 	 		        	data =  data;
 	 		        	toastr.success(json.loop.archived);
-	 		        	setTimeout(function(){window.location.replace("/blueloop-backend/chain/list")}, 1000);
+	 		        	setTimeout(function(){window.location.replace("/blueloop/chain/list")}, 1000);
 	 		        },
 	 		    	error: function(httpRequest, textStatus, errorThrown) { 
 	 		     	   console.log("status=" + textStatus + " ,error=" + errorThrown);
@@ -91,7 +91,7 @@ var loopElementView = Backbone.View.extend({
 			
 		$.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/chain/changeState/',
+	        url: '/blueloop/chain/changeState/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -99,7 +99,7 @@ var loopElementView = Backbone.View.extend({
 	        success: function(data, textStatus) {
 	        	data =  data;
 	        	toastr.success(json.loop.restored);
-	        	setTimeout(function(){window.location.replace("/blueloop-backend/chain/list")}, 1000);
+	        	setTimeout(function(){window.location.replace("/blueloop/chain/list")}, 1000);
 	        },
 	    	error: function(httpRequest, textStatus, errorThrown) { 
 	     	   console.log("status=" + textStatus + " ,error=" + errorThrown);
@@ -117,7 +117,7 @@ var loopElementView = Backbone.View.extend({
 			if(e){					
 				$.ajax({
 	 		        type: 'POST',
-	 		        url: '/blueloop-backend/chain/delete/'+ jsonObject.id,
+	 		        url: '/blueloop/chain/delete/'+ jsonObject.id,
 	 		        data: jsonObject,
 	 		        contentType: 'application/json; charset=utf-8',
 	 		        dataType: 'json',
@@ -125,7 +125,7 @@ var loopElementView = Backbone.View.extend({
 	 		        success: function(data, textStatus) {
 	 		        	data =  data;
 	 		        	toastr.success(json.loop.deleted);
-	 		        	setTimeout(function(){window.location.replace("/blueloop-backend/chain/list")}, 1000);
+	 		        	setTimeout(function(){window.location.replace("/blueloop/chain/list")}, 1000);
 	 		        },
 	 		    	error: function(httpRequest, textStatus, errorThrown) { 
 	 		     	   console.log("status=" + textStatus + " ,error=" + errorThrown);

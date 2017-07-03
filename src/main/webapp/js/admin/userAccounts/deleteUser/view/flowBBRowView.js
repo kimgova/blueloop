@@ -1,6 +1,6 @@
 var flowBBRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/flowRowTemplate.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/flowRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);

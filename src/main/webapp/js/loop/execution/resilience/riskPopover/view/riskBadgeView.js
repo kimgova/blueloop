@@ -1,7 +1,7 @@
 var riskBadgeView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/resilience/riskPopover/template/badgeTemplate.ejs',
-	templatePopoverContent: '/blueloop-backend/static/js/loop/execution/resilience/riskPopover/template/popoverContentTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/resilience/riskPopover/template/badgeTemplate.ejs',
+	templatePopoverContent: '/blueloop/static/js/loop/execution/resilience/riskPopover/template/popoverContentTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -32,7 +32,7 @@ var riskBadgeView = Backbone.View.extend({
     },
     
     updateContent: function(e){
-    	var risks = ajaxCall('GET', '/blueloop-backend/chainBuildingBlock/getBBRisksByCBB/', {idCBB:e.id}, "text/json", "json", false);
+    	var risks = ajaxCall('GET', '/blueloop/chainBuildingBlock/getBBRisksByCBB/', {idCBB:e.id}, "text/json", "json", false);
     	var content = new EJS({url: this.templatePopoverContent}).render({dataRisks:risks,status:" Active"})
     	e.popover.data('bs.popover').options.content = content;    
     },

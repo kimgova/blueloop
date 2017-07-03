@@ -1,6 +1,6 @@
 var userWSLoopListView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/userWS/template/userWSLoopListViewTemplate.ejs',
+    template: '/blueloop/static/js/userWS/template/userWSLoopListViewTemplate.ejs',
     
     initialize: function(userId,current_id){
         _.bindAll(this, 'render', 'arrowRight', 'arrowLeft'); 
@@ -44,7 +44,7 @@ var userWSLoopListView = Backbone.View.extend({
         
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/chain/listLoopsPerfil/',
+            url: '/blueloop/chain/listLoopsPerfil/',
             data: jsonObject,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -72,7 +72,7 @@ var userWSLoopListView = Backbone.View.extend({
         _.each(loopList,function(item,i){
             var model = new userWSElementModel({
                 id: item.chain.id,
-                path:"/blueloop-backend/static/images/home/loop.png",
+                path:"/blueloop/static/images/home/loop.png",
                 name: item.chain.description,
                 teamwork: item.chain.teamwork.id,
                 allowAccess : item.allowAccess,
@@ -144,7 +144,7 @@ var userWSLoopListView = Backbone.View.extend({
         jsonObject.pairs = JSON.stringify(this.userLoopTw);
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/teamwork/getUserTWRoles/',
+            url: '/blueloop/teamwork/getUserTWRoles/',
             data: jsonObject,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

@@ -1,5 +1,5 @@
 <div id="item-info">
-    <img class="panel-element-pic" src="/blueloop-backend/static/images/home/loop.png" alt="<%= model.name %>"/>
+    <img class="panel-element-pic" src="/blueloop/static/images/home/loop.png" alt="<%= model.name %>"/>
     <h4><%= model.name %></h4>
 	<hr>
 	<div class="loop-description">
@@ -9,11 +9,11 @@
        	  <p><%= json.loop.containsBB %>: <span><%= model.containsBBs %></span></p>
     </div>
     <% if(model.archived === false){ %>
- 	  <a  href="/blueloop-backend/chain/execution/<%= model.id %>" id="loop-btn" class="btn btn-default btn-lg"><%= json.button.gotoExecution %></a>
+ 	  <a  href="/blueloop/chain/execution/<%= model.id %>" id="loop-btn" class="btn btn-default btn-lg"><%= json.button.gotoExecution %></a>
  	<% } %> 
  	
  	<% if(creationPermission == true){ %>
- 	  <a href="/blueloop-backend/chain/create" id="add_btn" class="circular-red-btn"><i class="" id="cross">+</i></a>
+ 	  <a href="/blueloop/chain/create" id="add_btn" class="circular-red-btn"><i class="" id="cross">+</i></a>
  	<% } %> 
     
 </div>

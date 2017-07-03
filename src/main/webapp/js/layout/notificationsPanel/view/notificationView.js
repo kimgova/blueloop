@@ -1,6 +1,6 @@
 var notificationView = Backbone.View.extend({
 	
-	 template: '/blueloop-backend/static/js/layout/notificationsPanel/template/notificationTemplate.ejs',
+	 template: '/blueloop/static/js/layout/notificationsPanel/template/notificationTemplate.ejs',
 	 
 	 constructor : function (options) {
 		 _.extend(this, options);
@@ -24,25 +24,25 @@ var notificationView = Backbone.View.extend({
 
 		switch (e.data.model.get("type")) {
 	  	  case "loop":
-	  		var result = ajaxCall('GET', '/blueloop-backend/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
-	  		window.location.replace("/blueloop-backend/chain/list");
+	  		var result = ajaxCall('GET', '/blueloop/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
+	  		window.location.replace("/blueloop/chain/list");
 	  	  break;
 	  	  case "user": 
 	  		  if(e.data.model.get("description").indexOf("Sent you a connection request") != -1){
 	  			obj.userContactId = e.data.model.get("senderId");
-	  			var result = ajaxCall('GET', '/blueloop-backend/user/confirmConnectionRequest/', obj, "text/json", "json", false);	
+	  			var result = ajaxCall('GET', '/blueloop/user/confirmConnectionRequest/', obj, "text/json", "json", false);	
 	  		  }else{
-	  			var result = ajaxCall('GET', '/blueloop-backend/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
+	  			var result = ajaxCall('GET', '/blueloop/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
 	  		  }
-	  		window.location.replace("/blueloop-backend/search/people");
+	  		window.location.replace("/blueloop/search/people");
 	      break;
 	  	  case "bb": 
-	  		var result = ajaxCall('GET', '/blueloop-backend/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
-			window.location.replace("/blueloop-backend/buildingBlock/list");
+	  		var result = ajaxCall('GET', '/blueloop/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
+			window.location.replace("/blueloop/buildingBlock/list");
 	  	  break;
 	  	  case "fc":
-	  		var result = ajaxCall('GET', '/blueloop-backend/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
-			window.location.replace("/blueloop-backend/chain/list");      
+	  		var result = ajaxCall('GET', '/blueloop/user/changeNotificationAlertState/', obj, "text/json", "json", false);	
+			window.location.replace("/blueloop/chain/list");      
 	  	  break;
 	  	}
 	  },
@@ -53,7 +53,7 @@ var notificationView = Backbone.View.extend({
 			
 			$.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/user/changeNotificationAlertState/',
+		        url: '/blueloop/user/changeNotificationAlertState/',
 		        data: jsonObjectUA,
 		        contentType: "text/json",
 		        dataType: "json",

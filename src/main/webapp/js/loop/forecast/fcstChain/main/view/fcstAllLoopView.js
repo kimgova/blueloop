@@ -1,7 +1,7 @@
 var forecastAllLoopView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstChain/main/template/fcstAllLoopTemplate.ejs',
-	nodataTemplate:'/blueloop-backend/static/js/loop/forecast/fcstChain/main/template/nodatafound.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstChain/main/template/fcstAllLoopTemplate.ejs',
+	nodataTemplate:'/blueloop/static/js/loop/forecast/fcstChain/main/template/nodatafound.ejs',
 
 	init:function (){
 		this.$el = $(new EJS({url: this.template }).render());

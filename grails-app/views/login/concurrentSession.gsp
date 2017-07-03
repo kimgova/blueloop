@@ -34,7 +34,7 @@
                                                         <form action='${postUrl}' method='POST' id='loginForm' autocomplete='off'>
                                                             <div class="logo">
                                                                 <a href="http://blue-loop.com"> 
-                                                                    <img alt="Blue-loop" src="/blueloop-backend/static/images/logo.png">
+                                                                    <img alt="Blue-loop" src="/blueloop/static/images/logo.png">
                                                                 </a>
                                                             </div>
                                                             <br/>

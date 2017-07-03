@@ -1,6 +1,6 @@
 var fcstinst3SFilterView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3SFilter.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3SFilter.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -28,7 +28,7 @@ var fcstinst3SFilterView = Backbone.View.extend({
 	retrieveRoles: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcstRole/getRolesByForecastInstance/',
+			url: '/blueloop/fcstRole/getRolesByForecastInstance/',
 			data: {id:this.instanceId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

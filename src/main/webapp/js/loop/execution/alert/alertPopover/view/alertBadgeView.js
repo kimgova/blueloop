@@ -1,7 +1,7 @@
 var alertBadgeView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/alert/alertPopover/template/badgeTemplate.ejs',
-	templatePopoverContent: '/blueloop-backend/static/js/loop/execution/alert/alertPopover/template/popoverContentTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/alert/alertPopover/template/badgeTemplate.ejs',
+	templatePopoverContent: '/blueloop/static/js/loop/execution/alert/alertPopover/template/popoverContentTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -32,7 +32,7 @@ var alertBadgeView = Backbone.View.extend({
     },
     
     updateContent: function(e){
-    	var data = ajaxCall('GET', '/blueloop-backend/chainBuildingBlockAlert/getCBBAlerts/', {jsonId:e.id}, "text/json", "json", false);
+    	var data = ajaxCall('GET', '/blueloop/chainBuildingBlockAlert/getCBBAlerts/', {jsonId:e.id}, "text/json", "json", false);
     	var content = new EJS({url: this.templatePopoverContent}).render({dataAlerts:data.cbbAlerts})
     	e.popover.data('bs.popover').options.content = content;    
     },

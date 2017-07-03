@@ -1,6 +1,6 @@
 var forecastInstLinearSubCatOptionView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearSubCatOption.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearSubCatOption.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

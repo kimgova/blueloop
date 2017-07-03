@@ -1,6 +1,6 @@
 var bbPanelView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/create_edit/bbpanel/template/bbPanelTemplate.ejs',
+    template: '/blueloop/static/js/loop/create_edit/bbpanel/template/bbPanelTemplate.ejs',
     el : $('#bb-panel-container'),
     
     initialize: function (){
@@ -63,7 +63,7 @@ var bbPanelView = Backbone.View.extend({
     },
     
     setMyBBList: function(){
-        var myBBdata = ajaxCall('GET', '/blueloop-backend/buildingBlock/getAllBuildingBlock/', {categories:""}, "text/json", "json", false);
+        var myBBdata = ajaxCall('GET', '/blueloop/buildingBlock/getAllBuildingBlock/', {categories:""}, "text/json", "json", false);
         this.myBBCollection = new bbPanelCollection([]);
         _.each(myBBdata.listMyBB,function(item,i){
             var model = new bbPanelModel({
@@ -92,7 +92,7 @@ var bbPanelView = Backbone.View.extend({
     },
     
     setShareBBList: function(panel){
-        var shareBBdata = ajaxCall('GET', '/blueloop-backend/buildingBlock/searchBBToBeShared/', {searchWord:""}, "text/json", "json", false);
+        var shareBBdata = ajaxCall('GET', '/blueloop/buildingBlock/searchBBToBeShared/', {searchWord:""}, "text/json", "json", false);
         this.shareBBCollection = new bbPanelCollection([]);
         _.each(shareBBdata.listBB,function(item,i){
             var model = new bbPanelModel({
@@ -120,13 +120,13 @@ var bbPanelView = Backbone.View.extend({
     },
     
     getBBCreationPermission:function(){
-        var data = ajaxCall('GET', '/blueloop-backend/user/verifyBBCreationPermission/', {}, "text/json", "json", false);
+        var data = ajaxCall('GET', '/blueloop/user/verifyBBCreationPermission/', {}, "text/json", "json", false);
         this.bbCreationPermission = data.permission 
     },
     
     setNewBBList: function(){
         if(this.bbCreationPermission == true){
-            var newBBdata = ajaxCall('GET', '/blueloop-backend/buildingBlockType/getAllBuildingBlockType/', {}, "text/json", "json", false);
+            var newBBdata = ajaxCall('GET', '/blueloop/buildingBlockType/getAllBuildingBlockType/', {}, "text/json", "json", false);
             this.newBBCollection = new bbPanelCollection([]);
             _.each(newBBdata.listBBType,function(item,i){
                 var model = new bbPanelModel({

@@ -1,6 +1,6 @@
 var forecastInstanceEditRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/main/template/fcstInstEditRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/main/template/fcstInstEditRow.ejs',
         
     render: function () {
         this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -20,7 +20,7 @@ var forecastInstanceEditRowView = Backbone.View.extend({
     	var instance = {id:data.model.id,name:data.$el.find("#nameInstance").val()};
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/forecast/editForecastInstance/',
+	        url: '/blueloop/forecast/editForecastInstance/',
 	        data: JSON.stringify(instance),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

@@ -1,6 +1,6 @@
 var peopleTopbarView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/people/template/peopleTopbarViewTemplate.ejs',
+	template: '/blueloop/static/js/people/template/peopleTopbarViewTemplate.ejs',
     
     initialize: function (){
 		this.render();

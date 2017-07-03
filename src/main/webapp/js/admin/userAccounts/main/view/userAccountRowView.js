@@ -1,6 +1,6 @@
 var userAccountRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/main/template/userAccountRowTemplate.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/main/template/userAccountRowTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -55,7 +55,7 @@ var userAccountRowView = Backbone.View.extend({
             if (e) {
                 $.ajax({
                     type: 'POST',
-                    url: '/blueloop-backend/administrator/resetPassword/',
+                    url: '/blueloop/administrator/resetPassword/',
                     data: JSON.stringify({id:that.data.model.get("id"),email:that.data.model.get("email")}),
                     contentType: "text/json",
                     dataType: "json",
@@ -84,7 +84,7 @@ var userAccountRowView = Backbone.View.extend({
         bootbox.confirm(json.admin.confirmUserDelete + that.data.model.get('name') + '?', function (e) {
             if (e) {
                 if(that.data.model.get("bbs") == 0 && that.data.model.get("loops") == 0 && that.data.model.get("countFlow") == 0){
-                    var result = ajaxCall('GET', '/blueloop-backend/user/disableUser/', {id:that.data.model.id}, "text/json", "json", false);
+                    var result = ajaxCall('GET', '/blueloop/user/disableUser/', {id:that.data.model.id}, "text/json", "json", false);
                     if(result.success){
                         toastr.success(result.message);
                         that.data.tableView.datatable.rows(that.data.$el).remove();
@@ -107,7 +107,7 @@ var userAccountRowView = Backbone.View.extend({
         var that = e; 
         bootbox.confirm(json.admin.confirmUserActivate + that.data.model.get('name') + '?', function (e) {
             if (e) {
-                var result = ajaxCall('POST', '/blueloop-backend/user/enableUser/', JSON.stringify({id:that.data.model.get("id")}), "text/json", "json", false);
+                var result = ajaxCall('POST', '/blueloop/user/enableUser/', JSON.stringify({id:that.data.model.get("id")}), "text/json", "json", false);
                 if(result.success){
                     toastr.success(result.message);
                     that.data.tableView.datatable.rows(that.data.$el).remove();

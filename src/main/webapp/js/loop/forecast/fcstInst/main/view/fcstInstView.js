@@ -1,6 +1,6 @@
 var forecastInstanceView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/main/template/fcstInstTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/main/template/fcstInstTemplate.ejs',
 
     idForecastChain: 0,
     

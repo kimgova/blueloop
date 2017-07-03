@@ -1,6 +1,6 @@
 var fcInstLinearVarRowView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/fcstInstLinearVar/template/fcstInstLinearVarRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/fcstInstLinearVar/template/fcstInstLinearVarRow.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -29,7 +29,7 @@ var fcInstLinearVarRowView = Backbone.View.extend({
 				var varData = {id:e.data.model.id};
 				var dataReturned = $.ajax({
 					type: 'POST',
-					url: '/blueloop-backend/fcstLinearPlan/deleteVarLinearPlanning/',
+					url: '/blueloop/fcstLinearPlan/deleteVarLinearPlanning/',
 					data: JSON.stringify(varData),
 					contentType: 'application/json; charset=utf-8',
 					dataType: 'json',

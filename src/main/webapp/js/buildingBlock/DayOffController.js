@@ -5,7 +5,7 @@ function DayOffController() {
 	var that = this;
 	var idSelectedBB;
 	that.objectTemplate = {};
-	that.template = "/blueloop-backend/static/js/buildingBlock/view/daysOffView.ejs";
+	that.template = "/blueloop/static/js/buildingBlock/view/daysOffView.ejs";
 	
 	that.init = function() {
 		that.objectTemplate = {tableDayOff:false,editDayOff:false,deleteDayOff:false,nameInputForm:false,startDateForm:false,finishDateForm:false,
@@ -52,7 +52,7 @@ function DayOffController() {
 	function getDayOffByBB(idBB){
 		var jsonObject = new Object();
 		jsonObject.idBB = idBB;
-		var listDayOff = ajaxCall('GET','/blueloop-backend/dayOff/getAllDayOffByBB/', jsonObject, "text/json", "json", false);
+		var listDayOff = ajaxCall('GET','/blueloop/dayOff/getAllDayOffByBB/', jsonObject, "text/json", "json", false);
 
 		for(i=0; i<listDayOff.length;++i){
 			listDayOff[i].action = new EJS({url:that.template}).render(cloneDataForm(["editDayOff","deleteDayOff"]));
@@ -228,7 +228,7 @@ function DayOffController() {
 	    dataDayOff.finishDate      = jqInputs[1].value;
 	    
 		var data = {dayOff:dataDayOff};
-		var dayOff = ajaxCall('POST', '/blueloop-backend/dayOff/saveDayOffByBB/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+		var dayOff = ajaxCall('POST', '/blueloop/dayOff/saveDayOffByBB/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
 		dataDayOff.id = dayOff.id;
 		dataDayOff.idBuildingB = idSelectedBB;
 		dataDayOff.action     = new EJS({url:that.template}).render(cloneDataForm(["editDayOff","deleteDayOff"]));
@@ -263,7 +263,7 @@ function DayOffController() {
 				var jsonObject      = new Object();
 				jsonObject.idDayOff = aData.id;
 				jsonObject.idBB     = idSelectedBB;
-				var dataAjax = ajaxCall('GET','/blueloop-backend/dayOff/deleteDayOffByBB/', jsonObject, "text/json", "json", false);
+				var dataAjax = ajaxCall('GET','/blueloop/dayOff/deleteDayOffByBB/', jsonObject, "text/json", "json", false);
 				dayOffTable.rows(nRow).remove().draw();
 				toastr.success(json.bb.daysOffRemoved);
 			} else {

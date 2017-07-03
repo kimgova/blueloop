@@ -1,6 +1,6 @@
 var userWSBBListView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/userWS/template/userWSBBListViewTemplate.ejs',
+    template: '/blueloop/static/js/userWS/template/userWSBBListViewTemplate.ejs',
     
     initialize: function(userId,current_id){
     	_.bindAll(this, 'render', 'arrowRight', 'arrowLeft'); 
@@ -54,7 +54,7 @@ var userWSBBListView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getAllBuildingBlock/',
+	        url: '/blueloop/buildingBlock/getAllBuildingBlock/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -155,7 +155,7 @@ var userWSBBListView = Backbone.View.extend({
     		jsonObject.pairs = JSON.stringify(this.userLoopTw);
     		var dataReturned = $.ajax({
     	        type: 'GET',
-    	        url: '/blueloop-backend/teamwork/getUserTWRoles/',
+    	        url: '/blueloop/teamwork/getUserTWRoles/',
     	        data: jsonObject,
     	        contentType: 'application/json; charset=utf-8',
     	        dataType: 'json',

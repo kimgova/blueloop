@@ -1,6 +1,6 @@
 var teamworkRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/teamwork/main/template/teamworkRow.ejs',
+    template: '/blueloop/static/js/teamwork/main/template/teamworkRow.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
@@ -33,7 +33,7 @@ var teamworkRowView = Backbone.View.extend({
     	var chatname = "Team Chat: " + e.data.model.get("name");
     	var userslist = [];
 
-    	var listTeamwork = ajaxCall('GET', '/blueloop-backend/teamwork/getTeamwork/', {id:e.data.model.id}, "text/json", "json", false);
+    	var listTeamwork = ajaxCall('GET', '/blueloop/teamwork/getTeamwork/', {id:e.data.model.id}, "text/json", "json", false);
 
     	$.each(listTeamwork[0].members, function (h, member) {
     		if(sessionUser.get("id") != member.user.id){

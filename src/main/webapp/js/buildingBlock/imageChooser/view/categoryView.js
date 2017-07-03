@@ -1,6 +1,6 @@
 var categoryView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/buildingBlock/imageChooser/template/categoryTemplate.ejs',
+	template: '/blueloop/static/js/buildingBlock/imageChooser/template/categoryTemplate.ejs',
     
 	constructor : function (options) {
         _.extend(this, options);

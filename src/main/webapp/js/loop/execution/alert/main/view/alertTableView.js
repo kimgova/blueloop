@@ -1,6 +1,6 @@
 var alertTableView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/alert/main/template/alertTableTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/alert/main/template/alertTableTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);

@@ -5,12 +5,12 @@ function CreateController() {
 	that.bbTypePool = {};
 	that.dataCountries = [];
 	that.objectTemplate = {};
-	that.template = "/blueloop-backend/static/js/buildingBlock/view/createView.ejs";
+	that.template = "/blueloop/static/js/buildingBlock/view/createView.ejs";
 	
 	that.init = function() {
 		bindEvents();
 		that.objectTemplate = {gridLiImg:false,selectImg:false,filePath:"",fileName:""};
-		that.dataCountries = ajaxCall('GET','/blueloop-backend/city/getCountries/', null, "text/json", "json", false);
+		that.dataCountries = ajaxCall('GET','/blueloop/city/getCountries/', null, "text/json", "json", false);
 		that.onChangeCategory($("#bbCategory").val());
 		that.changeBBForm($("#bbSelect").val());	
 		$("#fileNameSelect").attr("value","");
@@ -50,7 +50,7 @@ function CreateController() {
 		$("#bbSelect").empty();
 		var jsonObject = new Object();
 		jsonObject.category = category;
-		var data = ajaxCall('GET','/blueloop-backend/buildingBlockType/getAllBBTypeByCategory/', jsonObject, "text/json", "json", false); 
+		var data = ajaxCall('GET','/blueloop/buildingBlockType/getAllBBTypeByCategory/', jsonObject, "text/json", "json", false); 
 		that.filePath = data.filePath;
 		$.each(data.listBBType, function(i, item){
 			that.bbTypePool[item.id] = item;
@@ -66,12 +66,12 @@ function CreateController() {
 			var bb = {id:"",name:"",description:"",companyName:"",phoneNumber:"",emailAddress:"",type:type,category:"",
 					edit:false,countries:that.dataCountries.countries,fileName:"",phoneNumberAreaCode:"",disabled:""};
 
-			var form = $(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/bbGeneralInfoCreation.ejs' }).render(bb));
+			var form = $(new EJS({url: '/blueloop/static/js/ejsTemplates/bbGeneralInfoCreation.ejs' }).render(bb));
 			
 			bindFormEvents(form);
 			
 			if(type == ""){
-				$('#bb-thumb').attr('src', '/blueloop-backend/images/Expand.png');
+				$('#bb-thumb').attr('src', '/blueloop/images/Expand.png');
 			}else{
 				$('#bb-thumb').attr('src', that.filePath + that.bbTypePool[type].fileName);
 			}
@@ -97,7 +97,7 @@ function CreateController() {
 		
 		jsonObject['type'] = $('#bbSelect').val();
 		
-		var bb = ajaxCall('GET','/blueloop-backend/buildingBlock/saveBuildingBlock/', jsonObject, "text/json", "json", false);
+		var bb = ajaxCall('GET','/blueloop/buildingBlock/saveBuildingBlock/', jsonObject, "text/json", "json", false);
 		if ( bb[0] ){
 			toastr.error(json.bb.notSaved)
 			$.each(bb, function(index, error) {
@@ -107,7 +107,7 @@ function CreateController() {
 			});
 		}else{
 			toastr.success(json.bb.saved);
-			setTimeout(function(){window.location.replace("/blueloop-backend/buildingBlock/list")}, 2000);
+			setTimeout(function(){window.location.replace("/blueloop/buildingBlock/list")}, 2000);
 		}	
 	}
 	

@@ -1,7 +1,7 @@
 var forecastWURowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUTableRow.ejs',
-    noDataTemplate: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUNoDataRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUTableRow.ejs',
+    noDataTemplate: '/blueloop/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUNoDataRow.ejs',
         
     render: function () {
         this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -18,7 +18,7 @@ var forecastWURowView = Backbone.View.extend({
 		    	var wuData = {id:e.data.model.id};
 		    	var dataReturned = $.ajax({
 			        type: 'POST',
-			        url: '/blueloop-backend/fcstWUnit/deleteWorkingUnit/',
+			        url: '/blueloop/fcstWUnit/deleteWorkingUnit/',
 			        data: JSON.stringify(wuData),
 			        contentType: 'application/json; charset=utf-8',
 			        dataType: 'json',

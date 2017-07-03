@@ -1,6 +1,6 @@
 var fcstCollabRisksView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollabRisk/template/fcstCollabRisk.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollabRisk/template/fcstCollabRisk.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

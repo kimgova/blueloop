@@ -2,7 +2,7 @@ var riskPopoverController = {
 	
 	popovers: new PopoverCollection([]),
 	
-	templateSVGContainer : '/blueloop-backend/static/js/loop/execution/resilience/riskPopover/template/SVGContainerTemplate.ejs',
+	templateSVGContainer : '/blueloop/static/js/loop/execution/resilience/riskPopover/template/SVGContainerTemplate.ejs',
 
     createRiskPopoverContainer: function(id, cellview){   
     	$("svg#bbRiskAlert"+ id).remove();	

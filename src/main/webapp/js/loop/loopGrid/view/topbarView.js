@@ -1,6 +1,6 @@
 var topbarView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/loopGrid/template/topbarTemplate.ejs',
+	template: '/blueloop/static/js/loop/loopGrid/template/topbarTemplate.ejs',
 	
 	constructor : function (options) {
 		_.extend(this, options);

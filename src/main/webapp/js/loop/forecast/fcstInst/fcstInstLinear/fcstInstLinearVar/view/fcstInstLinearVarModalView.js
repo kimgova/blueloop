@@ -1,6 +1,6 @@
 var fcInstLinearVarModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/fcstInstLinearVar/template/fcstInstLinearVarModal.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/fcstInstLinearVar/template/fcstInstLinearVarModal.ejs',
     
     constructor : function (options) {
 		_.extend(this, options);
@@ -26,7 +26,7 @@ var fcInstLinearVarModalView = Backbone.View.extend({
     getUser: function(){
     	var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/user/getCurrent/',
+			url: '/blueloop/user/getCurrent/',
 			data: {},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

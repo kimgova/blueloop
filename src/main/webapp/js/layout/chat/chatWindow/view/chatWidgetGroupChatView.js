@@ -1,6 +1,6 @@
 var chatWidgetGroupChatView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/layout/chat/chatWindow/template/chatGroupWidget.ejs',
+    template: '/blueloop/static/js/layout/chat/chatWindow/template/chatGroupWidget.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -87,7 +87,7 @@ var chatWidgetGroupChatView = Backbone.View.extend({
 		var curr_time = moment().format('YYYY-MM-DD HH:mm:ss');
 		
 		var data = {message:text, curr_time:curr_time, urlUserPic:sessionUser.get("imgURI")};
-		var msg = $(new EJS({url:'/blueloop-backend/static/js/layout/chat/chatWindow/template/chatMessageRight.ejs'}).render(data));
+		var msg = $(new EJS({url:'/blueloop/static/js/layout/chat/chatWindow/template/chatMessageRight.ejs'}).render(data));
 		
 		chatListWdgt.append(msg);
 		
@@ -122,9 +122,9 @@ var chatWidgetGroupChatView = Backbone.View.extend({
 			var urlProfilePic = "https://s3-us-west-1.amazonaws.com/blapp-users/" + item.userObj.username + "/user/avatar.png"
     		var data = {user:item.userObj.name, message:item.message.text, curr_time:item.message.time, urlUserPic:urlProfilePic};
     		if(sessionUser.get("id") != item.userObj.id){
-    			contentMessage = $(new EJS({url: '/blueloop-backend/static/js/layout/chat/chatWindow/template/chatMessageLeft.ejs'}).render(data));
+    			contentMessage = $(new EJS({url: '/blueloop/static/js/layout/chat/chatWindow/template/chatMessageLeft.ejs'}).render(data));
     		}else{
-    			contentMessage = $(new EJS({url: '/blueloop-backend/static/js/layout/chat/chatWindow/template/chatMessageRight.ejs'}).render(data));
+    			contentMessage = $(new EJS({url: '/blueloop/static/js/layout/chat/chatWindow/template/chatMessageRight.ejs'}).render(data));
     		}
 			that.$el.find('.chat-list-wdgt').append(contentMessage);
     	});

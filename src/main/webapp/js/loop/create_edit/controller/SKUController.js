@@ -6,7 +6,7 @@ function SKUController() {
     that.nEditingSKUs=[];
     that.view = $("#formChainSKU");
     that.counter = 0;
-    that.template = "/blueloop-backend/static/js/loop/create_edit/view/SKUTableElements.ejs";
+    that.template = "/blueloop/static/js/loop/create_edit/view/SKUTableElements.ejs";
     that.units = [];
     that.types = [];
     that.skuDataForm = {};
@@ -53,7 +53,7 @@ function SKUController() {
 	}	
 	
 	that.getMeasureUnits = function(){
-		var skulist = ajaxCall('GET', '/blueloop-backend/sku/getAllMeasureUnits/', undefined, "text/json", "json", false);
+		var skulist = ajaxCall('GET', '/blueloop/sku/getAllMeasureUnits/', undefined, "text/json", "json", false);
 		return skulist;
 	}
 	
@@ -137,7 +137,7 @@ function SKUController() {
     	that.listSKUs=[];
     	var jsonObject = new Object();
     	jsonObject.id = localStorage.getItem('chainId');
-    	var data = ajaxCall('GET', '/blueloop-backend/sku/getAllSkusByChain/', jsonObject, "text/json", "json", false);
+    	var data = ajaxCall('GET', '/blueloop/sku/getAllSkusByChain/', jsonObject, "text/json", "json", false);
     	$.each( data, function( key, sku ) {
     		listSKUsAdd(sku.id, sku.identifier, sku.description, sku.unit.id, that.getUnitName(sku.unit.id), sku.type); 			
 	    });	 

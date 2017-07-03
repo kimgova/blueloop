@@ -1,6 +1,6 @@
 var createEditOrderSKURowView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/order/create_edit/template/orderSKURowTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/order/create_edit/template/orderSKURowTemplate.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);

@@ -1,6 +1,6 @@
 var userWSInfoView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/userWS/template/userWSInfoViewTemplate.ejs',
+    template: '/blueloop/static/js/userWS/template/userWSInfoViewTemplate.ejs',
     
     initialize: function(){
         this.userId;
@@ -18,11 +18,11 @@ var userWSInfoView = Backbone.View.extend({
         
         var footerTemplate;
         if(this.userId!='profile'){
-            footerTemplate = '/blueloop-backend/static/js/userWS/template/WSInfoFooterContactTemplate.ejs';
+            footerTemplate = '/blueloop/static/js/userWS/template/WSInfoFooterContactTemplate.ejs';
             var footer = $(new EJS({url: footerTemplate }).render(this.model.toJSON()));
             this.$el.find('#ws-info-footer').append(footer);
         }else{
-            footerTemplate = '/blueloop-backend/static/js/userWS/template/WSInfoFooterTemplate.ejs';
+            footerTemplate = '/blueloop/static/js/userWS/template/WSInfoFooterTemplate.ejs';
             var footer = $(new EJS({url: footerTemplate }).render());
             this.$el.find('#ws-info-footer').append(footer);
         }
@@ -44,7 +44,7 @@ var userWSInfoView = Backbone.View.extend({
 
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/user/getUserInfo/',
+            url: '/blueloop/user/getUserInfo/',
             data: jsonObject,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -120,14 +120,14 @@ var userWSInfoView = Backbone.View.extend({
     changePic: function(e){
     	e.data.$el.find("#formUpload").ajaxSubmit({
             async: true,
-            url: "/blueloop-backend/user/uploadFile", 
+            url: "/blueloop/user/uploadFile", 
             beforeSubmit: function() { 
             	$("body").addClass("loading");    
  			},
             success: function (data) {
             	$("body").removeClass("loading");
                 e.data.$el.find('.ws-info-pic').attr("src", data.photoUrlUpload + "?" + new Date().getTime());
-		    	$.ajax({type: 'GET', data: {fileName:data.filename}, url: '/blueloop-backend/user/deleteImage/', dataType:"json", success: function(data, textStatus){ } });
+		    	$.ajax({type: 'GET', data: {fileName:data.filename}, url: '/blueloop/user/deleteImage/', dataType:"json", success: function(data, textStatus){ } });
 		    	toastr.success(data.message);	
             },
             error: function(httpRequest, textStatus, errorThrown) { 

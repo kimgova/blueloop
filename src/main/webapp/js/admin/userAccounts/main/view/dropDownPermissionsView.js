@@ -1,6 +1,6 @@
 var dropDownPermissionsView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/main/template/dropDownTemplate.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/main/template/dropDownTemplate.ejs',
     
      render: function() {
         this.$el = $(new EJS({url: this.template }).render());

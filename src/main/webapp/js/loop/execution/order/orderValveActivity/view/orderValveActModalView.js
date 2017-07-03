@@ -1,6 +1,6 @@
 var orderValveActivityModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderValveActivity/template/valveActModalTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderValveActivity/template/valveActModalTemplate.ejs',
     totalAttachments: 0,
     constructor : function (options) {
         _.extend(this, options);
@@ -18,7 +18,7 @@ var orderValveActivityModalView = Backbone.View.extend({
     },
  
     getDataActivities: function(){
-        var result = ajaxCall('GET', '/blueloop-backend/valve/getActivitiesDataValve/', {idValve:this.actualValve, idOrder:this.idOrder}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/valve/getActivitiesDataValve/', {idValve:this.actualValve, idOrder:this.idOrder}, "text/json", "json", false);
         this.inputActivities = new orderValveActivityCollection([]);
         this.outputActivities = new orderValveActivityCollection([]);
         this.flowBBActivities = new orderValveActivityCollection([]);
@@ -106,7 +106,7 @@ var orderValveActivityModalView = Backbone.View.extend({
     	var activities = {idValve:e.data.actualValve, idOrder:e.data.idOrder, inputActivities:e.data.inputActivities.models, outputActivities:e.data.outputActivities.models, flowBBActivities:e.data.flowBBActivities.models};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/valve/saveActititiesCheck/',
+			url: '/blueloop/valve/saveActititiesCheck/',
 			data: JSON.stringify(activities),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

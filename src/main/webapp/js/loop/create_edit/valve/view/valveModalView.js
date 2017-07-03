@@ -1,8 +1,8 @@
 var valveModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/create_edit/valve/template/valveModal.ejs',
-    templateNoDataAct: '/blueloop-backend/static/js/loop/create_edit/valve/template/valveActivityNoData.ejs',
-    templateNoDataFlo: '/blueloop-backend/static/js/loop/create_edit/valve/template/valveFlowBBNoData.ejs',
+    template: '/blueloop/static/js/loop/create_edit/valve/template/valveModal.ejs',
+    templateNoDataAct: '/blueloop/static/js/loop/create_edit/valve/template/valveActivityNoData.ejs',
+    templateNoDataFlo: '/blueloop/static/js/loop/create_edit/valve/template/valveFlowBBNoData.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -29,7 +29,7 @@ var valveModalView = Backbone.View.extend({
     
     getActivities: function() {
     	this.activityCollection = new valveActivityCollection([]);
-    	var result = ajaxCall('GET', '/blueloop-backend/activityBuildingBlock/getValveActivitiesTest/', {idValve:this.valveId,idSource:this.sourceBBId,idTarget:this.targetBBId}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/activityBuildingBlock/getValveActivitiesTest/', {idValve:this.valveId,idSource:this.sourceBBId,idTarget:this.targetBBId}, "text/json", "json", false);
     	_.each(result.activityList,function(item,i){
     	    var valve_activ_id = item.valve_activ_id;
     		var actTemp = this.valve.setActivityChecks(item);

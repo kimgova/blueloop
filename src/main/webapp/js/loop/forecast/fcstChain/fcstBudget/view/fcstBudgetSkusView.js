@@ -4,7 +4,7 @@ var forecastBudgetSkusView = Backbone.View.extend({
 		_.extend(this, options);
 	},
 	
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstBudget/template/fcstBudgetSkusTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstBudget/template/fcstBudgetSkusTemplate.ejs',
 
     render: function() {
     	this.tableData = this.getBudgetSkusList();
@@ -25,7 +25,7 @@ var forecastBudgetSkusView = Backbone.View.extend({
     getBudgetSkusList: function(){
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/fcstBudget/getBudgetSkusByIPO/',
+	        url: '/blueloop/fcstBudget/getBudgetSkusByIPO/',
 	        data: {id:this.model.id},
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

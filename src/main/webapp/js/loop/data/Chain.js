@@ -29,7 +29,7 @@ function Chain() {
 		
 		window.bbPanelView = new bbPanelView();
 		
-		that.valveDropTemplate = $(new EJS({url: "/blueloop-backend/static/js/loop/create_edit/view/DropFlowBBFormView.ejs"}).render({}));
+		that.valveDropTemplate = $(new EJS({url: "/blueloop/static/js/loop/create_edit/view/DropFlowBBFormView.ejs"}).render({}));
 	}
     
     that.setId = function(pId){
@@ -47,7 +47,7 @@ function Chain() {
     
     that.openNameDialog = function(name){
     	var data = {modalTitle:json.loop.enterName,name:json.loop.name,value:name,cancelBtn:json.button.cancel,saveBtn:json.button.save};
-    	var $template = $(new EJS({url: "/blueloop-backend/static/js/loop/create_edit/view/ChainNameView.ejs"}).render(data));
+    	var $template = $(new EJS({url: "/blueloop/static/js/loop/create_edit/view/ChainNameView.ejs"}).render(data));
     	
     	$template.modal({backdrop: 'static',keyboard: false});
     	$template.find("#descriptionChain").focus();
@@ -134,7 +134,7 @@ function Chain() {
 
         var dataReturned = $.ajax({
             type : 'POST',
-            url : '/blueloop-backend/chain/saveChain/',
+            url : '/blueloop/chain/saveChain/',
             data : JSON.stringify(chainData),
             contentType : 'application/json; charset=utf-8',
             dataType : 'json',
@@ -192,7 +192,7 @@ function Chain() {
         var valve;
         var jsonObject = new Object();
         jsonObject.idChain = that.getId();
-        var result = ajaxCall('GET', '/blueloop-backend/chain/getChainWithAllData/', jsonObject, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/chain/getChainWithAllData/', jsonObject, "text/json", "json", false);
         window.DIAGRAM_FACADE.loadDiagram(result.diagram,result.haveOrders);
         that.setDescription(result.chain.description);
         
@@ -265,7 +265,7 @@ function Chain() {
 
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/chain/getResponsibles/',
+	        url: '/blueloop/chain/getResponsibles/',
 	        data: JSON.stringify({listResponsibles:listResponsibles,chain_id:that.getId()}),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -292,7 +292,7 @@ function Chain() {
     	
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/chain/getOwners/',
+	        url: '/blueloop/chain/getOwners/',
 	        data: JSON.stringify({listOwners:listOwners,chain_id:that.getId()}),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

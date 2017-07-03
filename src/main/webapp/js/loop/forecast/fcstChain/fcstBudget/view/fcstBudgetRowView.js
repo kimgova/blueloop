@@ -4,7 +4,7 @@ var forecastBudgetRowView = Backbone.View.extend({
 		_.extend(this, options);
 	},
 	
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstBudget/template/fcstBudgetTableRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstBudget/template/fcstBudgetTableRow.ejs',
         
     render: function () {    	
         this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -20,7 +20,7 @@ var forecastBudgetRowView = Backbone.View.extend({
 		    	var IPOData = {id:e.data.model.id};
 		    	var dataReturned = $.ajax({
 			        type: 'POST',
-			        url: '/blueloop-backend/fcstBudget/deleteIPO/',
+			        url: '/blueloop/fcstBudget/deleteIPO/',
 			        data: JSON.stringify(IPOData),
 			        contentType: 'application/json; charset=utf-8',
 			        dataType: 'json',

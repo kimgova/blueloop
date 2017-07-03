@@ -1,6 +1,6 @@
 var cardView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/billing/template/cardTemplate.ejs',
+    template: '/blueloop/static/js/admin/billing/template/cardTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -63,7 +63,7 @@ var cardView = Backbone.View.extend({
         this.model.set("month",this.$el.find("#expMonth").val());
         this.model.set("year",this.$el.find("#expYear").val());
         this.model.set("emptyInfo",false);
-        var data = ajaxCall('POST','/blueloop-backend/administrator/saveBillingInfo/', JSON.stringify(this.model.toJSON()), "text/json", "json", false);
+        var data = ajaxCall('POST','/blueloop/administrator/saveBillingInfo/', JSON.stringify(this.model.toJSON()), "text/json", "json", false);
         if(data.success){
         	toastr.success("Credit Card Saved");
         	window.wsView.setPaymentView();

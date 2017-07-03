@@ -1,6 +1,6 @@
 var orderCBBTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderCBB/template/orderCBBTableTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderCBB/template/orderCBBTableTemplate.ejs',
        
     constructor : function (options) {
         _.extend(this, options);
@@ -16,7 +16,7 @@ var orderCBBTableView = Backbone.View.extend({
     
     getOrders: function() {
         this.collection = new orderCBBCollection([]);
-        var data = ajaxCall('GET', '/blueloop-backend/orderChain/listOrderByCBB/', {idFormCBB:this.idFormCBB}, "text/json", "json", false);
+        var data = ajaxCall('GET', '/blueloop/orderChain/listOrderByCBB/', {idFormCBB:this.idFormCBB}, "text/json", "json", false);
         
         _.each(data.listOrder,function(item,i){
             var order = new orderCBBModel({

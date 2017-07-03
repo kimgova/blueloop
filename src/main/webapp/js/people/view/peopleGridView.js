@@ -1,7 +1,7 @@
 //(function($){
 var peopleGridView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/people/template/peopleGridViewTemplate.ejs',
+	template: '/blueloop/static/js/people/template/peopleGridViewTemplate.ejs',
     
 	
     initialize: function (){
@@ -150,7 +150,7 @@ var peopleGridView = Backbone.View.extend({
 
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/search/getPeople',
+	        url: '/blueloop/search/getPeople',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

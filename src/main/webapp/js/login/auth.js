@@ -56,7 +56,7 @@ $(function() {
 function forgotPass_email() {
     var result = $.ajax({
         type : 'POST',
-        url : '/blueloop-backend/login/resetPassword/',
+        url : '/blueloop/login/resetPassword/',
         data : JSON.stringify({
             email : $('#emailResetPassword').val()
         }),

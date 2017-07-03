@@ -1,6 +1,6 @@
 var fcstInstBudgetModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstBudget/template/fcstInstBudgetTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstBudget/template/fcstInstBudgetTemplate.ejs',
 
     render: function() {
     	this.collection = new fcstInstBudgetCollection();
@@ -23,7 +23,7 @@ var fcstInstBudgetModalView = Backbone.View.extend({
     retrieveBudgetList: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcstBudget/getAllBudget/',
+			url: '/blueloop/fcstBudget/getAllBudget/',
 			data: {id:this.model.id},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
@@ -43,7 +43,7 @@ var fcstInstBudgetModalView = Backbone.View.extend({
 		var budgetInstData = {budgetId:e.data.$el.find("#budgetSelect").val(),instanceId:e.data.model.id};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/fcstBudget/selectInstanceBudget/',
+			url: '/blueloop/fcstBudget/selectInstanceBudget/',
 			data: JSON.stringify(budgetInstData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

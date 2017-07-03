@@ -1,6 +1,6 @@
 var bbConnectionSelectionView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/workspace/connections/newConnectionModal/template/bbConnectionSelectionViewTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/workspace/connections/newConnectionModal/template/bbConnectionSelectionViewTemplate.ejs',
     
     
     initialize: function(model, myBB){
@@ -21,7 +21,7 @@ var bbConnectionSelectionView = Backbone.View.extend({
 		var bbInId		= this.myBB;
 		var dat			= {bbOutId:bbOutId, bbInId:bbInId, instanceId:instanceId};
 		
-	    var data = ajaxCall('POST', '/blueloop-backend/buildingBlock/connectBuildingBlock', JSON.stringify(dat), "text/json", "json", false);
+	    var data = ajaxCall('POST', '/blueloop/buildingBlock/connectBuildingBlock', JSON.stringify(dat), "text/json", "json", false);
 
 	   	var idConnection = data.bbcInstance;
 	   	this.savePermissions(idConnection, bbInId);
@@ -40,7 +40,7 @@ var bbConnectionSelectionView = Backbone.View.extend({
 			}
 	    });		
 		var data = {listPermissions:listSave, idConnection:idConnection, idBB:idBB };
-		var dataAjax = ajaxCall('POST', '/blueloop-backend/buildingBlock/savePermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+		var dataAjax = ajaxCall('POST', '/blueloop/buildingBlock/savePermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
 		
 	}
     

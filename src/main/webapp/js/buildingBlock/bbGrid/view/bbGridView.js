@@ -1,7 +1,7 @@
 var bbGridView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/bbGrid/template/bbGridViewTemplate.ejs',
-    emptyGridTemplate: '/blueloop-backend/static/js/buildingBlock/bbGrid/template/bbGridDefaultEmptyTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/bbGrid/template/bbGridViewTemplate.ejs',
+    emptyGridTemplate: '/blueloop/static/js/buildingBlock/bbGrid/template/bbGridDefaultEmptyTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -49,7 +49,7 @@ var bbGridView = Backbone.View.extend({
         
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/buildingBlock/getAllBuildingBlock/',
+            url: '/blueloop/buildingBlock/getAllBuildingBlock/',
             data: jsonObject,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

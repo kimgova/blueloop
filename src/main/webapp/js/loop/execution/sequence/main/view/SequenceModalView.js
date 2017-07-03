@@ -1,6 +1,6 @@
 var SequenceModalView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/execution/sequence/main/template/SequenceModal.ejs',
+	template: '/blueloop/static/js/loop/execution/sequence/main/template/SequenceModal.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -64,7 +64,7 @@ var SequenceModalView = Backbone.View.extend({
 	defineContent: function(){
 		var typeContent = ''
 		var jsonObject = {id:this.idLoop}
-		var result = ajaxCall('GET', '/blueloop-backend/orderSequence/getSequencesByChain/', jsonObject, "text/json", "json", false);		
+		var result = ajaxCall('GET', '/blueloop/orderSequence/getSequencesByChain/', jsonObject, "text/json", "json", false);		
 		this.setCollection(result.sequences);		
 		if(result.hasSkus){
 			if(result.hasSequences){		

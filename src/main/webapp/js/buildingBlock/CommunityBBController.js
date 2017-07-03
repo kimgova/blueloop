@@ -23,7 +23,7 @@ function CommunityBBController() {
 	function searchBB(){
 		var jsonObject = new Object();
 		jsonObject.searchWord = $("#search-bb").val();
-		var data = ajaxCall('GET','/blueloop-backend/buildingBlock/searchBBToBeShared/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/buildingBlock/searchBBToBeShared/', jsonObject, "text/json", "json", false);
 		renderCommunityBB(data);
 	}
 	
@@ -34,7 +34,7 @@ function CommunityBBController() {
 	}
 	
 	function renderCommunityBB(data){
-		$("#carousel-container").append(new EJS({url: '/blueloop-backend/static/js/buildingBlock/view/BBCommunityView.ejs' }).render({listBB:data.listBB,filePath:data.filePath,size:data.listBB.length}))
+		$("#carousel-container").append(new EJS({url: '/blueloop/static/js/buildingBlock/view/BBCommunityView.ejs' }).render({listBB:data.listBB,filePath:data.filePath,size:data.listBB.length}))
 		$('#mycarousel').elastislide({
 			imageW : 240, margin : 20, border : 10,	minItems : 1
 		});
@@ -45,13 +45,13 @@ function CommunityBBController() {
 		
 		var o	  = new Object();
 		o.id	  = $("#info-dialog").find('.id_bb').val();
-		var data  = ajaxCall('GET','/blueloop-backend/buildingBlock/getBuildingBlock/', o, "text/json", "json", false);
+		var data  = ajaxCall('GET','/blueloop/buildingBlock/getBuildingBlock/', o, "text/json", "json", false);
 		var bb = data.bb;
 		bb.config = JSON.stringify(data.bb.config);
 		bb.disabled = "disabled";
 		bb.countries = [];
 		bb.edit = false;
-		var form = $(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/bbGeneralInfo.ejs' }).render(bb));
+		var form = $(new EJS({url: '/blueloop/static/js/ejsTemplates/bbGeneralInfo.ejs' }).render(bb));
 		$("#info-dialog").find("#info-content").append(form);	
 		$("#info-content").find("#saveBB").css({"display":"none"});
 	}

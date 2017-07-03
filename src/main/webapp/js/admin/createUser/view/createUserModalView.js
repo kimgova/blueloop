@@ -1,6 +1,6 @@
 var createUserModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/createUser/template/createUserModalTemplate.ejs',
+    template: '/blueloop/static/js/admin/createUser/template/createUserModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -43,7 +43,7 @@ var createUserModalView = Backbone.View.extend({
     	this.email = this.$el.find("#email").val(); 
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/user/saveUser/',
+			url: '/blueloop/user/saveUser/',
 			data: JSON.stringify(user),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
@@ -83,7 +83,7 @@ var createUserModalView = Backbone.View.extend({
         var that = this;
         jQuery.ajax({
             type : 'POST',
-            url : '/blueloop-backend/administrator/getSelectTimezone',
+            url : '/blueloop/administrator/getSelectTimezone',
             success : function(data, textStatus) {
                 that.$el.find(".timezone").html(data);
             },

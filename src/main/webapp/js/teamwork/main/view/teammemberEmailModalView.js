@@ -1,6 +1,6 @@
 var teammemberEmailModalView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/teamwork/main/template/teammemberEmailModal.ejs',
+	template: '/blueloop/static/js/teamwork/main/template/teammemberEmailModal.ejs',
 	
 	constructor : function (options) {
 		_.extend(this, options);
@@ -21,7 +21,7 @@ var teammemberEmailModalView = Backbone.View.extend({
 			success: "valid",
 			submitHandler: function(form,data) {
 				var obj = {idUser:e.data.id,subject:e.data.$el.find("#subjectTM").val(),message:e.data.$el.find("#messageTM").val()};
-				var response = ajaxCall('GET', '/blueloop-backend/teamwork/sendEmailTeammember/', obj, "text/json", "json", false);
+				var response = ajaxCall('GET', '/blueloop/teamwork/sendEmailTeammember/', obj, "text/json", "json", false);
 				
 				if(response.result == "true"){
 					toastr.success(json.teamwork.emailSent);

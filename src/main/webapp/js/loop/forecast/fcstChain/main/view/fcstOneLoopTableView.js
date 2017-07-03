@@ -4,7 +4,7 @@ var forecastTableView = Backbone.View.extend({
 		_.extend(this, options);
 	},
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstChain/main/template/fcstOneLoopTable.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstChain/main/template/fcstOneLoopTable.ejs',
 
 	render: function() {
 		this.$el = $(new EJS({url: this.template }).render());

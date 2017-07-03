@@ -1,6 +1,6 @@
 var uploadDataView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/main/template/fcstUploadData.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/main/template/fcstUploadData.ejs',
 
     render: function() {
     	this.$el = $(new EJS({url: this.template }).render({idForecast:this.idForecast}));
@@ -11,7 +11,7 @@ var uploadDataView = Backbone.View.extend({
     
     uploadHistoricalFile: function(e){
     	if(e.data.validateFile()){
-    		e.data.submitForm($("#formUpload"), "/blueloop-backend/forecast/uploadHistorical", e.data )
+    		e.data.submitForm($("#formUpload"), "/blueloop/forecast/uploadHistorical", e.data )
     	}    	
     },
     

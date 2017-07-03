@@ -1,7 +1,7 @@
 var bbWSConnectionsView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/buildingBlock/workspace/connections/template/bbWSConnectionsViewTemplate.ejs',
-	leftPanelTemplate: '/blueloop-backend/static/js/buildingBlock/workspace/connections/template/bbConnectionsLeftPanelTemplate.ejs',
+	template: '/blueloop/static/js/buildingBlock/workspace/connections/template/bbWSConnectionsViewTemplate.ejs',
+	leftPanelTemplate: '/blueloop/static/js/buildingBlock/workspace/connections/template/bbConnectionsLeftPanelTemplate.ejs',
 	
     initialize: function (bb){
     	_.bindAll(this, 'countPendingConnections', 'newConnectionModal'); 
@@ -50,7 +50,7 @@ var bbWSConnectionsView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getConnectedBBs/',
+	        url: '/blueloop/buildingBlock/getConnectedBBs/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -73,7 +73,7 @@ var bbWSConnectionsView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getConnectionRequestReceived/',
+	        url: '/blueloop/buildingBlock/getConnectionRequestReceived/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -96,7 +96,7 @@ var bbWSConnectionsView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getConnectionRequestSent/',
+	        url: '/blueloop/buildingBlock/getConnectionRequestSent/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

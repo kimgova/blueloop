@@ -1,6 +1,6 @@
 var userWSPanelView = Backbone.View.extend({
 
-    template : '/blueloop-backend/static/js/userWS/template/userWSPanelViewTemplate.ejs',
+    template : '/blueloop/static/js/userWS/template/userWSPanelViewTemplate.ejs',
 
     initialize : function(userId, current_id) {
         this.userId     = userId;

@@ -11899,7 +11899,7 @@ joint.dia.Link = joint.dia.Cell.extend({
     labelMarkup: [
         '<g class="label">',
         '<rect />',
-        '<image class="valve" xlink:href="/blueloop-backend/static/images/canvas/valve2.png"  height="25" width="25" x="-10" y="-10"/>',
+        '<image class="valve" xlink:href="/blueloop/static/images/canvas/valve2.png"  height="25" width="25" x="-10" y="-10"/>',
         '<text />',
         '</g>'
     ].join(''),

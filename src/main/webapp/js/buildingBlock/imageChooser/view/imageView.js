@@ -1,6 +1,6 @@
 var imageView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/buildingBlock/imageChooser/template/imageTemplate.ejs',
+	template: '/blueloop/static/js/buildingBlock/imageChooser/template/imageTemplate.ejs',
     
 	constructor : function (options) {
         _.extend(this, options);

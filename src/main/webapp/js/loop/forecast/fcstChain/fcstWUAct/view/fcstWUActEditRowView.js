@@ -1,6 +1,6 @@
 var forecastWUActEditRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActTableEditRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActTableEditRow.ejs',
         
     render: function () {
         this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -22,7 +22,7 @@ var forecastWUActEditRowView = Backbone.View.extend({
     	var actData = {id:e.data.model.id,name:e.data.$el.find("#nameAct").val(),imgUrl:e.data.$el.find("#imgUrlAct").val()};
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/fcstWUnit/editWUActivity/',
+	        url: '/blueloop/fcstWUnit/editWUActivity/',
 	        data: JSON.stringify(actData),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

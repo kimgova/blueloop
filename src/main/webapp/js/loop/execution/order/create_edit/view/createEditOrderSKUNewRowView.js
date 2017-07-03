@@ -1,6 +1,6 @@
 var createEditOrderSKUNewRowView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/execution/order/create_edit/template/orderSKUEditRowTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/order/create_edit/template/orderSKUEditRowTemplate.ejs',
 		
 	constructor : function (options) {
 		_.extend(this, options);
@@ -36,7 +36,7 @@ var createEditOrderSKUNewRowView = Backbone.View.extend({
 	},
 
 	getPTA: function(sequenceId){
-		var result = ajaxCall('GET', '/blueloop-backend/orderSequence/getPTABySequence/', {sequenceId:sequenceId}, "text/json", "json", false);
+		var result = ajaxCall('GET', '/blueloop/orderSequence/getPTABySequence/', {sequenceId:sequenceId}, "text/json", "json", false);
 		return result.date[0]
 	},
 	

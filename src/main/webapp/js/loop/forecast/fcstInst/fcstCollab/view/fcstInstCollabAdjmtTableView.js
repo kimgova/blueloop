@@ -1,6 +1,6 @@
 var collaborativeTableView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtTable.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtTable.ejs',
 	
 	constructor : function (options) {
 		_.extend(this, options);
@@ -25,7 +25,7 @@ var collaborativeTableView = Backbone.View.extend({
 	retrieveCollaborativeData: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: "/blueloop-backend/fcstCollaborative/getCollaborativeData/",
+			url: "/blueloop/fcstCollaborative/getCollaborativeData/",
 			data: {id:this.instanceId,filterType:this.filterType,unit:this.unit,isDefault:this.isDefault},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

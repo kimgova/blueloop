@@ -30,7 +30,7 @@
 						<span class="message"> <%= fcAlert[0].description %></span>
 					</a>
 					
-					<a href="/blueloop-backend/chain/list" class="alertNotification" id="<%= fcAlert[1].id %>">
+					<a href="/blueloop/chain/list" class="alertNotification" id="<%= fcAlert[1].id %>">
 					Go</a>
 					<a id="" class="alertDismiss btn btn-xs userAlert<%= fcAlert[1].id %>" title="Dismiss" idalert="<%= fcAlert[1].id %>">Dismiss</a>
 				</li>
@@ -77,14 +77,14 @@
 					</a>
 					
 					<% if (conRequest[0].description == "Accepted your connection request"){ %>
-						<a href="/blueloop-backend/user/profileWall/<%= conRequest[1].sender.id %>" id="<%= conRequest[1].id %>" class="alertNotification btn btn-xs">
+						<a href="/blueloop/user/profileWall/<%= conRequest[1].sender.id %>" id="<%= conRequest[1].id %>" class="alertNotification btn btn-xs">
 					<% }else{ %>
 						<% if (conRequest[0].name == "Added to teamwork"){ %> 
-							<a href="/blueloop-backend/teamwork/list" class="alertNotification btn btn-xs" id="<%= conRequest[1].id %>">
+							<a href="/blueloop/teamwork/list" class="alertNotification btn btn-xs" id="<%= conRequest[1].id %>">
 						<% } else if (conRequest[0].name == "Added as a leader"){ %> 
-							<a href="/blueloop-backend/forecast/" class="alertNotification btn btn-xs" id="<%= conRequest[1].id %>">
+							<a href="/blueloop/forecast/" class="alertNotification btn btn-xs" id="<%= conRequest[1].id %>">
 						<% }else{ %>
-							<a href="/blueloop-backend/user/profileWall/<%= conRequest[1].sender.id %>" class="btn btn-xs">
+							<a href="/blueloop/user/profileWall/<%= conRequest[1].sender.id %>" class="btn btn-xs">
 						<% } %>									
 					<% } %>
 					Go</a>
@@ -125,7 +125,7 @@
 						<span class="message"> <%= alert[0].description %></span>
 					</a>
 					
-					<a href="/blueloop-backend/chain/list" class="alertNotification" id="<%= alert[1].id %>">
+					<a href="/blueloop/chain/list" class="alertNotification" id="<%= alert[1].id %>">
 					Go</a>
 					<a id="" class="alertDismiss btn btn-xs userAlert<%= alert[1].id %>" title="Dismiss" idalert="<%=alert[1].id %>">Dismiss</a>
 				</li>
@@ -165,9 +165,9 @@
 					</a>
 					
 					<% if (bbalert[0].name == "Connected Building Block"){ %>
-						<a href="/blueloop-backend/buildingBlock/connectBB" class="alertNotification" id="<%= bbalert[1].id %>">Go</a>
+						<a href="/blueloop/buildingBlock/connectBB" class="alertNotification" id="<%= bbalert[1].id %>">Go</a>
 					<% }else{ %>
-                        <a href="/blueloop-backend/buildingBlock/connectBB" class="alertNotification" id="<%= bbalert[1].id %>">Go</a>
+                        <a href="/blueloop/buildingBlock/connectBB" class="alertNotification" id="<%= bbalert[1].id %>">Go</a>
 					<% } %>
 						
 					<a id="" class="alertDismiss btn btn-xs userAlert<%= bbalert[1].id %>" title="Dismiss" idalert="<%= bbalert[1].id %>">Dismiss</a>

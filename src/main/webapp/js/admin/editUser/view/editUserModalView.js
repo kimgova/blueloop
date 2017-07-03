@@ -1,13 +1,13 @@
 var editUserModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/editUser/template/editUserModalTemplate.ejs',
+    template: '/blueloop/static/js/admin/editUser/template/editUserModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
     },
 
     render: function() {
-    	this.userdata = ajaxCall('GET','/blueloop-backend/administrator/getUserByEmailAndCompany/', {email:this.email}, "text/json", "json", false);
+    	this.userdata = ajaxCall('GET','/blueloop/administrator/getUserByEmailAndCompany/', {email:this.email}, "text/json", "json", false);
    		this.$el = $(new EJS({url: this.template }).render({user:this.userdata.user}));  
     	this.setEvents();
     	this.loadTimeZone();
@@ -43,7 +43,7 @@ var editUserModalView = Backbone.View.extend({
     	            department:this.$el.find("#department").val(),username:this.$el.find("#username").val(),timezone:this.$el.find("#userTimeZone option:selected").val()};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/user/editUser/',
+			url: '/blueloop/user/editUser/',
 			data: JSON.stringify(user),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
@@ -78,7 +78,7 @@ var editUserModalView = Backbone.View.extend({
         jQuery.ajax({
             type : 'POST',
             data : {timezone:this.userdata.user.timeZone},
-            url : '/blueloop-backend/administrator/getSelectTimezone',
+            url : '/blueloop/administrator/getSelectTimezone',
             success : function(data, textStatus) {
                 that.$el.find(".timezone").html(data);
             },

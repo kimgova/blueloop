@@ -12,12 +12,12 @@ var AbstractForm = Backbone.Model.extend({
 	},
 	
 	template : {
-	    valve_edit:  			'/blueloop-backend/static/js/loop/form/view/FormValve.ejs',	    
-	    valve_consult: 			'/blueloop-backend/static/js/loop/form/view/FormValveE.ejs',
- 		bb_edit: 	 			'/blueloop-backend/static/js/loop/form/view/FormBB.ejs',
- 		bb_consult:	 			'/blueloop-backend/static/js/loop/form/view/FormBBC.ejs',
- 		bb_flow_edit:	 		'/blueloop-backend/static/js/loop/form/view/FormFlowBB.ejs',
- 		resp_select: 			'/blueloop-backend/static/js/loop/form/view/FormResponsible.ejs'
+	    valve_edit:  			'/blueloop/static/js/loop/form/view/FormValve.ejs',	    
+	    valve_consult: 			'/blueloop/static/js/loop/form/view/FormValveE.ejs',
+ 		bb_edit: 	 			'/blueloop/static/js/loop/form/view/FormBB.ejs',
+ 		bb_consult:	 			'/blueloop/static/js/loop/form/view/FormBBC.ejs',
+ 		bb_flow_edit:	 		'/blueloop/static/js/loop/form/view/FormFlowBB.ejs',
+ 		resp_select: 			'/blueloop/static/js/loop/form/view/FormResponsible.ejs'
 	},
 	
 	renderData : function (pData,modelId,pIsNew,pIsEdit) {
@@ -96,7 +96,7 @@ var AbstractForm = Backbone.Model.extend({
 		
 		var buildingBlock  = new BuildingBlock ({bb : {config:config}, listMembers : [], daysOff : [], risks : [], listAltRoutes:[],isNew:true,isEdit:false});
 		
-		var dataCountries = ajaxCall('GET','/blueloop-backend/city/getCountries/', null, "text/json", "json", false);		
+		var dataCountries = ajaxCall('GET','/blueloop/city/getCountries/', null, "text/json", "json", false);		
 		buildingBlock.countries	= dataCountries.countries;
 		
 		if(dataCountries.defaultCountry != null){
@@ -146,7 +146,7 @@ var AbstractForm = Backbone.Model.extend({
 		this.figPalette = figPalette;
 		var data 	= new Object();
 		data.idBB	= idBB.substr(3);
-		var members = ajaxCall('GET','/blueloop-backend/teamwork/getMembersByBB/', data, "text/json", "json", false);
+		var members = ajaxCall('GET','/blueloop/teamwork/getMembersByBB/', data, "text/json", "json", false);
 		data.listMembers = members;
 		data.listTypes = this.convertObjToArray(LEADTIME_TYPES);
 		this.$el = $(new EJS({url: this.template["resp_select"] }).render(data));
@@ -178,7 +178,7 @@ var AbstractForm = Backbone.Model.extend({
 			
 			var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/buildingBlock/saveBBFromCreate/',
+		        url: '/blueloop/buildingBlock/saveBBFromCreate/',
 		        data: dataBB,
 		        contentType: "text/json",
 		        dataType: "json",
@@ -249,7 +249,7 @@ var AbstractForm = Backbone.Model.extend({
 			
 		dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getBBData/',
+	        url: '/blueloop/buildingBlock/getBBData/',
 	        data: jsonBB,
 	        contentType: "text/json",
 	        dataType: "json",

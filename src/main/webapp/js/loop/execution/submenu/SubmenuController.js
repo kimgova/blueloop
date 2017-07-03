@@ -14,7 +14,7 @@ var SubmenuController = {
 		}
 				
 		if(ptype==0){ // BB submenu
-			submenu = new EJS({url: '/blueloop-backend/static/js/ejsTemplates/submenu.ejs'}).render({pid:pid,ptype:ptype,formId:formId,isExec:isExec,connectedLabel:connectedLabel});			
+			submenu = new EJS({url: '/blueloop/static/js/ejsTemplates/submenu.ejs'}).render({pid:pid,ptype:ptype,formId:formId,isExec:isExec,connectedLabel:connectedLabel});			
 		}		
 		$("#canvas").append($(submenu));
     	$("#submenu"+pid).css({'display':'block', 'left':evt.pageX, 'top':evt.pageY});   
@@ -26,7 +26,7 @@ var SubmenuController = {
 			var jsonCBB 	      = new Object();
 			jsonCBB.idformJSON 	  = pid;
 			jsonCBB.idchain 	  = $("#idChain").text();
-			var dataCBB          = ajaxCall('GET', '/blueloop-backend/chainBuildingBlock/getDataCBB/', jsonCBB, "text/json", "json", false);
+			var dataCBB          = ajaxCall('GET', '/blueloop/chainBuildingBlock/getDataCBB/', jsonCBB, "text/json", "json", false);
 			//Parameters: bbName, cbbId, bbId, chainId			
 			chat.showBBChatGroupDialog(dataCBB[0][0].name, dataCBB[0][1].id,"",$("#idChain").text());
 			
@@ -71,7 +71,7 @@ var SubmenuController = {
     	
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getBBbySearchWord/',
+	        url: '/blueloop/buildingBlock/getBBbySearchWord/',
 	        data: jsonBB,
 	        contentType: "text/json",
 	        dataType: "json",

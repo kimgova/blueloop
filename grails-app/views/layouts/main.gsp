@@ -56,7 +56,7 @@
 	<script src="<g:createLinkTo dir='js/plugins/backbone' file='backbone-min.js' />"></script>
     <script src="<g:createLinkTo dir='js/layout/sessionUser' file='sessionUserModel.js' />" type="text/javascript"></script>
     <script type="text/javascript">
-        var urlLanguage = '/blueloop-backend/static/js_i18n/messages_' + '<%= session.getAttribute("lang") %>' + '.json';
+        var urlLanguage = '/blueloop/static/js_i18n/messages_' + '<%= session.getAttribute("lang") %>' + '.json';
         var json;
         $.getJSON(urlLanguage).done(function(parsedResponse) {
             localStorage.setItem('jsLanguage',JSON.stringify(parsedResponse));
@@ -72,8 +72,8 @@
         var sessionUser = new sessionUserModel({ 
             id:        ${sec.loggedInUserInfo(field: 'id')},
             username: "${sec.loggedInUserInfo(field: 'username')}",
-            name:     "${sec.loggedInUserInfo(field: 'firstname')}",
-            lastname: "${sec.loggedInUserInfo(field: 'lastname')}",
+<%--            name:     "${sec.loggedInUserInfo(field: 'firstname')}",--%>
+<%--            lastname: "${sec.loggedInUserInfo(field: 'lastname')}",--%>
             role:     "${sec.loggedInUserInfo(field: 'authorities')}",
             imgURI:   "${grails.util.Holders.config.aws.endpoint}${grails.util.Holders.config.aws.bucketBlAppUsers}/${sec.loggedInUserInfo(field: 'username')}/user/avatar.png",
             pubnubChannel: "${grails.util.Holders.config.pubnub.channel_name}"

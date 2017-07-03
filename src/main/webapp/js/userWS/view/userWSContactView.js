@@ -1,6 +1,6 @@
 var userWSContactView = Backbone.View.extend({
 
-    template : '/blueloop-backend/static/js/userWS/template/userWSContactViewTemplate.ejs',
+    template : '/blueloop/static/js/userWS/template/userWSContactViewTemplate.ejs',
 
     initialize : function() {
         _.bindAll(this, 'render');

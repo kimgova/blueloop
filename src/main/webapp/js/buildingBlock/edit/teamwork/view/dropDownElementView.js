@@ -1,6 +1,6 @@
 var dropDownElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/teamwork/template/dropDownElementTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/teamwork/template/dropDownElementTemplate.ejs',
     
     initialize: function(){
         _.bindAll(this, 'setPermission'); 
@@ -20,7 +20,7 @@ var dropDownElementView = Backbone.View.extend({
             this.model.set({checked: ''});
         }
         var data = {model:this.model.toJSON()};
-        var dataAjax = ajaxCall('POST', '/blueloop-backend/teamwork/saveBBPermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+        var dataAjax = ajaxCall('POST', '/blueloop/teamwork/saveBBPermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
         toastr.success(json.bb.permissionsSaved);
     }
     

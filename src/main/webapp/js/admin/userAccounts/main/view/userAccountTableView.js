@@ -1,6 +1,6 @@
 var userAccountView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/main/template/userAccountTableTemplate.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/main/template/userAccountTableTemplate.ejs',
     
     currentFilter : ['ENABLED'],
 
@@ -27,7 +27,7 @@ var userAccountView = Backbone.View.extend({
     
     getUsers: function(){
         this.collection = new userCollection([]);
-        var result = ajaxCall('GET', '/blueloop-backend/administrator/getUsersByCompany/', {}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/administrator/getUsersByCompany/', {}, "text/json", "json", false);
 
         _.each(result,function(item,i){   
             var user = new userModel({

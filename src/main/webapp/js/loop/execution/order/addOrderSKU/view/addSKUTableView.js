@@ -1,6 +1,6 @@
 var addSKUTableView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/execution/order/addOrderSKU/template/addSKUTable.ejs',
+	template: '/blueloop/static/js/loop/execution/order/addOrderSKU/template/addSKUTable.ejs',
 	
 	constructor : function (options) {
 		_.extend(this, options);
@@ -18,7 +18,7 @@ var addSKUTableView = Backbone.View.extend({
 		this.collection = new orderSKUCollection([]);
 		var idChain = $("#idChain").text().trim();
 				
-		var result = ajaxCall('GET', '/blueloop-backend/orderChain/getSkusByChainOrSequence/', {chainId:idChain, sequenceId:this.idSequence}, "text/json", "json", false);
+		var result = ajaxCall('GET', '/blueloop/orderChain/getSkusByChainOrSequence/', {chainId:idChain, sequenceId:this.idSequence}, "text/json", "json", false);
 	    _.each(result,function(item,i){
 	    	if(!this.validateSkuAlreadyAdded(item.id)){
 	    		var sku = new orderSKUModel({

@@ -1,6 +1,6 @@
 var orderTableView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/order/main/template/orderTableTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/order/main/template/orderTableTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -17,7 +17,7 @@ var orderTableView = Backbone.View.extend({
     
     getOrders: function() {
     	this.collection = new orderCollection([]);
-    	var result = ajaxCall('GET', '/blueloop-backend/orderChain/listOrder/', {id:this.idChain}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/orderChain/listOrder/', {id:this.idChain}, "text/json", "json", false);
     	_.each(result,function(item,i){
     		var order = new orderModel({
     			id:item.oc.id,

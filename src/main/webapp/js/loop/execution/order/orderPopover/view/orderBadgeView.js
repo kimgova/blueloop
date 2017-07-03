@@ -1,7 +1,7 @@
 var orderBadgeView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/order/orderPopover/template/badgeTemplate.ejs',
-	templatePopoverContent: '/blueloop-backend/static/js/loop/execution/order/orderPopover/template/popoverContentTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/order/orderPopover/template/badgeTemplate.ejs',
+	templatePopoverContent: '/blueloop/static/js/loop/execution/order/orderPopover/template/popoverContentTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -33,7 +33,7 @@ var orderBadgeView = Backbone.View.extend({
     },
     
     updateContent: function(e){
-    	var orders = ajaxCall('GET', '/blueloop-backend/orderChain/getOrdersAndStatusByCBB/', {idCBB:e.id}, "text/json", "json", false);
+    	var orders = ajaxCall('GET', '/blueloop/orderChain/getOrdersAndStatusByCBB/', {idCBB:e.id}, "text/json", "json", false);
     	var content = new EJS({url: this.templatePopoverContent}).render({dataOrders:orders})
     	e.popover.data('bs.popover').options.content = content;    
     },

@@ -5,7 +5,7 @@ function DynamicFieldController() {
 	var nEditingField  = [];	
 	var idBB;
 	that.objectTemplate = {};
-	that.template = "/blueloop-backend/static/js/buildingBlock/view/dynamicFieldView.ejs";
+	that.template = "/blueloop/static/js/buildingBlock/view/dynamicFieldView.ejs";
 	
 	that.init = function() {
 		that.objectTemplate = {tableFields:false,btnsEdit:false,descriptionField:false,typeField:false,
@@ -219,7 +219,7 @@ function DynamicFieldController() {
 	    dataField.required      	= jqInputs2[2].value;
 	    
 		var data = {field:dataField};
-		var field = ajaxCall('POST', '/blueloop-backend/buildingBlock/saveFieldByBB/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+		var field = ajaxCall('POST', '/blueloop/buildingBlock/saveFieldByBB/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
 		dataField.id 		 	= field.id;
 		dataField.description 	= field.description;
 		dataField.required 		= field.required;
@@ -249,7 +249,7 @@ function DynamicFieldController() {
 				var jsonObject      = new Object();
 				jsonObject.idField 	= aData.id;
 				jsonObject.bb		= that.idBB;
-				var dataAjax = ajaxCall('GET','/blueloop-backend/buildingBlock/deleteFieldByBB/', jsonObject, "text/json", "json", false);
+				var dataAjax = ajaxCall('GET','/blueloop/buildingBlock/deleteFieldByBB/', jsonObject, "text/json", "json", false);
 				fieldsTable.fnDeleteRow(nRow);
 				var index = nEditingField.indexOf(nRow);
 				nEditingField.splice(index, 1);
@@ -286,14 +286,14 @@ function DynamicFieldController() {
 		var jsonObject      = new Object();
 		jsonObject.idField 	= aData.id;
 		jsonObject.bb		= that.idBB;
-		var result = ajaxCall('GET','/blueloop-backend/buildingBlock/validateFieldInFormula/', jsonObject, "text/json", "json", false);
+		var result = ajaxCall('GET','/blueloop/buildingBlock/validateFieldInFormula/', jsonObject, "text/json", "json", false);
 		return result.inFormula;
 	}
 	
 	function getBuildingBlock(idBB){
 		var jsonObject = new Object();
 		jsonObject.id = idBB;
-		var data = ajaxCall('GET','/blueloop-backend/buildingBlock/getBuildingBlock/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/buildingBlock/getBuildingBlock/', jsonObject, "text/json", "json", false);
 		var bb = data.bb;
 		bb.config 	= data.config;
 		bb.filePath = data.filePath;

@@ -1,6 +1,6 @@
 var fcstInstCollabEquivLabelView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabEquivLabel.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabEquivLabel.ejs',
         
     constructor : function (options) {
         _.extend(this, options);

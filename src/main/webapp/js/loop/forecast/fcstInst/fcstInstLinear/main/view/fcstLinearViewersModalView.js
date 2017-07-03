@@ -1,6 +1,6 @@
 var viewersModalView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstLinearViewersModal.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstLinearViewersModal.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -15,7 +15,7 @@ var viewersModalView = Backbone.View.extend({
 	getViewers: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcstLinearPlan/getLinearPlanningViewers/',
+			url: '/blueloop/fcstLinearPlan/getLinearPlanningViewers/',
 			data: {planningId:this.planningId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

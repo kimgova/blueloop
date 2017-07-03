@@ -47,7 +47,7 @@ function AttachmentController() {
 		$(document).on('click', '#downloadAttach', function(e) {
 			e.preventDefault();
 			var url = ($(this).attr("href"));
-			url = "/blueloop-backend/" + url.substr(url.indexOf("repos/"),url.length);
+			url = "/blueloop/" + url.substr(url.indexOf("repos/"),url.length);
 			var fileName = $(this).attr("download");
 			downloadFile(url, fileName);		
 		});
@@ -59,7 +59,7 @@ function AttachmentController() {
 		$(document).on("change", "#inputFileAttachment", function() {
 			$("#formUploadBBAttachment").ajaxSubmit({
 	            async: true,
-	            url: "/blueloop-backend/BBAttachment/uploadFile",
+	            url: "/blueloop/BBAttachment/uploadFile",
 	            success: function (data) {
 	                if(data.error){
 	                    toastr.error(data.error);
@@ -82,7 +82,7 @@ function AttachmentController() {
 			$("#formUploadInventoryFile").ajaxSubmit({ 
 				data: params,
 	            async: true,
-	            url: "/blueloop-backend/loadFile/uploadInventoryFile",
+	            url: "/blueloop/loadFile/uploadInventoryFile",
 	            success: function (data) { 
 	            	$( "#applyFile" ).prop( "disabled", false );
 	            	$( "#typeFileSelected" ).val(params.typeFile);
@@ -119,12 +119,12 @@ function AttachmentController() {
 	that.createTableAttachFromDropbox = function(idBB){
 		idBuildingBlock = idBB;
 		$("#attachFromDropbox").html("");
-		$("#attachFromDropbox").append($(new EJS({url:'/blueloop-backend/static/js/ejsTemplates/attachmentsTables.ejs'}).render({type:"Dropbox"})));
+		$("#attachFromDropbox").append($(new EJS({url:'/blueloop/static/js/ejsTemplates/attachmentsTables.ejs'}).render({type:"Dropbox"})));
 		getAttachByDropbox(idBB);
 		setDropboxChooserBtn();		
 	
 		$("#attachDiskTable").html("");
-		$("#attachDiskTable").append($(new EJS({url:'/blueloop-backend/static/js/ejsTemplates/attachmentsTables.ejs'}).render({type:"Disk"})));
+		$("#attachDiskTable").append($(new EJS({url:'/blueloop/static/js/ejsTemplates/attachmentsTables.ejs'}).render({type:"Disk"})));
 		getAttachByDisk(idBB);			
 	}	
 	
@@ -164,15 +164,15 @@ function AttachmentController() {
 	function getAttachByDropbox(idBB){
 		var jsonObject = new Object();
 		jsonObject.idBB = idBB;
-		listAttachDropbox = ajaxCall('GET','/blueloop-backend/BBAttachment/getAllDropboxAttach/', jsonObject, "text/json", "json", false);
+		listAttachDropbox = ajaxCall('GET','/blueloop/BBAttachment/getAllDropboxAttach/', jsonObject, "text/json", "json", false);
 		
 		for(i=0; i<listAttachDropbox.length;++i){
 			var link = listAttachDropbox[i].link;
-			listAttachDropbox[i].link   = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDropbox", link:link});
-			listAttachDropbox[i].action = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDropbox"}) + 
-											new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDropbox"});
+			listAttachDropbox[i].link   = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDropbox", link:link});
+			listAttachDropbox[i].action = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDropbox"}) + 
+											new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDropbox"});
 			if(listAttachDropbox[i].fileName.length > 18){
-				listAttachDropbox[i].name = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:listAttachDropbox[i].fileName.substring(0, 18) + "...", fileName:listAttachDropbox[i].fileName});
+				listAttachDropbox[i].name = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:listAttachDropbox[i].fileName.substring(0, 18) + "...", fileName:listAttachDropbox[i].fileName});
 			}else{
 				listAttachDropbox[i].name = listAttachDropbox[i].fileName;
 			}
@@ -183,17 +183,17 @@ function AttachmentController() {
 	function getAttachByDisk(idBB){
 		var jsonObject = new Object();
 		jsonObject.idBB = idBB;
-		listAttachDisk = ajaxCall('GET','/blueloop-backend/BBAttachment/getAllDiskAttach/', jsonObject, "text/json", "json", false);
+		listAttachDisk = ajaxCall('GET','/blueloop/BBAttachment/getAllDiskAttach/', jsonObject, "text/json", "json", false);
 		
 		for(i=0; i<listAttachDisk.length;++i){
 			var link = listAttachDisk[i].link;
 			
-			listAttachDisk[i].link   = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link});
-			listAttachDisk[i].action = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"download", link:link, fileName:listAttachDisk[i].fileName}) +
-									   new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDisk"}) + 
-									   new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDisk"});
+			listAttachDisk[i].link   = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link});
+			listAttachDisk[i].action = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"download", link:link, fileName:listAttachDisk[i].fileName}) +
+									   new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDisk"}) + 
+									   new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDisk"});
 			if(listAttachDisk[i].fileName.length > 18){
-				listAttachDisk[i].name = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:listAttachDisk[i].fileName.substring(0, 18) + "...", fileName:listAttachDisk[i].fileName});
+				listAttachDisk[i].name = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:listAttachDisk[i].fileName.substring(0, 18) + "...", fileName:listAttachDisk[i].fileName});
 			}else{
 				listAttachDisk[i].name = listAttachDisk[i].fileName;
 			}
@@ -229,7 +229,7 @@ function AttachmentController() {
 	function getListUploadFiles(){
 		var jsonObject = new Object();
 		jsonObject.idBB = idBuildingBlock;
-		listAttachInventory = ajaxCall('GET','/blueloop-backend/LoadFile/getListUploadFiles/', jsonObject, "text/json", "json", false);
+		listAttachInventory = ajaxCall('GET','/blueloop/LoadFile/getListUploadFiles/', jsonObject, "text/json", "json", false);
 		$("#bbSelected").val(idBuildingBlock);
 	}
 	
@@ -290,13 +290,13 @@ function AttachmentController() {
 	    Attach.fileName = files[0].name;
 	    Attach.link     = files[0].link;
 
-		var result = ajaxCall('POST', '/blueloop-backend/BBAttachment/saveAttachFromDropbox/', JSON.stringify(Attach), 'application/json; charset=utf-8', "json", false);
+		var result = ajaxCall('POST', '/blueloop/BBAttachment/saveAttachFromDropbox/', JSON.stringify(Attach), 'application/json; charset=utf-8', "json", false);
 		var link = result.link;
-		result.link   = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDropbox", link:link});
-		result.action = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDropbox"});
-		result.description = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"description", description:""});
+		result.link   = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDropbox", link:link});
+		result.action = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDropbox"});
+		result.description = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"description", description:""});
 		if(files[0].name.length > 18){
-			result.name = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:files[0].name.substring(0, 18) + "...", fileName:files[0].name});
+			result.name = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:files[0].name.substring(0, 18) + "...", fileName:files[0].name});
 		}else{
 			result.name = files[0].name;
 		}
@@ -312,16 +312,16 @@ function AttachmentController() {
 		Attach.fileName = fileName;
 	    Attach.fileSize = fileSize;
 
-		var result = ajaxCall('POST', '/blueloop-backend/BBAttachment/saveAttachFromDisk/', JSON.stringify(Attach), 'application/json; charset=utf-8', "json", false);
+		var result = ajaxCall('POST', '/blueloop/BBAttachment/saveAttachFromDisk/', JSON.stringify(Attach), 'application/json; charset=utf-8', "json", false);
 		var link = result.link;	
-		result.link   = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link});
-		result.action = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDisk"});
+		result.link   = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link});
+		result.action = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDisk"});
 		if(fileName.length > 18){
-			result.name = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:fileName.substring(0, 18) + "...", fileName:fileName});
+			result.name = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:fileName.substring(0, 18) + "...", fileName:fileName});
 		}else{
 			result.name = fileName;
 		}
-		result.description = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"description", description:""});
+		result.description = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"description", description:""});
 		listAttachDisk.push(result);
 		toastr.success(json.file.attachmentAdded);
 		setTbodyDiskAttachment();
@@ -333,12 +333,12 @@ function AttachmentController() {
 		var jqTds = $('>td', nRow);
 		if(type == 1){
 			aData = attachFromDiskTable.row(nRow).data();
-			jqTds[2].innerHTML = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDisk"});
+			jqTds[2].innerHTML = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDisk"});
 		}else{
 			aData = attachFromDropboxTable.row(nRow).data();
-			jqTds[3].innerHTML = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDropbox"});
+			jqTds[3].innerHTML = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"saveDropbox"});
 		}
-		jqTds[1].innerHTML = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"description", description:aData.description});
+		jqTds[1].innerHTML = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"description", description:aData.description});
 		
 	}
 	
@@ -352,27 +352,27 @@ function AttachmentController() {
 			aData = attachFromDropboxTable.row(nRow).data();
 		}
 		
-		var result = ajaxCall('POST', '/blueloop-backend/BBAttachment/editAttachment/', JSON.stringify({id:aData.id,description:jqInputs[0].value}), 'application/json; charset=utf-8', "json", false);
+		var result = ajaxCall('POST', '/blueloop/BBAttachment/editAttachment/', JSON.stringify({id:aData.id,description:jqInputs[0].value}), 'application/json; charset=utf-8', "json", false);
 		
 		var link = result.link;
-		result.link   = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link});
+		result.link   = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link});
 		if(result.fileName.length > 18){
-			result.name = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:result.fileName.substring(0, 18) + "...", fileName:result.fileName});
+			result.name = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"filename", name:result.fileName.substring(0, 18) + "...", fileName:result.fileName});
 		}else{
 			result.name = result.fileName;
 		}
 		
 		if(type == 1){
-			result.action = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"download", link:link, fileName:result.fileName}) +
-							new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDisk"}) + 
-							new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDisk"});
+			result.action = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"download", link:link, fileName:result.fileName}) +
+							new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDisk"}) + 
+							new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDisk"});
 			
 			attachFromDiskTable.row(nRow).data(result);
 			attachFromDiskTable.draw();
 		}else{
-			result.link   = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link.substr(0,10) + "..."});
-			result.action = new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDropbox"}) + 
-							new EJS({url:'/blueloop-backend/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDropbox"});
+			result.link   = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"linkDisk", link:link.substr(0,10) + "..."});
+			result.action = new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"editDropbox"}) + 
+							new EJS({url:'/blueloop/static/js/ejsTemplates/btnsAttachments.ejs'}).render({type:"deleteDropbox"});
 
 			attachFromDropboxTable.row(nRow).data(result);
 			attachFromDropboxTable.draw();
@@ -392,7 +392,7 @@ function AttachmentController() {
 		    	}
 				var jsonObject      = new Object();
 				jsonObject.idAttach = aData.id;
-				var dataAjax = ajaxCall('GET','/blueloop-backend/BBAttachment/deleteAttach/', jsonObject, "text/json", "json", false);
+				var dataAjax = ajaxCall('GET','/blueloop/BBAttachment/deleteAttach/', jsonObject, "text/json", "json", false);
 				if(from == 0){
 					attachFromDropboxTable.rows(nRow).remove().draw();
 					listAttachDropboxRemove(aData.id);
@@ -430,7 +430,7 @@ function AttachmentController() {
 		jsonObject.typeFile = $("#typeFileSelected").val();
 		jsonObject.fileName = $("#typeFileSelected").html();
 		jsonObject.idBB 	= idBuildingBlock;		
-		var data = ajaxCall('GET','/blueloop-backend/LoadFile/processInventoryFile/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/LoadFile/processInventoryFile/', jsonObject, "text/json", "json", false);
 		
 		if(data.success){
 			$("#typeFileSelected").val(""); 

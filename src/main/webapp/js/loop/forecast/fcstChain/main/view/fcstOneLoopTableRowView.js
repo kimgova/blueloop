@@ -4,7 +4,7 @@ var forecastRowView = Backbone.View.extend({
 		_.extend(this, options);
 	},
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstChain/main/template/fcstOneLoopTableRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstChain/main/template/fcstOneLoopTableRow.ejs',
 	
 	render: function () {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -98,7 +98,7 @@ var forecastRowView = Backbone.View.extend({
 	callBackDelete: function(e){
 		var dataReturned = $.ajax({
 			type : 'GET',
-			url : '/blueloop-backend/forecast/deleteForecastChain/',
+			url : '/blueloop/forecast/deleteForecastChain/',
 			data : {id:e.data.callBackModel.id},
 			contentType : 'application/json; charset=utf-8',
 			dataType : 'json',

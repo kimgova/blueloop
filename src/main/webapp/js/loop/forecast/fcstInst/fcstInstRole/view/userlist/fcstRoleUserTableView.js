@@ -1,6 +1,6 @@
 var userForecastRoleTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstRole/template/userlist/tableUserRoleTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstRole/template/userlist/tableUserRoleTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -35,7 +35,7 @@ var userForecastRoleTableView = Backbone.View.extend({
     getUserForecastList: function(){
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/fcstRole/getUserForecastPerRole/',
+	        url: '/blueloop/fcstRole/getUserForecastPerRole/',
 	        data: {instanceId:this.instanceId,roleId:this.roleId},
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

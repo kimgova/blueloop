@@ -12,7 +12,7 @@ function wsBillingView() {
     };
     
     function setUserModel(){
-    	var result = ajaxCall('GET', '/blueloop-backend/administrator/getUserBillingInfo/', {}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/administrator/getUserBillingInfo/', {}, "text/json", "json", false);
         if(result.success){
         	that.model = new userModel({
             	id:       	result.billingInfo.id,

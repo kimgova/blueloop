@@ -1,6 +1,6 @@
 var inventoryRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/inventory/main/template/inventoryRowTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/inventory/main/template/inventoryRowTemplate.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);

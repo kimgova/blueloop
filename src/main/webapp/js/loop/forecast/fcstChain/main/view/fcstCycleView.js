@@ -1,6 +1,6 @@
 var forecastCycleView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/main/template/fcstCycleForm.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/main/template/fcstCycleForm.ejs',
 
     viewRow: [],
     
@@ -28,7 +28,7 @@ var forecastCycleView = Backbone.View.extend({
 		if(forecastData != false){
 			var dataReturned = $.ajax({
 			    type: 'POST',
-			    url: '/blueloop-backend/forecast/saveForecastCycle/',
+			    url: '/blueloop/forecast/saveForecastCycle/',
 			    data: JSON.stringify(forecastData),
 			    contentType: 'application/json; charset=utf-8',
 		        dataType: 'json',

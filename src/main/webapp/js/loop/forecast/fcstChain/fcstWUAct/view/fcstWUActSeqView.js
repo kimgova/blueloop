@@ -1,6 +1,6 @@
 var SequenceModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActSeqTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActSeqTemplate.ejs',
     sequenceCollection: null,
     viewItems: [],
 
@@ -40,7 +40,7 @@ var SequenceModalView = Backbone.View.extend({
 	    var forecastData = {data:e.data.sequenceCollection.models};
 	    var dataReturned = $.ajax({
 		    type: 'POST',
-		    url: '/blueloop-backend/fcstWUnitActiv/saveSequenceActivities/',
+		    url: '/blueloop/fcstWUnitActiv/saveSequenceActivities/',
 		    data: JSON.stringify(forecastData),
 		    contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -59,7 +59,7 @@ var SequenceModalView = Backbone.View.extend({
     getActivities: function(){    	
     	var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/fcstWUnitActiv/getAllActivitiesByForecastChain/',
+	        url: '/blueloop/fcstWUnitActiv/getAllActivitiesByForecastChain/',
 	        data: {id:this.idForecast},
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

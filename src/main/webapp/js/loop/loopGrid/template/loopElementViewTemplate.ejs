@@ -10,16 +10,16 @@
              <% }else{ %>
                  <% if(ownership == 'My Loop'){ %>
                      <i id="archive-loop" class="icon-drawar" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.archive %>"></i>
-                     <a href="/blueloop-backend/chain/edit/<%= id %>" id="goto-ws"><i  class="icon-pencil" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.edit %>"></i></a>
+                     <a href="/blueloop/chain/edit/<%= id %>" id="goto-ws"><i  class="icon-pencil" data-container="body" data-toggle="tooltip" data-placement="top" title="<%= json.button.edit %>"></i></a>
                  <% } %>
                 <i id="user-options" class="icon-options"></i>
                 <a id="detail-btn" href="" class="btn btn-default"><%= json.button.viewDetail %></a>
-                <a href="/blueloop-backend/chain/execution/<%= id %>" class="btn btn-default"><%= json.button.gotoExecution %></a>
+                <a href="/blueloop/chain/execution/<%= id %>" class="btn btn-default"><%= json.button.gotoExecution %></a>
              <% } %>
              
             </div>
         </div>
-        <img src="/blueloop-backend/static/images/home/loop.png" alt="<%= name %>" class="grid-item-pic"/>
+        <img src="/blueloop/static/images/home/loop.png" alt="<%= name %>" class="grid-item-pic"/>
         <div class="grid-item-description">
         <h4><%= name %></h4>
         <h5><%= ownership %></h5>

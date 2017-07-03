@@ -1,6 +1,6 @@
 var imageChooserModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/imageChooser/template/imageModalTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/imageChooser/template/imageModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -31,7 +31,7 @@ var imageChooserModalView = Backbone.View.extend({
     },
     
     setImagesData: function(){
-    	var result = ajaxCall('GET', '/blueloop-backend/imageCategory/getImages/', {imageType:this.imageType}, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/imageCategory/getImages/', {imageType:this.imageType}, "text/json", "json", false);
 
 	    this.categories = new categoryCollection([]);
 	    _.each(result,function(item,i){

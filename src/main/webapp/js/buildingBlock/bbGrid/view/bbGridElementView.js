@@ -1,6 +1,6 @@
 var bbGridElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/bbGrid/template/bbGridElementViewTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/bbGrid/template/bbGridElementViewTemplate.ejs',
 
     initialize: function(){
         _.bindAll(this, 'render', 'clicked','showOptions', 'hideOptions', 'archiveBB', 'removeBB', 'restoreBB'); 
@@ -49,7 +49,7 @@ var bbGridElementView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getBuildingBlock/',
+	        url: '/blueloop/buildingBlock/getBuildingBlock/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -71,7 +71,7 @@ var bbGridElementView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getConnectedBBs/',
+	        url: '/blueloop/buildingBlock/getConnectedBBs/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -122,7 +122,7 @@ var bbGridElementView = Backbone.View.extend({
  			}
  			$.ajax({
  		        type: 'GET',
- 		        url: '/blueloop-backend/buildingBlock/deleteBuildingBlock/',
+ 		        url: '/blueloop/buildingBlock/deleteBuildingBlock/',
  		        data: jsonObject,
  		        contentType: 'application/json; charset=utf-8',
  		        dataType: 'json',
@@ -136,7 +136,7 @@ var bbGridElementView = Backbone.View.extend({
  		     	}
  		    });
  			toastr.success(json.bb.archived);
- 			setTimeout(function(){window.location.replace("/blueloop-backend/buildingBlock/list")}, 1000);
+ 			setTimeout(function(){window.location.replace("/blueloop/buildingBlock/list")}, 1000);
  		});
      },
      
@@ -145,9 +145,9 @@ var bbGridElementView = Backbone.View.extend({
     	 var jsonObject = new Object();
 		 jsonObject.id = model.id;	
 			
-		 ajaxCall('GET','/blueloop-backend/buildingBlock/restoreBuildingBlock/', jsonObject, "text/json", "json", false);
+		 ajaxCall('GET','/blueloop/buildingBlock/restoreBuildingBlock/', jsonObject, "text/json", "json", false);
 		 toastr.success(json.bb.restored);
-		 setTimeout(function(){window.location.replace("/blueloop-backend/buildingBlock/list")}, 1000);
+		 setTimeout(function(){window.location.replace("/blueloop/buildingBlock/list")}, 1000);
 	 },
 	 
 	 removeBB : function(){
@@ -159,7 +159,7 @@ var bbGridElementView = Backbone.View.extend({
 			if(e){					
 				$.ajax({
 	 		        type: 'POST',
-	 		        url: '/blueloop-backend/buildingBlock/eraseBuildingBlock/',
+	 		        url: '/blueloop/buildingBlock/eraseBuildingBlock/',
 	 		        data: JSON.stringify(jsonObject),
 	 		        contentType: "text/json",
 	 		        dataType: 'json',
@@ -167,7 +167,7 @@ var bbGridElementView = Backbone.View.extend({
 	 		        success: function(data, textStatus) {
 	 		        	data =  data;
 	 		        	toastr.success(json.bb.deleted);
-	 		        	setTimeout(function(){window.location.replace("/blueloop-backend/buildingBlock/list")}, 1000);
+	 		        	setTimeout(function(){window.location.replace("/blueloop/buildingBlock/list")}, 1000);
 	 		        },
 	 		    	error: function(httpRequest, textStatus, errorThrown) { 
 	 		     	   console.log("status=" + textStatus + " ,error=" + errorThrown);

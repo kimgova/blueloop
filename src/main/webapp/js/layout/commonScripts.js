@@ -2,7 +2,7 @@
  * Make calls to backend
  * Parameters: 
  * 		pType: "GET" - "POST"... 
- * 		pUrl: "/blueloop-backend/..."
+ * 		pUrl: "/blueloop/..."
  * 		pJsonObject: Json Object with data
  * 		pContentType: "text/json"
  * 		pDataType: "json"

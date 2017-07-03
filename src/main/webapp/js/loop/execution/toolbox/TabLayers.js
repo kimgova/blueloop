@@ -37,7 +37,7 @@ function TabLayers() {
     	idChain= $("#idChain").text();
     	var jsonObjectChain = new Object();
     	jsonObjectChain.idChain = idChain;	
-    	var result = ajaxCall('GET', '/blueloop-backend/chain/getDiagram/', jsonObjectChain, "text/json", "json", false);
+    	var result = ajaxCall('GET', '/blueloop/chain/getDiagram/', jsonObjectChain, "text/json", "json", false);
     	var Diagram = JSON.stringify(result);
     	return Diagram;
     }
@@ -46,7 +46,7 @@ function TabLayers() {
     	idChain= $("#idChain").text();
     	var jsonObjectChain = new Object();
     	jsonObjectChain.idChain = idChain;	
-    	var activeRoutes = ajaxCall('GET', '/blueloop-backend/chain/getActiveRoutes/', jsonObjectChain, "text/json", "json", false);
+    	var activeRoutes = ajaxCall('GET', '/blueloop/chain/getActiveRoutes/', jsonObjectChain, "text/json", "json", false);
     	return activeRoutes; 
     }
 

@@ -1,6 +1,6 @@
 var bbGridTopbarView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/buildingBlock/bbGrid/template/bbGridTopbarTemplate.ejs',
+	template: '/blueloop/static/js/buildingBlock/bbGrid/template/bbGridTopbarTemplate.ejs',
     
     initialize: function (){
 		this.render();

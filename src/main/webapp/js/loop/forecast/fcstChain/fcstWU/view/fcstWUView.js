@@ -1,6 +1,6 @@
 var forecastWUView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUTemplate.ejs',
 
     render: function() {
     	this.$el = $(new EJS({url: this.template }).render());

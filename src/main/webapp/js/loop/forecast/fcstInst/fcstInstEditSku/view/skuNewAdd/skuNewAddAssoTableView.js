@@ -1,6 +1,6 @@
 var skuNewAddAssoTableView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewAdd/skuNewAddAssoTable.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewAdd/skuNewAddAssoTable.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

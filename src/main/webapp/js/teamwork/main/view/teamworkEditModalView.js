@@ -1,6 +1,6 @@
 var teamworkEditModalView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/teamwork/main/template/teamworkEditModal.ejs',
+	template: '/blueloop/static/js/teamwork/main/template/teamworkEditModal.ejs',
 
 	render: function() {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON())); 
@@ -18,7 +18,7 @@ var teamworkEditModalView = Backbone.View.extend({
 	
 	getTeamwork: function(){
 		this.listTeamMembers = new teammemberCollection([]);
-		var listTeamwork = ajaxCall('GET', '/blueloop-backend/teamwork/getTeamwork/', {id:this.model.id}, "text/json", "json", false);
+		var listTeamwork = ajaxCall('GET', '/blueloop/teamwork/getTeamwork/', {id:this.model.id}, "text/json", "json", false);
 
 		_.each(listTeamwork, function(val, i) {
 			_.each(val.members, function (item, j) {
@@ -81,7 +81,7 @@ var teamworkEditModalView = Backbone.View.extend({
 			success: "valid",
 			submitHandler: function(form,data) {
 				var obj = {id:e.data.model.id,name:e.data.$el.find("#groupNameEdit").val(),description:e.data.$el.find("#groupDescEdit").val()};
-				var teamWork = ajaxCall('GET','/blueloop-backend/teamwork/updateGroup/', obj, "text/json", "json", false);
+				var teamWork = ajaxCall('GET','/blueloop/teamwork/updateGroup/', obj, "text/json", "json", false);
 				toastr.success(json.teamwork.modified);
 			}
 		});

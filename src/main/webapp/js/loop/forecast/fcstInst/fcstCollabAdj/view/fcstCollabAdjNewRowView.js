@@ -1,6 +1,6 @@
 var fcstCollabAdjNewRowView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollabAdj/template/fcstCollabAdjNewRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollabAdj/template/fcstCollabAdjNewRow.ejs',
 		
 	constructor : function (options) {
 		_.extend(this, options);
@@ -42,7 +42,7 @@ var fcstCollabAdjNewRowView = Backbone.View.extend({
     			};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/fcstCollaborative/saveCollaborativeAdjustment/',
+			url: '/blueloop/fcstCollaborative/saveCollaborativeAdjustment/',
 			data: JSON.stringify(adjData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

@@ -9,7 +9,7 @@ function FormulaController() {
 	var tempSelectedInput;
 	var tempCursorPos;
 	that.objectTemplate = {};
-	that.template = "/blueloop-backend/static/js/buildingBlock/view/formulaView.ejs";
+	that.template = "/blueloop/static/js/buildingBlock/view/formulaView.ejs";
 	
 	that.init = function() {
 		that.objectTemplate = {taginput:false,elementHtml:false,elemId:"",elemFull:"",elemLbl:"",size:"1",value:""};
@@ -51,7 +51,7 @@ function FormulaController() {
 		var jsonObject = new Object();
 		jsonObject.idField = idField;
 		jsonObject.idBB = idBB;
-		var result = ajaxCall('GET','/blueloop-backend/buildingBlock/getFormula/', jsonObject, "text/json", "json", false);
+		var result = ajaxCall('GET','/blueloop/buildingBlock/getFormula/', jsonObject, "text/json", "json", false);
 		return result;
 	}
 	
@@ -112,7 +112,7 @@ function FormulaController() {
 		$("#selectField").html("");
 		BBnFieldsData = [];
 		
-		var data = ajaxCall('GET','/blueloop-backend/buildingBlock/getMyNetworkBB/', null, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/buildingBlock/getMyNetworkBB/', null, "text/json", "json", false);
 		$(data).each(function(i,item){
 			$("#selectBB").append($('<option>', {value: item.bb.id,text : item.bb.name}));
 
@@ -270,7 +270,7 @@ function FormulaController() {
 		jsonObject.idField = idField;
 		jsonObject.idBB = idBB;
 		jsonObject.formula = formula;
-		var result = ajaxCall('GET','/blueloop-backend/buildingBlock/saveFormula/', jsonObject, "text/json", "json", false);
+		var result = ajaxCall('GET','/blueloop/buildingBlock/saveFormula/', jsonObject, "text/json", "json", false);
 		
 		if(result.success){
 			$("#formulaEditorModal").modal("hide");
@@ -309,7 +309,7 @@ function FormulaController() {
 		var jsonObject     = new Object();
 		jsonObject.idField = idField;
 		jsonObject.bb      = idBB;		
-		var used = ajaxCall('GET','/blueloop-backend/buildingBlock/validateFieldInFormula/', jsonObject, "text/json", "json", false);
+		var used = ajaxCall('GET','/blueloop/buildingBlock/validateFieldInFormula/', jsonObject, "text/json", "json", false);
 		
 		if(used.inFormula){
 			messageconfirm = json.formula.inFormula + json.formula.confirmRemove;
@@ -319,7 +319,7 @@ function FormulaController() {
 		
 		bootbox.confirm(messageconfirm, function (e) {
 		    if (e){
-				var result = ajaxCall('GET','/blueloop-backend/buildingBlock/removeFormula/', jsonObject, "text/json", "json", false);
+				var result = ajaxCall('GET','/blueloop/buildingBlock/removeFormula/', jsonObject, "text/json", "json", false);
 				if(result.success){
 					toastr.success(json.formula.removed);
 					$("#dynamic-bb-form").find("input#"+idField).val("");

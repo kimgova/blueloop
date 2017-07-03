@@ -1,6 +1,6 @@
 var cbbSequenceTabView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/sequence/cbbSequence/template/cbbSequenceTabPane.ejs',
+    template: '/blueloop/static/js/loop/execution/sequence/cbbSequence/template/cbbSequenceTabPane.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -45,7 +45,7 @@ var cbbSequenceTabView = Backbone.View.extend({
     save: function(idSequence,listCBB){
     	$.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/orderSequenceCBB/saveSequence/',
+			url: '/blueloop/orderSequenceCBB/saveSequence/',
 			data: JSON.stringify({idSequence:idSequence,listCBB:listCBB}),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
@@ -67,7 +67,7 @@ var cbbSequenceTabView = Backbone.View.extend({
     getOrderSeqCBBList: function(){
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/orderSequenceCBB/getCbbSequenceList/',
+            url: '/blueloop/orderSequenceCBB/getCbbSequenceList/',
             data: {orderSeqId:this.orderSeqId},
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

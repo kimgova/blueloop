@@ -1,6 +1,6 @@
 var stepFourActFlow = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/create_edit/flowActivities/template/step_four_template.ejs',
+    template: '/blueloop/static/js/loop/create_edit/flowActivities/template/step_four_template.ejs',
         
     constructor : function (options) {
         _.extend(this, options);

@@ -1,6 +1,6 @@
 var stepTwoSelectActivityView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/create_edit/flowActivities/template/step_two_template.ejs',
+    template: '/blueloop/static/js/loop/create_edit/flowActivities/template/step_two_template.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -14,7 +14,7 @@ var stepTwoSelectActivityView = Backbone.View.extend({
     },
     
     getActivitiesList: function(){
-        var result = ajaxCall('GET', '/blueloop-backend/activityBuildingBlock/getAllFlowBBActivities/', {idBB:this.model.get("id"),valve_id:this.valve}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/activityBuildingBlock/getAllFlowBBActivities/', {idBB:this.model.get("id"),valve_id:this.valve}, "text/json", "json", false);
         _.each(result,function(item,i){
             if(!this.collection.findWhere({id_activity:item.id})){
                 var activity = new flowActivityModel({

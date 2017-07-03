@@ -1,6 +1,6 @@
 var bbMainView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/bbGrid/template/bbMainViewTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/bbGrid/template/bbMainViewTemplate.ejs',
     
     initialize: function (){
 
@@ -37,7 +37,7 @@ var bbMainView = Backbone.View.extend({
      },
      
     getCreationPermission:function(){
-        var data = ajaxCall('GET', '/blueloop-backend/user/verifyBBCreationPermission/', {}, "text/json", "json", false);
+        var data = ajaxCall('GET', '/blueloop/user/verifyBBCreationPermission/', {}, "text/json", "json", false);
         this.creationPermission = data.permission 
     }
 });

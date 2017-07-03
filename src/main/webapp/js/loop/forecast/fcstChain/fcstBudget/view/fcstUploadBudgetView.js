@@ -1,6 +1,6 @@
 var uploadBudgetView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstBudget/template/fcstUploadBudget.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstBudget/template/fcstUploadBudget.ejs',
 
     render: function() {
     	this.$el = $(new EJS({url: this.template }).render({idForecast:this.idForecast}));
@@ -11,7 +11,7 @@ var uploadBudgetView = Backbone.View.extend({
     
     uploadBudgetFile: function(e){
     	if(e.data.validateFile()){
-    		e.data.submitForm($("#formUploadBudget"), "/blueloop-backend/fcstBudget/uploadBudgetData", e.data )
+    		e.data.submitForm($("#formUploadBudget"), "/blueloop/fcstBudget/uploadBudgetData", e.data )
     	}    	
     },
     

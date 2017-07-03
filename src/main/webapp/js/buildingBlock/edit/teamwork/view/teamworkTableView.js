@@ -1,6 +1,6 @@
 var teamworkTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/teamwork/template/teamworkTable.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/teamwork/template/teamworkTable.ejs',
        
     constructor : function (options) {
         _.extend(this, options);
@@ -55,7 +55,7 @@ var teamworkTableView = Backbone.View.extend({
     },
     
     getTeamMembers: function(){
-        var listTeamwork    = ajaxCall('POST', '/blueloop-backend/teamwork/getTeamworkForEditBB/',  JSON.stringify({id:this.team_id}), "text/json", "json", false);
+        var listTeamwork    = ajaxCall('POST', '/blueloop/teamwork/getTeamworkForEditBB/',  JSON.stringify({id:this.team_id}), "text/json", "json", false);
         
         this.collection = new teamMemberCollection([]);
         

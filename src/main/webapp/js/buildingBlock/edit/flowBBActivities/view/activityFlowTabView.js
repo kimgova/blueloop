@@ -1,6 +1,6 @@
 var activityFlowTabView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/flowBBActivities/template/tabpane_template.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/flowBBActivities/template/tabpane_template.ejs',
        
     constructor : function (options) {
         _.extend(this, options);
@@ -17,7 +17,7 @@ var activityFlowTabView = Backbone.View.extend({
     
     getActivities: function(){
         this.collection = new activityFlowCollection([]);
-        var result = ajaxCall('GET', '/blueloop-backend/activityBuildingBlock/getAllFlowBBActivities/', {idBB:this.bb_id}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/activityBuildingBlock/getAllFlowBBActivities/', {idBB:this.bb_id}, "text/json", "json", false);
 
         _.each(result,function(item,i){
             var activity = new activityFlowModel({

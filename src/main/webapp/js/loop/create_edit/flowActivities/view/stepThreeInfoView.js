@@ -1,6 +1,6 @@
 var stepThreeInfoView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/create_edit/flowActivities/template/step_three_template.ejs',
+    template: '/blueloop/static/js/loop/create_edit/flowActivities/template/step_three_template.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -20,7 +20,7 @@ var stepThreeInfoView = Backbone.View.extend({
     getTeamMembers: function(){
         var data    = new Object();
         data.idBB   = this.model.get("id");
-        this.team_members = ajaxCall('GET','/blueloop-backend/teamwork/getMembersOfFlowBB/', data, "text/json", "json", false);
+        this.team_members = ajaxCall('GET','/blueloop/teamwork/getMembersOfFlowBB/', data, "text/json", "json", false);
     },
     
     addRow: function(model) {

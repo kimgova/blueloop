@@ -15,12 +15,12 @@
 		<span class="message"><%= alertDescription %></span>
 	</a>
 	<% if(type == "ConnectionApproved"){ %>   
-		<a href="/blueloop-backend/user/profileWall/<%= user2 %>" id="<%= userAlertId %>" class="alertNotification btn btn-xs">
+		<a href="/blueloop/user/profileWall/<%= user2 %>" id="<%= userAlertId %>" class="alertNotification btn btn-xs">
 	<% }else{ %> 
 		<% if(type == "AddedToTeam"){ %>   
-			<a href="/blueloop-backend/teamwork/list" class="alertNotification btn btn-xs" id="<%= userAlert %>">
+			<a href="/blueloop/teamwork/list" class="alertNotification btn btn-xs" id="<%= userAlert %>">
 		<% }else{ %> 
-			<a href="/blueloop-backend/user/profileWall/<%= user2 %>" class="alertNotification btn btn-xs" id="<%= userAlert %>">
+			<a href="/blueloop/user/profileWall/<%= user2 %>" class="alertNotification btn btn-xs" id="<%= userAlert %>">
 		<% } %>
 	<% } %> 
 	   

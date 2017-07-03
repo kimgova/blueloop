@@ -1,6 +1,6 @@
 var lastStepView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/lastStepTemplate.ejs',
+	template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/lastStepTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);

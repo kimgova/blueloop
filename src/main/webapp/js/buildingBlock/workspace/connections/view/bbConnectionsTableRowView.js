@@ -1,6 +1,6 @@
 var bbConnectionsTableRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/workspace/connections/template/bbConnectionsTableRowTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/workspace/connections/template/bbConnectionsTableRowTemplate.ejs',
     
     
     initialize: function(){
@@ -58,7 +58,7 @@ var bbConnectionsTableRowView = Backbone.View.extend({
     		//go to bb, delete bb
     		var btnGoTo = this.$el.find('.conn-actions a.conn-action-1');
     		var btnRemove = this.$el.find('.conn-actions a.conn-action-2');
-    		btnGoTo.attr('href', '/blueloop-backend/buildingBlock/workspace/' + this.model.get('connBbId'));
+    		btnGoTo.attr('href', '/blueloop/buildingBlock/workspace/' + this.model.get('connBbId'));
     		btnGoTo.addClass('conn-action-goto');
     		btnRemove.addClass('conn-action-remove');
     		
@@ -79,21 +79,21 @@ var bbConnectionsTableRowView = Backbone.View.extend({
     
     acceptReceivedRequest : function(){
     	var data = {connId: this.model.get('connId'), state: 1}
-    	var dataAjax = ajaxCall('POST', '/blueloop-backend/buildingBlock/answerReceivedRequest/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+    	var dataAjax = ajaxCall('POST', '/blueloop/buildingBlock/answerReceivedRequest/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
     	this.model.set({status: "Aproved"});
     	toastr.success(json.bb.connectionSave);
     },
     
     rejectReceivedRequest : function(){
     	var data = {connId: this.model.get('connId'), state: 2}
-    	var dataAjax = ajaxCall('POST', '/blueloop-backend/buildingBlock/answerReceivedRequest/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+    	var dataAjax = ajaxCall('POST', '/blueloop/buildingBlock/answerReceivedRequest/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
     	this.model.set({status: "Declined"});
     	toastr.success(json.bb.connectionSave);
     },
     
     removeConnection : function(){
     	var dat = {bbOutId:this.model.get('bbOut'), bbInId:this.model.get('bbIn'), instanceId:this.model.get('connId'), state:3}
-    	var data = ajaxCall('POST', '/blueloop-backend/buildingBlock/modifyconnectBb', JSON.stringify(dat), "text/json", "json", false);	
+    	var data = ajaxCall('POST', '/blueloop/buildingBlock/modifyconnectBb', JSON.stringify(dat), "text/json", "json", false);	
     	this.model.set({status: "Canceled"});
     	toastr.success(json.connection.removed);
     },

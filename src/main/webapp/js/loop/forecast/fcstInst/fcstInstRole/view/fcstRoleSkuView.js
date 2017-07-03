@@ -1,6 +1,6 @@
 var forecastRoleSkuView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstRole/template/treeRoleSkuTemplate.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstRole/template/treeRoleSkuTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -55,7 +55,7 @@ var forecastRoleSkuView = Backbone.View.extend({
     retrieveSkuList: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcstRole/getCatWithSkusByFcInstanceAndRole/',
+			url: '/blueloop/fcstRole/getCatWithSkusByFcInstanceAndRole/',
 			data: {instanceId:this.instanceId,roleId:this.roleId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
@@ -105,9 +105,9 @@ var forecastRoleSkuView = Backbone.View.extend({
     changeSkuStateDB: function(instanceId,roleId,skuList,action){
     	var reqUrl = "";
     	if(action == "select_node"){
-    		reqUrl = "/blueloop-backend/fcstRole/addRoleSkus/"
+    		reqUrl = "/blueloop/fcstRole/addRoleSkus/"
     	}else if(action == "deselect_node"){
-    		reqUrl = "/blueloop-backend/fcstRole/removeRoleSkus/"
+    		reqUrl = "/blueloop/fcstRole/removeRoleSkus/"
     	}
     	
     	if(reqUrl != ""){

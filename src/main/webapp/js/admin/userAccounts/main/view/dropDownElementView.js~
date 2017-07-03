@@ -1,6 +1,6 @@
 var dropDownElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/main/template/dropDownElementTemplate.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/main/template/dropDownElementTemplate.ejs',
     
     initialize: function(){
         _.bindAll(this, 'setPermission'); 
@@ -21,7 +21,7 @@ var dropDownElementView = Backbone.View.extend({
             this.model.set({checked: ''});
         }
         var data = {model:this.model.toJSON()};
-        var dataAjax = ajaxCall('POST', '/blueloop-backend/administrator/saveUserPermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+        var dataAjax = ajaxCall('POST', '/blueloop/administrator/saveUserPermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
         toastr.success(json.bb.permissionsSaved);
     }
     

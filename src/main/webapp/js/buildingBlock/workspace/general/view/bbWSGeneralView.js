@@ -1,7 +1,7 @@
 var bbWSGeneralView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/buildingBlock/workspace/general/template/bbWSGeneralViewTemplate.ejs',
-	leftPanelTemplate: '/blueloop-backend/static/js/buildingBlock/workspace/general/template/bbGeneralLeftPanelTemplate.ejs',
+	template: '/blueloop/static/js/buildingBlock/workspace/general/template/bbWSGeneralViewTemplate.ejs',
+	leftPanelTemplate: '/blueloop/static/js/buildingBlock/workspace/general/template/bbGeneralLeftPanelTemplate.ejs',
 	
     initialize: function (bb){
     	this.bb = bb;

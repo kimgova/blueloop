@@ -1,6 +1,6 @@
 var forecastWUNewRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUTableNewRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWU/template/fcstWUTableNewRow.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
@@ -35,7 +35,7 @@ var forecastWUNewRowView = Backbone.View.extend({
     	var wuData = {id:e.data.forecastId,name:e.data.$el.find("#nameWU").val()};
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/fcstWUnit/saveWorkingUnit/',
+	        url: '/blueloop/fcstWUnit/saveWorkingUnit/',
 	        data: JSON.stringify(wuData),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

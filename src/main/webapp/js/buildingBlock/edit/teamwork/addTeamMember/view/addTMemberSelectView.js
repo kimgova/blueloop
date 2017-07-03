@@ -1,5 +1,5 @@
 var addTMemberSelectView = Backbone.View.extend({
-    template : '/blueloop-backend/static/js/buildingBlock/edit/teamwork/addTeamMember/template/addTMemberSelect.ejs',
+    template : '/blueloop/static/js/buildingBlock/edit/teamwork/addTeamMember/template/addTMemberSelect.ejs',
 
     render : function() {
         this.$el = $(new EJS({url: this.template }).render());

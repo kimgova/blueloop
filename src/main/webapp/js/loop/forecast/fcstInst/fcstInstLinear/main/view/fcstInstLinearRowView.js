@@ -1,6 +1,6 @@
 var forecastInstLinearRowView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearRow.ejs',
 
 	render: function () {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));

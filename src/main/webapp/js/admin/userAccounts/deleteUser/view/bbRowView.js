@@ -1,6 +1,6 @@
 var bbRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/bbRowTemplate.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/bbRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);

@@ -42,7 +42,7 @@
             <div class="divRowContentTable">
                 <ul>
                     <% $.each(leaders, function(j, user){ %> 
-                       <li class="tabSpace"><i class='fa fa-angle-right'></i> <a href="/blueloop-backend/user/profileWall/<%= user.id %>"><%= user.firstName %> <%= user.lastName %></a></li>
+                       <li class="tabSpace"><i class='fa fa-angle-right'></i> <a href="/blueloop/user/profileWall/<%= user.id %>"><%= user.firstName %> <%= user.lastName %></a></li>
                     <% }); %>
                 </ul>
             </div>
@@ -64,7 +64,7 @@
                     <li><i class='fa fa-angle-down'></i> <b><%= unit.workingUnit.name %></b>
                         <ul>
                         <% $.each(unit.workingUnitMembers, function(k, member){ %>
-                            <li class="tabSpace"><i class='fa fa-angle-right'></i> <a href="/blueloop-backend/user/profileWall/<%= member.id %>"><%= member.firstName %> <%= member.lastName %></a></li>
+                            <li class="tabSpace"><i class='fa fa-angle-right'></i> <a href="/blueloop/user/profileWall/<%= member.id %>"><%= member.firstName %> <%= member.lastName %></a></li>
                         <% }); %>
                         </ul>
                     </li>

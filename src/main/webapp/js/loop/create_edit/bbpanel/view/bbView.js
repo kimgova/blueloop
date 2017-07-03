@@ -1,6 +1,6 @@
 var bbView = Backbone.View.extend({
 	
-	 template: '/blueloop-backend/static/js/loop/create_edit/bbpanel/template/bbTemplate.ejs',
+	 template: '/blueloop/static/js/loop/create_edit/bbpanel/template/bbTemplate.ejs',
 	 
 	 constructor : function (options) {
 		 _.extend(this, options);

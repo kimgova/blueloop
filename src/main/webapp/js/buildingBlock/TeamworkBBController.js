@@ -6,7 +6,7 @@ function TeamworkBBController(){
 	var listMembers = [];
 	var that = this;
 	that.objectTemplate = {};
-	that.template = "/blueloop-backend/static/js/buildingBlock/view/teamworkBBView.ejs";
+	that.template = "/blueloop/static/js/buildingBlock/view/teamworkBBView.ejs";
 	
 	that.init = function() {
 		that.objectTemplate = {checkTemplate:false,thumbsTeamList:false,memberList:false,multiSelect:false,optionSelect:false,teamSelect:false,
@@ -41,7 +41,7 @@ function TeamworkBBController(){
 	that.getEditPermissions = function(idBB){
 		var jsonObject  	  = new Object();
 		jsonObject.idBB = idBB;		
-		var data = ajaxCall('GET','/blueloop-backend/teamwork/getEditPermissions/', jsonObject, "text/json", "json", false);		
+		var data = ajaxCall('GET','/blueloop/teamwork/getEditPermissions/', jsonObject, "text/json", "json", false);		
 		return data
 	}
 	

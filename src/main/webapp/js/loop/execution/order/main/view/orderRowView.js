@@ -1,6 +1,6 @@
 var orderRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/main/template/orderRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/main/template/orderRowTemplate.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
@@ -72,7 +72,7 @@ var orderRowView = Backbone.View.extend({
             if(e){
                 var dataReturned = $.ajax({
                     type : 'GET',
-                    url : '/blueloop-backend/orderChain/deleteOrder/',
+                    url : '/blueloop/orderChain/deleteOrder/',
                     data : {idOrder:context.data.model.get("id")},
                     contentType : 'application/json; charset=utf-8',
                     dataType : 'json',

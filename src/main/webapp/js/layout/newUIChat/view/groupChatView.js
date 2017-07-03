@@ -1,6 +1,6 @@
 var groupChatView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/layout/newUIChat/template/groupChatViewTemplate.ejs',
+    template: '/blueloop/static/js/layout/newUIChat/template/groupChatViewTemplate.ejs',
     
     initialize: function(){
     	 _.bindAll(this, 'render', 'open','editChat', 'deleteChat', 'subscribeGroupChannel', 'refreshCount', 'refreshName'); 

@@ -1,6 +1,6 @@
 var fcstInst3STableView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3STable.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3STable.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -57,7 +57,7 @@ var fcstInst3STableView = Backbone.View.extend({
 	retrieve3SList: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcst3S/getAll3S/',
+			url: '/blueloop/fcst3S/getAll3S/',
 			data: {id:this.instanceId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
@@ -76,7 +76,7 @@ var fcstInst3STableView = Backbone.View.extend({
 	retrieveFiltered3SList: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcst3S/get3SByRole/',
+			url: '/blueloop/fcst3S/get3SByRole/',
 			data: {id:this.instanceId,roleId:this.roleId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

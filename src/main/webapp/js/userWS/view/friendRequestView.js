@@ -1,6 +1,6 @@
 var friendRequestView = Backbone.View.extend({
 
-    template : '/blueloop-backend/static/js/userWS/template/friendRequestTemplate.ejs',
+    template : '/blueloop/static/js/userWS/template/friendRequestTemplate.ejs',
 
     render : function() {
         this.$el = $(new EJS({url : this.template}).render(this.model.toJSON()));
@@ -20,7 +20,7 @@ var friendRequestView = Backbone.View.extend({
     sendRequest : function(context){
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/user/connetUsers/',
+            url: '/blueloop/user/connetUsers/',
             data: {userConnId : context.data.model.get("id")},
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

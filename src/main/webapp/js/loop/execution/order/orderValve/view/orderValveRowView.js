@@ -1,6 +1,6 @@
 var orderValveRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderValve/template/orderValveRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderValve/template/orderValveRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -42,7 +42,7 @@ var orderValveRowView = Backbone.View.extend({
     save: function(context){
         $.ajax({
             type: 'POST',
-            url: '/blueloop-backend/valve/moveOrderToNextValve/',
+            url: '/blueloop/valve/moveOrderToNextValve/',
             data: JSON.stringify({nextValve:context.model.get("nextValve"),idOrder:context.model.get("id")}),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

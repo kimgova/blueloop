@@ -1,6 +1,6 @@
 var ownerSelectView = Backbone.View.extend({
 	
-    template : '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/ownerSelect.ejs',
+    template : '/blueloop/static/js/admin/userAccounts/deleteUser/template/ownerSelect.ejs',
     
     constructor : function (options) {
 		_.extend(this, options);

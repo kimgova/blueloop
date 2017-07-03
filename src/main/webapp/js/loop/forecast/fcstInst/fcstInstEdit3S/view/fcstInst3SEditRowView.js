@@ -1,6 +1,6 @@
 var fcstInst3SEditRowView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3SEditRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3SEditRow.ejs',
 
 	render: function () {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -23,7 +23,7 @@ var fcstInst3SEditRowView = Backbone.View.extend({
 		var threeData = {idSkuChain:e.data.model.get("idSkuChain"),fcstExport:e.data.$el.find("input").val(),instanceId:e.data.model.get("instanceId"),roleId:e.data.model.get("roleId")};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/fcst3S/edit3sData/',
+			url: '/blueloop/fcst3S/edit3sData/',
 			data: JSON.stringify(threeData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

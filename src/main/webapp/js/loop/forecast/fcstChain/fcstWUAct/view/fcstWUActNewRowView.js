@@ -1,7 +1,7 @@
 var forecastWUActNewRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActTableNewRow.ejs',
-    noDataTemplate: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActNoDataRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActTableNewRow.ejs',
+    noDataTemplate: '/blueloop/static/js/loop/forecast/fcstChain/fcstWUAct/template/fcstWUActNoDataRow.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
@@ -34,7 +34,7 @@ var forecastWUActNewRowView = Backbone.View.extend({
     	var actData = {id:e.data.wuId,name:e.data.$el.find("#nameAct").val(),imgUrl:e.data.$el.find("#imgUrlAct").val()};
     	var dataReturned = $.ajax({
 	        type: 'POST',
-	        url: '/blueloop-backend/fcstWUnit/saveWUActivity/',
+	        url: '/blueloop/fcstWUnit/saveWUActivity/',
 	        data: JSON.stringify(actData),
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',

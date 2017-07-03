@@ -1,6 +1,6 @@
 var dropDownChatView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/layout/chat/chatWindow/template/dropDownChat.ejs',
+    template: '/blueloop/static/js/layout/chat/chatWindow/template/dropDownChat.ejs',
     
     constructor : function (options) {
 		_.extend(this, options);

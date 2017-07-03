@@ -1,6 +1,6 @@
 var forecastInstLinearEditRowView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearEditRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearEditRow.ejs',
 
 	render: function () {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -28,7 +28,7 @@ var forecastInstLinearEditRowView = Backbone.View.extend({
 		var linearData = {instanceId:e.data.model.get("instanceId"),planningId:e.data.model.get("idForecastPlanning"),negociation:e.data.$el.find("#negociation").val()};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/fcstLinearPlan/editLinearPlanning/',
+			url: '/blueloop/fcstLinearPlan/editLinearPlanning/',
 			data: JSON.stringify(linearData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

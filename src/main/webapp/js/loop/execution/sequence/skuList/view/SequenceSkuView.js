@@ -1,6 +1,6 @@
 var SequenceSkuView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/loop/execution/sequence/skuList/template/SequenceSkuTemplate.ejs',
+	template: '/blueloop/static/js/loop/execution/sequence/skuList/template/SequenceSkuTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -85,7 +85,7 @@ var SequenceSkuView = Backbone.View.extend({
     retrieveSkuList: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/orderSequence/getCatAndSkusBySequence/',
+			url: '/blueloop/orderSequence/getCatAndSkusBySequence/',
 			data: {sequenceId:this.sequenceId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
@@ -145,7 +145,7 @@ var SequenceSkuView = Backbone.View.extend({
     	var skusData = {sequenceId:sequenceId,skuList:skuList}
     	var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/orderSequence/saveSequenceSkus/',
+			url: '/blueloop/orderSequence/saveSequenceSkus/',
 			data: JSON.stringify(skusData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

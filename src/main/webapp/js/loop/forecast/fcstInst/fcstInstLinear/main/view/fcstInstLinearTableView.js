@@ -1,6 +1,6 @@
 var forecastInstLinearTableView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearTable.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearTable.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);
@@ -49,7 +49,7 @@ var forecastInstLinearTableView = Backbone.View.extend({
 	retrieveLinearCollection: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcstLinearPlan/getLinearPlanning/',
+			url: '/blueloop/fcstLinearPlan/getLinearPlanning/',
 			data: {instanceId:this.instanceId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

@@ -7,7 +7,7 @@ function InOutActivitiesController() {
 	var nEditingInput  = [];
 	var nEditingOutput = [];
 	that.objectTemplate = {};
-	that.template = "/blueloop-backend/static/js/buildingBlock/view/inOutActivitiesView.ejs";
+	that.template = "/blueloop/static/js/buildingBlock/view/inOutActivitiesView.ejs";
 	that.staticImgUrl = "";
 	
 	that.init = function() {
@@ -82,7 +82,7 @@ function InOutActivitiesController() {
 	function getActivityByBB(idBB){
 		var jsonObject = new Object();
 		jsonObject.idBB = idBB;
-		var data = ajaxCall('GET','/blueloop-backend/activityBuildingBlock/getAllActivitiesByBB/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/activityBuildingBlock/getAllActivitiesByBB/', jsonObject, "text/json", "json", false);
 		var listActivities = data.listActivities;
 		that.staticImgUrl = data.staticImgUrl;
 		var listInputActivities  = [];
@@ -294,7 +294,7 @@ function InOutActivitiesController() {
 			dataInputOut.action = new EJS({url:that.template}).render(cloneDataForm(["btnDelete","btnEdit"],{id:"deleteOutputActi",idBtn:'editOutputActi'}));
 		}
 		var data = {activity:dataInputOut};
-		var dataAjax = ajaxCall('POST', '/blueloop-backend/activityBuildingBlock/saveActivityByBB/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+		var dataAjax = ajaxCall('POST', '/blueloop/activityBuildingBlock/saveActivityByBB/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
 		dataInputOut.id = dataAjax.id;
 		dataInputOut.idBuildingB = dataAjax.buildingBlock.id;
 		dataInputOut.filePath	=  new EJS({url:that.template}).render(cloneDataForm(["img"],{fileName:dataAjax.fileName,
@@ -318,7 +318,7 @@ function InOutActivitiesController() {
 				var jsonObject = new Object();
 				jsonObject.idActivity = aData.id;
 				jsonObject.idBB = idSelectedBB;
-				var dataAjax = ajaxCall('GET','/blueloop-backend/activityBuildingBlock/deleteActivityByBB/',jsonObject, "text/json", "json", false);
+				var dataAjax = ajaxCall('GET','/blueloop/activityBuildingBlock/deleteActivityByBB/',jsonObject, "text/json", "json", false);
 				if (dataAjax.message != undefined) {
 					toastr.error(json.activity.notDeleted + " " + dataAjax.message);
 				} else {

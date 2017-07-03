@@ -1,6 +1,6 @@
 var forecastInstLinearRoleFilterView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearRoleFilter.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinearRoleFilter.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

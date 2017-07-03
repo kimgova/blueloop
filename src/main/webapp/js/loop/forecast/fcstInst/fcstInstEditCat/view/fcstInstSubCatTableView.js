@@ -1,6 +1,6 @@
 var forecastInstSubCatTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditCat/template/fcstInstSubTable.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditCat/template/fcstInstSubTable.ejs',
     
     constructor : function (options) {
 		_.extend(this, options);

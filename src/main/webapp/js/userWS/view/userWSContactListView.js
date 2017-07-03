@@ -1,6 +1,6 @@
 var userWSContactListView = Backbone.View.extend({
 	
-    template: '/blueloop-backend/static/js/userWS/template/userWSContactListViewTemplate.ejs',
+    template: '/blueloop/static/js/userWS/template/userWSContactListViewTemplate.ejs',
    
     initialize: function(userId){
     	_.bindAll(this, 'render', 'arrowRight', 'arrowLeft'); 
@@ -46,7 +46,7 @@ var userWSContactListView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/user/getAllContacts/',
+	        url: '/blueloop/user/getAllContacts/',
 	        data: jsonObject,
 	        contentType: 'text/json; charset=utf-8',
 	        dataType: 'json',

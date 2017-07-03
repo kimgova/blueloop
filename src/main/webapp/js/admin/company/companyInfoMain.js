@@ -12,7 +12,7 @@ var companyInfoViewMain = Backbone.View.extend({
     getUserInfo : function(){
         var dataReturned = $.ajax({
             type: 'GET',
-            url: '/blueloop-backend/user/getUserInfo/',
+            url: '/blueloop/user/getUserInfo/',
             data: new Object(),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -64,14 +64,14 @@ var companyInfoViewMain = Backbone.View.extend({
     changePic: function(e){
         $("#formUpload").ajaxSubmit({
             async: true,
-            url: "/blueloop-backend/user/uploadFile", 
+            url: "/blueloop/user/uploadFile", 
             beforeSubmit: function() { 
                 $("body").addClass("loading");
             },
             success: function (data) {
                 $("body").removeClass("loading");
                 $('.ws-info-pic').attr("src", data.photoUrlUpload + "?" + new Date().getTime());
-                $.ajax({type: 'GET', data: {fileName:data.filename}, url: '/blueloop-backend/user/deleteImage/', dataType:"json", success: function(data, textStatus){ } });
+                $.ajax({type: 'GET', data: {fileName:data.filename}, url: '/blueloop/user/deleteImage/', dataType:"json", success: function(data, textStatus){ } });
                 toastr.success(data.message);   
             },
             error: function(httpRequest, textStatus, errorThrown) { 

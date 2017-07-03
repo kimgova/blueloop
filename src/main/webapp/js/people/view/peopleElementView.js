@@ -1,6 +1,6 @@
 var peopleElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/people/template/peopleElementViewTemplate.ejs',
+    template: '/blueloop/static/js/people/template/peopleElementViewTemplate.ejs',
     
     initialize: function(){
     	 _.bindAll(this, 'render', 'clicked','clickedBtn2', 'showOptions', 'hideOptions', 'changeColor'); 
@@ -125,7 +125,7 @@ var peopleElementView = Backbone.View.extend({
     		jsonObject.id = this.model.attributes.id;
     		var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/user/refuseRequest/',
+		        url: '/blueloop/user/refuseRequest/',
 		        data: jsonObject,
 		        contentType: 'text/json',
 		        dataType: 'json',
@@ -134,7 +134,7 @@ var peopleElementView = Backbone.View.extend({
 		        	data =  data;
 					toastr.success("Connection Denied");
 					that.$el.remove();
-					setTimeout(function(){window.location.replace("/blueloop-backend/search/people")}, 500);
+					setTimeout(function(){window.location.replace("/blueloop/search/people")}, 500);
 		        },
 		    	error: function(httpRequest, textStatus, errorThrown) { 
 		     	   console.log("status=" + textStatus + " ,error=" + errorThrown);
@@ -148,7 +148,7 @@ var peopleElementView = Backbone.View.extend({
     		jsonObject.userContactId = this.model.attributes.id;
     		var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/user/confirmConnectionRequest/',
+		        url: '/blueloop/user/confirmConnectionRequest/',
 		        data: jsonObject,
 		        contentType: 'text/json',
 		        dataType: 'json',
@@ -158,7 +158,7 @@ var peopleElementView = Backbone.View.extend({
 					toastr.success("Connection Request Accepted");
 					that.sendApprovedConnectionNotification(data);
 					that.$el.remove();
-					setTimeout(function(){window.location.replace("/blueloop-backend/search/people")}, 500);
+					setTimeout(function(){window.location.replace("/blueloop/search/people")}, 500);
 		        },
 		    	error: function(httpRequest, textStatus, errorThrown) { 
 		     	   console.log("status=" + textStatus + " ,error=" + errorThrown);
@@ -180,7 +180,7 @@ var peopleElementView = Backbone.View.extend({
 		if(connStatus == false && requestStatus == false){
 			var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/user/connetUsers/',
+		        url: '/blueloop/user/connetUsers/',
 		        data: jsonObject,
 		        contentType: 'application/json; charset=utf-8',
 		        dataType: 'json',
@@ -188,7 +188,7 @@ var peopleElementView = Backbone.View.extend({
 		        success: function(data, textStatus) {
 		        	data =  data;
 		        	toastr.success("Connection Request Sent");
-		        	setTimeout(function(){window.location.replace("/blueloop-backend/search/people")}, 500);
+		        	setTimeout(function(){window.location.replace("/blueloop/search/people")}, 500);
 		        },
 		    	error: function(httpRequest, textStatus, errorThrown) { 
 		     	   console.log("status=" + textStatus + " ,error=" + errorThrown);
@@ -199,7 +199,7 @@ var peopleElementView = Backbone.View.extend({
 		}else if(connStatus == false && requestStatus == true){
 			var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/user/cancelUserRequest/',
+		        url: '/blueloop/user/cancelUserRequest/',
 		        data: jsonObject,
 		        contentType: 'application/json; charset=utf-8',
 		        dataType: 'json',
@@ -214,12 +214,12 @@ var peopleElementView = Backbone.View.extend({
 		     	}
 		    });
 			this.sendCancelConnectionNotification(dataReturned.responseJSON);
-			setTimeout(function(){window.location.replace("/blueloop-backend/search/people")}, 500);
+			setTimeout(function(){window.location.replace("/blueloop/search/people")}, 500);
 			
 		}else if(connStatus == true){
 			var dataReturned = $.ajax({
 		        type: 'GET',
-		        url: '/blueloop-backend/user/disConnetUsers/',
+		        url: '/blueloop/user/disConnetUsers/',
 		        data: jsonObject,
 		        contentType: 'application/json; charset=utf-8',
 		        dataType: 'json',
@@ -227,7 +227,7 @@ var peopleElementView = Backbone.View.extend({
 		        success: function(data, textStatus) {
 		        	data =  data;
 					toastr.success("Connection Removed");
-					setTimeout(function(){window.location.replace("/blueloop-backend/search/people")}, 500);
+					setTimeout(function(){window.location.replace("/blueloop/search/people")}, 500);
 		        },
 		    	error: function(httpRequest, textStatus, errorThrown) { 
 		     	   console.log("status=" + textStatus + " ,error=" + errorThrown);

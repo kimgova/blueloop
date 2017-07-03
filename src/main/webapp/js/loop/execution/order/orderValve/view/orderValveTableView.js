@@ -1,6 +1,6 @@
 var orderValveTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderValve/template/orderValveTableTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderValve/template/orderValveTableTemplate.ejs',
        
     constructor : function (options) {
         _.extend(this, options);
@@ -16,7 +16,7 @@ var orderValveTableView = Backbone.View.extend({
     
     getOrders: function() {
         this.collection = new orderValveCollection([]);
-        var result = ajaxCall('GET', '/blueloop-backend/valve/getOrdersInValve/', {idFormLeft:this.idFormLeft,idValve:this.idValve,idFormRight:this.idFormRight}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/valve/getOrdersInValve/', {idFormLeft:this.idFormLeft,idValve:this.idValve,idFormRight:this.idFormRight}, "text/json", "json", false);
         _.each(result.listOrders,function(item,i){
             var disabled = "";
             if(!item.readyToProceed){

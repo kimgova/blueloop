@@ -1,7 +1,7 @@
 var forecastEquivRowView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquivRow.ejs',
-	editableInputTemplate: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquivEditRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquivRow.ejs',
+	editableInputTemplate: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditEquiv/template/fcstEquivEditRow.ejs',
 
 	render: function () {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));
@@ -63,7 +63,7 @@ var forecastEquivRowView = Backbone.View.extend({
 		var equivData = {id:idEquivalence,factor:valueEquivalence};
 		var dataReturned = $.ajax({
 			type: 'POST',
-			url: '/blueloop-backend/fcstSku/editForecastSKUEquiv/',
+			url: '/blueloop/fcstSku/editForecastSKUEquiv/',
 			data: JSON.stringify(equivData),
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

@@ -1,6 +1,6 @@
 var bbConnectionsPermissionsDropdownView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/workspace/connections/template/bbConnectionsPermissionsDropdownTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/workspace/connections/template/bbConnectionsPermissionsDropdownTemplate.ejs',
 
     initialize: function (idBB, idConnection){
     	_.bindAll(this, 'savePermissions'); 
@@ -30,7 +30,7 @@ var bbConnectionsPermissionsDropdownView = Backbone.View.extend({
 		
 		var dataReturned = $.ajax({
 	        type: 'GET',
-	        url: '/blueloop-backend/buildingBlock/getPermissions/',
+	        url: '/blueloop/buildingBlock/getPermissions/',
 	        data: jsonObject,
 	        contentType: 'application/json; charset=utf-8',
 	        dataType: 'json',
@@ -76,7 +76,7 @@ var bbConnectionsPermissionsDropdownView = Backbone.View.extend({
 			}
     	});
 		var data = {listPermissions:listSave, idConnection:this.idConnection, idBB:this.idBB };
-		var dataAjax = ajaxCall('POST', '/blueloop-backend/buildingBlock/savePermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
+		var dataAjax = ajaxCall('POST', '/blueloop/buildingBlock/savePermissions/', JSON.stringify(data), 'application/json; charset=utf-8', "json", false);
 		toastr.success(json.bb.permissionsSaved);
 	}
     

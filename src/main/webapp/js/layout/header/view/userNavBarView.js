@@ -1,6 +1,6 @@
 var userNavBarView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/layout/header/template/userNavBarTemplate.ejs',
+	template: '/blueloop/static/js/layout/header/template/userNavBarTemplate.ejs',
 
     initialize: function(){
         _.bindAll(this, 'render', 'openNotifications', 'closeNotifications', 'openChat'); 

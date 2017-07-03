@@ -1,6 +1,6 @@
 var chatCategoryView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/layout/newUIChat/template/chatCategoryViewTemplate.ejs',
+    template: '/blueloop/static/js/layout/newUIChat/template/chatCategoryViewTemplate.ejs',
     
     initialize: function(collection, type){
     	this.chatsCollection = collection;

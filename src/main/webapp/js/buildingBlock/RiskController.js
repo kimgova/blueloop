@@ -4,9 +4,9 @@ function RiskController() {
     var nEditingRisk = [];    
     var idSelectedBB;
     that.objectTemplate = {};
-    that.template = "/blueloop-backend/static/js/buildingBlock/view/riskView.ejs";
+    that.template = "/blueloop/static/js/buildingBlock/view/riskView.ejs";
     that.staticImgUrl = "";
-    that.$imgForm = $(new EJS({url: "/blueloop-backend/static/js/buildingBlock/view/BBRiskImgGridView.ejs"}).render({}));
+    that.$imgForm = $(new EJS({url: "/blueloop/static/js/buildingBlock/view/BBRiskImgGridView.ejs"}).render({}));
     
     that.init = function() {
         that.objectTemplate = {inputRiskName:false,inputSeason:false,inputProbability:false,inputResilience:false,btnsEdit:false,
@@ -58,7 +58,7 @@ function RiskController() {
     function getRiskByBB(idBB){
         var jsonObject = new Object();
         jsonObject.idBB = idBB;
-        var data = ajaxCall('GET','/blueloop-backend/bbRisk/getAllRisksByBB/', jsonObject, "text/json", "json", false);
+        var data = ajaxCall('GET','/blueloop/bbRisk/getAllRisksByBB/', jsonObject, "text/json", "json", false);
     
         var listRisks = data.listRisks;
         that.staticImgUrl = data.staticImgUrl;
@@ -254,7 +254,7 @@ function RiskController() {
         });
         dataRisk.seasonText = seasonText;
         
-        var result = ajaxCall('POST', '/blueloop-backend/bbRisk/saveRiskByBB/', JSON.stringify({risk:dataRisk}), 'application/json; charset=utf-8', "json", false);
+        var result = ajaxCall('POST', '/blueloop/bbRisk/saveRiskByBB/', JSON.stringify({risk:dataRisk}), 'application/json; charset=utf-8', "json", false);
         var risk   = result.BbRisk;
         dataRisk.id = risk.id;
         dataRisk.idBuildingB = risk.bb.id;
@@ -298,7 +298,7 @@ function RiskController() {
                 var jsonObject    = new Object();
                 jsonObject.idRisk = aData.id;
                 jsonObject.idBB   = idSelectedBB;
-                var dataAjax      = ajaxCall('GET','/blueloop-backend/bbRisk/deleteRiskByBB/', jsonObject, "text/json", "json", false);
+                var dataAjax      = ajaxCall('GET','/blueloop/bbRisk/deleteRiskByBB/', jsonObject, "text/json", "json", false);
                 if(dataAjax.message != undefined){
                     toastr.error(json.risk.noDeleed+" "+dataAjax.message);
                 }else{

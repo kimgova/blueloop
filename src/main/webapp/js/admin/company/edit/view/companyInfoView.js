@@ -1,6 +1,6 @@
 var companyInfoView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/company/edit/template/companyInfoTemplate.ejs',
+    template: '/blueloop/static/js/admin/company/edit/template/companyInfoTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -21,7 +21,7 @@ var companyInfoView = Backbone.View.extend({
     },
     
     getCountries: function(){
-        var data = ajaxCall('GET','/blueloop-backend/city/getLocationInfo/', {}, "text/json", "json", false);
+        var data = ajaxCall('GET','/blueloop/city/getLocationInfo/', {}, "text/json", "json", false);
         this.countries = data.countries;
         this.cyties    = data.cities;
         this.languageList = data.languageList;
@@ -44,7 +44,7 @@ var companyInfoView = Backbone.View.extend({
         userData.id = e.data.model.id;
         var data = $.ajax({
             type: 'POST',
-            url: '/blueloop-backend/administrator/updateInfo/',
+            url: '/blueloop/administrator/updateInfo/',
             data: JSON.stringify(userData),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -82,7 +82,7 @@ var companyInfoView = Backbone.View.extend({
         var that = this;
         jQuery.ajax({
             type : 'POST',
-            url : '/blueloop-backend/administrator/getSelectTimezone',
+            url : '/blueloop/administrator/getSelectTimezone',
             success : function(data, textStatus) {
                 that.$el.find(".timezone").html(data);
             },
@@ -98,7 +98,7 @@ var companyInfoView = Backbone.View.extend({
         jQuery.ajax({
             type : 'GET',
             data:{id:id},
-            url : '/blueloop-backend/city/getCities',
+            url : '/blueloop/city/getCities',
             success : function(data, textStatus) {
                 that.data.$el.find(".city").html(data);
             },

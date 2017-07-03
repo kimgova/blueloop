@@ -4,7 +4,7 @@ var forecastModelRowView = Backbone.View.extend({
 		_.extend(this, options);
 	},
 	
-    template: '/blueloop-backend/static/js/loop/forecast/fcstChain/fcstModel/template/fcstModelTableRow.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstChain/fcstModel/template/fcstModelTableRow.ejs',
         
     render: function () {
     	this.model.set("forecastPermission", this.forecastPermission);
@@ -22,7 +22,7 @@ var forecastModelRowView = Backbone.View.extend({
         	var forecastData = {chainId:localStorage.getItem("loopId"),modelId:e.data.model.id,fcstName:e.data.$el.find("#nameFcst").val()};
         	var dataReturned = $.ajax({
     	        type: 'POST',
-    	        url: '/blueloop-backend/forecast/saveForecast/',
+    	        url: '/blueloop/forecast/saveForecast/',
     	        data: JSON.stringify(forecastData),
     	        contentType: 'application/json; charset=utf-8',
     	        dataType: 'json',

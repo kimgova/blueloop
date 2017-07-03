@@ -1,6 +1,6 @@
 var mapModalEditView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/inventory/map/template/mapModalEdit.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/inventory/map/template/mapModalEdit.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -30,7 +30,7 @@ var mapModalEditView = Backbone.View.extend({
     
     saveMap: function(e){
         var data = $(e.data.$el).find("form").serializeArray();
-        var result = ajaxCall('POST','/blueloop-backend/loadFile/updateFileMapping/', JSON.stringify(data), "text/json", "json", false);
+        var result = ajaxCall('POST','/blueloop/loadFile/updateFileMapping/', JSON.stringify(data), "text/json", "json", false);
         if(result.text == "success"){
         	toastr.success(json.blueMonitor.succesSave);
         }else{

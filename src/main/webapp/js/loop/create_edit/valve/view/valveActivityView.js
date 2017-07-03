@@ -1,6 +1,6 @@
 var valveActivityView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/create_edit/valve/template/valveActivityRow.ejs',
+    template: '/blueloop/static/js/loop/create_edit/valve/template/valveActivityRow.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

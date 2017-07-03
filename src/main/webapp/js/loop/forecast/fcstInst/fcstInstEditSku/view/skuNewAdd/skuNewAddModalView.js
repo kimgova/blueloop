@@ -1,5 +1,5 @@
 var skuNewAddModalView = Backbone.View.extend({
-	template : '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewAdd/skuNewAddModal.ejs',
+	template : '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewAdd/skuNewAddModal.ejs',
 	
 	skuCollection: null,
 	promotion:null,
@@ -51,7 +51,7 @@ var skuNewAddModalView = Backbone.View.extend({
 		var jsonObj = {id:id,fcInstanceId:fcInstanceId};
 		var dataReturned = $.ajax({
 			type : 'POST',
-			url : '/blueloop-backend/fcstSku/consultSku/',
+			url : '/blueloop/fcstSku/consultSku/',
 			data : JSON.stringify(jsonObj),
 			contentType : 'application/json; charset=utf-8',
 			dataType : 'json',
@@ -71,7 +71,7 @@ var skuNewAddModalView = Backbone.View.extend({
 		var jsonObj = {fcInstanceId:fcInstanceId};
 		var dataReturned = $.ajax({
 			type : 'POST',
-			url : '/blueloop-backend/fcstSku/getDefaultSkuUnit/',
+			url : '/blueloop/fcstSku/getDefaultSkuUnit/',
 			data : JSON.stringify(jsonObj),
 			contentType : 'application/json; charset=utf-8',
 			dataType : 'json',
@@ -161,7 +161,7 @@ var skuNewAddModalView = Backbone.View.extend({
 	saveSku: function(jsonObj) {
 		var dataReturned = $.ajax({
 			type : 'POST',
-			url : '/blueloop-backend/fcstSku/saveNewSku/',
+			url : '/blueloop/fcstSku/saveNewSku/',
 			data : JSON.stringify(jsonObj),
 			contentType : 'application/json; charset=utf-8',
 			dataType : 'json',

@@ -1,6 +1,6 @@
 var bbConnectionElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/workspace/connections/newConnectionModal/template/bbConnectionElementViewTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/workspace/connections/newConnectionModal/template/bbConnectionElementViewTemplate.ejs',
     
     
     initialize: function(){

@@ -4,7 +4,7 @@ var collaborativeRowView = Backbone.View.extend({
 		_.extend(this, options);
 	},
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtRow.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabAdjmtRow.ejs',
 		
 	render: function () {
 		this.$el = $(new EJS({url: this.template }).render(this.model.toJSON()));

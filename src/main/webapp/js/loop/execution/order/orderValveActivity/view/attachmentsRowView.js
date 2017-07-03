@@ -1,6 +1,6 @@
 var attachmentsRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderValveActivity/template/attachmentsRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderValveActivity/template/attachmentsRowTemplate.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -21,7 +21,7 @@ var attachmentsRowView = Backbone.View.extend({
     downloadAttachment: function(context) {
         var actData = {id:context.data.model.get("id"),type:context.data.tableView.model.get("type")};
         
-        $.fileDownload("/blueloop-backend/valve/downloadAttachment/?id="+actData.id+"&type="+actData.type, {
+        $.fileDownload("/blueloop/valve/downloadAttachment/?id="+actData.id+"&type="+actData.type, {
 		    successCallback: function (url) {
 		        console.log('Download :' + url);
 		    },
@@ -32,7 +32,7 @@ var attachmentsRowView = Backbone.View.extend({
         
 //        var dataReturned = $.ajax({
 //            type: 'POST',
-//            url: '/blueloop-backend/valve/downloadAttachment/',
+//            url: '/blueloop/valve/downloadAttachment/',
 //            data: JSON.stringify(actData),
 //            contentType: 'application/json; charset=utf-8',
 //            dataType: 'json',
@@ -71,7 +71,7 @@ var attachmentsRowView = Backbone.View.extend({
 	                var actData = {id:context.data.model.get("id"),type:context.data.tableView.model.get("type")};
 	                var dataReturned = $.ajax({
 	                    type: 'POST',
-	                    url: '/blueloop-backend/valve/deleteAttachment/',
+	                    url: '/blueloop/valve/deleteAttachment/',
 	                    data: JSON.stringify(actData),
 	                    contentType: 'application/json; charset=utf-8',
 	                    dataType: 'json',

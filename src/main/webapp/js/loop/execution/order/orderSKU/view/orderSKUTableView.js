@@ -1,6 +1,6 @@
 var orderSKUTableView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderSKU/template/orderSKUTableTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderSKU/template/orderSKUTableTemplate.ejs',
        
     constructor : function (options) {
         _.extend(this, options);
@@ -16,7 +16,7 @@ var orderSKUTableView = Backbone.View.extend({
     
     getSkus: function() {
         this.collection = new orderSKUCollection([]);
-        var result = ajaxCall('GET', '/blueloop-backend/orderChain/getSkusByOrder/', {orderId:this.model.id}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/orderChain/getSkusByOrder/', {orderId:this.model.id}, "text/json", "json", false);
         _.each(result,function(item,i){
             var sku = new orderSKUModel({
                 id:item.id,

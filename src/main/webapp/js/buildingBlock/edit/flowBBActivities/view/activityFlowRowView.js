@@ -1,6 +1,6 @@
 var activityFlowRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/edit/flowBBActivities/template/row_template.ejs',
+    template: '/blueloop/static/js/buildingBlock/edit/flowBBActivities/template/row_template.ejs',
         
     constructor : function (options) {
         _.extend(this, options);
@@ -36,7 +36,7 @@ var activityFlowRowView = Backbone.View.extend({
                         request.setRequestHeader("authorizationToken", authorizationToken);
                         request.setRequestHeader("authorizationUri", authorizationUri);
                     },
-                    url: '/blueloop-backend/activityBuildingBlock/deleteActivityFlowBB/',
+                    url: '/blueloop/activityBuildingBlock/deleteActivityFlowBB/',
                     data: JSON.stringify({id:that.data.model.id}),
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',

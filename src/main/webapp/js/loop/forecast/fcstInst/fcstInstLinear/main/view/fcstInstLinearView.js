@@ -1,6 +1,6 @@
 var forecastInstLinearView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinear.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstLinear/main/template/fcstInstLinear.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

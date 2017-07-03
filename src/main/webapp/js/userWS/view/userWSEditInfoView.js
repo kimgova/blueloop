@@ -1,6 +1,6 @@
 var userWSEditInfoView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/userWS/template/userWSEditInfoTemplate.ejs',
+    template: '/blueloop/static/js/userWS/template/userWSEditInfoTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -14,7 +14,7 @@ var userWSEditInfoView = Backbone.View.extend({
     },
     
     getCountries: function(){
-    	var data = ajaxCall('GET','/blueloop-backend/city/getCountries/', {}, "text/json", "json", false);
+    	var data = ajaxCall('GET','/blueloop/city/getCountries/', {}, "text/json", "json", false);
     	this.countries = data.countries;
     },
     
@@ -26,7 +26,7 @@ var userWSEditInfoView = Backbone.View.extend({
     saveUserInfo: function(e){
     	var userData = $(e.data.$el).find("form").serializeObject();
     	userData.id = e.data.model.id;
-    	var data = ajaxCall('GET','/blueloop-backend/user/updateInfo/', userData, "text/json", "json", false);
+    	var data = ajaxCall('GET','/blueloop/user/updateInfo/', userData, "text/json", "json", false);
     	e.data.containerView.updateUserInfo();
     	toastr.success(json.profile.personalInfoSaved);
     }

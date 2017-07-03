@@ -19,7 +19,7 @@ function AltRouteController() {
 
     function setEditMode(){
     	var data = {routes:window.DIAGRAM_FACADE.altRoutController.getAlternativeRoutes(),modalTitle:json.route.selectAlternative,defaultRoute:json.route.select,editBtn:json.button.accept,cancelBtn:json.button.cancel}
-    	var $template = $(new EJS({url: "/blueloop-backend/static/js/loop/create_edit/view/EditAltRouteView.ejs"}).render(data));
+    	var $template = $(new EJS({url: "/blueloop/static/js/loop/create_edit/view/EditAltRouteView.ejs"}).render(data));
     	$template.modal("show");
     	$("#editAltRoute").click(onEditRouteClick);
     	$template.delegate("#editAltRoute","click", function(e) {
@@ -29,7 +29,7 @@ function AltRouteController() {
 
     function openNewRouteDialog(){
     	var data = {modalTitle:json.route.enterName,routeName:json.route.name,saveBtn:json.button.accept,cancelBtn:json.button.cancel}
-    	var $template = $(new EJS({url: "/blueloop-backend/static/js/loop/create_edit/view/CreateAltRouteView.ejs"}).render(data));
+    	var $template = $(new EJS({url: "/blueloop/static/js/loop/create_edit/view/CreateAltRouteView.ejs"}).render(data));
     	$template.modal("show");
     	$template.delegate("#saveRouteName","click", function(e) {
     		onSaveRouteClick(e);

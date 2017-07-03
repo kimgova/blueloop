@@ -64,7 +64,7 @@ function modifyConnStatus(name, userId, status, thisbtn){
 	
 	switch(status) {
     case "nonConnStatus":
-    	var data = ajaxCall('GET', '/blueloop-backend/user/connetUsers/', jsonObject, "text/json", "json", false);
+    	var data = ajaxCall('GET', '/blueloop/user/connetUsers/', jsonObject, "text/json", "json", false);
     	$(thisbtn).attr("data-original-title", "Connection request sent Click to cancel the request");
     	$(thisbtn).find("i").attr("class", "fa fa-chain");
     	$(thisbtn).find("i").prop("style").color = "#71B9E7";
@@ -75,7 +75,7 @@ function modifyConnStatus(name, userId, status, thisbtn){
     	sendNotification(data);
         break;
     case "connStatus":
-    	var data = ajaxCall('GET', '/blueloop-backend/user/disConnetUsers/', jsonObject, "text/json", "json", false);
+    	var data = ajaxCall('GET', '/blueloop/user/disConnetUsers/', jsonObject, "text/json", "json", false);
     	$(thisbtn).attr("data-original-title", "Send contact request to this user");
     	$(thisbtn).find("i").attr("class", "fa fa-chain-broken");
 		$(thisbtn).find("i").prop("style").color = "#ff6c60";
@@ -85,7 +85,7 @@ function modifyConnStatus(name, userId, status, thisbtn){
     	dialogConfirm('Connection successfully removed', '../images/btn/delete_user.png', name);
         break;
     case "conRequest":
-    	var data = ajaxCall('GET', '/blueloop-backend/user/cancelUserRequest/', jsonObject, "text/json", "json", false);
+    	var data = ajaxCall('GET', '/blueloop/user/cancelUserRequest/', jsonObject, "text/json", "json", false);
     	$(thisbtn).attr("data-original-title", "Send contact request to this user");
     	$(thisbtn).find("i").attr("class", "fa fa-chain-broken");
 		$(thisbtn).find("i").prop("style").color = "#ff6c60";

@@ -9,7 +9,7 @@ function BBTypeController() {
 	that.nEditingType  = [];
 	that.listBBTypes = [];
 	that.objectTemplate = {};
-	that.template = "/blueloop-backend/static/js/buildingBlock/view/BBTypesTableView.ejs";
+	that.template = "/blueloop/static/js/buildingBlock/view/BBTypesTableView.ejs";
 	
 	that.init = function() {
 		that.objectTemplate = {tableBBTypes:false,img:false,editBBType:false,deleteBBType:false,nameInput:false,descriptionInput:false,
@@ -64,7 +64,7 @@ function BBTypeController() {
 	that.getTypesBB = function(bbCategory){
 		var jsonObject = new Object();
 		jsonObject.category = bbCategory;
-		var data = ajaxCall('GET','/blueloop-backend/buildingBlockType/getAllBBTypeByCategory/', jsonObject, "text/json", "json", false);
+		var data = ajaxCall('GET','/blueloop/buildingBlockType/getAllBBTypeByCategory/', jsonObject, "text/json", "json", false);
 		that.listBBTypes = [];
 		$.each(data.listBBType, function(key,bb){
 			listBBTypeAdd(bb.id,bb.name,bb.description,bb.fileName,data.filePath,bb.owner.id);
@@ -195,7 +195,7 @@ function BBTypeController() {
 		dataBBType.fileName = aData.fileName;
 
 		if(that.validate(dataBBType.name,dataBBType.description,dataBBType.fileName)){
-			var data = ajaxCall('GET', '/blueloop-backend/buildingBlockType/saveBBType/', dataBBType, 'application/json; charset=utf-8', "json", false);
+			var data = ajaxCall('GET', '/blueloop/buildingBlockType/saveBBType/', dataBBType, 'application/json; charset=utf-8', "json", false);
 			if(data){
 				dataBBType.id 		 	= data.bbType.id;
 				dataBBType.name 		= data.bbType.name;
@@ -232,7 +232,7 @@ function BBTypeController() {
 			if (e) {
 				var nRow            = $(context).parents('tr')[0];   
 				var aData           = that.typesTable.row(nRow).data();
-				var dataAjax = ajaxCall('GET','/blueloop-backend/buildingBlockType/deleteBBType/', {idBBType:aData.id}, "text/json", "json", false);
+				var dataAjax = ajaxCall('GET','/blueloop/buildingBlockType/deleteBBType/', {idBBType:aData.id}, "text/json", "json", false);
 				that.typesTable.rows(nRow).remove().draw();
 				toastr.success(json.bbType.removed);
 				$('#bbSelect').trigger("chosen:updated");

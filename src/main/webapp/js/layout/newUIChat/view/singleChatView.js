@@ -1,6 +1,6 @@
 var singleChatView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/layout/newUIChat/template/singleChatViewTemplate.ejs',
+    template: '/blueloop/static/js/layout/newUIChat/template/singleChatViewTemplate.ejs',
     
     initialize: function(){
     	 _.bindAll(this, 'render', 'open', 'changeStatusColor', 'subscribeSingleChatChannel', 'refreshCount'); 

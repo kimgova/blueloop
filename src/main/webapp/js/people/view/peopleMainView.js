@@ -1,6 +1,6 @@
 var peopleMainView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/people/template/peopleMainViewTemplate.ejs',
+	template: '/blueloop/static/js/people/template/peopleMainViewTemplate.ejs',
 	
     initialize: function (){
 

@@ -1,6 +1,6 @@
 var orderCBBModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderCBB/template/orderCBBModalTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderCBB/template/orderCBBModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

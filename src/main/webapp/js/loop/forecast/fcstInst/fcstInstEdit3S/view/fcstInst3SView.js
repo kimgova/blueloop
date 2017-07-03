@@ -1,6 +1,6 @@
 var fcstInst3SView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3S.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEdit3S/template/fcstInst3S.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

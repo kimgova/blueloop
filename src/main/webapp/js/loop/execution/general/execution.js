@@ -11,7 +11,7 @@ $( document ).ready( function(){
 	$('.qq-upload-button').attr("class","btn btn-primary");
 	$('.qq-upload-drop-area').remove(); 	
 	$("#btnFileSystemChooser .qq-uploader > div").addClass("dropbox-dropin-btn btn");
-	$("#btnFileSystemChooser .qq-uploader > div").append(new EJS({url: '/blueloop-backend/static/js/ejsTemplates/btnsUploaders.ejs'}).render({type:"faUpload"}));
+	$("#btnFileSystemChooser .qq-uploader > div").append(new EJS({url: '/blueloop/static/js/ejsTemplates/btnsUploaders.ejs'}).render({type:"faUpload"}));
 
 
     //Data preparation to load this module
@@ -43,7 +43,7 @@ function createFormBB(){
 	jsonObjectChain.idChain = $("#idChain").text();	
 	$.ajax({
         type: 'GET',
-        url: '/blueloop-backend/chainBuildingBlock/getChainBuildingBlocks/',
+        url: '/blueloop/chainBuildingBlock/getChainBuildingBlocks/',
         data: jsonObjectChain,
         contentType: "text/json",
         dataType: "json",

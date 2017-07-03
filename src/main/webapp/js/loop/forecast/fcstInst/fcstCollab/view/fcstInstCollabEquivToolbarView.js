@@ -1,6 +1,6 @@
 var equivToolbarView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabEquivToolbar.ejs',
+    template: '/blueloop/static/js/loop/forecast/fcstInst/fcstCollab/template/fcstInstCollabEquivToolbar.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -39,7 +39,7 @@ var equivToolbarView = Backbone.View.extend({
     retrieveEquivList: function(){
         var dataReturned = $.ajax({
             type: 'GET',
-            url: "/blueloop-backend/fcstCollaborative/getEquiv/",
+            url: "/blueloop/fcstCollaborative/getEquiv/",
             data: {id:this.instanceId},
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',

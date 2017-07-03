@@ -1,6 +1,6 @@
 var bbConnectionsPermissionsElementView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/workspace/connections/template/bbConnectionsPermissionsElementTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/workspace/connections/template/bbConnectionsPermissionsElementTemplate.ejs',
     
     
     initialize: function(){

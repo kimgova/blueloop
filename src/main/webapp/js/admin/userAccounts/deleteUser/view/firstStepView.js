@@ -1,6 +1,6 @@
 var firstStepView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/firstStepTemplate.ejs',
+	template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/firstStepTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);

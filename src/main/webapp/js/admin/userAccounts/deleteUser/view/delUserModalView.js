@@ -1,6 +1,6 @@
 var delUserModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/delUserModal.ejs',
+    template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/delUserModal.ejs',
     
     constructor : function (options) {
         _.extend(this, options);
@@ -19,7 +19,7 @@ var delUserModalView = Backbone.View.extend({
     
     getAdminUsers: function(){
     	this.userCollection = new userCollection([]);
-        var result = ajaxCall('GET', '/blueloop-backend/administrator/getActiveUsersByCompany/', {}, "text/json", "json", false);
+        var result = ajaxCall('GET', '/blueloop/administrator/getActiveUsersByCompany/', {}, "text/json", "json", false);
 
         _.each(result,function(item,i){
             var user = new userModel({
@@ -183,7 +183,7 @@ var delUserModalView = Backbone.View.extend({
     finish: function(e){
         var data = {listBB:e.data.bbCollection.models,listLoop:e.data.loopCollection.models,
                     listFlow:e.data.flowCollection.models,user_id:e.data.model.id};
-        var result = ajaxCall('POST', '/blueloop-backend/administrator/deleteUser/', JSON.stringify(data), "text/json", "json", false);
+        var result = ajaxCall('POST', '/blueloop/administrator/deleteUser/', JSON.stringify(data), "text/json", "json", false);
         if(result.success){
             toastr.success(json.admin.msgDelUser);
             e.data.$el.remove();

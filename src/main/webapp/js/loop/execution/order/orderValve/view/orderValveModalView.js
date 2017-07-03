@@ -1,6 +1,6 @@
 var orderValveModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/orderValve/template/orderValveModalTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/orderValve/template/orderValveModalTemplate.ejs',
     
     constructor : function (options) {
         _.extend(this, options);

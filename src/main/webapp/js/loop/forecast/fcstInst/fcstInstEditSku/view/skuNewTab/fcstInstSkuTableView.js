@@ -1,6 +1,6 @@
 var forecastInstSkuTableView = Backbone.View.extend({
 	
-	template: '/blueloop-backend/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewTab/fcstInstSkuTable.ejs',
+	template: '/blueloop/static/js/loop/forecast/fcstInst/fcstInstEditSku/template/skuNewTab/fcstInstSkuTable.ejs',
 	
 	constructor : function (options) {
 		_.extend(this, options);
@@ -48,7 +48,7 @@ var forecastInstSkuTableView = Backbone.View.extend({
 	retrieveSkuList: function(){
 		var dataReturned = $.ajax({
 			type: 'GET',
-			url: '/blueloop-backend/fcstSku/getSkuInstanceList/',
+			url: '/blueloop/fcstSku/getSkuInstanceList/',
 			data: {id:this.fcInstanceId},
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',

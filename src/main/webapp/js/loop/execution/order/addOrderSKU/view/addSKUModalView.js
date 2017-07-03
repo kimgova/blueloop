@@ -1,6 +1,6 @@
 var addSKUModalView = Backbone.View.extend({
 
-	template: '/blueloop-backend/static/js/loop/execution/order/addOrderSKU/template/addSKUModal.ejs',
+	template: '/blueloop/static/js/loop/execution/order/addOrderSKU/template/addSKUModal.ejs',
 
 	constructor : function (options) {
 		_.extend(this, options);

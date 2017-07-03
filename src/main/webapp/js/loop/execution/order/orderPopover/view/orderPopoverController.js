@@ -2,7 +2,7 @@ var orderPopoverController = {
 	
 	popovers: new PopoverCollection([]),
 	
-	templateSVGContainer : '/blueloop-backend/static/js/loop/execution/order/orderPopover/template/SVGContainerTemplate.ejs',
+	templateSVGContainer : '/blueloop/static/js/loop/execution/order/orderPopover/template/SVGContainerTemplate.ejs',
 
     createOrderPopoverContainer: function(id, cellview){   	
     	$("svg#bbOrderAlert"+ id).remove();	

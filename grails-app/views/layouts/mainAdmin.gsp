@@ -57,7 +57,7 @@
 	<script src="<g:createLinkTo dir='js/plugins/backbone' file='backbone-min.js' />"></script>
 
     <script type="text/javascript">
-        var urlLanguage = '/blueloop-backend/static/js_i18n/messages_' + '<%= session.getAttribute("lang") %>' + '.json';
+        var urlLanguage = '/blueloop/static/js_i18n/messages_' + '<%= session.getAttribute("lang") %>' + '.json';
         var json;
         $.getJSON(urlLanguage).done(function(parsedResponse) {
             localStorage.setItem('jsLanguage',JSON.stringify(parsedResponse));

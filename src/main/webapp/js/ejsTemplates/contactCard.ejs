@@ -1,9 +1,9 @@
 <% $.each(listUsers, function(i, user){ %>
 	<li> 
 		<% if(userLogged == user.id){ %>
-			<a class="contactcard" href="/blueloop-backend/user/profile/">		
+			<a class="contactcard" href="/blueloop/user/profile/">		
 	    <% }else{ %>
-	   		<a class="contactcard" href="/blueloop-backend/user/profileWall/<%= user.id %>">
+	   		<a class="contactcard" href="/blueloop/user/profileWall/<%= user.id %>">
 	    <% } %> 					
 				<img src='<%= filePath %><%= user.username %>/user/profile.png' height='95' width='95' alt='<%= user.firstName %> <%= user.lastName %>' />
 				<div class="contactName"> 

@@ -45,7 +45,7 @@ $(document).ready(function(){
         var jsonObject = new Object()
         jsonObject.language = $("#language").find(":selected").val()
 
-        var data = ajaxCall('GET','/blueloop-backend/user/updateL/', jsonObject, "text/json", "json", false);
+        var data = ajaxCall('GET','/blueloop/user/updateL/', jsonObject, "text/json", "json", false);
         
         showMessage(data); 
     });
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
         var rege = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         if(rege.test($('#email').val())){ 
-            var data = ajaxCall('GET','/blueloop-backend/user/updateE/',jsonObject, "text/json", "json", false);
+            var data = ajaxCall('GET','/blueloop/user/updateE/',jsonObject, "text/json", "json", false);
             showMessage(data); 
         }else if($('#email').val() == ''){
             showMessage(data,json.error.emailEmpty);
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	$(document).on("change", "#inputFile", function() {
 		$("#formUploadUserImage").ajaxSubmit({
             async: true,
-            url: "/blueloop-backend/user/uploadFile", 
+            url: "/blueloop/user/uploadFile", 
             beforeSubmit: function() { 
             	$("body").addClass("loading");    
  			},
@@ -85,7 +85,7 @@ $(document).ready(function(){
 		    	$('#user-avatar').attr("src", data.photoUrlUpload + "?" + new Date().valueOf()); 
 		    	$('#userAvatar').attr("src", data.photoUrlUpload + "?" + new Date().valueOf());
 		    	$('#profile-wrapper-img').attr("src", data.photoUrlUpload + "?" + new Date().valueOf());
-		    	$.ajax({type: 'GET', data: {fileName:data.filename}, url: '/blueloop-backend/user/deleteImage/', dataType:"json", success: function(data, textStatus){ } });
+		    	$.ajax({type: 'GET', data: {fileName:data.filename}, url: '/blueloop/user/deleteImage/', dataType:"json", success: function(data, textStatus){ } });
 		    	document.getElementById('statusDiv').innerHTML = 'Image uploaded: '+data.filename;
 		    	toastr.success(data.message);	
             },
@@ -153,7 +153,7 @@ function changePass(){
     jsonObject.password 	= $("#currentpassword").val()
     jsonObject.newPassword 	= $("#password").val()
     
-    var data = ajaxCall('GET','/blueloop-backend/user/updateCP/',jsonObject, "text/json", "json", false);
+    var data = ajaxCall('GET','/blueloop/user/updateCP/',jsonObject, "text/json", "json", false);
 
     if(data.loginSuccess == "false"){
         toastr.error(json.profile.passwordError);

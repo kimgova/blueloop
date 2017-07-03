@@ -1,6 +1,6 @@
 var loopStepView = Backbone.View.extend({
     
-	template: '/blueloop-backend/static/js/admin/userAccounts/deleteUser/template/loopTableTemplate.ejs',
+	template: '/blueloop/static/js/admin/userAccounts/deleteUser/template/loopTableTemplate.ejs',
        
     constructor : function (options) {
 		_.extend(this, options);
@@ -16,7 +16,7 @@ var loopStepView = Backbone.View.extend({
     
     getLoopList: function() {
     	if(this.loopCollection.length == 0){
-        	var result = ajaxCall('GET', '/blueloop-backend/chain/getLoopsByUser/', {idUser:this.model.id}, "text/json", "json", false);
+        	var result = ajaxCall('GET', '/blueloop/chain/getLoopsByUser/', {idUser:this.model.id}, "text/json", "json", false);
         	_.each(result.chainList,function(item,i){
         		var loop = new loopModel({
         			id : item.id,

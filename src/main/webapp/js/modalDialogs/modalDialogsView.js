@@ -1,5 +1,5 @@
 var confirmModalView = Backbone.View.extend({
-	template : '/blueloop-backend/static/js/modalDialogs/template/modalTemplate.ejs',
+	template : '/blueloop/static/js/modalDialogs/template/modalTemplate.ejs',
 
 	initialize : function(that) {
 		this.$el = $(new EJS({url:this.template}).render(that.model.toJSON()));

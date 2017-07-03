@@ -1,6 +1,6 @@
 var bbConnectionsModalView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/buildingBlock/workspace/connections/newConnectionModal/template/bbConnectionModalTemplate.ejs',
+    template: '/blueloop/static/js/buildingBlock/workspace/connections/newConnectionModal/template/bbConnectionModalTemplate.ejs',
     
     
     initialize: function(myBB){
@@ -39,7 +39,7 @@ var bbConnectionsModalView = Backbone.View.extend({
 		jsonObject.searchWord = "";
 		jsonObject.myBB 	  = this.myBB;
 		jsonObject.filter 	  = filter;
-		var data 			  = ajaxCall('GET', '/blueloop-backend/buildingBlock/getBBbySearchWord/', jsonObject, "text/json", "json", false);
+		var data 			  = ajaxCall('GET', '/blueloop/buildingBlock/getBBbySearchWord/', jsonObject, "text/json", "json", false);
 		console.log(data);
 		if(data.error){
 			toastr.error(data.error);

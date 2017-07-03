@@ -1,6 +1,6 @@
 var orderSubRowView = Backbone.View.extend({
     
-    template: '/blueloop-backend/static/js/loop/execution/order/main/template/orderSubRowTemplate.ejs',
+    template: '/blueloop/static/js/loop/execution/order/main/template/orderSubRowTemplate.ejs',
         
     constructor : function (options) {
 		_.extend(this, options);
