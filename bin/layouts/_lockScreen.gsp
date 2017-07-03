@@ -26,7 +26,7 @@
 		</div>
 		
 		<div class="text-center" style="margin-top: 45px;">
-		  <a id="loginAnotherUser" href="/blueloop-backend/logout"><g:message code="auth.anotherUser"/></a>
+		  <a id="loginAnotherUser" href="/blueloop/logout"><g:message code="auth.anotherUser"/></a>
 		</div>
 		
 	</div>
