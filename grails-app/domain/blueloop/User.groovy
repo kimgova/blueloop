@@ -19,7 +19,8 @@ class User implements Serializable {
 	boolean passwordExpired
 	String firstName
 	String lastName
-
+	String email
+	
 	Set<Role> getAuthorities() {
 		(UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
 	}
@@ -29,6 +30,7 @@ class User implements Serializable {
 		username blank: false, unique: true
 		firstName nullable: true
 		lastName nullable: true
+		email unique: true
 	}
 
 	static mapping = {

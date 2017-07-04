@@ -72,11 +72,8 @@
         var sessionUser = new sessionUserModel({ 
             id:        ${sec.loggedInUserInfo(field: 'id')},
             username: "${sec.loggedInUserInfo(field: 'username')}",
-            
-            name: "${sec.loggedInUserInfo(field: 'username')}",
-            
-<%--            name:     "${sec.loggedInUserInfo(field: 'firstname')}",--%>
-<%--            lastname: "${sec.loggedInUserInfo(field: 'lastname')}",--%>
+            name:     "${sec.loggedInUserInfo(field: 'firstname')}",
+            lastname: "${sec.loggedInUserInfo(field: 'lastname')}",
             role:     "${sec.loggedInUserInfo(field: 'authorities')}",
             imgURI:   "${grails.util.Holders.config.aws.endpoint}${grails.util.Holders.config.aws.bucketBlAppUsers}/${sec.loggedInUserInfo(field: 'username')}/user/avatar.png",
             pubnubChannel: "${grails.util.Holders.config.pubnub.channel_name}"
