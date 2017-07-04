@@ -84,20 +84,20 @@
     <div class="se-pre-con"></div>
     
     <header class="header dark-bg">
-        <g:render template="../layouts/header" />
+        <g:render template="/layouts/header" />
     </header>
     
     <aside>
-        <g:render template="../layouts/sidebarAdmin" />
+        <g:render template="/layouts/sidebarAdmin" />
     </aside>
 
     <section id="container"  class="sidebar-closed">
 
-        <g:render template="../layouts/pageContent" />
-<%--        <g:render template="../layouts/lockScreen" />--%>
+        <g:render template="/layouts/pageContent" />
+<%--        <g:render template="/layouts/lockScreen" />--%>
 <div id="time" style="display:none;"></div>
 
-        <%--<g:render template="../layouts/footer" />
+        <%--<g:render template="/layouts/footer" />
     --%></section>
 
     <!--footer start-->

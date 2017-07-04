@@ -20,6 +20,7 @@ class User implements Serializable {
 	String firstName
 	String lastName
 	String email
+	Language language
 	
 	Set<Role> getAuthorities() {
 		(UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
@@ -31,6 +32,7 @@ class User implements Serializable {
 		firstName nullable: true
 		lastName nullable: true
 		email unique: true
+		language nullable: true
 	}
 
 	static mapping = {

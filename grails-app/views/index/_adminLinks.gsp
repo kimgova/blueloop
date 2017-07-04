@@ -5,7 +5,7 @@
             <div class="content-top">
                 <div class="img-container">
                     <g:link controller="administrator" action="userAccounts">
-                        <img src="/blueloop-backend/static/images/home/users.png">
+                        <img src="/blueloop/static/images/home/users.png">
                     </g:link>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="content-top">
                 <div class="img-container">
                     <g:link controller="administrator" action="companyProfile">
-                        <img src="/blueloop-backend/static/images/home/company.png">
+                        <img src="/blueloop/static/images/home/company.png">
                     </g:link>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="content-top">
                 <div class="img-container">
                     <g:link controller="administrator" action="billing">
-                        <img src="/blueloop-backend/static/images/home/billing.png">
+                        <img src="/blueloop/static/images/home/billing.png">
                     </g:link>
                 </div>
             </div>

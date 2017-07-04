@@ -114,7 +114,7 @@
     <section id="container"  class="sidebar-closed">
         <g:render template="/layouts/pageContent" />
         <div id="time" style="display:none;"></div>
-        <%--<g:render template="../layouts/footer" /> --%>
+        <%--<g:render template="/layouts/footer" /> --%>
     </section>
 
     <!-- scripts -->

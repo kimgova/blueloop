@@ -55,7 +55,7 @@
 </head>
 <body onmousemove="lockScreen.resetTimers();" >
 
-     <g:render template="../layouts/lockScreen" />
+     <g:render template="/layouts/lockScreen" />
      
     <script type="text/javascript" src="<g:createLinkTo dir='js/plugins/bootstrap'         file='moment.min.js' />"></script>
     <script type="text/javascript" src="<g:createLinkTo dir='js/plugins/jquery'            file='jquery.timeago.min.js' />" ></script>

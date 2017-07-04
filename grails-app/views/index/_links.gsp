@@ -5,7 +5,7 @@
             <div class="content-top">
                 <div class="img-container">
                     <g:link controller="search" action="index">
-                        <img src="/blueloop-backend/static/images/home/people.png">
+                        <img src="/blueloop/static/images/home/people.png">
                     </g:link>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="content-top">
                 <div class="img-container">
                     <g:link controller="buildingBlock" action="list">
-                        <img src="/blueloop-backend/static/images/home/buildingBlock.png">
+                        <img src="/blueloop/static/images/home/buildingBlock.png">
                     </g:link>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="content-top">
                 <div class="img-container">
                     <g:link controller="chain" action="list">
-                        <img src="/blueloop-backend/static/images/home/loop.png">
+                        <img src="/blueloop/static/images/home/loop.png">
                     </g:link>
                 </div>
             </div>
