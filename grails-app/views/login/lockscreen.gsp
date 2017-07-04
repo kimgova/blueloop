@@ -1,4 +1,4 @@
-<%@ page import="cr.sa.bl.User"%>
+<%@ page import="blueloop.User"%>
 <!DOCTYPE html>
 <html>
 <head>

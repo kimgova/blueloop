@@ -1,0 +1,16 @@
+<div class="col-lg-6">
+	<a class="breadcrump active ${morebb}" id="${id}" style="cursor:pointer" ${aHref} onclick="${onclick}">
+		<div class="panel">
+			<div class="panel-body">
+				<div class="bio-chart" >
+				<img width="75px" height="75px"  src="${href}" />
+				</div>
+				<div class="bio-desk">
+					<h4 class="red">${name}	 </h4>
+					<p>Description: ${description}	 </p>
+					<p>${maxCap}${maxCapacity}</p>
+				</div>
+			</div>
+		</div>
+	</a>
+</div>

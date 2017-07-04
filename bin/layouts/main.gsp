@@ -72,6 +72,9 @@
         var sessionUser = new sessionUserModel({ 
             id:        ${sec.loggedInUserInfo(field: 'id')},
             username: "${sec.loggedInUserInfo(field: 'username')}",
+            
+            name: "${sec.loggedInUserInfo(field: 'username')}",
+            
 <%--            name:     "${sec.loggedInUserInfo(field: 'firstname')}",--%>
 <%--            lastname: "${sec.loggedInUserInfo(field: 'lastname')}",--%>
             role:     "${sec.loggedInUserInfo(field: 'authorities')}",

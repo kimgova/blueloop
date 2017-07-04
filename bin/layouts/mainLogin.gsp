@@ -41,9 +41,9 @@
 		<div class="modalLoading"></div>
 		<script src="<g:createLinkTo dir='js/plugins/jquery' file='jquery-1.10.2.js' />"></script>
   		<script src="<g:createLinkTo dir='js/plugins/jquery/min'    file='jquery-ui.min.js'/>"></script>
-  		<script type="text/javascript" src="<g:createLinkTo dir='assets/jquery-validation-1.14.0'   file='jquery.validate.min.js' />"></script>
+  		<script src="<g:createLinkTo dir='assets/jquery-validation-1.14.0'   file='jquery.validate.min.js' />"></script>
+  		<script src="<g:createLinkTo dir='assets/iCheck-master/' file='icheck.min.js' />"></script>
   		<script src="<g:createLinkTo dir='js/plugins/bootstrap' file='bootstrap.min.js' />"></script>
 		<script src="<g:createLinkTo dir='js/login' file='auth.js' />"></script>
-		<script src="<g:createLinkTo dir='assets/iCheck-master/' file='icheck.min.js' />"></script>
 	</body>
 </html>

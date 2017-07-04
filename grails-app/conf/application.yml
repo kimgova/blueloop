@@ -18,6 +18,12 @@ grails:
         gsp:
             sitemesh:
                 preprocess: true
+    resources:
+      resourceLocatorEnabled: true
+      adhoc:
+          patterns: ['/images/*', '/css/*', '/js/*', '/plugins/*', '/repos/*', '/fonts/*', '/i18n/*','/assets/*', '/js_i18n/*']
+          includes: ['/images/**', '/css/**', '/js/**', '/plugins/**', '/repos/**', '/fonts/**', '/i18n/**','/assets/**', '/js_i18n/**']
+                
 info:
     app:
         name: '@info.app.name@'
@@ -107,30 +113,29 @@ grails:
                 authorityJoinClassName: blueloop.UserRole
             authority:
                 className: blueloop.Role
-#            controllerAnnotations:
-#                staticRules: [
-#                        '/':                              ['permitAll'],
-#                        '/index':                         ['permitAll'],
-#                        '/monitoring':                    ['permitAll'],
-#                        '/index.gsp':                     ['permitAll'],
-#                        '/**/js/**':                      ['permitAll'],
-#                        '/**/css/**':                     ['permitAll'],
-#                        '/**/images/**':                  ['permitAll'],
-#                        '/**/favicon.ico':                ['permitAll'],
-#                        '/services/**':                   ['permitAll'],
-#                        '/**/crumb/**':                   ['permitAll'],
-#                        '/**/city/**':                    ['permitAll'],
-#                        '/assets/**':                     ['permitAll'],
-#                        '/**/fonts/**':                   ['permitAll'],
-#                        '/**/repos/**':                   ['permitAll'],
-#                        '/**/js_i18n/**':                 ['permitAll']
-#                    ]
-#            useSecurityEventListener: true
+            controllerAnnotations:
+                staticRules:
+                    '/':                permitAll
+                    '/index':           permitAll
+                    '/monitoring':      permitAll
+                    '/index.gsp':       permitAll
+                    '/**/js/**':        permitAll
+                    '/**/css/**':       permitAll
+                    '/**/images/**':    permitAll
+                    '/**/favicon.ico':  permitAll
+                    '/services/**':     permitAll
+                    '/**/crumb/**':     permitAll
+                    '/**/city/**':      permitAll
+                    '/**/assets/**':    permitAll
+                    '/**/fonts/**':     permitAll
+                    '/**/repos/**':     permitAll
+                    '/**/js_i18n/**':   permitAll
+            useSecurityEventListener: true
 #            failureHandler:
 #                exceptionMappings: [
 #                    'org.springframework.security.authentication.CredentialsExpiredException': '/user/passwordExpired'
 #                    ]
-#
+
 #bruteforcedefender:
 #    time: 5
 #    allowedNumberOfAttempts: 3
