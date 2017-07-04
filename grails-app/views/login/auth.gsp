@@ -8,7 +8,7 @@
         
         <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
         <link rel="stylesheet" href="${resource(dir: 'css/plugins/bootstrap', file: 'bootstrap.min.css')}" type="text/css">
-        <link rel="stylesheet" href="${resource(dir: 'css/custom', file: 'main.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css/custom', file: 'main2.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'assets/font-awesome/css', file: 'font-awesome.min.css')}" type="text/css" media='screen'>
         <link rel="stylesheet" href="${resource(dir: 'assets/iCheck-master/square/', file: 'blue.css')}" type="text/css">
 
